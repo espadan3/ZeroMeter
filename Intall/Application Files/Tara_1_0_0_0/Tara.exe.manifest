@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="Tara.exe" version="1.0.0.0" publicKeyToken="6efc150912e9fad5" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="Clock 04.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Tara" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="Tara.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el 
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la 
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Data.v10.1.dll" size="2475520">
+      <assemblyIdentity name="DevExpress.Data.v10.1" version="10.1.5.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>H5IwGmvCkT3FY+Po5B4qTh+xJIE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Utils.v10.1.dll" size="2929152">
+      <assemblyIdentity name="DevExpress.Utils.v10.1" version="10.1.5.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>zt9PMHWMR4hXbj+j5WtBKKxXJeg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.XtraEditors.v10.1.dll" size="1647616">
+      <assemblyIdentity name="DevExpress.XtraEditors.v10.1" version="10.1.5.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>H4dQg08U2W2ZXNHDZLZWeOx6JaQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.XtraGrid.v10.1.dll" size="1756672">
+      <assemblyIdentity name="DevExpress.XtraGrid.v10.1" version="10.1.5.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>E6Wb8PanzU4ybuVGuwQmwqTXGGo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.XtraLayout.v10.1.dll" size="698880">
+      <assemblyIdentity name="DevExpress.XtraLayout.v10.1" version="10.1.5.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>FtE/SrqI4t7/tIuqIFVNC5fRS7A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.XtraNavBar.v10.1.dll" size="293888">
+      <assemblyIdentity name="DevExpress.XtraNavBar.v10.1" version="10.1.5.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>7BocxK6jbogX31CKpKem+2rhp3o=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LibUsbDotNet.dll" size="150016">
+      <assemblyIdentity name="LibUsbDotNet" version="2.2.8.104" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>WHJTFUmlhCwCVSdvHqxj4aFNT8k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tara.exe" size="487936">
+      <assemblyIdentity name="Tara" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>+brx33MhZx+qKyrKilqbsPZ2hKg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Clock 04.ico" size="113171">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bojNd1ZS39zKlll0X1SCl/i0kic=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Tara.exe.config" size="402">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>i95pv5C+PTPWmHYeMIuSPntaei4=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Auckland\Miguel Angel" issuerKeyHash="5ca9cc857fe769d825bfa0c1e9c19d2d557f47ee" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>DLN10NqhPv99R3xGUGVG/Dar8qA=</DigestValue></Reference></SignedInfo><SignatureValue>QLX9364ZJzOCMKSaiZXLnoLA3TrnmQ4D/52lpupksMU09TDvzUA1dK3nI/EcwhyqOJqT8Qh/zGiYkv+uU5F8aqIOA2CoDa18SDk8HxE+z1hW6fASrdFHkUM1ihnjOtsW/2tm+qkLewj0IFjPRpmvTMcjDoIDwF+0HZcI3+2cIBE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>oTlLzWo95Nkw69azTYdehAksplGzF0Xx2VXxQ5cDSobPF5Kf5VoKc+9kRvo+VTqQu5h3py/JavPc+17QvqRIaoC+mGZeDxlwyTTVwIfWqPS1ftBxQlV8nzv9Fq7UNmeiRJtKy3Q/L3ZSpT097LG9Qu2Ic0QMELkBmgQxS7xyDu0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a0f2ab36fc466550467c477dff3ea1dad075b30c" Description="" Url=""><as:assemblyIdentity name="Tara.exe" version="1.0.0.0" publicKeyToken="6efc150912e9fad5" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Auckland\Miguel Angel</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>aClT1p4Ew26jAEP6z8yNkQtr1VI=</DigestValue></Reference></SignedInfo><SignatureValue>NNQG9WHbLrm7+Z5xbPY5VrFssmJpI+w5UByG+YeieIiDaC36LfoLIxoJH4BhW3bVNbjjBJXjXbzhFdJKDNQyS/ZSgd3yNmLGDmRcqb7McEbnuzBiuxB5a7CC6Vg2xgg1jDy7wGo5YKllB94z9gNp3YL2iymexRyRb6nfMTssBXY=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>oTlLzWo95Nkw69azTYdehAksplGzF0Xx2VXxQ5cDSobPF5Kf5VoKc+9kRvo+VTqQu5h3py/JavPc+17QvqRIaoC+mGZeDxlwyTTVwIfWqPS1ftBxQlV8nzv9Fq7UNmeiRJtKy3Q/L3ZSpT097LG9Qu2Ic0QMELkBmgQxS7xyDu0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQXCfMMY52Tr5JM6SgIIjQ6DANBgkqhkiG9w0BAQUFADA1MTMwMQYDVQQDHioAQQB1AGMAawBsAGEAbgBkAFwATQBpAGcAdQBlAGwAIABBAG4AZwBlAGwwHhcNMTIwMjEyMDIzNzQ2WhcNMTMwMjExMDgzNzQ2WjA1MTMwMQYDVQQDHioAQQB1AGMAawBsAGEAbgBkAFwATQBpAGcAdQBlAGwAIABBAG4AZwBlAGwwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKE5S81qPeTZMOvWs02HXoQJLKZRsxdF8dlV8UOXA0qGzxeSn+VaCnPvZEb6PlU6kLuYd6cvyWrz3Pte0L6kSGqAvphmXg8ZcMk01cCH1qj0tX7QcUJVfJ87/Rau1DZnokSbSst0Py92UqU9PeyxvULtiHNEDBC5AZoEMUu8cg7tAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAAAIkHsJBoQVKQ65bEkW9651/FMt5qKktd2ITuY8SiU5rbwAr4st4NE0dBKQDWWNfQ88JcAxp5t3AK8OKdQHNW5eZ6F4eh3L68CY1VJlAwFFrAR97U35jCulOOb+pkReH7WMDm/Xd866SMLbLrQ7n3wfxhG8gsAQMwz6M+0woE30=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
