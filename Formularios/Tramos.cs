@@ -62,8 +62,6 @@ namespace ZeroTrip
                             cbTramos.Text,
                             cbTipo.Text,
                             teSalida.Time);
-
-
             }
             catch (Exception ex)
             {

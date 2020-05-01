@@ -13,10 +13,14 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>D:\Mis Documentos\Visual Studio 2010\Projects\ZeroTrip_2.0\Intall\</PublishUrl>
     <Install>true</Install>
@@ -134,7 +138,6 @@
     <Compile Include="Settings.cs" />
     <Compile Include="ZeroTripBBDDDataSet.cs">
       <DependentUpon>ZeroTripBBDDDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ZeroTripBBDDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -195,7 +198,9 @@
     <None Include="lock_open.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\script.js" />
     <Content Include="Clock 04.ico" />
+    <Content Include="readme.txt" />
     <Content Include="ZeroTrip.ico" />
     <None Include="tick.png" />
     <None Include="cross.png" />
@@ -307,6 +312,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>rem copy "D:\Mis Documentos\Visual Studio 2010\Projects\ZeroTrip_2.0\bin\Release\ZeroTrip.exe" "C:\Program Files (x86)\ZeroTrip_2.0"</PostBuildEvent>
