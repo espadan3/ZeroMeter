@@ -39,10 +39,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {386B60FC-A628-4959-BE27-AE9D951024AF}
 	EndGlobalSection
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 2
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ZeroTrip_2.0.csproj
-		SccLocalPath1 = .
-	EndGlobalSection
 EndGlobal
