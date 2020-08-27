@@ -250,6 +250,18 @@ namespace ZeroTrip
 
         //*********************************************************************************************************        
 
+
+        private void btConnectBLT_Click(object sender, EventArgs e)
+        {
+            // Al pulsar este botón, lo que hacemos es ponernos en modo listener de forma asincrona. El otro dispositivo debe conectar con nosotros
+
+            BLTObj.remoteDeviceNameAdmited = cbBLTDevs.SelectedItem.ToString();
+
+            BLTObj.localListener.BeginAcceptBluetoothClient(new AsyncCallback(BLTObj.AcceptConnection), BLTObj.localListener);
+        }
+
+        //---------------------------------------------------------------------------------------------------------
+
         private void btSincronizar_Click(object sender, EventArgs e)
         {
             tmCrono.Stop();
@@ -269,7 +281,6 @@ namespace ZeroTrip
             tmCrono.Start();
 
         }
-
    
         //---------------------------------------------------------------------------------------------------------
 
@@ -331,6 +342,7 @@ namespace ZeroTrip
                 nDistRealAnt = 0;
                 teRecalibre.Text = "0";
                 teSigRecalibre.Text = "0";
+                nDistReal = 0;
 
                 String szCadena = "Z";
 #if DEBUG
@@ -538,7 +550,8 @@ namespace ZeroTrip
             for (int nInd = nSigInc; nInd <= tbIncidenciasTr.Rows.Count - 1; nInd++)
             {
                 //nSigInc = (Convert.ToInt16(tbIncidenciasTr[nInd].Posicion));
-                if (nDistIdeal <= Convert.ToInt32(tbIncidenciasTr[nInd].Posicion))
+                //if (nDistIdeal <= Convert.ToInt32(tbIncidenciasTr[nInd].Posicion))
+                    if (nDistReal <= Convert.ToInt32(tbIncidenciasTr[nInd].Posicion))
                     return (tbIncidenciasTr[nInd].IdIncidencia);
 
             }
@@ -666,7 +679,7 @@ namespace ZeroTrip
                                     simpleSound.Play();
                                     Gb.anAvInc[nSigIncidecia] = 1;
                                 }
-                                lbDistAInci.Text = ((Convert.ToInt32(tbIncidenciasTr[nSigIncidecia - 1].Posicion) - nDistIdeal) / 10).ToString() + "0";
+                                lbDistAInci.Text = ((Convert.ToInt32(tbIncidenciasTr[nSigIncidecia - 1].Posicion) - nDistReal) / 10).ToString() + "0";
                             }
                             else
                             {

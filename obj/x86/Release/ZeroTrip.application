@@ -4,18 +4,17 @@
   <description asmv2:publisher="ZeroTrip" asmv2:product="ZeroTrip" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.0" profile="Client" supportedRuntime="4.0.30319" />
-    <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ZeroTrip.exe.manifest" size="14051">
+    <dependentAssembly dependencyType="install" codebase="ZeroTrip.exe.manifest" size="16207">
       <assemblyIdentity name="ZeroTrip.exe" version="2.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Q+rDLyE0BBfDEEFwuWBfO2040us=</dsig:DigestValue>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VrA8dCaN/16mgWQ2rjjQVE8QTRPeaaj2I4R/lOQFgUM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

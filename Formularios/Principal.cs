@@ -4,14 +4,21 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
+//using System.Text;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.Media;
 using Microsoft.VisualBasic;
 using System.Globalization;
-using System.Runtime.InteropServices;
+
 using USBClassLibrary;
+using BTLibrary;
+
+using InTheHand.Net;
+using InTheHand.Net.Bluetooth;
+using InTheHand.Net.Sockets;
+using System.Management;
+
 
 
 namespace ZeroTrip
@@ -34,7 +41,7 @@ namespace ZeroTrip
 
         // Array con tres columnas: la primera es calibre, la segunda es el número de pulsos hasta el que aplica ese calibre y la tercera es la distancia equivalente
         public double[,] anCalibres = new double[1, 3];
-        
+
 
         public bool bHayTramo = false; // nos indica si tenemos un tramo cargado
         public bool bEnCompeticion = false; // nos indica si estamos en tiempo de tramo cronometrado
@@ -81,7 +88,7 @@ namespace ZeroTrip
         public decimal dbCalcarVelocidad;
         public DateTime dtmCalcarTParcial = DateTime.Today, dtmCalcarTAcumulado = DateTime.Today;
 
-         
+
         SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
 
         GestionConfig config = new GestionConfig(Application.StartupPath + @"\ConfigZeroTrip.exe.config");
@@ -89,12 +96,25 @@ namespace ZeroTrip
         //USB Detect
         public bool MyUSBARDConnected;
         public bool MyUSBPDAConnected;
+        //public bool MyUSBAndroidConnected;
+
         private USBClassLibrary.USBClass USBPort = new USBClass();
         private USBClassLibrary.USBClass.DeviceProperties USBDeviceProperties = new USBClass.DeviceProperties();
 
+
+        // Variables para la conexión por Bluetooth
+        private BTLibrary.Enviar BLTObj = new BTLibrary.Enviar();
+        public BluetoothDeviceInfo[] listaDevices;
+
+
         public frPrincipal()
         {
+
             InitializeComponent();
+
+            //BT Detect. Consultamos la lista de dispositivos emparejados con este ordenador
+            listaDevices = BLTObj.listPaired();
+
 
             //USB Detect
             USBPort.USBDeviceAttached +=
@@ -109,6 +129,7 @@ namespace ZeroTrip
 
                 cbPortARD.Text = USBDeviceProperties.COMPort;
                 MyUSBARDConnected = true;
+                //MyUSBAndroidConnected = true;
 
                 AbrirPuertoSonda(USBDeviceProperties.COMPort, USBDeviceProperties.FriendlyName);
             }
@@ -126,7 +147,6 @@ namespace ZeroTrip
             //  }
             USBPort.RegisterForDeviceChange(true, this);
             //     RegisterHidNotification();
-
 
         }
 
@@ -165,6 +185,12 @@ namespace ZeroTrip
                 cbPortPDA.Properties.Items.Add(port);
             }
 
+            // Cargamos el combo con los nombres de los dispositivos Bluetooth emparejados.
+            foreach (BluetoothDeviceInfo dev in listaDevices)
+            {
+                cbBLTDevs.Properties.Items.Add(dev.DeviceName);
+            }
+
             Inicializar();
 
             gcMedias.EmbeddedNavigator.Enabled = true;
@@ -172,14 +198,32 @@ namespace ZeroTrip
 
             teTPaso.Visible = false;
             tePrueba.Time = DateTime.Now;
- 
-         //   teDirBBDD.Text = Gb.sDirectorioDatos;
+
+            //recConnetionBLT();
+
+            
+
+            //   teDirBBDD.Text = Gb.sDirectorioDatos;
         }
 
         //********************************************************************************************************************
 
+        private void recConnetionBLT()
+        {
+            BLTObj.localListener.BeginAcceptBluetoothClient(new AsyncCallback(BLTObj.AcceptConnection), BLTObj.localListener);
+            if (BLTObj.remoteDevice.Connected )
+            {
+                string a = BLTObj.remoteDevice.RemoteMachineName;
+                BLTObj.localListener.BeginAcceptBluetoothClient(new AsyncCallback(BLTObj.AcceptConnection), BLTObj.localListener);
+            }
+        }
 
         #region CONTROLES
+
+
+
+
+        //-----------------------------------------------------------------------------------
 
         private void zoCoreccion_ValueChanged(object sender, EventArgs e)
         {
@@ -481,11 +525,7 @@ namespace ZeroTrip
 
             // Pintamos la hora actual
             lbHora.Text = Convert.ToString(DateTime.Now.ToLongTimeString());
-            //lbScond.Text = DateTime.Now.Second.ToString();
-            //int mili = DateTime.Now.Millisecond;
-            //if (mili < 100)
-            //    lbMili.Text = mili.ToString();
-            // Pintamos la posible corrección de metros.
+
             zoCoreccion.ToolTip = zoCoreccion.Value.ToString();
             DateTime dtmTiempoParcial;
 
@@ -511,7 +551,7 @@ namespace ZeroTrip
 
                 if (bEnCompeticion)
                 {
-                    if (tsCrono.Seconds != nSegundoAnterior)
+                    if (tsCrono.Seconds != nSegundoAnterior) // muestro la diferencia cada segundo porque al ser en metros va muy rápido.
                     {
                         tbcDiferencia.Value = nDifMetros;
                         if (nDifMetros > tbcDiferencia.Properties.Maximum)
@@ -586,9 +626,13 @@ namespace ZeroTrip
 
             if (PSeriePDA.IsOpen)
                 EnviarTerminal();
+
+                if (BLTObj.remoteDevice.Connected)
+                EnviarBluetooth();
+
         }
-        
-        # endregion TIMER
+
+        #endregion TIMER
 
         //********************************************************************************************************************
 
@@ -661,12 +705,28 @@ namespace ZeroTrip
             //      Random rndObj = new Random();
             //      string szDistancia = rndObj.Next(100).ToString() + "," + rndObj.Next(100).ToString();
             //      string szCD = rndObj.Next(1, 10).ToString();
+            // 00,63;00:00:47;1:36:44;00,03;-596;50;0;Tipo Incidencia;00.000;50;
 
             // Envio al terminal de información
             try
             {
                 //        if (PSeriePDA.IsOpen)
                 // PuertoSerie.Write(DateTime.Now.ToLongTimeString());
+                string a = (szEnvDistancia + ";"  //Distancia ideal
+                    + tsCrono.ToString() + ";"          // Crono
+                    + DateTime.Now.ToLongTimeString() + ";"         // Hora actual
+                                                                    //  + szEnvDistancia2 + ";"             // Punto de siguiente paso horario: hitos, viñetas, 
+                    + lbDistReal.Text + ";"             // Punto de siguiente paso horario: hitos, viñetas, tablas
+                                                        //  + szEnvCuentaAtras + ";"                // Cuenta atras
+                    + lbDiferencia.Text + ";"                // Cuenta atras / Diferencia de metros
+                    + szVelocidad + ";"          // Velocidad actual
+                    + nDireccionCruce + ";"      // direccion a tomar en cruce
+                    + lbTipoIncidencia.Text + ";" // Tipo de incidencia
+                                                  //+ nFaltaCruce + ";"          // distancia hasta el siguiente cruce
+                    + lbDistAInci.Text + ";"     // distancia hasta el siguiente cruce
+                    + dbVelSiguiente + ";"               // siguiente velocidad
+                    + lbFaltaCam.Text);
+
                 PSeriePDA.Write(szEnvDistancia + ";"  //Distancia ideal
                     + tsCrono.ToString() + ";"          // Crono
                     + DateTime.Now.ToLongTimeString() + ";"         // Hora actual
@@ -694,6 +754,57 @@ namespace ZeroTrip
         }
 
         //-----------------------------------------------------------------------------------
+
+        public void EnviarBluetooth()
+        {
+            // Enviamos datos al terminal externo
+
+            // 00,63;00:00:47;1:36:44;00,03;-596;50;0;Tipo Incidencia;00.000;50;
+
+            string szSigInci = "00,00";
+
+            try
+            {
+                //if ( tbIncidenciasTr[nSigIncidecia - 1].Posicion != null)
+                if (nSigIncidecia != 0 && nSigIncidecia != 9999)
+                {
+                    szSigInci = (Convert.ToDouble(tbIncidenciasTr[nSigIncidecia - 1].Posicion)/1000).ToString("00.#00").Substring(0, 5); 
+                }
+                else
+                { szSigInci = "--,--"; }
+
+                string a = (cbTramosRace.Text + " " + lbTipoTramo.Text + ";"  // Nombre del tramo
+                    + szEnvDistancia + ";"  //Distancia ideal
+                    + tsCrono.ToString() + ";"          // Crono
+                    + DateTime.Now.ToLongTimeString() + ";"         // Hora actual
+                                                                    //  + szEnvDistancia2 + ";"             // Punto de siguiente paso horario: hitos, viñetas, 
+                    + lbDistReal.Text + ";"             // Punto de siguiente paso horario: hitos, viñetas, tablas
+                                                        //  + szEnvCuentaAtras + ";"                // Cuenta atras
+                    + lbDiferencia.Text + ";"                // Cuenta atras / Diferencia de metros
+                    + szVelocidad + ";"          // Velocidad actual
+                    + nDireccionCruce + ";"      // direccion a tomar en cruce
+                    + lbTipoIncidencia.Text + ";" // Tipo de incidencia
+                                                  //+ nFaltaCruce + ";"          // distancia hasta el siguiente cruce
+                    + lbDistAInci.Text + ";"     // distancia hasta el siguiente cruce
+                    + dbVelSiguiente + ";"               // siguiente velocidad
+                    + lbDistActVel.Text + ";"
+                    + szSigInci +
+                    "\n");
+
+       
+                bool result = BLTObj.EnviarDatos(BLTObj.remoteDevice, a); 
+
+            }
+            catch (TimeoutException)
+            {
+                if (PSeriePDA.IsOpen)
+                {
+
+                    PSeriePDA.Close();
+                    Util.AvisoConRespuesta("No hay nada escuchando por el puerto " + PSeriePDA.PortName, "Error en puerto");
+                }
+            }
+        }   //-----------------------------------------------------------------------------------
 
         public void CalcDistIdeal(bool bShowCambio)
         {
@@ -1065,6 +1176,9 @@ namespace ZeroTrip
 
         }
 
+  
+
+
 
         //-----------------------------------------------------------------------------------
 
@@ -1266,6 +1380,23 @@ namespace ZeroTrip
 
                 }
             }
+
+            //if (!MyUSBAndroidConnected)
+            //{
+            //    if (USBClass.GetUSBDevice(2717, "FF48", ref USBDeviceProperties, true))
+            //    {
+            //        //My Device is connected
+            //        cbPortARD.Text = USBDeviceProperties.COMPort;
+            //        MyUSBARDConnected = true;
+            //        if (USBDeviceProperties.COMPort != null)
+            //        {
+            //            AbrirPuertoSonda(USBDeviceProperties.COMPort, USBDeviceProperties.FriendlyName);
+            //        }
+
+
+
+            //    }
+            //}
             //if (!MyUSBPDAConnected)
             //{
             //    if (USBClass.GetUSBDevice(1131, 1004, ref USBDeviceProperties, true))

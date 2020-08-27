@@ -140,6 +140,8 @@
             this.chkSonido100 = new DevExpress.XtraEditors.CheckEdit();
             this.chkSonido = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btConnectBLT = new DevExpress.XtraEditors.SimpleButton();
+            this.cbBLTDevs = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btOpenPortARD = new DevExpress.XtraEditors.SimpleButton();
             this.cbPortARD = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btOpenPortPDA = new DevExpress.XtraEditors.SimpleButton();
@@ -286,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkSonido.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbBLTDevs.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPortARD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPortPDA.Properties)).BeginInit();
             this.xtTPTramos.SuspendLayout();
@@ -2182,11 +2185,11 @@
             this.groupControl2.Controls.Add(this.label10);
             this.groupControl2.Controls.Add(this.chkSonido100);
             this.groupControl2.Controls.Add(this.chkSonido);
-            this.groupControl2.Location = new System.Drawing.Point(32, 120);
+            this.groupControl2.Location = new System.Drawing.Point(32, 149);
             this.groupControl2.LookAndFeel.SkinName = "The Asphalt World";
             this.groupControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(261, 362);
+            this.groupControl2.Size = new System.Drawing.Size(261, 358);
             this.groupControl2.TabIndex = 13;
             this.groupControl2.Text = "Varios";
             // 
@@ -2220,7 +2223,7 @@
             // label31
             // 
             this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Navy;
             this.label31.Location = new System.Drawing.Point(80, 324);
             this.label31.Name = "label31";
@@ -2300,11 +2303,11 @@
             // label18
             // 
             this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Navy;
-            this.label18.Location = new System.Drawing.Point(80, 278);
+            this.label18.Location = new System.Drawing.Point(80, 273);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(144, 24);
+            this.label18.Size = new System.Drawing.Size(144, 45);
             this.label18.TabIndex = 0;
             this.label18.Text = "Distancia para Hitos";
             // 
@@ -2339,11 +2342,11 @@
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Navy;
-            this.label15.Location = new System.Drawing.Point(80, 232);
+            this.label15.Location = new System.Drawing.Point(80, 227);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(154, 26);
+            this.label15.Size = new System.Drawing.Size(154, 46);
             this.label15.TabIndex = 0;
             this.label15.Text = "Valor Max y Min para la corrección";
             // 
@@ -2373,11 +2376,11 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Navy;
-            this.label11.Location = new System.Drawing.Point(80, 187);
+            this.label11.Location = new System.Drawing.Point(80, 182);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(127, 27);
+            this.label11.Size = new System.Drawing.Size(127, 45);
             this.label11.TabIndex = 0;
             this.label11.Text = "Distancia para aviso cruces";
             // 
@@ -2407,11 +2410,11 @@
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Navy;
-            this.label10.Location = new System.Drawing.Point(80, 143);
+            this.label10.Location = new System.Drawing.Point(80, 138);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(144, 25);
+            this.label10.Size = new System.Drawing.Size(144, 44);
             this.label10.TabIndex = 0;
             this.label10.Text = "Distancia para aviso cambio media";
             // 
@@ -2462,6 +2465,8 @@
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl1.Controls.Add(this.btConnectBLT);
+            this.groupControl1.Controls.Add(this.cbBLTDevs);
             this.groupControl1.Controls.Add(this.btOpenPortARD);
             this.groupControl1.Controls.Add(this.cbPortARD);
             this.groupControl1.Controls.Add(this.btOpenPortPDA);
@@ -2470,9 +2475,53 @@
             this.groupControl1.LookAndFeel.SkinName = "The Asphalt World";
             this.groupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(261, 109);
+            this.groupControl1.Size = new System.Drawing.Size(261, 140);
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Conexiones";
+            // 
+            // btConnectBLT
+            // 
+            this.btConnectBLT.Appearance.Font = new System.Drawing.Font("Ebrima", 12F);
+            this.btConnectBLT.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.btConnectBLT.Appearance.Options.UseFont = true;
+            this.btConnectBLT.Appearance.Options.UseForeColor = true;
+            this.btConnectBLT.Appearance.Options.UseTextOptions = true;
+            this.btConnectBLT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btConnectBLT.Location = new System.Drawing.Point(161, 107);
+            this.btConnectBLT.LookAndFeel.SkinName = "iMaginary";
+            this.btConnectBLT.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btConnectBLT.Name = "btConnectBLT";
+            this.btConnectBLT.Size = new System.Drawing.Size(85, 29);
+            this.btConnectBLT.TabIndex = 7;
+            this.btConnectBLT.Text = "Bluetooth";
+            this.btConnectBLT.Click += new System.EventHandler(this.btConnectBLT_Click);
+            // 
+            // cbBLTDevs
+            // 
+            this.cbBLTDevs.Location = new System.Drawing.Point(5, 111);
+            this.cbBLTDevs.Name = "cbBLTDevs";
+            this.cbBLTDevs.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cbBLTDevs.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBLTDevs.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
+            this.cbBLTDevs.Properties.Appearance.Options.UseBackColor = true;
+            this.cbBLTDevs.Properties.Appearance.Options.UseFont = true;
+            this.cbBLTDevs.Properties.Appearance.Options.UseForeColor = true;
+            this.cbBLTDevs.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBLTDevs.Properties.AppearanceDropDown.ForeColor = System.Drawing.Color.Gray;
+            this.cbBLTDevs.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cbBLTDevs.Properties.AppearanceDropDown.Options.UseForeColor = true;
+            this.cbBLTDevs.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cbBLTDevs.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbBLTDevs.Properties.DropDownRows = 10;
+            this.cbBLTDevs.Properties.Items.AddRange(new object[] {
+            "Uno",
+            "Dos"});
+            this.cbBLTDevs.Properties.LookAndFeel.SkinName = "Money Twins";
+            this.cbBLTDevs.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cbBLTDevs.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbBLTDevs.Size = new System.Drawing.Size(144, 24);
+            this.cbBLTDevs.TabIndex = 6;
             // 
             // btOpenPortARD
             // 
@@ -2482,18 +2531,18 @@
             this.btOpenPortARD.Appearance.Options.UseForeColor = true;
             this.btOpenPortARD.Appearance.Options.UseTextOptions = true;
             this.btOpenPortARD.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btOpenPortARD.Location = new System.Drawing.Point(119, 70);
+            this.btOpenPortARD.Location = new System.Drawing.Point(161, 70);
             this.btOpenPortARD.LookAndFeel.SkinName = "iMaginary";
             this.btOpenPortARD.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btOpenPortARD.Name = "btOpenPortARD";
-            this.btOpenPortARD.Size = new System.Drawing.Size(127, 29);
+            this.btOpenPortARD.Size = new System.Drawing.Size(85, 29);
             this.btOpenPortARD.TabIndex = 5;
-            this.btOpenPortARD.Text = "C&onectar SONDA";
+            this.btOpenPortARD.Text = "SONDA";
             this.btOpenPortARD.Click += new System.EventHandler(this.btOpenPortARD_Click);
             // 
             // cbPortARD
             // 
-            this.cbPortARD.Location = new System.Drawing.Point(29, 74);
+            this.cbPortARD.Location = new System.Drawing.Point(5, 74);
             this.cbPortARD.Name = "cbPortARD";
             this.cbPortARD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.cbPortARD.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2519,7 +2568,7 @@
             this.cbPortARD.Properties.LookAndFeel.SkinName = "Money Twins";
             this.cbPortARD.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cbPortARD.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbPortARD.Size = new System.Drawing.Size(71, 24);
+            this.cbPortARD.Size = new System.Drawing.Size(144, 24);
             this.cbPortARD.TabIndex = 4;
             // 
             // btOpenPortPDA
@@ -2530,18 +2579,18 @@
             this.btOpenPortPDA.Appearance.Options.UseForeColor = true;
             this.btOpenPortPDA.Appearance.Options.UseTextOptions = true;
             this.btOpenPortPDA.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btOpenPortPDA.Location = new System.Drawing.Point(119, 35);
+            this.btOpenPortPDA.Location = new System.Drawing.Point(161, 35);
             this.btOpenPortPDA.LookAndFeel.SkinName = "iMaginary";
             this.btOpenPortPDA.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btOpenPortPDA.Name = "btOpenPortPDA";
-            this.btOpenPortPDA.Size = new System.Drawing.Size(127, 29);
+            this.btOpenPortPDA.Size = new System.Drawing.Size(85, 29);
             this.btOpenPortPDA.TabIndex = 3;
-            this.btOpenPortPDA.Text = "Co&nectar PDA";
+            this.btOpenPortPDA.Text = " PDA";
             this.btOpenPortPDA.Click += new System.EventHandler(this.btOpenPortPDA_Click);
             // 
             // cbPortPDA
             // 
-            this.cbPortPDA.Location = new System.Drawing.Point(29, 39);
+            this.cbPortPDA.Location = new System.Drawing.Point(5, 39);
             this.cbPortPDA.Name = "cbPortPDA";
             this.cbPortPDA.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.cbPortPDA.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2567,7 +2616,7 @@
             this.cbPortPDA.Properties.LookAndFeel.SkinName = "Money Twins";
             this.cbPortPDA.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cbPortPDA.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbPortPDA.Size = new System.Drawing.Size(71, 24);
+            this.cbPortPDA.Size = new System.Drawing.Size(144, 24);
             this.cbPortPDA.TabIndex = 2;
             // 
             // xtTPTramos
@@ -4229,6 +4278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkSonido.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbBLTDevs.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPortARD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPortPDA.Properties)).EndInit();
             this.xtTPTramos.ResumeLayout(false);
@@ -4482,6 +4532,8 @@
         private System.Windows.Forms.Label lbFreeze;
         private System.Windows.Forms.Label label32;
         private DevExpress.XtraEditors.RadioGroup rbTamanioRueda;
+        private DevExpress.XtraEditors.SimpleButton btConnectBLT;
+        private DevExpress.XtraEditors.ComboBoxEdit cbBLTDevs;
     }
 }
 

@@ -79,3 +79,8 @@ D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTr
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip_2.0.csproj.CopyComplete
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip.exe
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip.pdb
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip_2.0.csprojAssemblyReference.cache
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\InTheHand.Devices.Bluetooth.pdb
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\InTheHand.Devices.Bluetooth.xml
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\InTheHand.Net.Personal.xml

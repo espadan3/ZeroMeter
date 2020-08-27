@@ -1129,7 +1129,7 @@ using System.Windows.Forms;
         /// <param name="DP">A Device Properties structure.</param>
         /// <param name="GetCOMPort">Set to True to retrieve the COM Port number if the Device is emulating a Serial Port.</param>
         /// <returns>True the Device is found.</returns>
-        public static bool GetUSBDevice(UInt32 VID, UInt32 PID, ref DeviceProperties DP, bool GetCOMPort)
+        public static bool GetUSBDevice(UInt32 VID, dynamic PID, ref DeviceProperties DP, bool GetCOMPort)
         {
             IntPtr IntPtrBuffer = Marshal.AllocHGlobal(BUFFER_SIZE);
             IntPtr h = IntPtr.Zero;
@@ -1139,7 +1139,16 @@ using System.Windows.Forms;
             try
             {
                 string DevEnum = "USB";
-                string ExpectedDeviceID = "VID_" + VID.ToString("D4") + "&" + "PID_" + PID.ToString("D4");
+                string ExpectedDeviceID;
+                if (PID.GetType().Name != "String")
+                {
+                    ExpectedDeviceID = "VID_" + VID.ToString("D4") + "&" + "PID_" + PID.ToString("D4");
+                }
+                else
+                {
+                    ExpectedDeviceID = "VID_" + VID.ToString("D4") + "&" + "PID_" + PID;
+                }
+
                 ExpectedDeviceID = ExpectedDeviceID.ToLowerInvariant();
                 
                 h = Win32Wrapper.SetupDiGetClassDevs(IntPtr.Zero, DevEnum, IntPtr.Zero, (int)(Win32Wrapper.DIGCF.DIGCF_PRESENT | Win32Wrapper.DIGCF.DIGCF_ALLCLASSES));
@@ -1238,7 +1247,7 @@ using System.Windows.Forms;
                                                         {
                                                             DP.COMPort = Data.ToString();
                                                         }
-
+                                                        //Equipo\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB\VID_2341&PID_0043\749373039363512192E0\Device Parameters
                                                         //Close Registry
                                                         Win32Wrapper.RegCloseKey(hDeviceRegistryKey);
                                                     }
