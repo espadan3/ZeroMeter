@@ -53,7 +53,7 @@ namespace ZeroTrip
         public int nDifMetros;  //Diferencia en metros entre la distancia real y la teorica.
         public int nSectorIdeal; // Sector del tramo en el que nos debemos encontrar, que se corresponde con una velocidad en cambios de medias
         public int nSigIncidecia; // Numero de la siguente incidencia, es como el de distancia pero para incidencias
-        public int nDireccionCruce; // Nos indica en formato horario la direccion a tomar en un cruce, se envia al terminal
+        public string szDireccionCruce; // Nos indica en formato horario la direccion a tomar en un cruce, se envia al terminal
         public int nTramoCron;
         public short nCalcarTramo;
 
@@ -134,17 +134,7 @@ namespace ZeroTrip
                 AbrirPuertoSonda(USBDeviceProperties.COMPort, USBDeviceProperties.FriendlyName);
             }
 
-            //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true))
-            //if (USBClass.GetUSBDevice(1131, 1004, ref USBDeviceProperties, true))
-            //  {
-            //      //My Device is connected
 
-            //      cbPortPDA.Text = USBDeviceProperties.COMPort;
-            //      MyUSBPDAConnected = true;
-
-
-            //      AbrirPuertoPDA(USBDeviceProperties.COMPort, USBDeviceProperties.FriendlyName);
-            //  }
             USBPort.RegisterForDeviceChange(true, this);
             //     RegisterHidNotification();
 
@@ -219,9 +209,6 @@ namespace ZeroTrip
         }
 
         #region CONTROLES
-
-
-
 
         //-----------------------------------------------------------------------------------
 
@@ -710,22 +697,6 @@ namespace ZeroTrip
             // Envio al terminal de información
             try
             {
-                //        if (PSeriePDA.IsOpen)
-                // PuertoSerie.Write(DateTime.Now.ToLongTimeString());
-                string a = (szEnvDistancia + ";"  //Distancia ideal
-                    + tsCrono.ToString() + ";"          // Crono
-                    + DateTime.Now.ToLongTimeString() + ";"         // Hora actual
-                                                                    //  + szEnvDistancia2 + ";"             // Punto de siguiente paso horario: hitos, viñetas, 
-                    + lbDistReal.Text + ";"             // Punto de siguiente paso horario: hitos, viñetas, tablas
-                                                        //  + szEnvCuentaAtras + ";"                // Cuenta atras
-                    + lbDiferencia.Text + ";"                // Cuenta atras / Diferencia de metros
-                    + szVelocidad + ";"          // Velocidad actual
-                    + nDireccionCruce + ";"      // direccion a tomar en cruce
-                    + lbTipoIncidencia.Text + ";" // Tipo de incidencia
-                                                  //+ nFaltaCruce + ";"          // distancia hasta el siguiente cruce
-                    + lbDistAInci.Text + ";"     // distancia hasta el siguiente cruce
-                    + dbVelSiguiente + ";"               // siguiente velocidad
-                    + lbFaltaCam.Text);
 
                 PSeriePDA.Write(szEnvDistancia + ";"  //Distancia ideal
                     + tsCrono.ToString() + ";"          // Crono
@@ -735,7 +706,7 @@ namespace ZeroTrip
                     //  + szEnvCuentaAtras + ";"                // Cuenta atras
                     + lbDiferencia.Text + ";"                // Cuenta atras / Diferencia de metros
                     + szVelocidad + ";"          // Velocidad actual
-                    + nDireccionCruce + ";"      // direccion a tomar en cruce
+                    + szDireccionCruce + ";"      // direccion a tomar en cruce
                     + lbTipoIncidencia.Text + ";" // Tipo de incidencia
                     //+ nFaltaCruce + ";"          // distancia hasta el siguiente cruce
                     + lbDistAInci.Text + ";"     // distancia hasta el siguiente cruce
@@ -765,7 +736,7 @@ namespace ZeroTrip
 
             try
             {
-                //if ( tbIncidenciasTr[nSigIncidecia - 1].Posicion != null)
+                
                 if (nSigIncidecia != 0 && nSigIncidecia != 9999)
                 {
                     szSigInci = (Convert.ToDouble(tbIncidenciasTr[nSigIncidecia - 1].Posicion)/1000).ToString("00.#00").Substring(0, 5); 
@@ -773,24 +744,26 @@ namespace ZeroTrip
                 else
                 { szSigInci = "--,--"; }
 
-                string a = (cbTramosRace.Text + " " + lbTipoTramo.Text + ";"  // Nombre del tramo
-                    + szEnvDistancia + ";"  //Distancia ideal
-                    + tsCrono.ToString() + ";"          // Crono
-                    + DateTime.Now.ToLongTimeString() + ";"         // Hora actual
-                                                                    //  + szEnvDistancia2 + ";"             // Punto de siguiente paso horario: hitos, viñetas, 
-                    + lbDistReal.Text + ";"             // Punto de siguiente paso horario: hitos, viñetas, tablas
-                                                        //  + szEnvCuentaAtras + ";"                // Cuenta atras
-                    + lbDiferencia.Text + ";"                // Cuenta atras / Diferencia de metros
-                    + szVelocidad + ";"          // Velocidad actual
-                    + nDireccionCruce + ";"      // direccion a tomar en cruce
-                    + lbTipoIncidencia.Text + ";" // Tipo de incidencia
-                                                  //+ nFaltaCruce + ";"          // distancia hasta el siguiente cruce
-                    + lbDistAInci.Text + ";"     // distancia hasta el siguiente cruce
-                    + dbVelSiguiente + ";"               // siguiente velocidad
-                    + lbDistActVel.Text + ";"
-                    + szSigInci +
-                    "\n");
+                string szVel = szVelocidad.Length > 5 ? szVelocidad.Substring(0, 5) : szVelocidad;
+                string szCrono = tsCrono.ToString().Contains("-") ? "-" + tsCrono.ToString().Substring(4) : tsCrono.ToString();
 
+                string a = (cbTramosRace.Text + " " + lbTipoTramo.Text + ";"  // Nombre del tramo
+                    + DateTime.Now.ToLongTimeString() + ";"     // Hora actual
+                    + szCrono + ";"                             // Crono
+                    + lbDistReal.Text + ";"                     //Distancia REAL
+                    + szEnvDistancia + ";"                      //Distancia ideal
+                    + lbDiferencia.Text + ";"                   // Cuenta atras / Diferencia de metros
+
+                    + szVel + ";"          // Velocidad actual
+                    + lbDistActVel.Text + ";"                   //Velocidad HASTA
+                    + dbVelSiguiente.ToString("00.#00").Substring(0, 5) + ";"               // siguiente velocidad
+
+                    + szSigInci + ";"                           // Posicion siguiente incidencia
+                    + szDireccionCruce + ";"                     // direccion a tomar en cruce
+                    + lbTipoIncidencia.Text + ";"               // Tipo de incidencia
+                    + lbDistAInci.Text +                        // distancia hasta el siguiente cruce
+
+                    "\n");
        
                 bool result = BLTObj.EnviarDatos(BLTObj.remoteDevice, a); 
 
@@ -1006,7 +979,7 @@ namespace ZeroTrip
                 }
                 else
                 {
-                    nDireccionCruce = 0;
+                    szDireccionCruce = "0";
                     picOrientacion.Visible = false;
                     label19.Visible = false;
                     label20.Visible = false;
@@ -1019,7 +992,7 @@ namespace ZeroTrip
             }
             else
             {
-                nDireccionCruce = 0;
+                szDireccionCruce = "0";
                 picOrientacion.Visible = false;
                 label19.Visible = false;
                 label20.Visible = false;
@@ -1080,8 +1053,9 @@ namespace ZeroTrip
 
 #if DEBUG
 
-                if (bHayTramo && bEnCompeticion)
-                {
+                if (bEnCompeticion)
+                    //if (bHayTramo && bEnCompeticion)
+                    {
                     Random r = new Random();
 
                     // lbPulsos.Visible = true;
@@ -1112,7 +1086,7 @@ namespace ZeroTrip
                         if (dbPulsos % 100 == 0 ) //bueno
                             GrabarLog(dbPulsos.ToString());
                     }
-                }
+                } //if (bEnCompeticion)
 
 #else
                 if (PSerieARD.IsOpen)
@@ -1120,6 +1094,7 @@ namespace ZeroTrip
 
                    if (PSerieARD.BytesToRead > 2 && PSerieARD.BytesToRead < 4096)
                     {
+                        //lbPulsos.Visible = true;
                         string szCadena = PSerieARD.ReadExisting();
                         string szcopia = szCadena;
                         //Contamos cuantos \n hay
@@ -1175,10 +1150,6 @@ namespace ZeroTrip
             }
 
         }
-
-  
-
-
 
         //-----------------------------------------------------------------------------------
 

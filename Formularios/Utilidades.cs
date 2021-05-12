@@ -41,16 +41,16 @@ namespace ZeroTrip
 
         private void BaseDeDatos()
         {
-            
+
 
 #if DEBUG
-#if PORTATIL
-            String dataName = @"D:\Mis documentos\Visual Studio 2010\Projects\ZeroTrip_2.0\";
+#if PORTATIL                  
+            String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
             String fileName = "ZeroTripBBDD.accdb"; 
 #else
 #if PC
             String fileName = "ZeroTripBBDD.accdb";
-            // String dataName = @"D:\Mis documentos\Visual Studio 2010\Projects\ZeroTrip_2.0\";
+            // String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
             szDirectorio = System.AppDomain.CurrentDomain.BaseDirectory; ;
 
             String dataName = szDirectorio.Substring(0, szDirectorio.IndexOf("ZeroTrip") + 8);
@@ -58,7 +58,7 @@ namespace ZeroTrip
 #else
 #if NANO
             String fileName = "ZeroTripBBDD.accdb";
-            String dataName = @"C:\Users\Miguel Angel\Documents\Visual Studio 2010\Projects\ZeroTrip_2.0\";
+            String dataName = @"C:\Users\Miguel Angel\Documents\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
 #else
 
             //String fileName = FichConfig.GetFicheroDeDatos();
@@ -69,7 +69,7 @@ namespace ZeroTrip
 #endif
             //#else
             //            String fileName = FichConfig.GetFicheroDeDatos();
-            //            String dataName = @"D:\Mis documentos\Visual Studio 2010\Projects\ACERATrece\Datos\";
+            //            String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ACERATrece\Datos\";
 #endif
 #endif
 #else
@@ -254,10 +254,11 @@ namespace ZeroTrip
         private void btConnectBLT_Click(object sender, EventArgs e)
         {
             // Al pulsar este botón, lo que hacemos es ponernos en modo listener de forma asincrona. El otro dispositivo debe conectar con nosotros
+            if (cbBLTDevs.SelectedItem != null) { 
+                BLTObj.remoteDeviceNameAdmited = cbBLTDevs.SelectedItem.ToString();
 
-            BLTObj.remoteDeviceNameAdmited = cbBLTDevs.SelectedItem.ToString();
-
-            BLTObj.localListener.BeginAcceptBluetoothClient(new AsyncCallback(BLTObj.AcceptConnection), BLTObj.localListener);
+                BLTObj.localListener.BeginAcceptBluetoothClient(new AsyncCallback(BLTObj.AcceptConnection), BLTObj.localListener);
+            }
         }
 
         //---------------------------------------------------------------------------------------------------------
@@ -565,7 +566,7 @@ namespace ZeroTrip
 
         // Boton de ayuda en las pruebas para modificar la hora de inicio de un tramo por la que escribamos en pantalla.
         {
-            dtSalidaTr = Convert.ToDateTime((tePrueba.Time).AddSeconds(5));
+            dtSalidaTr = Convert.ToDateTime((tePrueba.Time).AddSeconds(8));
             dtSalidaTr = dtSalidaTr.AddTicks(dtSalidaTr.Ticks % 10000000 * -1);
             //tsSalida = tePrueba;
         }
@@ -631,41 +632,137 @@ namespace ZeroTrip
 
                                     switch (tbIncidenciasTr[nSigIncidecia - 1].Orientacion)
                                     {
-                                        case 1:
+                                        case "1":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._1;
                                             break;
-                                        case 2:
+                                        case "2":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._2;
                                             break;
-                                        case 3:
+                                        case "3":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._3;
                                             break;
-                                        case 4:
+                                        case "4":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._4;
                                             break;
-                                        case 5:
+                                        case "5":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._5;
                                             break;
-                                        case 6:
+                                        case "6":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._6;
                                             break;
-                                        case 7:
+                                        case "7":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._7;
                                             break;
-                                        case 8:
+                                        case "8":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._8;
                                             break;
-                                        case 9:
+                                        case "9":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._9;
                                             break;
-                                        case 10:
+                                        case "10":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._10;
                                             break;
-                                        case 11:
+                                        case "11":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._11;
                                             break;
-                                        case 12:
+                                        case "12":
                                             picOrientacion.Image = ZeroTrip.Properties.Resources._12;
+                                            break;
+                                        case "C1":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C1;
+                                            break;
+                                        case "C2":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C2;
+                                            break;
+                                        case "C9":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C9;
+                                            break;
+                                        case "C3":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C3;
+                                            break;
+                                        case "C4":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C4;
+                                            break;
+                                        case "C5":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C5;
+                                            break;
+                                        case "C7":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C1;
+                                            break;
+                                        case "C8":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C2;
+                                            break;
+                                        case "C10":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C10;
+                                            break;
+                                        case "C11":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C11;
+                                            break;
+                                        case "C12":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C12;
+                                            break;
+                                        case "R1":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R1;
+                                            break;
+                                        case "R2":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R2;
+                                            break;
+                                        case "R3":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R3;
+                                            break;
+                                        case "R4":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R4;
+                                            break;
+                                        case "R5":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R5;
+                                            break;
+                                        case "R7":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R7;
+                                            break;
+                                        case "R8":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R8;
+                                            break;
+                                        case "R9":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R9;
+                                            break;
+                                        case "R10":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R10;
+                                            break;
+                                        case "R11":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R11;
+                                            break;
+                                        case "R12":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R12;
+                                            break;
+                                        case "S3":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.S3;
+                                            break;
+                                        case "S9":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.S9;
+                                            break;
+                                        case "T3":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.T3;
+                                            break;
+                                        case "T9":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.T9;
+                                            break;
+                                        case "TS2":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS2;
+                                            break;
+                                        case "TS3":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS3;
+                                            break;
+                                        case "TS4":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS4;
+                                            break;
+                                        case "TS8":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS8;
+                                            break;
+                                        case "TS9":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS9;
+                                            break;
+                                        case "TS10":
+                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS10;
                                             break;
                                         default:
                                             picOrientacion.Visible = false;
@@ -673,7 +770,7 @@ namespace ZeroTrip
 
                                     }
 
-                                    nDireccionCruce = tbIncidenciasTr[nSigIncidecia - 1].Orientacion;
+                                    szDireccionCruce = tbIncidenciasTr[nSigIncidecia - 1].Orientacion;
                                     lbTipoIncidencia.Text = tbIncidenciasTr[nSigIncidecia - 1].Descripcion;
 
                                     simpleSound.Play();
@@ -683,7 +780,7 @@ namespace ZeroTrip
                             }
                             else
                             {
-                                nDireccionCruce = 0;
+                                szDireccionCruce = "0";
                                 picOrientacion.Visible = false;
                                 label19.Visible = false;
                                 label20.Visible = false;

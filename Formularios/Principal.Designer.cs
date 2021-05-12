@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frPrincipal));
             this.xtTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtTPCarrera = new DevExpress.XtraTab.XtraTabPage();
+            this.picOrientacion = new System.Windows.Forms.PictureBox();
             this.lbFreeze = new System.Windows.Forms.Label();
             this.btRERecalibra = new DevExpress.XtraEditors.SimpleButton();
             this.btSigRecalibre = new DevExpress.XtraEditors.SimpleButton();
@@ -71,7 +72,6 @@
             this.lbComenInci = new System.Windows.Forms.Label();
             this.lbDistAInci = new System.Windows.Forms.Label();
             this.lbTipoIncidencia = new System.Windows.Forms.Label();
-            this.picOrientacion = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -180,10 +180,10 @@
             this.gcDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ricDescripcion = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gcOrientacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rsiOrientacion = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.gcComentarios = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.rsiOrientacion = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.btBloqueo = new DevExpress.XtraEditors.SimpleButton();
             this.btRecarga = new DevExpress.XtraEditors.SimpleButton();
@@ -205,12 +205,13 @@
             this.tramosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsTramos = new ZeroTrip.ZeroTripBBDDDataSet();
             this.scContenedor = new System.Windows.Forms.SplitContainer();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbCrono = new System.Windows.Forms.Label();
-            this.lbFaltaCam = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.lbDistReal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbDistTeorica = new System.Windows.Forms.Label();
+            this.lbCrono = new System.Windows.Forms.Label();
+            this.lbFaltaCam = new System.Windows.Forms.Label();
             this.lbPulsos = new System.Windows.Forms.Label();
             this.lbDiferencia = new System.Windows.Forms.Label();
             this.lbLitVariable = new System.Windows.Forms.Label();
@@ -223,7 +224,6 @@
             this.lbSigVel = new System.Windows.Forms.Label();
             this.lbVelocidad = new System.Windows.Forms.Label();
             this.lbVariable = new System.Windows.Forms.Label();
-            this.lbDistTeorica = new System.Windows.Forms.Label();
             this.tmAux = new System.Windows.Forms.Timer(this.components);
             this.tmCrono = new System.Windows.Forms.Timer(this.components);
             this.datosTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.DatosTableAdapter();
@@ -235,6 +235,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtTabControl)).BeginInit();
             this.xtTabControl.SuspendLayout();
             this.xtTPCarrera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrientacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSigRecalibre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSigVelRE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTramoACalcar.Properties)).BeginInit();
@@ -247,7 +248,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbTramosRace.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teRecalibre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSigCMRE.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOrientacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zoCoreccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zoCoreccion.Properties)).BeginInit();
             this.xtTPUtils.SuspendLayout();
@@ -312,9 +312,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsIncidencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIncidencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricDescripcion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rsiOrientacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rsiOrientacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcAdd)).BeginInit();
             this.gcAdd.SuspendLayout();
@@ -372,6 +372,7 @@
             this.xtTPCarrera.Appearance.PageClient.Options.UseBorderColor = true;
             this.xtTPCarrera.Appearance.PageClient.Options.UseFont = true;
             this.xtTPCarrera.Appearance.PageClient.Options.UseForeColor = true;
+            this.xtTPCarrera.Controls.Add(this.picOrientacion);
             this.xtTPCarrera.Controls.Add(this.lbFreeze);
             this.xtTPCarrera.Controls.Add(this.btRERecalibra);
             this.xtTPCarrera.Controls.Add(this.btSigRecalibre);
@@ -398,7 +399,6 @@
             this.xtTPCarrera.Controls.Add(this.lbComenInci);
             this.xtTPCarrera.Controls.Add(this.lbDistAInci);
             this.xtTPCarrera.Controls.Add(this.lbTipoIncidencia);
-            this.xtTPCarrera.Controls.Add(this.picOrientacion);
             this.xtTPCarrera.Controls.Add(this.label14);
             this.xtTPCarrera.Controls.Add(this.label13);
             this.xtTPCarrera.Controls.Add(this.label12);
@@ -414,6 +414,16 @@
             this.xtTPCarrera.Size = new System.Drawing.Size(1306, 510);
             this.xtTPCarrera.TabPageWidth = 100;
             this.xtTPCarrera.Text = "&Carrera";
+            // 
+            // picOrientacion
+            // 
+            this.picOrientacion.Image = global::ZeroTrip.Properties.Resources._12;
+            this.picOrientacion.Location = new System.Drawing.Point(998, 229);
+            this.picOrientacion.Name = "picOrientacion";
+            this.picOrientacion.Size = new System.Drawing.Size(112, 191);
+            this.picOrientacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picOrientacion.TabIndex = 30;
+            this.picOrientacion.TabStop = false;
             // 
             // lbFreeze
             // 
@@ -1083,7 +1093,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Navy;
-            this.label20.Location = new System.Drawing.Point(915, 279);
+            this.label20.Location = new System.Drawing.Point(892, 279);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(56, 13);
             this.label20.TabIndex = 0;
@@ -1094,7 +1104,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Navy;
-            this.label19.Location = new System.Drawing.Point(931, 328);
+            this.label19.Location = new System.Drawing.Point(908, 328);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(19, 13);
             this.label19.TabIndex = 0;
@@ -1104,7 +1114,7 @@
             // 
             this.lbComenInci.Font = new System.Drawing.Font("Ebrima", 20.25F);
             this.lbComenInci.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbComenInci.Location = new System.Drawing.Point(845, 380);
+            this.lbComenInci.Location = new System.Drawing.Point(822, 380);
             this.lbComenInci.Name = "lbComenInci";
             this.lbComenInci.Size = new System.Drawing.Size(191, 40);
             this.lbComenInci.TabIndex = 0;
@@ -1116,7 +1126,7 @@
             // 
             this.lbDistAInci.Font = new System.Drawing.Font("Digiface", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDistAInci.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbDistAInci.Location = new System.Drawing.Point(886, 341);
+            this.lbDistAInci.Location = new System.Drawing.Point(863, 341);
             this.lbDistAInci.Name = "lbDistAInci";
             this.lbDistAInci.Size = new System.Drawing.Size(108, 33);
             this.lbDistAInci.TabIndex = 0;
@@ -1127,22 +1137,12 @@
             // 
             this.lbTipoIncidencia.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTipoIncidencia.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbTipoIncidencia.Location = new System.Drawing.Point(845, 294);
+            this.lbTipoIncidencia.Location = new System.Drawing.Point(822, 294);
             this.lbTipoIncidencia.Name = "lbTipoIncidencia";
             this.lbTipoIncidencia.Size = new System.Drawing.Size(191, 33);
             this.lbTipoIncidencia.TabIndex = 0;
             this.lbTipoIncidencia.Text = "Tipo Incidencia";
             this.lbTipoIncidencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picOrientacion
-            // 
-            this.picOrientacion.Image = global::ZeroTrip.Properties.Resources._12;
-            this.picOrientacion.Location = new System.Drawing.Point(1105, 229);
-            this.picOrientacion.Name = "picOrientacion";
-            this.picOrientacion.Size = new System.Drawing.Size(112, 191);
-            this.picOrientacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picOrientacion.TabIndex = 30;
-            this.picOrientacion.TabStop = false;
             // 
             // label14
             // 
@@ -2690,7 +2690,7 @@
             // 
             // cbOrientacion
             // 
-            this.cbOrientacion.Location = new System.Drawing.Point(46, 165);
+            this.cbOrientacion.Location = new System.Drawing.Point(23, 161);
             this.cbOrientacion.Name = "cbOrientacion";
             this.cbOrientacion.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.cbOrientacion.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2706,6 +2706,33 @@
             this.cbOrientacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbOrientacion.Properties.Items.AddRange(new object[] {
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10",
+            "C11",
+            "T3",
+            "T9",
+            "S3",
+            "S9",
+            "S12",
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R11",
+            "R12",
             "1",
             "2",
             "3",
@@ -2721,7 +2748,7 @@
             this.cbOrientacion.Properties.LookAndFeel.SkinName = "Money Twins";
             this.cbOrientacion.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cbOrientacion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbOrientacion.Size = new System.Drawing.Size(60, 29);
+            this.cbOrientacion.Size = new System.Drawing.Size(109, 29);
             this.cbOrientacion.TabIndex = 12;
             this.cbOrientacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbOrientacion_KeyPress);
             // 
@@ -2801,7 +2828,7 @@
             this.lbOrientacion.Appearance.Options.UseForeColor = true;
             this.lbOrientacion.Appearance.Options.UseTextOptions = true;
             this.lbOrientacion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lbOrientacion.Location = new System.Drawing.Point(50, 151);
+            this.lbOrientacion.Location = new System.Drawing.Point(50, 147);
             this.lbOrientacion.Name = "lbOrientacion";
             this.lbOrientacion.Size = new System.Drawing.Size(46, 12);
             this.lbOrientacion.TabIndex = 0;
@@ -3476,9 +3503,6 @@
             this.gcOrientacion.AppearanceHeader.Options.UseTextOptions = true;
             this.gcOrientacion.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gcOrientacion.Caption = "Orien.";
-            this.gcOrientacion.ColumnEdit = this.rsiOrientacion;
-            this.gcOrientacion.DisplayFormat.FormatString = "n0";
-            this.gcOrientacion.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gcOrientacion.FieldName = "Orientacion";
             this.gcOrientacion.Name = "gcOrientacion";
             this.gcOrientacion.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
@@ -3487,25 +3511,6 @@
             this.gcOrientacion.Visible = true;
             this.gcOrientacion.VisibleIndex = 2;
             this.gcOrientacion.Width = 76;
-            // 
-            // rsiOrientacion
-            // 
-            this.rsiOrientacion.AutoHeight = false;
-            this.rsiOrientacion.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.rsiOrientacion.LookAndFeel.SkinName = "Money Twins";
-            this.rsiOrientacion.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.rsiOrientacion.MaxValue = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.rsiOrientacion.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.rsiOrientacion.Name = "rsiOrientacion";
             // 
             // gcComentarios
             // 
@@ -3549,6 +3554,23 @@
             this.repositoryItemTimeEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.repositoryItemTimeEdit1.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
+            // 
+            // rsiOrientacion
+            // 
+            this.rsiOrientacion.AutoHeight = false;
+            this.rsiOrientacion.LookAndFeel.SkinName = "Money Twins";
+            this.rsiOrientacion.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.rsiOrientacion.MaxValue = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.rsiOrientacion.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.rsiOrientacion.Name = "rsiOrientacion";
             // 
             // repositoryItemComboBox1
             // 
@@ -3909,12 +3931,13 @@
             // scContenedor.Panel1
             // 
             this.scContenedor.Panel1.BackColor = System.Drawing.Color.LightBlue;
-            this.scContenedor.Panel1.Controls.Add(this.label3);
-            this.scContenedor.Panel1.Controls.Add(this.label1);
-            this.scContenedor.Panel1.Controls.Add(this.lbCrono);
-            this.scContenedor.Panel1.Controls.Add(this.lbFaltaCam);
             this.scContenedor.Panel1.Controls.Add(this.label29);
             this.scContenedor.Panel1.Controls.Add(this.lbDistReal);
+            this.scContenedor.Panel1.Controls.Add(this.label1);
+            this.scContenedor.Panel1.Controls.Add(this.label3);
+            this.scContenedor.Panel1.Controls.Add(this.lbDistTeorica);
+            this.scContenedor.Panel1.Controls.Add(this.lbCrono);
+            this.scContenedor.Panel1.Controls.Add(this.lbFaltaCam);
             this.scContenedor.Panel1.Controls.Add(this.lbPulsos);
             this.scContenedor.Panel1.Controls.Add(this.lbDiferencia);
             this.scContenedor.Panel1.Controls.Add(this.lbLitVariable);
@@ -3927,7 +3950,6 @@
             this.scContenedor.Panel1.Controls.Add(this.lbSigVel);
             this.scContenedor.Panel1.Controls.Add(this.lbVelocidad);
             this.scContenedor.Panel1.Controls.Add(this.lbVariable);
-            this.scContenedor.Panel1.Controls.Add(this.lbDistTeorica);
             this.scContenedor.Panel1.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // scContenedor.Panel2
@@ -3940,6 +3962,41 @@
             this.scContenedor.TabIndex = 1;
             this.scContenedor.TabStop = false;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Navy;
+            this.label29.Location = new System.Drawing.Point(776, 133);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(29, 13);
+            this.label29.TabIndex = 28;
+            this.label29.Text = "Real";
+            // 
+            // lbDistReal
+            // 
+            this.lbDistReal.AutoSize = true;
+            this.lbDistReal.BackColor = System.Drawing.Color.Transparent;
+            this.lbDistReal.Font = new System.Drawing.Font("Digiface", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDistReal.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lbDistReal.Location = new System.Drawing.Point(796, 75);
+            this.lbDistReal.Name = "lbDistReal";
+            this.lbDistReal.Size = new System.Drawing.Size(261, 117);
+            this.lbDistReal.TabIndex = 27;
+            this.lbDistReal.Text = "00,00";
+            this.lbDistReal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(762, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Teórica";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -3951,16 +4008,17 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Cronometro";
             // 
-            // label1
+            // lbDistTeorica
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(772, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Teórica";
+            this.lbDistTeorica.BackColor = System.Drawing.Color.Transparent;
+            this.lbDistTeorica.Font = new System.Drawing.Font("Digiface", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDistTeorica.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbDistTeorica.Location = new System.Drawing.Point(787, -17);
+            this.lbDistTeorica.Name = "lbDistTeorica";
+            this.lbDistTeorica.Size = new System.Drawing.Size(270, 119);
+            this.lbDistTeorica.TabIndex = 6;
+            this.lbDistTeorica.Text = "00,00";
+            this.lbDistTeorica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbCrono
             // 
@@ -3986,34 +4044,10 @@
             this.lbFaltaCam.Text = "00.000";
             this.lbFaltaCam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Navy;
-            this.label29.Location = new System.Drawing.Point(776, 40);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(29, 13);
-            this.label29.TabIndex = 28;
-            this.label29.Text = "Real";
-            // 
-            // lbDistReal
-            // 
-            this.lbDistReal.AutoSize = true;
-            this.lbDistReal.BackColor = System.Drawing.Color.Transparent;
-            this.lbDistReal.Font = new System.Drawing.Font("Digiface", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDistReal.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbDistReal.Location = new System.Drawing.Point(796, -21);
-            this.lbDistReal.Name = "lbDistReal";
-            this.lbDistReal.Size = new System.Drawing.Size(261, 117);
-            this.lbDistReal.TabIndex = 27;
-            this.lbDistReal.Text = "00,00";
-            this.lbDistReal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lbPulsos
             // 
             this.lbPulsos.AutoSize = true;
-            this.lbPulsos.Location = new System.Drawing.Point(405, 98);
+            this.lbPulsos.Location = new System.Drawing.Point(339, 102);
             this.lbPulsos.Name = "lbPulsos";
             this.lbPulsos.Size = new System.Drawing.Size(48, 19);
             this.lbPulsos.TabIndex = 45;
@@ -4154,18 +4188,6 @@
             this.lbVariable.Text = "0.000";
             this.lbVariable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbDistTeorica
-            // 
-            this.lbDistTeorica.BackColor = System.Drawing.Color.Transparent;
-            this.lbDistTeorica.Font = new System.Drawing.Font("Digiface", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDistTeorica.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbDistTeorica.Location = new System.Drawing.Point(797, 70);
-            this.lbDistTeorica.Name = "lbDistTeorica";
-            this.lbDistTeorica.Size = new System.Drawing.Size(270, 119);
-            this.lbDistTeorica.TabIndex = 6;
-            this.lbDistTeorica.Text = "00,00";
-            this.lbDistTeorica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tmAux
             // 
             this.tmAux.Enabled = true;
@@ -4220,6 +4242,7 @@
             this.xtTabControl.ResumeLayout(false);
             this.xtTPCarrera.ResumeLayout(false);
             this.xtTPCarrera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrientacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSigRecalibre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSigVelRE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTramoACalcar.Properties)).EndInit();
@@ -4234,7 +4257,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbTramosRace.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teRecalibre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSigCMRE.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOrientacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zoCoreccion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zoCoreccion)).EndInit();
             this.xtTPUtils.ResumeLayout(false);
@@ -4304,9 +4326,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsIncidencias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIncidencias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricDescripcion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rsiOrientacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rsiOrientacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcAdd)).EndInit();
             this.gcAdd.ResumeLayout(false);

@@ -54,6 +54,8 @@ D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\DevExpre
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\DevExpress.XtraGrid.v10.1.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\DevExpress.XtraLayout.v10.1.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\DevExpress.XtraNavBar.v10.1.dll
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\InTheHand.Devices.Bluetooth.dll
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\InTheHand.Net.Personal.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\Microsoft.VisualStudio.TestTools.UITesting.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\Microsoft.VisualStudio.TestTools.UITest.Extension.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\Microsoft.VisualStudio.TestTools.UITest.Common.dll
@@ -65,9 +67,13 @@ D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\DevExpre
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\DevExpress.XtraGrid.v10.1.xml
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\DevExpress.XtraLayout.v10.1.xml
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\DevExpress.XtraNavBar.v10.1.xml
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\InTheHand.Devices.Bluetooth.pdb
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\InTheHand.Devices.Bluetooth.xml
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\InTheHand.Net.Personal.xml
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\es\Microsoft.VisualStudio.TestTools.UITesting.resources.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\es\Microsoft.VisualStudio.TestTools.UITest.Extension.resources.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\es\Microsoft.VisualStudio.TestTools.UITest.Common.resources.dll
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip_2.0.csprojAssemblyReference.cache
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip_2.0.csproj.ResolveComReference.cache
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip.frPrincipal.resources
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip.Properties.Resources.resources
@@ -79,6 +85,3 @@ D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\Zero
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip_2.0.csproj.CopyComplete
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip.exe
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip.pdb
-D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\InTheHand.Net.Bluetooth.dll
-D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\InTheHand.Net.Bluetooth.xml
-D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip_2.0.csprojAssemblyReference.cache

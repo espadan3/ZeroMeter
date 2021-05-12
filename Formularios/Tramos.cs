@@ -453,7 +453,8 @@ namespace ZeroTrip
                                             Convert.ToInt16(nRegs + 1),
                                             Convert.ToInt32(tePosicion.Text.Replace(".", "")),
                                             cbDescripcion.SelectedItem.ToString(), 
-                                            Convert.ToByte(cbOrientacion.SelectedItem),
+                                            cbOrientacion.SelectedItem.ToString(),
+                                           // Convert.ToByte(cbOrientacion.SelectedItem),
                                             "X");
 
             incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
@@ -679,9 +680,9 @@ namespace ZeroTrip
                 if (string.IsNullOrEmpty(dsIncidencias.Incidencias.Rows[nFila]["Orientacion"].ToString()))
                     return (false);
 
-                if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nFila]["Orientacion"]) < 1 ||
-                    Convert.ToInt32(dsIncidencias.Incidencias.Rows[nFila]["Orientacion"]) > 12)
-                    return (false);
+                //if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nFila]["Orientacion"]) < 1 ||
+                //    Convert.ToInt32(dsIncidencias.Incidencias.Rows[nFila]["Orientacion"]) > 12)
+                //    return (false);
 
                 if (dsIncidencias.Incidencias.Rows[nFila]["Posicion"].ToString() == "")
                     return (false);
