@@ -306,7 +306,7 @@ namespace ZeroTrip
 
         }
  
-       [ConfigurationProperty("TamanioRueda", DefaultValue = @"Grande")]
+       [ConfigurationProperty("TamanioRueda", DefaultValue = @"L")]
         public string TamanioRueda
         {
             get

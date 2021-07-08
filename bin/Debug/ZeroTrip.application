@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ZeroTrip.exe.manifest" size="29440">
+    <dependentAssembly dependencyType="install" codebase="ZeroTrip.exe.manifest" size="43570">
       <assemblyIdentity name="ZeroTrip.exe" version="2.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8eXuZF3lvlx/36w9fbX5tdsFpoa1zSy3EfHEc6ufB/8=</dsig:DigestValue>
+        <dsig:DigestValue>2BaWtIiu7cNCpuTKo6a4SxCeObNH11QtpL6jj56T34A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

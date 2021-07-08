@@ -114,11 +114,10 @@ namespace ZeroTrip
                 Util.AvisoInformativo("No existen datos para este tramo", "Error en tramo.");
                 return;
             }
+            // Obtenemos la longitud del tramo
+            Gb.nLongTramo = Convert.ToInt32(tbDatosTr[tbDatosTr.Count-1]["Hasta"]);
+            //Obtenemos la hora de inicio del tramo
             dtSalidaTr = Convert.ToDateTime(tbInfoTr.Rows[0]["HoraSalida"]);
-
-
-            //if (tePrueba.Time.Hour != 0)
-            //    dtSalidaTr = (tePrueba.Time);
 
             dtSalidaTr = dtSalidaTr.AddTicks(dtSalidaTr.Ticks % 10000000 * -1);
 
@@ -1238,11 +1237,28 @@ namespace ZeroTrip
 
             if (PSerieARD.IsOpen)
             {
-                if (rbTamanioRueda.Text == "Grande")
-                    szCadena = "A"; // pone 40 msg de retardo para ruedas más grandes
-                else
-                    szCadena = "B"; // pone 30 msg de retardo para ruedas más pequeñas
+                switch (rbTamanioRueda.Text)
+                { 
 
+                    case "L":
+                        szCadena = "A"; // pone 40 msg de retardo para ruedas más grandes
+                        break;
+                    case "M":
+                        szCadena = "B"; // pone 30 msg de retardo para ruedas más pequeñas
+                        break;
+                    case "S":
+                        szCadena = "C"; // pone 22 msg de retardo para ruedas mucho más pequeñas para hasta 140 Km/h
+                        break;
+                    default:
+                        szCadena = "B";
+                        break;
+                }
+
+                //Con calibre 880
+                // 40 ms hasta 75 Km/h
+                // 30 ms hasta 100 Km/h
+                // 25 ms hasta 125 Km/h
+                // 20 ms hasta 150 Km/h
 
                 //    szCadena = "C"; // este no lo usamos todavia
                 //    break;

@@ -16,6 +16,7 @@ namespace ZeroTrip
         public int nAnio;
         public int[] anAvInc;
         public int[] anAvCM;
+        public int nLongTramo;
         public bool bSalidaAvisada;
         public string sDirectorioDatos;
         public bool bTramoACalcar;

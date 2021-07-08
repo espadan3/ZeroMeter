@@ -325,6 +325,25 @@ namespace ZeroTrip
 
         //-----------------------------------------------------------------------------------
 
+        private void btEliminarReajuste_Click(object sender, EventArgs e)
+        {
+            Int32 nDistRealMedidor;
+
+            nDistRealMedidor = Convert.ToInt32((dbCalibreActivo / 1000) * dbPulsos);
+
+            // Eliminamos toda posible recalibración que huieramos hecho.
+            nDifPorRecalibre = 0;
+
+            lbDifPorRecal.Text = nDifPorRecalibre.ToString();
+
+            // Ponemos a cero la posible correccion.
+            zoCoreccion.Value = 0;
+            GrabarLog("Eliminamos recalibración: " + teRecalibre.Text + " | Dist Arduino: " + nDistRealMedidor.ToString() + " | Mostrado: " + lbDistReal.Text + " | Dif: " + nDifPorRecalibre.ToString());
+
+        }
+ 
+        //-----------------------------------------------------------------------------------
+
         private void btRERecalibra_Click(object sender, EventArgs e)
             // He hecho un recalibrado y me he equivocado. En dDistRealAnt tengo la distancia real en la que estábamos en el momento de recalibre
             //Aplico sobre esa distancia.
@@ -455,7 +474,6 @@ namespace ZeroTrip
                 teSigRecalibre.Text = "--"; 
         }
 
-
         //-----------------------------------------------------------------------------------
 
         private void CambiaDistRecalibre()
@@ -484,6 +502,34 @@ namespace ZeroTrip
                 Gb.bFreeze = true;
                 lbFreeze.Text = (dbDistReal / 1000).ToString("00.#00").Substring(0, 6);
             }
+        }
+
+        //-----------------------------------------------------------------------------------
+
+        private void frPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case (Keys.Add):
+                    btFreeze_Click(sender, e);
+                    break;
+                case (Keys.Divide):
+                    btRecalibrar_Click(sender, e);
+                    break;
+                default:
+                    break;
+                    //MessageBox.Show("Function F1 frPrincipal_KeyDown");
+
+            }
+
+        }
+
+        //-----------------------------------------------------------------------------------
+
+        private void teRecalibre_Enter(object sender, EventArgs e)
+        {
+            teRecalibre.SelectionStart = 0;
+            teRecalibre.SelectionLength = teRecalibre.Text.Length;
         }
 
 
@@ -614,7 +660,7 @@ namespace ZeroTrip
             if (PSeriePDA.IsOpen)
                 EnviarTerminal();
 
-                if (BLTObj.remoteDevice.Connected)
+            if (BLTObj.remoteDevice.Connected)
                 EnviarBluetooth();
 
         }
@@ -711,7 +757,9 @@ namespace ZeroTrip
                     //+ nFaltaCruce + ";"          // distancia hasta el siguiente cruce
                     + lbDistAInci.Text + ";"     // distancia hasta el siguiente cruce
                     + dbVelSiguiente + ";"               // siguiente velocidad
-                    + lbFaltaCam.Text);                  // distancia para el cambio de media
+                    + lbFaltaCam.Text        // distancia para el cambio de media
+                 //   + Gb.nLongTramo.ToString()
+                    );                  
             }
             catch (TimeoutException)
             {
@@ -747,7 +795,9 @@ namespace ZeroTrip
                 string szVel = szVelocidad.Length > 5 ? szVelocidad.Substring(0, 5) : szVelocidad;
                 string szCrono = tsCrono.ToString().Contains("-") ? "-" + tsCrono.ToString().Substring(4) : tsCrono.ToString();
 
-                string a = (cbTramosRace.Text + " " + lbTipoTramo.Text + ";"  // Nombre del tramo
+                //string a = (cbTramosRace.Text + " " + lbTipoTramo.Text + ";"  // Nombre del tramo
+                //string a = (cbTramosRace.Text + " " + Gb.nLongTramo.ToString() + ";"
+                string a = (cbTramosRace.Text + ";"  // Nombre del tramo
                     + DateTime.Now.ToLongTimeString() + ";"     // Hora actual
                     + szCrono + ";"                             // Crono
                     + lbDistReal.Text + ";"                     //Distancia REAL
@@ -761,8 +811,8 @@ namespace ZeroTrip
                     + szSigInci + ";"                           // Posicion siguiente incidencia
                     + szDireccionCruce + ";"                     // direccion a tomar en cruce
                     + lbTipoIncidencia.Text + ";"               // Tipo de incidencia
-                    + lbDistAInci.Text +                        // distancia hasta el siguiente cruce
-
+                    + lbDistAInci.Text + ";"                      // distancia hasta el siguiente cruce
+                    + Gb.nLongTramo.ToString("#,##0") +               // Longitud del tramo
                     "\n");
        
                 bool result = BLTObj.EnviarDatos(BLTObj.remoteDevice, a); 
@@ -777,7 +827,9 @@ namespace ZeroTrip
                     Util.AvisoConRespuesta("No hay nada escuchando por el puerto " + PSeriePDA.PortName, "Error en puerto");
                 }
             }
-        }   //-----------------------------------------------------------------------------------
+        }  
+
+        //-----------------------------------------------------------------------------------
 
         public void CalcDistIdeal(bool bShowCambio)
         {
@@ -1035,7 +1087,8 @@ namespace ZeroTrip
             }
 
             // Si el terra marca de menos, lo que tenemos que hacer restar el valor indicado en la barra, que para este caso será negativo.
-            nDistIdeal += zoCoreccion.Value;
+            //Esto lo manejo ahora en el CaldDistReal, junto con la diferencia por recalibración
+            // nDistIdeal += zoCoreccion.Value;
 
         }
 
@@ -1067,8 +1120,9 @@ namespace ZeroTrip
                     {
                         // a veces ocurre que se deja de leer un dígito del número de pulsos.Por ello preguntamos que si es menor
                         //que el anterior, no se pinte. También le meto aquí la diferencia por recalibrado para que ya la lleve incluida.
+                        // y también la posible corrección de metros de la barra
 
-                        dbDistReal = ((dbCalibreActivo / 1000) * dbPulsos) + (Convert.ToDouble(nDifPorRecalibre));
+                        dbDistReal = ((dbCalibreActivo / 1000) * dbPulsos) + (Convert.ToDouble(nDifPorRecalibre)) + zoCoreccion.Value;
 
                         //if (!Gb.bFreeze) // Si congelamos, no modificamos la etiqueta con la distancia
                         //{
@@ -1115,7 +1169,9 @@ namespace ZeroTrip
                             {
                                 // a veces ocurre que se deja de leer un dígito del número de pulsos.Por ello preguntamos que si es menor
                                 //que el anterior, no se pinte
-                                dbDistReal = ((dbCalibreActivo / 1000) * dbPulsos) + Convert.ToDouble(nDifPorRecalibre);
+                                // y también la posible corrección de metros de la barra
+
+                                dbDistReal = ((dbCalibreActivo / 1000) * dbPulsos) + Convert.ToDouble(nDifPorRecalibre) + zoCoreccion.Value;
 
                                 if (!Gb.bFreeze) // Si congelamos, no modificamos la etiqueta con la distancia
                                 {
@@ -1151,11 +1207,12 @@ namespace ZeroTrip
 
         }
 
+
         //-----------------------------------------------------------------------------------
 
         private void Inicializar()
         {
-
+            KeyPreview = true;
             bHayTramo = false;
             bEnCompeticion = false;
             lbCuentaAtras.Text = "";
@@ -1192,6 +1249,7 @@ namespace ZeroTrip
             dbSegundoAnterior = 0.99;
             bAvisar = false;
             nSigIncidecia = 0;
+            Gb.nLongTramo = 0;
 
             if (Gb.anAvCM != null)
                 Array.Clear(Gb.anAvCM, 0, Gb.anAvCM.Length);
