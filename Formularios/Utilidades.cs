@@ -141,8 +141,9 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
-                    lbSigVelRE.Visible = false;
-                    teSigVelRE.Visible = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
                     break;
 
                 case "Hitos":
@@ -158,8 +159,9 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
-                    lbSigVelRE.Visible = false;
-                    teSigVelRE.Visible = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
 
                     break;
 
@@ -174,8 +176,9 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
-                    lbSigVelRE.Visible = false;
-                    teSigVelRE.Visible = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
                     break;
 
                 case "Viñetas":
@@ -192,8 +195,9 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
-                    lbSigVelRE.Visible = false;
-                    teSigVelRE.Visible = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
                     break;
 
                 case "Sectores":
@@ -209,8 +213,9 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
-                    lbSigVelRE.Visible = false;
-                    teSigVelRE.Visible = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
                     break;
 
                 case "RefExternas":
@@ -226,9 +231,12 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = true;
                     teSigCMRE.Visible = true;
                     btSigCM.Visible = true;
-                    lbSigVelRE.Visible = true;
-                    teSigVelRE.Visible = true;
-                    btSigCM.Text = "2ª Media";
+                    btSigCMManual.Visible = true;
+                    lbVelRE.Visible = true;
+                    teVelRE.Visible = true;
+                    //btSigCM.Text = "2ª Media";
+                    //teSigCMRE.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+                    teVelRE.Text = tbDatosTr[0].Velocidad.ToString("00.##");
                     break;
 
                 default:
@@ -471,7 +479,7 @@ namespace ZeroTrip
                 tsTiempoAcum = (Convert.ToDateTime(tbDatosTr[nInd].TiempoAcum)).TimeOfDay;
                 if (tsCrono <= tsTiempoAcum)
                 {
-                 //   lbPulsos.Text = tbDatosTr[nInd].IdDato.ToString();
+                    lbPulsos.Text = tbDatosTr[nInd].IdDato.ToString();
                     return (tbDatosTr[nInd].IdDato);
                 }
             }
@@ -565,7 +573,8 @@ namespace ZeroTrip
 
         // Boton de ayuda en las pruebas para modificar la hora de inicio de un tramo por la que escribamos en pantalla.
         {
-            dtSalidaTr = Convert.ToDateTime((tePrueba.Time).AddSeconds(8));
+            tePrueba.Time = DateTime.Now;
+            dtSalidaTr = Convert.ToDateTime((tePrueba.Time).AddSeconds(4));
             dtSalidaTr = dtSalidaTr.AddTicks(dtSalidaTr.Ticks % 10000000 * -1);
             //tsSalida = tePrueba;
         }
@@ -622,7 +631,7 @@ namespace ZeroTrip
                                     label19.Visible = true;
                                     label20.Visible = true;
                                     lbDistAInci.Visible = true;
-                                    lbComenInci.Visible = true;
+                                    //lbComenInci.Visible = true;
                                     //if (chkBRecalAuto.Checked)
                                     //{
                                     //    teRecalibre.Text = tbIncidenciasTr[nSigIncidecia - 1].Posicion.ToString().Replace(".", "");
@@ -860,6 +869,7 @@ namespace ZeroTrip
                 groupControl4.LookAndFeel.UseWindowsXPTheme = false;
                 groupControl5.LookAndFeel.UseWindowsXPTheme = false;
                 groupControl6.LookAndFeel.UseWindowsXPTheme = false;
+                
 
                 label13.ForeColor = System.Drawing.Color.Navy;
                 label14.ForeColor = System.Drawing.Color.Navy;
@@ -888,11 +898,11 @@ namespace ZeroTrip
                 label24.ForeColor = System.Drawing.Color.Navy;
                 label25.ForeColor = System.Drawing.Color.Navy;
 
-                label1.ForeColor = System.Drawing.Color.Navy;
+                //label1.ForeColor = System.Drawing.Color.Navy;
                 label2.ForeColor = System.Drawing.Color.Navy;
                 label3.ForeColor = System.Drawing.Color.Navy;
                 label4.ForeColor = System.Drawing.Color.Navy;
-                label29.ForeColor = System.Drawing.Color.Navy;
+                //label29.ForeColor = System.Drawing.Color.Navy;
 
                 lbSigCMRE.ForeColor = System.Drawing.Color.Navy;
                 lbSalida.ForeColor = System.Drawing.Color.Navy;
@@ -902,14 +912,23 @@ namespace ZeroTrip
                 chkSonido100.ForeColor = System.Drawing.Color.Navy;
                 chkLog.ForeColor = System.Drawing.Color.Navy;
 
+
                 rgDiaNoche.ForeColor = System.Drawing.Color.Navy;
 
                 lbTipoTramo.ForeColor = System.Drawing.Color.Navy;
                 chkCalcar.ForeColor = System.Drawing.Color.Navy;
                 chkBRecalAuto.ForeColor = System.Drawing.Color.Navy;
+                chkSonido.ForeColor = System.Drawing.Color.Navy;
+                chkSonido100.ForeColor = System.Drawing.Color.Navy;
+                chkLog.ForeColor = System.Drawing.Color.Navy;
+                chkLog.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
+                lbDistReal.ForeColor = System.Drawing.Color.Navy;
+                lbCrono.ForeColor = System.Drawing.Color.Navy;
+                lbDistTeorica.ForeColor = System.Drawing.Color.LimeGreen;
 
                 scContenedor.Panel1.BackColor = System.Drawing.Color.LightBlue;
-                
+                //scContenedor.Panel1.BackColor = System.Drawing.Color.MidnightBlue;
+
 
 
             }
@@ -919,9 +938,9 @@ namespace ZeroTrip
                 xtTabControl.LookAndFeel.UseWindowsXPTheme = true;
                 xtTabControl.BackColor = System.Drawing.Color.Teal;
 
-                xtTPCarrera.BackColor = System.Drawing.Color.DarkSlateGray;
-                xtTPUtils.BackColor = System.Drawing.Color.DarkSlateGray;
-                xtTPTramos.BackColor = System.Drawing.Color.DarkSlateGray;
+                xtTPCarrera.BackColor = System.Drawing.Color.MidnightBlue;
+                xtTPUtils.BackColor = System.Drawing.Color.MidnightBlue;
+                xtTPTramos.BackColor = System.Drawing.Color.MidnightBlue;
 
                 //Cajas de la pantalla de utilidades
                 groupControl1.LookAndFeel.UseWindowsXPTheme = true;
@@ -930,13 +949,15 @@ namespace ZeroTrip
                 groupControl4.LookAndFeel.UseWindowsXPTheme = true;
                 groupControl5.LookAndFeel.UseWindowsXPTheme = true;
                 groupControl6.LookAndFeel.UseWindowsXPTheme = true;
+                chkSonido.LookAndFeel.UseWindowsXPTheme = true;
+                chkLog.LookAndFeel.UseWindowsXPTheme = true;
 
-                groupControl1.BackColor = System.Drawing.Color.DarkSlateGray;
-                groupControl2.BackColor = System.Drawing.Color.DarkSlateGray;
-                groupControl3.BackColor = System.Drawing.Color.DarkSlateGray;
-                groupControl4.BackColor = System.Drawing.Color.DarkSlateGray;
-                groupControl5.BackColor = System.Drawing.Color.DarkSlateGray;
-                groupControl6.BackColor = System.Drawing.Color.DarkSlateGray;
+                groupControl1.BackColor = System.Drawing.Color.MidnightBlue;
+                groupControl2.BackColor = System.Drawing.Color.MidnightBlue;
+                groupControl3.BackColor = System.Drawing.Color.MidnightBlue;
+                groupControl4.BackColor = System.Drawing.Color.MidnightBlue;
+                groupControl5.BackColor = System.Drawing.Color.MidnightBlue;
+                groupControl6.BackColor = System.Drawing.Color.MidnightBlue;
 
                 label13.ForeColor = System.Drawing.Color.White;
                 label14.ForeColor = System.Drawing.Color.White;
@@ -965,17 +986,17 @@ namespace ZeroTrip
                 label24.ForeColor = System.Drawing.Color.White;
                 label25.ForeColor = System.Drawing.Color.White;
 
-                label1.ForeColor = System.Drawing.Color.White;
+                //label1.ForeColor = System.Drawing.Color.White;
                 label2.ForeColor = System.Drawing.Color.White;
                 label3.ForeColor = System.Drawing.Color.White;
                 label4.ForeColor = System.Drawing.Color.White;
-                label29.ForeColor = System.Drawing.Color.White;
+                //label29.ForeColor = System.Drawing.Color.White;
 
                 chkSonido.ForeColor = System.Drawing.Color.White;
                 chkSonido100.ForeColor = System.Drawing.Color.White;
                 chkLog.ForeColor = System.Drawing.Color.White;
-
                 rgDiaNoche.ForeColor = System.Drawing.Color.White;
+                
 
                 lbSigCMRE.ForeColor = System.Drawing.Color.White;
                 lbSalida.ForeColor = System.Drawing.Color.White;
@@ -984,13 +1005,22 @@ namespace ZeroTrip
                 lbTipoTramo.ForeColor = System.Drawing.Color.White;
                 chkCalcar.ForeColor = System.Drawing.Color.White;
                 chkBRecalAuto.ForeColor = System.Drawing.Color.White;
+                lbDistReal.ForeColor = System.Drawing.Color.LightBlue;
+                lbCrono.ForeColor = System.Drawing.Color.LightBlue;
+                lbDistTeorica.ForeColor = System.Drawing.Color.LimeGreen;
 
-                scContenedor.Panel1.BackColor = System.Drawing.Color.Teal;
-                
+                //scContenedor.Panel1.BackColor = System.Drawing.Color.Teal
+                scContenedor.Panel1.BackColor = System.Drawing.Color.MidnightBlue;
+               // scContenedor.Panel1.BackColor = System.Drawing.Color.DarkBlue;
 
-                
-            
+
+
+
             }
+            //Para que se repinten
+            chkLog.Refresh();
+            chkSonido.Refresh();
+            chkSonido100.Refresh();
         }
 
         //-----------------------------------------------------------------------------------
@@ -1121,7 +1151,6 @@ namespace ZeroTrip
             config.SetDistanciaTablas(teDistTablas.Text);
         }
 
-
         private void btCal1_Click(object sender, EventArgs e)
         {
             if (!config.GetSelCal1())
@@ -1222,6 +1251,18 @@ namespace ZeroTrip
         private void rgDecaMetro_SelectedIndexChanged(object sender, EventArgs e)
         {
             config.SetDecaMetros(rgDecaMetro.Text);
+
+
+            //if (Gb.bMetros)
+            //{
+            //    Gb.bMetros = false;
+            //    rgDecaMetro.EditValue = "Decametro";
+            //}
+            //else
+            //{
+            //    Gb.bMetros = true;
+            //    rgDecaMetro.EditValue = "Metro";
+            //}
 
             if (rgDecaMetro.Text == "Metros")
                 Gb.bMetros = true;

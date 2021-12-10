@@ -45,8 +45,6 @@ D:\Mis Documentos\Visual Studio 2010\Projects\ZeroTrip_2.0\bin\Debug\DevExpress.
 D:\Mis Documentos\Visual Studio 2010\Projects\ZeroTrip_2.0\bin\Debug\DevExpress.Data.v10.1.xml
 D:\Mis Documentos\Visual Studio 2010\Projects\ZeroTrip_2.0\bin\Debug\DevExpress.Utils.v10.1.xml
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\ZeroTrip.exe.config
-D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\ZeroTrip.exe.manifest
-D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\ZeroTrip.application
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\ZeroTrip.exe
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\ZeroTrip.pdb
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Debug\DevExpress.Data.v10.1.dll
@@ -74,8 +72,6 @@ D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTr
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip_2.0.csproj.GenerateResource.cache
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip.exe.licenses
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip_2.0.csproj.CoreCompileInputs.cache
-D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip.exe.manifest
-D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip.application
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip_2.0.csproj.CopyComplete
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip.exe
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Debug\ZeroTrip.pdb
