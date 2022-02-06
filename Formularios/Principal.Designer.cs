@@ -436,7 +436,6 @@
             this.label33.TabIndex = 64;
             this.label33.Text = "(F2)";
             this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label33.Visible = false;
             // 
             // btMenos10
             // 

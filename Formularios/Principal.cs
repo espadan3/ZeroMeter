@@ -1314,7 +1314,10 @@ namespace ZeroTrip
                     // Para ver que está pasando
                     lbPulsos.Text = nSectorIdeal.ToString();
 
-                    dbDistReal = ((dbCalibreActivo / 1000) * dbPulsos) + (Convert.ToDouble(nDifPorRecalibre)) + zoCoreccion.Value + Convert.ToDouble(nCorrecionMetros);
+                    if (rgCalibre.Text == "Biciclometro")
+                        dbDistReal = ((dbCalibreActivo / 1000) * dbPulsos) + (Convert.ToDouble(nDifPorRecalibre)) + zoCoreccion.Value + Convert.ToDouble(nCorrecionMetros);
+                    else
+                        dbDistReal = ((dbPulsos * 1000) / dbCalibreActivo) + (Convert.ToDouble(nDifPorRecalibre)) + zoCoreccion.Value + Convert.ToDouble(nCorrecionMetros);
 
                     //if (!Gb.bFreeze) // Si congelamos, no modificamos la etiqueta con la distancia
                     //{
