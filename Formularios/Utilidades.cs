@@ -1228,17 +1228,17 @@ namespace ZeroTrip
 
         private void teCal1_EditValueChanged(object sender, EventArgs e)
         {
-            config.SetCal1(int.Parse(teCal1.Text.Replace(".", "")));
+            config.SetCal1(double.Parse(teCal1.Text.Replace(".", "")));
         }
 
         private void teCal2_EditValueChanged(object sender, EventArgs e)
         {
-            config.SetCal2(int.Parse(teCal2.Text.Replace(".", "")));
+            config.SetCal2(double.Parse(teCal2.Text.Replace(".", "")));
         }
 
         private void teCal3_EditValueChanged(object sender, EventArgs e)
         {
-            config.SetCal3(int.Parse(teCal3.Text.Replace(".", "")));
+            config.SetCal3(double.Parse(teCal3.Text.Replace(".", "")));
         }
 
         private void rgCalibre_EditValueChanged(object sender, EventArgs e)

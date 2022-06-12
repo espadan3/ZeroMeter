@@ -185,12 +185,12 @@ namespace ZeroTrip
 
       }
 
-      [ConfigurationProperty("Cal1", DefaultValue = 1950)]
-      public Int32 Cal1
+      [ConfigurationProperty("Cal1", DefaultValue = 1950.0)]
+      public double Cal1
       {
           get
           {
-              return (Int32)this["Cal1"];
+              return (double)this["Cal1"];
           }
 
           set
@@ -215,12 +215,12 @@ namespace ZeroTrip
 
       }
 
-      [ConfigurationProperty("Cal2", DefaultValue = 1950)]
-      public Int32 Cal2
+      [ConfigurationProperty("Cal2", DefaultValue = 1950.0)]
+      public double Cal2
       {
           get
           {
-              return (Int32)this["Cal2"];
+              return (double)this["Cal2"];
           }
 
           set
@@ -246,12 +246,12 @@ namespace ZeroTrip
 
       }
       
-       [ConfigurationProperty("Cal3", DefaultValue = 1950)]
-        public Int32 Cal3
+       [ConfigurationProperty("Cal3", DefaultValue = 195.0)]
+        public double Cal3
       {
           get
           {
-              return (Int32)this["Cal3"];
+              return (double)this["Cal3"];
           }
 
           set
@@ -833,14 +833,14 @@ namespace ZeroTrip
 
         //-----------------------       CALIBRACION -------------------
 
-        public int GetCal1()
+        public double GetCal1()
         {
 
             return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).Cal1);
 
         }
 
-        public void SetCal1(Int32 nCal1)
+        public void SetCal1(double nCal1)
         {
             CalibracionSection custSection = new CalibracionSection();
 
@@ -879,14 +879,14 @@ namespace ZeroTrip
 
         }
 
-        public int GetCal2()
+        public double GetCal2()
         {
 
             return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).Cal2);
 
         }
 
-        public void SetCal2(Int32 nCal2)
+        public void SetCal2(double nCal2)
         {
             CalibracionSection custSection = new CalibracionSection();
 
@@ -924,14 +924,14 @@ namespace ZeroTrip
             configFile.Save(ConfigurationSaveMode.Full);
 
         }
-        public int GetCal3()
+        public double GetCal3()
         {
 
             return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).Cal3);
 
         }
 
-        public void SetCal3(Int32 nCal3)
+        public void SetCal3(double nCal3)
         {
             CalibracionSection custSection = new CalibracionSection();
 

@@ -170,6 +170,7 @@ namespace ZeroTrip
             cbPortPDA.Properties.Items.Clear();
 
             nCorrecionMetros = 0;
+            lbCorreccion.Text = "0";
             zoCoreccion.Value = 0;
 
             foreach (string port in ports)
@@ -252,6 +253,7 @@ namespace ZeroTrip
                 btStart.Select();
 				zoCoreccion.Value = 0;
                 nCorrecionMetros = 0;
+                lbCorreccion.Text = "0";
                 ResetContador();
                 chkCalcar.Checked = false;
                 Gb.bTramoACalcar = false;
@@ -309,7 +311,11 @@ namespace ZeroTrip
             {
                 Int32 nDistRealMedidor;
 
-                nDistRealMedidor = Convert.ToInt32((dbCalibreActivo / 1000) * dbPulsos);
+
+                if (rgCalibre.Text == "Biciclometro")
+                    nDistRealMedidor = Convert.ToInt32((dbCalibreActivo / 1000) * dbPulsos);
+                else
+                    nDistRealMedidor = Convert.ToInt32((dbPulsos * 1000) / dbCalibreActivo);
 
                 //nDistRealAnt = nDistReal;
                 nDistRealAnt = nDistRealMedidor;
@@ -1374,6 +1380,7 @@ namespace ZeroTrip
 
             zoCoreccion.Value = 0;
             nCorrecionMetros = 0;
+            lbCorreccion.Text = "0";
 
             picOrientacion.Visible = false;
             label19.Visible = false;
