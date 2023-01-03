@@ -114,6 +114,11 @@ namespace ZeroTrip
                 Util.AvisoInformativo("No existen datos para este tramo", "Error en tramo.");
                 return;
             }
+
+            if (tbIncidenciasTr.Rows.Count > 0 && nSigIncidecia == 9999)
+            {
+                nSigIncidecia = 0;
+            }
             // Obtenemos la longitud del tramo
             Gb.nLongTramo = Convert.ToInt32(tbDatosTr[tbDatosTr.Count-1]["Hasta"]);
             //Obtenemos la hora de inicio del tramo
@@ -352,13 +357,14 @@ namespace ZeroTrip
                 teSigRecalibre.Text = "0";
                 nDistReal = 0;
 
-                String szCadena = "Z";
+                
 #if DEBUG
                 dbPulsosAnt = 0;
                 dbPulsos = 0;
 
 
 #endif
+                String szCadena = "Z";
 
                 if (PSerieARD.IsOpen)
                 {
@@ -479,7 +485,7 @@ namespace ZeroTrip
                 tsTiempoAcum = (Convert.ToDateTime(tbDatosTr[nInd].TiempoAcum)).TimeOfDay;
                 if (tsCrono <= tsTiempoAcum)
                 {
-                    lbPulsos.Text = tbDatosTr[nInd].IdDato.ToString();
+                    //lbPulsos.Text = tbDatosTr[nInd].IdDato.ToString();
                     return (tbDatosTr[nInd].IdDato);
                 }
             }
@@ -911,6 +917,7 @@ namespace ZeroTrip
                 chkSonido.ForeColor = System.Drawing.Color.Navy;
                 chkSonido100.ForeColor = System.Drawing.Color.Navy;
                 chkLog.ForeColor = System.Drawing.Color.Navy;
+                lbCandado.ForeColor = System.Drawing.Color.Navy;
 
 
                 rgDiaNoche.ForeColor = System.Drawing.Color.Navy;
@@ -1008,6 +1015,7 @@ namespace ZeroTrip
                 lbDistReal.ForeColor = System.Drawing.Color.LightBlue;
                 lbCrono.ForeColor = System.Drawing.Color.LightBlue;
                 lbDistTeorica.ForeColor = System.Drawing.Color.LimeGreen;
+                lbCandado.ForeColor = System.Drawing.Color.White;
 
                 //scContenedor.Panel1.BackColor = System.Drawing.Color.Teal
                 scContenedor.Panel1.BackColor = System.Drawing.Color.MidnightBlue;
@@ -1084,11 +1092,11 @@ namespace ZeroTrip
 
             if (rgMedidor.EditValue.ToString() == "Terra")
             {
-                tbCalNuevo.Text = ((Convert.ToInt32(tbCalActual.Text.Replace(".", "")) * Convert.ToInt32(tbDistRecorrida.Text.Replace(".", ""))) / Convert.ToInt32(tbReferencia.Text.Replace(".", ""))).ToString();
+                tbCalNuevo.Text = ((Convert.ToDouble(tbCalActual.Text.Replace(".", "")) * Convert.ToDouble(tbDistRecorrida.Text.Replace(".", ""))) / Convert.ToDouble(tbReferencia.Text.Replace(".", ""))).ToString();
             }
             else
             {
-                tbCalNuevo.Text = ((Convert.ToInt32(tbCalActual.Text.Replace(".", "")) * Convert.ToInt32(tbReferencia.Text.Replace(".", ""))) / Convert.ToInt32(tbDistRecorrida.Text.Replace(".", ""))).ToString();
+                tbCalNuevo.Text = ((Convert.ToDouble(tbCalActual.Text.Replace(".", "")) * Convert.ToDouble(tbReferencia.Text.Replace(".", ""))) / Convert.ToDouble(tbDistRecorrida.Text.Replace(".", ""))).ToString();
             }
 
 
@@ -1168,6 +1176,12 @@ namespace ZeroTrip
             dbCalibreActivo = (double)config.GetCal1();
             GrabarLog("Calibre activo " + dbCalibreActivo.ToString());
             if (bEnCompeticion) GuardaCalibre();
+
+            if (PSerieARD.IsOpen)
+            {
+                PSerieARD.Write(dbCalibreActivo.ToString());
+                String szCadena = PSerieARD.ReadLine();
+            }
         }
 
         private void btCal2_Click(object sender, EventArgs e)
@@ -1186,6 +1200,12 @@ namespace ZeroTrip
             dbCalibreActivo = (double)config.GetCal2();
             GrabarLog("Calibre activo " + dbCalibreActivo.ToString());
             if (bEnCompeticion) GuardaCalibre();
+
+            if (PSerieARD.IsOpen)
+            {
+                PSerieARD.Write(dbCalibreActivo.ToString());
+                String szCadena = PSerieARD.ReadLine();
+            }
         }
 
         private void btCal3_Click(object sender, EventArgs e)
@@ -1204,6 +1224,12 @@ namespace ZeroTrip
             dbCalibreActivo = (double)config.GetCal3();
             GrabarLog("Calibre activo " + dbCalibreActivo.ToString());
             if (bEnCompeticion) GuardaCalibre();
+
+            if (PSerieARD.IsOpen)
+            {
+                PSerieARD.Write(dbCalibreActivo.ToString());
+                String szCadena = PSerieARD.ReadLine();
+            }
         }
 
         public void GuardaCalibre()

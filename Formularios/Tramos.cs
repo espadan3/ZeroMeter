@@ -463,6 +463,12 @@ namespace ZeroTrip
             gvIncidencias.MoveLast();
             tePosicion.Focus();
 
+            // Si el tramo cargado en memoria es el que acabamos de modificar, lo recargamos.
+            if (nTramoCron == Convert.ToInt16(cbTramos.Text.Substring(6)))
+            {
+                btRecarga_Click(sender, e);
+            }
+
             bReCargaTramo = true;
 
         }

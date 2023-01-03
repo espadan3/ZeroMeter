@@ -95,6 +95,7 @@ D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\ja\DevEx
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\ru\DevExpress.Pdf.v17.1.Core.resources.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\es\Microsoft.VisualStudio.TestTools.UITest.Extension.resources.dll
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\bin\Release\es\Microsoft.VisualStudio.TestTools.UITest.Common.resources.dll
+D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip_2.0.csprojAssemblyReference.cache
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip_2.0.csproj.ResolveComReference.cache
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip.frPrincipal.resources
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip.Properties.Resources.resources
@@ -104,4 +105,3 @@ D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\Zero
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip_2.0.csproj.CopyComplete
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip.exe
 D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip.pdb
-D:\Mis Documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\obj\x86\Release\ZeroTrip_2.0.csprojAssemblyReference.cache

@@ -195,7 +195,8 @@ namespace ZeroTrip
             btReset.Focus();
             //recConnetionBLT();
 
-            
+            //Habilitamos el timer auxiliar para que se inicie el proceso de sincronización y arranque del timer principal.
+            tmAux.Enabled = true;
 
             //   teDirBBDD.Text = Gb.sDirectorioDatos;
         }
@@ -439,10 +440,11 @@ namespace ZeroTrip
 
                 dbVelocidad = decimal.Parse(tbDatosTr[nSectorIdeal-1].Velocidad.ToString(), provider);
 
-                GrabarLog("CAMBIO REF.EXTERNAS/ Velocidad: " + dbVelocidad.ToString() + " | Hasta: " + Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider) * 1000).ToString() );
-
+                //GrabarLog("CAMBIO REF.EXTERNAS/ Velocidad aplicada: " + dbVelocidad.ToString() + " | Hasta: " + Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider) * 1000).ToString() );
+                GrabarLog("CAMBIO REF.EXTERNAS/ Velocidad aplicada: " + dbVelocidad.ToString() + " | Hasta: " + nDistReal.ToString());
                 //tbDatosTr[nSectorIdeal-1].Hasta = Convert.ToInt32(decimal.Parse(teSigCMRE.Text.ToString(), provider));
-                tbDatosTr[nSectorIdeal - 1].Hasta = Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider)*1000);
+                //tbDatosTr[nSectorIdeal - 1].Hasta = Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider)*1000);
+                tbDatosTr[nSectorIdeal - 1].Hasta = nDistReal;
                 tbDatosTr[nSectorIdeal-1].Parcial = tbDatosTr[nSectorIdeal-1].Hasta - tbDatosTr[nSectorIdeal-1].Desde;
                 dtmTParcial = Util.Tiempo(tbDatosTr[nSectorIdeal-1].Parcial, dbVelocidad);
                 tbDatosTr[nSectorIdeal - 1].TiempoParcial = dtmTParcial;
@@ -461,7 +463,8 @@ namespace ZeroTrip
                 dbVelocidad = decimal.Parse(tbDatosTr[nSectorIdeal].Velocidad.ToString(), provider);
                 teVelRE.Text = tbDatosTr[nSectorIdeal].Velocidad.ToString("00.##");
 
-                tbDatosTr[nSectorIdeal].Desde = Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider) * 1000);
+                //tbDatosTr[nSectorIdeal].Desde = Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider) * 1000);
+                tbDatosTr[nSectorIdeal].Desde = nDistReal;
                 tbDatosTr[nSectorIdeal].Parcial = tbDatosTr[nSectorIdeal].Hasta - tbDatosTr[nSectorIdeal].Desde;
                // tbDatosTr[nSectorIdeal].Velocidad = Convert.ToDouble(dbVelocidad);
 
@@ -478,9 +481,21 @@ namespace ZeroTrip
                     tbDatosTr[nSectorIdeal].TiempoAcum = dtmTAcumulado;
                 }
 
-                Gb.anAvCM = new int[tbDatosTr.Rows.Count + 1];
+                //Gb.anAvCM = new int[tbDatosTr.Rows.Count + 1];
 
-                
+                //if (dsDatos.Tables["Datos"].GetChanges() != null)
+                //{
+                //    datosTableAdapter.Update(dsDatos);
+
+
+                //    dsDatos.AcceptChanges();
+
+                //}
+
+
+                //datosTableAdapter.Fill(dsDatos.Datos, nTramo);
+
+
             }
 
         }
@@ -555,6 +570,9 @@ namespace ZeroTrip
                     break;
                 case (Keys.Multiply):
                     btRecalibrar_Click(sender, e);
+                    break;
+                case (Keys.Divide):
+                    btSigRecalibre_Click(sender, e);
                     break;
                 case (Keys.F1):
                     btStart_Click(sender, e);
@@ -737,21 +755,21 @@ namespace ZeroTrip
                         //if (dPulsos < 1)
                         //    a = 1;
                         if (nDifMetros < -10) {
-                            lbDiferencia.ForeColor = Color.Red;
+                            lbDiferencia.ForeColor = Color.Blue;
                          //   lbDiferencia.BackColor = Color.Coral;
                         }
                         else if (nDifMetros < -5) { 
-                            lbDiferencia.ForeColor = Color.Red;
+                            lbDiferencia.ForeColor = Color.Blue;
                         }
                         else if (nDifMetros >= -5 && nDifMetros < 5) {
                             lbDiferencia.ForeColor = Color.LimeGreen;
                             lbDiferencia.BackColor = Color.Transparent;
                         }
                         else if (nDifMetros > 5 ) {
-                            lbDiferencia.ForeColor = Color.Blue;
+                            lbDiferencia.ForeColor = Color.Red;
                         }
                         else{
-                            lbDiferencia.ForeColor = Color.Blue;
+                            lbDiferencia.ForeColor = Color.Red;
                            // lbDiferencia.BackColor = Color.DarkTurquoise;
                         }
 
@@ -944,7 +962,12 @@ namespace ZeroTrip
                 if (cbTramosRace.Text == "")
                     szTramo = "XX-Tipo";
                 else
-                    szTramo = cbTramosRace.Text.Substring(6, 2) + "-" + lbTipoTramo.Text;
+                {
+                    if (lbTipoTramo.Text.Length > 6)
+                        szTramo = cbTramosRace.Text.Substring(6, 2) + "-" + lbTipoTramo.Text.Substring(0, 7);
+                    else
+                        szTramo = cbTramosRace.Text.Substring(6, 2) + "-" + lbTipoTramo.Text;
+                }
 
                 if (nSectorIdeal != 9999)
                     szDifMetros = lbDiferencia.Text;
@@ -1253,7 +1276,7 @@ namespace ZeroTrip
 
         public void CalcDistReal()
         {
-            // string szCadena = "";
+             string szCadena = "";
             nDifMetros = 0;
 
             try
@@ -1281,7 +1304,7 @@ namespace ZeroTrip
                     {
                         //lbPulsos.Visible = true;
 
-                        string szCadena = PSerieARD.ReadExisting();
+                         szCadena = PSerieARD.ReadExisting();
                         string szcopia = szCadena;
                         
                         //Contamos cuantos \n hay
@@ -1290,10 +1313,25 @@ namespace ZeroTrip
                         if (szCadena.Length > 2 && szCadena[szCadena.Length - 1] == '\n')
                         {
                             string[] szA = (szCadena.Replace("\r\n", " ")).Split(new Char[] { });
+                            //BUENO
                             if (szA.Length < 2)
                                 dbPulsos = double.Parse(szA[0]);
                             else
                                 dbPulsos = double.Parse(szA[szA.Length - 2]);
+                            //FIN BUENO
+
+                            //if (szA.Length < 2)
+                            //{
+                            //    string[] szB = szA[0].Split(':');
+                            //    dbPulsos = double.Parse(szB[0]);
+                            //}
+                            //else
+                            //{
+                            //    string[] szB = szA[0].Split(':');
+                            //    dbPulsos = double.Parse(szB[szB.Length - 2]);
+                            //   
+                            //}
+
 
                             // DEBUG EN 
                             //{if (bEnCompeticion)
@@ -1318,7 +1356,9 @@ namespace ZeroTrip
                     // y también la posible corrección de metros de la barra o por botones
 
                     // Para ver que está pasando
-                    lbPulsos.Text = nSectorIdeal.ToString();
+                    //lbPulsos.Text = nSectorIdeal.ToString();
+                    lbPulsos.Text = dbPulsos.ToString();
+
 
                     if (rgCalibre.Text == "Biciclometro")
                         dbDistReal = ((dbCalibreActivo / 1000) * dbPulsos) + (Convert.ToDouble(nDifPorRecalibre)) + zoCoreccion.Value + Convert.ToDouble(nCorrecionMetros);
@@ -1344,11 +1384,13 @@ namespace ZeroTrip
             }
             catch (Exception ex)
             {
-
+ //PSerieARD.DiscardInBuffer();
                 Util.AvisoConEx(ex, "Puerto " + PSeriePDA.PortName + " no disponible o no existe", "Error en puerto");
+               
             }
 
         }
+
 
 
         //-----------------------------------------------------------------------------------
@@ -1361,6 +1403,7 @@ namespace ZeroTrip
             lbCuentaAtras.Text = "";
             lbDistTeorica.Text = "00,00";
             lbDistReal.Text = "00,00";
+          
             lbDiferencia.Text = "0";
             lbVariable.Text = "";
             lbVelocidad.Text = "";
@@ -1424,7 +1467,43 @@ namespace ZeroTrip
             chkSonido100.Checked = config.GetSonidoMetros();
 
             rgDiaNoche.EditValue = config.GetDiaNoche();
+
             rbTamanioRueda.EditValue = config.GetTamanioRueda();
+
+            if (PSerieARD.IsOpen)
+            {
+                String szCadena;
+                switch (rbTamanioRueda.Text)
+                {
+
+                    case "L":
+                        szCadena = "A"; // pone 40 msg de retardo para ruedas más grandes
+                        break;
+                    case "M":
+                        szCadena = "B"; // pone 30 msg de retardo para ruedas más pequeñas
+                        break;
+                    case "S":
+                        szCadena = "C"; // pone 22 msg de retardo para ruedas mucho más pequeñas para hasta 140 Km/h
+                        break;
+                    default:
+                        szCadena = "B";
+                        break;
+                }
+
+                //Con calibre 880
+                // 40 ms hasta 75 Km/h
+                // 30 ms hasta 100 Km/h
+                // 25 ms hasta 125 Km/h
+                // 20 ms hasta 150 Km/h
+
+                //    szCadena = "C"; // este no lo usamos todavia
+                //    break;
+
+                PSerieARD.Write(szCadena);
+                szCadena = PSerieARD.ReadLine();
+
+                
+            }
 
             DiaNoche(rgDiaNoche.Text);
 
@@ -1434,6 +1513,7 @@ namespace ZeroTrip
             teDistHitos.Text = config.GetDistanciaHitos();
             teDistTablas.Text = config.GetDistanciaTablas();
 
+            // CALIBRES Recuperamos los datos de los calibres guardados y establecemos el calibre activo
             teCal1.Text = config.GetCal1().ToString();
             teCal2.Text = config.GetCal2().ToString();
             teCal3.Text = config.GetCal3().ToString();
@@ -1464,6 +1544,14 @@ namespace ZeroTrip
 
                 dbCalibreActivo = (double)config.GetCal3();
             }
+
+            // Enviaremos el calibre si hiciera falta para calcular la velocidad en la tarjeta.
+            //if (PSerieARD.IsOpen)
+            //{
+            //    PSerieARD.Write(((int)dbCalibreActivo).ToString());
+            //    String szCadena = PSerieARD.ReadLine();
+            //}
+            // CALIBRES
 
             lbDiferencia.Text = "0";
             nDifMetros = 0;
