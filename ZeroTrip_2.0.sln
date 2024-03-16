@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2050
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroTrip_2.0", "ZeroTrip_2.0.csproj", "{14BF27F1-EF3C-48BC-926E-B927139448A6}"
 EndProject
@@ -9,28 +9,48 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZeroTrip_Install_2.0", "..\
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		CD_ROM|x86 = CD_ROM|x86
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
+		DVD-5|Any CPU = DVD-5|Any CPU
 		DVD-5|x86 = DVD-5|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
+		SingleImage|Any CPU = SingleImage|Any CPU
 		SingleImage|x86 = SingleImage|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.CD_ROM|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.CD_ROM|Any CPU.Build.0 = Debug|Any CPU
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.CD_ROM|x86.ActiveCfg = Release|x86
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.CD_ROM|x86.Build.0 = Release|x86
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.Debug|x86.ActiveCfg = Debug|x86
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.Debug|x86.Build.0 = Debug|x86
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.DVD-5|x86.ActiveCfg = Debug|x86
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.DVD-5|x86.Build.0 = Debug|x86
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.Release|x86.ActiveCfg = Release|x86
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.Release|x86.Build.0 = Release|x86
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.SingleImage|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BF27F1-EF3C-48BC-926E-B927139448A6}.SingleImage|Any CPU.Build.0 = Debug|Any CPU
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.SingleImage|x86.ActiveCfg = Release|x86
 		{14BF27F1-EF3C-48BC-926E-B927139448A6}.SingleImage|x86.Build.0 = Release|x86
+		{39B901DF-1FF5-463B-925F-28FF781F36A3}.CD_ROM|Any CPU.ActiveCfg = Debug
 		{39B901DF-1FF5-463B-925F-28FF781F36A3}.CD_ROM|x86.ActiveCfg = Release
+		{39B901DF-1FF5-463B-925F-28FF781F36A3}.Debug|Any CPU.ActiveCfg = Debug
 		{39B901DF-1FF5-463B-925F-28FF781F36A3}.Debug|x86.ActiveCfg = Debug
+		{39B901DF-1FF5-463B-925F-28FF781F36A3}.DVD-5|Any CPU.ActiveCfg = Debug
 		{39B901DF-1FF5-463B-925F-28FF781F36A3}.DVD-5|x86.ActiveCfg = Debug
+		{39B901DF-1FF5-463B-925F-28FF781F36A3}.Release|Any CPU.ActiveCfg = Release
 		{39B901DF-1FF5-463B-925F-28FF781F36A3}.Release|x86.ActiveCfg = Release
 		{39B901DF-1FF5-463B-925F-28FF781F36A3}.Release|x86.Build.0 = Release
+		{39B901DF-1FF5-463B-925F-28FF781F36A3}.SingleImage|Any CPU.ActiveCfg = Debug
 		{39B901DF-1FF5-463B-925F-28FF781F36A3}.SingleImage|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ZeroTrip
@@ -15,6 +16,7 @@ namespace ZeroTrip
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+          //  DevExpress.UserSkins.BonusSkins.Register();
             Application.Run(new frPrincipal());
         }
     }

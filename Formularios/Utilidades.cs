@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.IO.Ports;
 using System.Data;
@@ -44,9 +44,12 @@ namespace ZeroTrip
 
 
 #if DEBUG
-#if PORTATIL                  
-            String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
-            String fileName = "ZeroTripBBDD.accdb"; 
+#if PORTATIL
+            // String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
+            
+            String dataName = Directory.GetParent(Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName;
+                        String fileName = "ZeroTripBBDD.accdb";
+            
 #else
 #if PC
             String fileName = "ZeroTripBBDD.accdb";
@@ -833,8 +836,8 @@ namespace ZeroTrip
         {
             if (teCorreccion.Text.Length > 1)
             {
-                zoCoreccion.Properties.Maximum = Convert.ToInt32(teCorreccion.Text);
-                zoCoreccion.Properties.Minimum = Convert.ToInt32(teCorreccion.Text) * -1;
+              //  zoCoreccion.Properties.Maximum = Convert.ToInt32(teCorreccion.Text);
+              //  zoCoreccion.Properties.Minimum = Convert.ToInt32(teCorreccion.Text) * -1;
 
                 config.SetMaxCorreccion(teCorreccion.Text);
             }
@@ -877,9 +880,6 @@ namespace ZeroTrip
                 groupControl6.LookAndFeel.UseWindowsXPTheme = false;
                 
 
-                label13.ForeColor = System.Drawing.Color.Navy;
-                label14.ForeColor = System.Drawing.Color.Navy;
-                label12.ForeColor = System.Drawing.Color.Navy;
                 label5.ForeColor = System.Drawing.Color.Navy;
                 label16.ForeColor = System.Drawing.Color.Navy;
                 label7.ForeColor = System.Drawing.Color.Navy;
@@ -966,10 +966,7 @@ namespace ZeroTrip
                 groupControl5.BackColor = System.Drawing.Color.MidnightBlue;
                 groupControl6.BackColor = System.Drawing.Color.MidnightBlue;
 
-                label13.ForeColor = System.Drawing.Color.White;
-                label14.ForeColor = System.Drawing.Color.White;
-                label12.ForeColor = System.Drawing.Color.White;
-                label5.ForeColor = System.Drawing.Color.White;
+
                 label16.ForeColor = System.Drawing.Color.White;
                 label7.ForeColor = System.Drawing.Color.White;
                 label9.ForeColor = System.Drawing.Color.White;

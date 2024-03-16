@@ -337,7 +337,6 @@
             this.xtTabControl.Appearance.Options.UseBackColor = true;
             this.xtTabControl.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtTabControl.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtTabControl.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Right;
             this.xtTabControl.Location = new System.Drawing.Point(0, 0);
             this.xtTabControl.LookAndFeel.SkinName = "Lilian";
@@ -345,7 +344,7 @@
             this.xtTabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtTabControl.Name = "xtTabControl";
             this.xtTabControl.SelectedTabPage = this.xtTPCarrera;
-            this.xtTabControl.Size = new System.Drawing.Size(1344, 518);
+            this.xtTabControl.Size = new System.Drawing.Size(1504, 717);
             this.xtTabControl.TabIndex = 0;
             this.xtTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtTPCarrera,
@@ -357,7 +356,7 @@
             // xtTPCarrera
             // 
             this.xtTPCarrera.Appearance.Header.BackColor = System.Drawing.Color.Black;
-            this.xtTPCarrera.Appearance.Header.Font = new System.Drawing.Font("DejaVu Sans", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtTPCarrera.Appearance.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtTPCarrera.Appearance.Header.Options.UseBackColor = true;
             this.xtTPCarrera.Appearance.Header.Options.UseFont = true;
             this.xtTPCarrera.Appearance.Header.Options.UseTextOptions = true;
@@ -409,10 +408,9 @@
             this.xtTPCarrera.Controls.Add(this.label8);
             this.xtTPCarrera.Controls.Add(this.lbFaltaCambio);
             this.xtTPCarrera.Controls.Add(this.label6);
-            this.xtTPCarrera.Font = new System.Drawing.Font("Ebrima", 12F);
             this.xtTPCarrera.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtTPCarrera.Name = "xtTPCarrera";
-            this.xtTPCarrera.Size = new System.Drawing.Size(1306, 510);
+            this.xtTPCarrera.Size = new System.Drawing.Size(1466, 709);
             this.xtTPCarrera.TabPageWidth = 100;
             this.xtTPCarrera.Text = "&Carrera";
             // 
@@ -470,7 +468,7 @@
             // 
             // btBloqMetros
             // 
-            this.btBloqMetros.Image = global::ZeroTrip.Properties.Resources.lock_open;
+            this.btBloqMetros.ImageOptions.Image = global::ZeroTrip.Properties.Resources.lock_open;
             this.btBloqMetros.Location = new System.Drawing.Point(570, 341);
             this.btBloqMetros.LookAndFeel.SkinName = "The Asphalt World";
             this.btBloqMetros.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -547,7 +545,7 @@
             this.picOrientacion.Image = global::ZeroTrip.Properties.Resources._12;
             this.picOrientacion.Location = new System.Drawing.Point(1024, 187);
             this.picOrientacion.Name = "picOrientacion";
-            this.picOrientacion.Size = new System.Drawing.Size(280, 200);
+            this.picOrientacion.Size = new System.Drawing.Size(436, 393);
             this.picOrientacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picOrientacion.TabIndex = 30;
             this.picOrientacion.TabStop = false;
@@ -639,7 +637,7 @@
             this.teSigRecalibre.Properties.Mask.EditMask = "n0";
             this.teSigRecalibre.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.teSigRecalibre.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.teSigRecalibre.Size = new System.Drawing.Size(151, 41);
+            this.teSigRecalibre.Size = new System.Drawing.Size(151, 42);
             this.teSigRecalibre.TabIndex = 53;
             // 
             // lbVelRE
@@ -783,7 +781,7 @@
             this.chkCalcar.ForeColor = System.Drawing.Color.Navy;
             this.chkCalcar.Location = new System.Drawing.Point(81, 362);
             this.chkCalcar.Name = "chkCalcar";
-            this.chkCalcar.Size = new System.Drawing.Size(142, 25);
+            this.chkCalcar.Size = new System.Drawing.Size(106, 17);
             this.chkCalcar.TabIndex = 50;
             this.chkCalcar.Text = "Calcar en Tramo";
             this.chkCalcar.UseVisualStyleBackColor = true;
@@ -795,7 +793,7 @@
             this.chkBRecalAuto.ForeColor = System.Drawing.Color.Navy;
             this.chkBRecalAuto.Location = new System.Drawing.Point(864, 7);
             this.chkBRecalAuto.Name = "chkBRecalAuto";
-            this.chkBRecalAuto.Size = new System.Drawing.Size(103, 25);
+            this.chkBRecalAuto.Size = new System.Drawing.Size(79, 17);
             this.chkBRecalAuto.TabIndex = 49;
             this.chkBRecalAuto.Text = "Recal Auto";
             this.chkBRecalAuto.UseVisualStyleBackColor = true;
@@ -869,7 +867,7 @@
             // 
             this.lbSigVelocidad.Font = new System.Drawing.Font("Digiface", 36F, System.Drawing.FontStyle.Bold);
             this.lbSigVelocidad.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbSigVelocidad.Location = new System.Drawing.Point(309, 13);
+            this.lbSigVelocidad.Location = new System.Drawing.Point(326, 13);
             this.lbSigVelocidad.Name = "lbSigVelocidad";
             this.lbSigVelocidad.Size = new System.Drawing.Size(146, 58);
             this.lbSigVelocidad.TabIndex = 0;
@@ -1304,7 +1302,7 @@
             // 
             // xtTPUtils
             // 
-            this.xtTPUtils.Appearance.Header.Font = new System.Drawing.Font("DejaVu Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtTPUtils.Appearance.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtTPUtils.Appearance.Header.Options.UseFont = true;
             this.xtTPUtils.Appearance.Header.Options.UseTextOptions = true;
             this.xtTPUtils.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1321,10 +1319,9 @@
             this.xtTPUtils.Controls.Add(this.groupControl3);
             this.xtTPUtils.Controls.Add(this.groupControl2);
             this.xtTPUtils.Controls.Add(this.groupControl1);
-            this.xtTPUtils.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtTPUtils.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtTPUtils.Name = "xtTPUtils";
-            this.xtTPUtils.Size = new System.Drawing.Size(1306, 510);
+            this.xtTPUtils.Size = new System.Drawing.Size(1466, 709);
             this.xtTPUtils.TabPageWidth = 100;
             this.xtTPUtils.Text = "&Utilidades";
             // 
@@ -1459,8 +1456,8 @@
             this.btCal3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btCal3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btCal3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btCal3.Image = global::ZeroTrip.Properties.Resources.cross;
-            this.btCal3.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btCal3.ImageOptions.Image = global::ZeroTrip.Properties.Resources.cross;
+            this.btCal3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btCal3.Location = new System.Drawing.Point(203, 106);
             this.btCal3.LookAndFeel.SkinName = "The Asphalt World";
             this.btCal3.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -1499,7 +1496,7 @@
             this.teCal3.Properties.Mask.EditMask = "n1";
             this.teCal3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.teCal3.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.teCal3.Size = new System.Drawing.Size(87, 31);
+            this.teCal3.Size = new System.Drawing.Size(87, 32);
             this.teCal3.TabIndex = 41;
             this.teCal3.EditValueChanged += new System.EventHandler(this.teCal3_EditValueChanged);
             // 
@@ -1525,8 +1522,8 @@
             this.btCal2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btCal2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btCal2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btCal2.Image = global::ZeroTrip.Properties.Resources.cross;
-            this.btCal2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btCal2.ImageOptions.Image = global::ZeroTrip.Properties.Resources.cross;
+            this.btCal2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btCal2.Location = new System.Drawing.Point(203, 68);
             this.btCal2.LookAndFeel.SkinName = "The Asphalt World";
             this.btCal2.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -1565,7 +1562,7 @@
             this.teCal2.Properties.Mask.EditMask = "n1";
             this.teCal2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.teCal2.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.teCal2.Size = new System.Drawing.Size(87, 31);
+            this.teCal2.Size = new System.Drawing.Size(87, 32);
             this.teCal2.TabIndex = 38;
             this.teCal2.EditValueChanged += new System.EventHandler(this.teCal2_EditValueChanged);
             // 
@@ -1591,8 +1588,8 @@
             this.btCal1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btCal1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btCal1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btCal1.Image = global::ZeroTrip.Properties.Resources.tick;
-            this.btCal1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btCal1.ImageOptions.Image = global::ZeroTrip.Properties.Resources.tick;
+            this.btCal1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btCal1.Location = new System.Drawing.Point(203, 31);
             this.btCal1.LookAndFeel.SkinName = "The Asphalt World";
             this.btCal1.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -1631,7 +1628,7 @@
             this.teCal1.Properties.Mask.EditMask = "n1";
             this.teCal1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.teCal1.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.teCal1.Size = new System.Drawing.Size(87, 31);
+            this.teCal1.Size = new System.Drawing.Size(87, 32);
             this.teCal1.TabIndex = 29;
             this.teCal1.EditValueChanged += new System.EventHandler(this.teCal1_EditValueChanged);
             // 
@@ -1709,7 +1706,7 @@
             this.tbCalNuevo.Properties.Mask.EditMask = "n1";
             this.tbCalNuevo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbCalNuevo.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tbCalNuevo.Size = new System.Drawing.Size(117, 31);
+            this.tbCalNuevo.Size = new System.Drawing.Size(117, 32);
             this.tbCalNuevo.TabIndex = 0;
             // 
             // label25
@@ -1766,7 +1763,7 @@
             this.tbCalActual.Properties.Mask.EditMask = "n1";
             this.tbCalActual.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbCalActual.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tbCalActual.Size = new System.Drawing.Size(117, 31);
+            this.tbCalActual.Size = new System.Drawing.Size(117, 32);
             this.tbCalActual.TabIndex = 30;
             // 
             // btCalcCal
@@ -1824,7 +1821,7 @@
             this.tbDistRecorrida.Properties.Mask.EditMask = "n0";
             this.tbDistRecorrida.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbDistRecorrida.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tbDistRecorrida.Size = new System.Drawing.Size(117, 31);
+            this.tbDistRecorrida.Size = new System.Drawing.Size(117, 32);
             this.tbDistRecorrida.TabIndex = 29;
             // 
             // tbReferencia
@@ -1857,7 +1854,7 @@
             this.tbReferencia.Properties.Mask.EditMask = "n0";
             this.tbReferencia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbReferencia.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tbReferencia.Size = new System.Drawing.Size(117, 31);
+            this.tbReferencia.Size = new System.Drawing.Size(117, 32);
             this.tbReferencia.TabIndex = 28;
             // 
             // label23
@@ -1925,7 +1922,7 @@
             this.btLimpiar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btLimpiar.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btLimpiar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btLimpiar.Image = global::ZeroTrip.Properties.Resources.Sign_07;
+            this.btLimpiar.ImageOptions.Image = global::ZeroTrip.Properties.Resources.Sign_07;
             this.btLimpiar.Location = new System.Drawing.Point(213, 56);
             this.btLimpiar.LookAndFeel.SkinName = "The Asphalt World";
             this.btLimpiar.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -1996,7 +1993,7 @@
             this.teTiempo.Properties.LookAndFeel.SkinName = "Money Twins";
             this.teTiempo.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.teTiempo.Properties.Mask.EditMask = "HH:mm:ss,f";
-            this.teTiempo.Size = new System.Drawing.Size(117, 29);
+            this.teTiempo.Size = new System.Drawing.Size(117, 30);
             this.teTiempo.TabIndex = 29;
             // 
             // tbVelocidad
@@ -2030,7 +2027,7 @@
             this.tbVelocidad.Properties.Mask.EditMask = "n4";
             this.tbVelocidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbVelocidad.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tbVelocidad.Size = new System.Drawing.Size(117, 31);
+            this.tbVelocidad.Size = new System.Drawing.Size(117, 32);
             this.tbVelocidad.TabIndex = 30;
             // 
             // label17
@@ -2088,7 +2085,7 @@
             this.tbDistancia.Properties.Mask.EditMask = "n0";
             this.tbDistancia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbDistancia.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tbDistancia.Size = new System.Drawing.Size(117, 31);
+            this.tbDistancia.Size = new System.Drawing.Size(117, 32);
             this.tbDistancia.TabIndex = 28;
             // 
             // label21
@@ -2165,7 +2162,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.teHora.Properties.LookAndFeel.SkinName = "Money Twins";
             this.teHora.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.teHora.Size = new System.Drawing.Size(212, 67);
+            this.teHora.Size = new System.Drawing.Size(212, 68);
             this.teHora.TabIndex = 0;
             // 
             // btInicio
@@ -2271,7 +2268,7 @@
             this.teDistTablas.Properties.Mask.EditMask = "n0";
             this.teDistTablas.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.teDistTablas.Properties.MaxLength = 3;
-            this.teDistTablas.Size = new System.Drawing.Size(58, 33);
+            this.teDistTablas.Size = new System.Drawing.Size(58, 34);
             this.teDistTablas.TabIndex = 47;
             this.teDistTablas.EditValueChanged += new System.EventHandler(this.teDistTablas_EditValueChanged);
             // 
@@ -2323,7 +2320,7 @@
             this.chkLog.Properties.DisplayValueUnchecked = "Log Off";
             this.chkLog.Properties.LookAndFeel.SkinName = "The Asphalt World";
             this.chkLog.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.chkLog.Size = new System.Drawing.Size(60, 26);
+            this.chkLog.Size = new System.Drawing.Size(60, 25);
             this.chkLog.TabIndex = 35;
             this.chkLog.CheckedChanged += new System.EventHandler(this.chkLog_CheckedChanged);
             // 
@@ -2351,7 +2348,7 @@
             this.teDistHitos.Properties.Mask.EditMask = "n0";
             this.teDistHitos.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.teDistHitos.Properties.MaxLength = 4;
-            this.teDistHitos.Size = new System.Drawing.Size(58, 33);
+            this.teDistHitos.Size = new System.Drawing.Size(58, 34);
             this.teDistHitos.TabIndex = 34;
             this.teDistHitos.EditValueChanged += new System.EventHandler(this.teDistHitos_EditValueChanged);
             // 
@@ -2390,7 +2387,7 @@
             this.teCorreccion.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.teCorreccion.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.teCorreccion.Properties.MaxLength = 3;
-            this.teCorreccion.Size = new System.Drawing.Size(58, 33);
+            this.teCorreccion.Size = new System.Drawing.Size(58, 34);
             this.teCorreccion.TabIndex = 32;
             this.teCorreccion.EditValueChanged += new System.EventHandler(this.teCorreccion_EditValueChanged);
             // 
@@ -2424,7 +2421,7 @@
             this.teDistCruce.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.teDistCruce.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.teDistCruce.Properties.MaxLength = 3;
-            this.teDistCruce.Size = new System.Drawing.Size(58, 33);
+            this.teDistCruce.Size = new System.Drawing.Size(58, 34);
             this.teDistCruce.TabIndex = 30;
             this.teDistCruce.EditValueChanged += new System.EventHandler(this.teDistCruce_EditValueChanged);
             // 
@@ -2458,7 +2455,7 @@
             this.teDistCM.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.teDistCM.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.teDistCM.Properties.MaxLength = 3;
-            this.teDistCM.Size = new System.Drawing.Size(58, 33);
+            this.teDistCM.Size = new System.Drawing.Size(58, 34);
             this.teDistCM.TabIndex = 28;
             this.teDistCM.EditValueChanged += new System.EventHandler(this.teDistCM_EditValueChanged);
             // 
@@ -2489,7 +2486,7 @@
             this.chkSonido100.Properties.DisplayValueUnchecked = "Sonido Off";
             this.chkSonido100.Properties.LookAndFeel.SkinName = "The Asphalt World";
             this.chkSonido100.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.chkSonido100.Size = new System.Drawing.Size(191, 26);
+            this.chkSonido100.Size = new System.Drawing.Size(191, 25);
             this.chkSonido100.TabIndex = 12;
             this.chkSonido100.CheckedChanged += new System.EventHandler(this.chkSonido100_CheckedChanged);
             // 
@@ -2508,7 +2505,7 @@
             this.chkSonido.Properties.DisplayValueUnchecked = "Sonido Off";
             this.chkSonido.Properties.LookAndFeel.SkinName = "The Asphalt World";
             this.chkSonido.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.chkSonido.Size = new System.Drawing.Size(112, 26);
+            this.chkSonido.Size = new System.Drawing.Size(112, 25);
             this.chkSonido.TabIndex = 11;
             this.chkSonido.CheckedChanged += new System.EventHandler(this.chkSonido_CheckedChanged);
             // 
@@ -2676,7 +2673,7 @@
             // 
             // xtTPTramos
             // 
-            this.xtTPTramos.Appearance.Header.Font = new System.Drawing.Font("DejaVu Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtTPTramos.Appearance.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtTPTramos.Appearance.Header.Options.UseFont = true;
             this.xtTPTramos.Appearance.Header.Options.UseTextOptions = true;
             this.xtTPTramos.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -2699,7 +2696,7 @@
             this.xtTPTramos.Controls.Add(this.labelControl2);
             this.xtTPTramos.Controls.Add(this.labelControl1);
             this.xtTPTramos.Name = "xtTPTramos";
-            this.xtTPTramos.Size = new System.Drawing.Size(1306, 510);
+            this.xtTPTramos.Size = new System.Drawing.Size(1466, 709);
             this.xtTPTramos.TabPageWidth = 100;
             this.xtTPTramos.Text = "&Tramos";
             // 
@@ -2803,7 +2800,7 @@
             this.cbOrientacion.Properties.LookAndFeel.SkinName = "Money Twins";
             this.cbOrientacion.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cbOrientacion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbOrientacion.Size = new System.Drawing.Size(109, 29);
+            this.cbOrientacion.Size = new System.Drawing.Size(109, 30);
             this.cbOrientacion.TabIndex = 12;
             this.cbOrientacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbOrientacion_KeyPress);
             // 
@@ -2835,7 +2832,7 @@
             this.cbDescripcion.Properties.LookAndFeel.SkinName = "Money Twins";
             this.cbDescripcion.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cbDescripcion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbDescripcion.Size = new System.Drawing.Size(109, 29);
+            this.cbDescripcion.Size = new System.Drawing.Size(109, 30);
             this.cbDescripcion.TabIndex = 11;
             this.cbDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbDescripcion_KeyPress);
             // 
@@ -2983,7 +2980,7 @@
             this.cbTipo.Properties.LookAndFeel.SkinName = "Money Twins";
             this.cbTipo.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cbTipo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbTipo.Size = new System.Drawing.Size(191, 55);
+            this.cbTipo.Size = new System.Drawing.Size(191, 56);
             this.cbTipo.TabIndex = 0;
             this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
@@ -3060,13 +3057,15 @@
             this.cbTramos.Properties.LookAndFeel.SkinName = "Money Twins";
             this.cbTramos.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cbTramos.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbTramos.Size = new System.Drawing.Size(220, 55);
+            this.cbTramos.Size = new System.Drawing.Size(220, 56);
             this.cbTramos.TabIndex = 0;
             this.cbTramos.EditValueChanged += new System.EventHandler(this.cbTramos_EditValueChanged);
             // 
             // gcMedias
             // 
             this.gcMedias.DataSource = this.datosBindingSource;
+            this.gcMedias.EmbeddedNavigator.Appearance.Options.UseFont = true;
+            this.gcMedias.EmbeddedNavigator.Appearance.Options.UseForeColor = true;
             this.gcMedias.EmbeddedNavigator.Buttons.First.Visible = false;
             this.gcMedias.EmbeddedNavigator.Buttons.Last.Visible = false;
             this.gcMedias.EmbeddedNavigator.Buttons.Next.Visible = false;
@@ -3424,6 +3423,8 @@
             // gcIncidencias
             // 
             this.gcIncidencias.DataSource = this.incidenciasBindingSource;
+            this.gcIncidencias.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gcIncidencias.EmbeddedNavigator.Appearance.Options.UseFont = true;
             this.gcIncidencias.EmbeddedNavigator.Buttons.First.Visible = false;
             this.gcIncidencias.EmbeddedNavigator.Buttons.Last.Visible = false;
             this.gcIncidencias.EmbeddedNavigator.Buttons.Next.Visible = false;
@@ -3614,7 +3615,6 @@
             // rsiOrientacion
             // 
             this.rsiOrientacion.AutoHeight = false;
-            this.rsiOrientacion.LookAndFeel.SkinName = "Money Twins";
             this.rsiOrientacion.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.rsiOrientacion.MaxValue = new decimal(new int[] {
             12,
@@ -3651,7 +3651,7 @@
             // 
             // btBloqueo
             // 
-            this.btBloqueo.Image = global::ZeroTrip.Properties.Resources.lock_open;
+            this.btBloqueo.ImageOptions.Image = global::ZeroTrip.Properties.Resources.lock_open;
             this.btBloqueo.Location = new System.Drawing.Point(37, 4);
             this.btBloqueo.LookAndFeel.SkinName = "The Asphalt World";
             this.btBloqueo.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -3746,7 +3746,7 @@
             this.tSec.Properties.Mask.EditMask = "n1";
             this.tSec.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tSec.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tSec.Size = new System.Drawing.Size(99, 49);
+            this.tSec.Size = new System.Drawing.Size(99, 48);
             this.tSec.TabIndex = 6;
             this.tSec.Click += new System.EventHandler(this.tSec_Click);
             this.tSec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tSec_KeyPress);
@@ -3768,7 +3768,7 @@
             this.tMin.Properties.Mask.EditMask = "n0";
             this.tMin.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tMin.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tMin.Size = new System.Drawing.Size(65, 49);
+            this.tMin.Size = new System.Drawing.Size(65, 48);
             this.tMin.TabIndex = 5;
             this.tMin.Click += new System.EventHandler(this.tMin_Click);
             this.tMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tMin_KeyPress);
@@ -3790,7 +3790,7 @@
             this.tHor.Properties.Mask.EditMask = "n0";
             this.tHor.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tHor.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tHor.Size = new System.Drawing.Size(45, 49);
+            this.tHor.Size = new System.Drawing.Size(45, 48);
             this.tHor.TabIndex = 4;
             this.tHor.Click += new System.EventHandler(this.tHor_Click);
             // 
@@ -3816,7 +3816,7 @@
             this.teTPaso.Properties.LookAndFeel.SkinName = "Money Twins";
             this.teTPaso.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.teTPaso.Properties.Mask.EditMask = "HH:mm:ss,f";
-            this.teTPaso.Size = new System.Drawing.Size(187, 49);
+            this.teTPaso.Size = new System.Drawing.Size(187, 48);
             this.teTPaso.TabIndex = 2;
             // 
             // lbDos
@@ -3868,7 +3868,7 @@
             this.tVelocidad.Properties.Mask.EditMask = "n4";
             this.tVelocidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tVelocidad.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tVelocidad.Size = new System.Drawing.Size(194, 49);
+            this.tVelocidad.Size = new System.Drawing.Size(194, 48);
             this.tVelocidad.TabIndex = 2;
             this.tVelocidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tVelocidad_KeyDown);
             this.tVelocidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tVelocidad_KeyPress);
@@ -3890,7 +3890,7 @@
             this.tHasta.Properties.Mask.EditMask = "n0";
             this.tHasta.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tHasta.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tHasta.Size = new System.Drawing.Size(171, 49);
+            this.tHasta.Size = new System.Drawing.Size(171, 48);
             this.tHasta.TabIndex = 1;
             this.tHasta.Enter += new System.EventHandler(this.tHasta_Enter);
             this.tHasta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tHasta_KeyPress);
@@ -4011,8 +4011,8 @@
             this.scContenedor.Panel2.Controls.Add(this.xtTabControl);
             this.scContenedor.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.scContenedor.Panel2.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scContenedor.Size = new System.Drawing.Size(1344, 711);
-            this.scContenedor.SplitterDistance = 189;
+            this.scContenedor.Size = new System.Drawing.Size(1504, 981);
+            this.scContenedor.SplitterDistance = 260;
             this.scContenedor.TabIndex = 1;
             this.scContenedor.TabStop = false;
             // 
@@ -4140,8 +4140,8 @@
             this.btSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btSalir.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btSalir.Image = ((System.Drawing.Image)(resources.GetObject("btSalir.Image")));
-            this.btSalir.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSalir.ImageOptions.Image")));
+            this.btSalir.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btSalir.Location = new System.Drawing.Point(1269, 20);
             this.btSalir.Name = "btSalir";
             this.btSalir.Size = new System.Drawing.Size(44, 48);
@@ -4259,7 +4259,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btSalir;
-            this.ClientSize = new System.Drawing.Size(1344, 711);
+            this.ClientSize = new System.Drawing.Size(1504, 981);
             this.Controls.Add(this.scContenedor);
             this.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
