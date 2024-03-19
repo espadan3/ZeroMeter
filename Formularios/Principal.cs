@@ -171,8 +171,7 @@ namespace ZeroTrip
 
             nCorrecionMetros = 0;
             lbCorreccion.Text = "0";
-         //   zoCoreccion.Value = 0;
-
+            
             foreach (string port in ports)
             {
                 cbPortPDA.Properties.Items.Add(port);
@@ -217,14 +216,6 @@ namespace ZeroTrip
 
         //-----------------------------------------------------------------------------------
 
-      //  private void zoCoreccion_ValueChanged(object sender, EventArgs e)
-      //  {
-      //      lbCorreccion.Text = zoCoreccion.Value.ToString();
-      //      GrabarLog("Correccion metros " + zoCoreccion.Value.ToString());
-      //  }
-
-        //-----------------------------------------------------------------------------------
-
         private void btSalir_Click(object sender, EventArgs e)
         {
             Gb.Util.fnSalida();
@@ -252,7 +243,6 @@ namespace ZeroTrip
                 btStart.Enabled = true;
                 btStart.LookAndFeel.SkinName = "Money Twins";
                 btStart.Select();
-			//	zoCoreccion.Value = 0;
                 nCorrecionMetros = 0;
                 lbCorreccion.Text = "0";
                 ResetContador();
@@ -328,7 +318,6 @@ namespace ZeroTrip
                 lbDifPorRecal.Text = nDifPorRecalibre.ToString();
                 
                 // Ponemos a cero la posible correccion.
-                //zoCoreccion.Value = 0;
                 nCorrecionMetros = 0;
                 lbCorreccion.Text = "0";
 
@@ -351,8 +340,8 @@ namespace ZeroTrip
             lbDifPorRecal.Text = nDifPorRecalibre.ToString();
 
             // Ponemos a cero la posible correccion.
-            //zoCoreccion.Value = 0;
             nCorrecionMetros = 0;
+            lbCorreccion.Text = "0";
             GrabarLog("Eliminamos recalibración: " + teRecalibre.Text + " | Dist Arduino: " + nDistRealMedidor.ToString() + " | Mostrado: " + lbDistReal.Text + " | Dif: " + nDifPorRecalibre.ToString());
 
         }
@@ -366,7 +355,6 @@ namespace ZeroTrip
             nDifPorRecalibre = Int32.Parse(teRecalibre.Text.Replace(".", "")) - nDistRealAnt;
             lbDifPorRecal.Text = nDifPorRecalibre.ToString();
             // Ponemos a cero la posible correccion.
-            //zoCoreccion.Value = 0;
             GrabarLog("RE-Recalibracion / Informado: " + teRecalibre.Text + " | Dist Arduino " + nDistReal.ToString() + " | Mostrado: " + lbDistReal.Text + " | Dist Real Ant: " + nDistRealAnt.ToString() +
                 " | Nuevo Dif: " + nDifPorRecalibre.ToString());
             //teRecalibre.Focus();
@@ -560,8 +548,8 @@ namespace ZeroTrip
 
         private void frPrincipal_KeyDown(object sender, KeyEventArgs e)
         {
-            if (Control.ModifierKeys == Keys.Shift)
-            //{ int a = 1; }
+           if (Control.ModifierKeys == Keys.Shift)
+            { int a = 1; }
 
             switch (e.KeyCode)
             {
@@ -724,7 +712,6 @@ namespace ZeroTrip
             // Pintamos la hora actual
             lbHora.Text = Convert.ToString(DateTime.Now.ToLongTimeString());
 
-            //zoCoreccion.ToolTip = zoCoreccion.Value.ToString();
             DateTime dtmTiempoParcial;
 
 
@@ -1118,7 +1105,7 @@ namespace ZeroTrip
                         lbFaltaCambio.Text = (((tbDatosTr[nSectorIdeal - 1].Hasta - nDistIdeal) / 10) + 1).ToString() + "0";
                         lbFaltaCam.Text = lbFaltaCambio.Text;
 
-                        Sonidos("CambioMedia");
+                       // Sonidos("CambioMedia");
 
                         break;
 
@@ -1365,11 +1352,6 @@ namespace ZeroTrip
                     else
                         dbDistReal = ((dbPulsos * 1000) / dbCalibreActivo) + (Convert.ToDouble(nDifPorRecalibre)) + Convert.ToDouble(nCorrecionMetros);
 
-                  //  if (rgCalibre.Text == "Biciclometro")
-                  //      dbDistReal = ((dbCalibreActivo / 1000) * dbPulsos) + (Convert.ToDouble(nDifPorRecalibre)) + zoCoreccion.Value + Convert.ToDouble(nCorrecionMetros);
-                  //  else
-                  //      dbDistReal = ((dbPulsos * 1000) / dbCalibreActivo) + (Convert.ToDouble(nDifPorRecalibre)) + zoCoreccion.Value + Convert.ToDouble(nCorrecionMetros);
-
                     //if (!Gb.bFreeze) // Si congelamos, no modificamos la etiqueta con la distancia
                     //{
                     if (Gb.bMetros)
@@ -1395,8 +1377,6 @@ namespace ZeroTrip
             }
 
         }
-
-
 
         //-----------------------------------------------------------------------------------
 
@@ -1426,7 +1406,6 @@ namespace ZeroTrip
             lbFaltaCambio.Visible = false;
             label8.Visible = false;
 
-            //zoCoreccion.Value = 0;
             nCorrecionMetros = 0;
             lbCorreccion.Text = "0";
 
@@ -1522,6 +1501,8 @@ namespace ZeroTrip
             teCal1.Text = config.GetCal1().ToString();
             teCal2.Text = config.GetCal2().ToString();
             teCal3.Text = config.GetCal3().ToString();
+            //teDistOrg.Text = config.GetDistOrg().ToString();
+            teCalMopu.Text = config.GetCalMopu().ToString();
 
             if (config.GetSelCal1())
             {
@@ -1549,6 +1530,10 @@ namespace ZeroTrip
 
                 dbCalibreActivo = (double)config.GetCal3();
             }
+
+            // Calculamos la distancia entre hitos a partir del calibre activo y del configurado como MOPU
+
+            teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopu())).ToString();
 
             // Enviaremos el calibre si hiciera falta para calcular la velocidad en la tarjeta.
             //if (PSerieARD.IsOpen)

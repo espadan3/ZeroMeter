@@ -261,7 +261,7 @@ namespace ZeroTrip
 
       }
 
-       [ConfigurationProperty("SelCal3", DefaultValue = "No")]
+        [ConfigurationProperty("SelCal3", DefaultValue = "No")]
         public string SelCal3
         {
             get
@@ -276,6 +276,21 @@ namespace ZeroTrip
 
         }
      
+        [ConfigurationProperty("CalMopu", DefaultValue = 888.0)]
+        public double CalMopu
+        {
+            get
+            {
+                return (double)this["CalMopu"];
+            }
+
+            set
+            {
+                this["CalMopu"] = value;
+            }
+
+        }
+
        [ConfigurationProperty("TipoMedidor", DefaultValue = @"Biciclometro")]
         public String TipoMedidor
       {
@@ -320,6 +335,7 @@ namespace ZeroTrip
             }
 
         }
+
     }
 
   #endregion Declaraciones para para Datos de calibracion
@@ -965,6 +981,25 @@ namespace ZeroTrip
                 dgSection.SelCal3 = @"No";
 
             dgSection.SectionInformation.ForceSave = true;
+            configFile.Save(ConfigurationSaveMode.Full);
+
+        }
+        public double GetCalMopu()
+        {
+
+            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).CalMopu);
+
+        }
+
+        public void SetCalMopu(double nCalMopu)
+        {
+            CalibracionSection custSection = new CalibracionSection();
+
+            custSection = configFile.GetSection(szSecCalibracion) as CalibracionSection;
+
+            custSection.CalMopu = nCalMopu;
+
+            custSection.SectionInformation.ForceSave = false;
             configFile.Save(ConfigurationSaveMode.Full);
 
         }

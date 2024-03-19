@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
+using System.Text;
 using System.Runtime.InteropServices;
 using System.IO.Ports;
 using System.Data;
@@ -44,12 +44,9 @@ namespace ZeroTrip
 
 
 #if DEBUG
-#if PORTATIL
-            // String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
-            
-            String dataName = Directory.GetParent(Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName;
-                        String fileName = "ZeroTripBBDD.accdb";
-            
+#if PORTATIL                  
+            String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
+            String fileName = "ZeroTripBBDD.accdb"; 
 #else
 #if PC
             String fileName = "ZeroTripBBDD.accdb";
@@ -836,8 +833,8 @@ namespace ZeroTrip
         {
             if (teCorreccion.Text.Length > 1)
             {
-              //  zoCoreccion.Properties.Maximum = Convert.ToInt32(teCorreccion.Text);
-              //  zoCoreccion.Properties.Minimum = Convert.ToInt32(teCorreccion.Text) * -1;
+                //zoCoreccion.Properties.Maximum = Convert.ToInt32(teCorreccion.Text);
+                //zoCoreccion.Properties.Minimum = Convert.ToInt32(teCorreccion.Text) * -1;
 
                 config.SetMaxCorreccion(teCorreccion.Text);
             }
@@ -880,6 +877,9 @@ namespace ZeroTrip
                 groupControl6.LookAndFeel.UseWindowsXPTheme = false;
                 
 
+                //label13.ForeColor = System.Drawing.Color.Navy;
+                //label14.ForeColor = System.Drawing.Color.Navy;
+                //label12.ForeColor = System.Drawing.Color.Navy;
                 label5.ForeColor = System.Drawing.Color.Navy;
                 label16.ForeColor = System.Drawing.Color.Navy;
                 label7.ForeColor = System.Drawing.Color.Navy;
@@ -966,7 +966,10 @@ namespace ZeroTrip
                 groupControl5.BackColor = System.Drawing.Color.MidnightBlue;
                 groupControl6.BackColor = System.Drawing.Color.MidnightBlue;
 
-
+                //label13.ForeColor = System.Drawing.Color.White;
+                //label14.ForeColor = System.Drawing.Color.White;
+                //label12.ForeColor = System.Drawing.Color.White;
+                label5.ForeColor = System.Drawing.Color.White;
                 label16.ForeColor = System.Drawing.Color.White;
                 label7.ForeColor = System.Drawing.Color.White;
                 label9.ForeColor = System.Drawing.Color.White;
@@ -1079,9 +1082,9 @@ namespace ZeroTrip
         private void btCalcCal_Click(object sender, EventArgs e)
         {
 
-            if (!Util.IsNumeric(tbCalActual.Text) || tbCalActual.Text == "0" ||
-                !Util.IsNumeric(tbReferencia.Text) || tbReferencia.Text == "0" ||
-                !Util.IsNumeric(tbDistRecorrida.Text) || tbDistRecorrida.Text == "0")
+            if (!Util.IsNumeric(teCalActual.Text) || teCalActual.Text == "0" ||
+                !Util.IsNumeric(teDistOrg.Text) || teDistOrg.Text == "0" ||
+                !Util.IsNumeric(teDistRecorrida.Text) || teDistRecorrida.Text == "0")
             {
                 Util.AvisoConError("Falta algún dato para el cálculo.", "Recalibración.");
                 return;
@@ -1089,11 +1092,11 @@ namespace ZeroTrip
 
             if (rgMedidor.EditValue.ToString() == "Terra")
             {
-                tbCalNuevo.Text = ((Convert.ToDouble(tbCalActual.Text.Replace(".", "")) * Convert.ToDouble(tbDistRecorrida.Text.Replace(".", ""))) / Convert.ToDouble(tbReferencia.Text.Replace(".", ""))).ToString();
+                teCalNuevo.Text = ((Convert.ToDouble(teCalActual.Text.Replace(".", "")) * Convert.ToDouble(teDistRecorrida.Text.Replace(".", ""))) / Convert.ToDouble(teDistOrg.Text.Replace(".", ""))).ToString();
             }
             else
             {
-                tbCalNuevo.Text = ((Convert.ToDouble(tbCalActual.Text.Replace(".", "")) * Convert.ToDouble(tbReferencia.Text.Replace(".", ""))) / Convert.ToDouble(tbDistRecorrida.Text.Replace(".", ""))).ToString();
+                teCalNuevo.Text = ((Convert.ToDouble(teCalActual.Text.Replace(".", "")) * Convert.ToDouble(teDistOrg.Text.Replace(".", ""))) / Convert.ToDouble(teDistRecorrida.Text.Replace(".", ""))).ToString();
             }
 
 
@@ -1155,6 +1158,18 @@ namespace ZeroTrip
         {
             config.SetDistanciaTablas(teDistTablas.Text);
         }
+
+
+        //private void tbDistOrg_EditValueChanged(object sender, EventArgs e)
+        //{
+        //    config.SetDistanciaTablas(teDistOrg.Text);
+        //}
+
+        private void teCalMopu_EditValueChanged(object sender, EventArgs e)
+        {
+            config.SetCalMopu(double.Parse(teCalMopu.Text.Replace(".", "")));
+        }
+
 
         private void btCal1_Click(object sender, EventArgs e)
         {
