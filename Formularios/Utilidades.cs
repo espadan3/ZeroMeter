@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.IO.Ports;
 using System.Data;
 using System.Windows.Forms;
+using System.IO;
 //using System.Net;
 //using System.Net.Sockets;
 
@@ -45,7 +46,10 @@ namespace ZeroTrip
 
 #if DEBUG
 #if PORTATIL                  
-            String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
+            //String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
+            //String dataName = AppDomain.CurrentDomain.BaseDirectory;
+            string dataName = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
+           
             String fileName = "ZeroTripBBDD.accdb"; 
 #else
 #if PC
