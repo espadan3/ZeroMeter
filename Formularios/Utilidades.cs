@@ -77,8 +77,15 @@ namespace ZeroTrip
 #endif
 #endif
 #else
+#if PC
+            // Por aqui entramos si estamos en modo Release desde VS. Comprobar comportamiento en ejecucion
+            String fileName = "ZeroTripBBDD.accdb";
+            string dataName = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
+            //String dataName = System.AppDomain.CurrentDomain.BaseDirectory;
+#else
             String fileName = "ZeroTripBBDD.accdb";
             String dataName = System.AppDomain.CurrentDomain.BaseDirectory;
+#endif
 #endif
 
             //OOOOJJJJJOOOOOO Falta manejar el nombre del fichero para cogerlo del fichero de configuracion.
