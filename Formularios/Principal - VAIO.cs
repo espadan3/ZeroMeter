@@ -28,7 +28,7 @@ namespace ZeroTrip
 
 
 {
-    public partial class frPrincipal : Form
+    public partial class frPrincipal_VAIO : Form
     {
         public VblesGlobales Gb = new VblesGlobales();
 
@@ -108,7 +108,7 @@ namespace ZeroTrip
         public BluetoothDeviceInfo[] listaDevices;
 
 
-        public frPrincipal()
+        public frPrincipal_VAIO()
         {
 
             InitializeComponent();
@@ -1379,11 +1379,6 @@ namespace ZeroTrip
                 Util.AvisoConEx(ex, "Puerto " + PSeriePDA.PortName + " no disponible o no existe", "Error en puerto");
                
             }
-
-        }
-
-        private void lbCuentaAtras_Click(object sender, EventArgs e)
-        {
 
         }
 

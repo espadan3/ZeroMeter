@@ -403,3 +403,10 @@ FodyWeavers.xsd
 /obj
 /.vs
 UpgradeLog3.htm
+bin/Release/ZeroTrip.exe
+bin/Release/ZeroTrip.pdb
+bin/Release/ZeroTrip.pdb
+bin/Release/ZeroTrip.exe
+bin/Debug/ZeroTrip.pdb
+bin/Debug/ZeroTrip.exe
+bin/Debug/ConfigZeroTrip.exe.config
