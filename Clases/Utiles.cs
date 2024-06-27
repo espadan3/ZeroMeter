@@ -34,8 +34,10 @@ namespace ZeroTrip
         { 
             Int64 nMiliseg = Convert.ToInt64(nEspacio/ (fVelocidad/3600));
             DateTime tsAux;
-      
-            DateTime dtFormHora = new DateTime();
+
+            //DateTime dtmTParcial = DateTime.Today,
+            //DateTime dtFormHora = new DateTime();
+            DateTime dtFormHora = DateTime.Today;
             tsAux = dtFormHora.AddMilliseconds(Convert.ToDouble(nMiliseg));
             return (tsAux);
         }
