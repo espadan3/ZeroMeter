@@ -3174,7 +3174,7 @@
             this.gvMedias.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
             this.gvMedias.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
             this.gvMedias.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.gvMedias.Appearance.Empty.BackColor = System.Drawing.Color.White;
+            this.gvMedias.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
             this.gvMedias.Appearance.Empty.Options.UseBackColor = true;
             this.gvMedias.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
             this.gvMedias.Appearance.FilterCloseButton.BackColor2 = System.Drawing.Color.White;
