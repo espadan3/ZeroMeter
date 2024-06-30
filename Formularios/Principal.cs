@@ -689,6 +689,24 @@ namespace ZeroTrip
             }
         }
 
+        //-----------------------------------------------------------------------------------
+
+        private void btMas1Min_Click(object sender, EventArgs e)
+        {
+            DateTime dtHoraMas1Min = ((DateTime)tbInfoTr.Rows[0]["HoraSalida"]).AddMinutes(1);
+            tramosTableAdapter.Update(tbInfoTr.Rows[0]["Tramo"].ToString(), tbInfoTr.Rows[0]["TipoTramo"].ToString(), dtHoraMas1Min, (short)nTramoCron);
+            CargaTramo(Convert.ToInt16(nTramoCron));
+        }
+
+        //-----------------------------------------------------------------------------------
+
+        private void btMenos1Min_Click(object sender, EventArgs e)
+        {
+            DateTime dtHoraMas1Min = ((DateTime)tbInfoTr.Rows[0]["HoraSalida"]).AddMinutes(-1);
+            tramosTableAdapter.Update(tbInfoTr.Rows[0]["Tramo"].ToString(), tbInfoTr.Rows[0]["TipoTramo"].ToString(), dtHoraMas1Min, (short)nTramoCron);
+            CargaTramo(Convert.ToInt16(nTramoCron));
+        }
+
 
         #endregion CONTROLES
 
@@ -1382,10 +1400,7 @@ namespace ZeroTrip
 
         }
 
-        private void lbCuentaAtras_Click(object sender, EventArgs e)
-        {
 
-        }
 
         //-----------------------------------------------------------------------------------
 
@@ -1395,8 +1410,8 @@ namespace ZeroTrip
             bHayTramo = false;
             bEnCompeticion = false;
             lbCuentaAtras.Text = "";
-            lbDistTeorica.Text = "00,00";
-            lbDistReal.Text = "00,00";
+            lbDistTeorica.Text = "00,000";
+            lbDistReal.Text = "00,000";
           
             lbDiferencia.Text = "0";
             lbVariable.Text = "";
@@ -1511,7 +1526,8 @@ namespace ZeroTrip
             teCal2.Text = config.GetCal2().ToString();
             teCal3.Text = config.GetCal3().ToString();
             //teDistOrg.Text = config.GetDistOrg().ToString();
-            teCalMopu.Text = config.GetCalMopu().ToString();
+            teCalMopuBici.Text = config.GetCalMopuBici().ToString();
+            teCalMopuTerra.Text = config.GetCalMopuTerra().ToString();
 
             if (config.GetSelCal1())
             {
@@ -1542,7 +1558,7 @@ namespace ZeroTrip
 
             // Calculamos la distancia entre hitos a partir del calibre activo y del configurado como MOPU
 
-            teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopu())).ToString();
+            teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
 
             // Enviaremos el calibre si hiciera falta para calcular la velocidad en la tarjeta.
             //if (PSerieARD.IsOpen)

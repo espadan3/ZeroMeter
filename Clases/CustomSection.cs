@@ -276,22 +276,37 @@ namespace ZeroTrip
 
         }
      
-        [ConfigurationProperty("CalMopu", DefaultValue = 888.0)]
-        public double CalMopu
+        [ConfigurationProperty("CalMopuBici", DefaultValue = 888.0)]
+        public double CalMopuBici
         {
             get
             {
-                return (double)this["CalMopu"];
+                return (double)this["CalMopuBici"];
             }
 
             set
             {
-                this["CalMopu"] = value;
+                this["CalMopuBici"] = value;
             }
 
         }
 
-       [ConfigurationProperty("TipoMedidor", DefaultValue = @"Biciclometro")]
+        [ConfigurationProperty("CalMopuTerra", DefaultValue = 1125.0)]
+        public double CalMopuTerra
+        {
+            get
+            {
+                return (double)this["CalMopuTerra"];
+            }
+
+            set
+            {
+                this["CalMopuTerra"] = value;
+            }
+
+        }
+
+        [ConfigurationProperty("TipoMedidor", DefaultValue = @"Biciclometro")]
         public String TipoMedidor
       {
           get
@@ -984,20 +999,39 @@ namespace ZeroTrip
             configFile.Save(ConfigurationSaveMode.Full);
 
         }
-        public double GetCalMopu()
+        public double GetCalMopuBici()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).CalMopu);
+            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).CalMopuBici);
 
         }
 
-        public void SetCalMopu(double nCalMopu)
+        public double GetCalMopuTerra()
+        {
+
+            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).CalMopuTerra);
+
+        }
+
+        public void SetCalMopuBici(double nCalMopuBici)
         {
             CalibracionSection custSection = new CalibracionSection();
 
             custSection = configFile.GetSection(szSecCalibracion) as CalibracionSection;
 
-            custSection.CalMopu = nCalMopu;
+            custSection.CalMopuBici = nCalMopuBici;
+
+            custSection.SectionInformation.ForceSave = false;
+            configFile.Save(ConfigurationSaveMode.Full);
+
+        }
+        public void SetCalMopuTerra(double nCalMopuTerra)
+        {
+            CalibracionSection custSection = new CalibracionSection();
+
+            custSection = configFile.GetSection(szSecCalibracion) as CalibracionSection;
+
+            custSection.CalMopuTerra = nCalMopuTerra;
 
             custSection.SectionInformation.ForceSave = false;
             configFile.Save(ConfigurationSaveMode.Full);

@@ -132,12 +132,12 @@ namespace ZeroTrip
             }
             // Obtenemos la longitud del tramo
             Gb.nLongTramo = Convert.ToInt32(tbDatosTr[tbDatosTr.Count-1]["Hasta"]);
+
             //Obtenemos la hora de inicio del tramo
             dtSalidaTr = Convert.ToDateTime(tbInfoTr.Rows[0]["HoraSalida"]);
-
             dtSalidaTr = dtSalidaTr.AddTicks(dtSalidaTr.Ticks % 10000000 * -1);
-
             lbHoraSalida.Text = dtSalidaTr.TimeOfDay.ToString();
+
             lbTipoTramo.Text = tbInfoTr[0].TipoTramo.ToString();
             
             switch (tbInfoTr[0].TipoTramo)
@@ -359,7 +359,7 @@ namespace ZeroTrip
         {
             if (Util.AvisoConRespuesta("¿Quieres poner a Cero la distancia?", "Reset Distancia."))
             {
-                lbDistReal.Text = "00,00";
+                lbDistReal.Text = "00,000";
                 lbDiferencia.Text = "0";
                 lbDifPorRecal.Text = "0";
                 nDifPorRecalibre = 0;
@@ -1171,16 +1171,16 @@ namespace ZeroTrip
         }
 
 
-        //private void tbDistOrg_EditValueChanged(object sender, EventArgs e)
-        //{
-        //    config.SetDistanciaTablas(teDistOrg.Text);
-        //}
-
-        private void teCalMopu_EditValueChanged(object sender, EventArgs e)
+        private void teCalMopuBici_EditValueChanged(object sender, EventArgs e)
         {
-            config.SetCalMopu(double.Parse(teCalMopu.Text.Replace(".", "")));
+            config.SetCalMopuBici(double.Parse(teCalMopuBici.Text.Replace(".", "")));
         }
 
+
+        private void teCalMopuTerra_EditValueChanged(object sender, EventArgs e)
+        {
+            config.SetCalMopuTerra(double.Parse(teCalMopuTerra.Text.Replace(".", "")));
+        }
 
         private void btCal1_Click(object sender, EventArgs e)
         {
