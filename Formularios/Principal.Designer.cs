@@ -376,6 +376,7 @@
             this.xtTPCarrera.Appearance.PageClient.Options.UseBorderColor = true;
             this.xtTPCarrera.Appearance.PageClient.Options.UseFont = true;
             this.xtTPCarrera.Appearance.PageClient.Options.UseForeColor = true;
+            this.xtTPCarrera.AutoScroll = true;
             this.xtTPCarrera.Controls.Add(this.lbCandado);
             this.xtTPCarrera.Controls.Add(this.btMenos10);
             this.xtTPCarrera.Controls.Add(this.btMenos1);
@@ -1341,6 +1342,7 @@
             // 
             // xtTPUtils
             // 
+            this.xtTPUtils.AllowTouchScroll = true;
             this.xtTPUtils.Appearance.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtTPUtils.Appearance.Header.Options.UseFont = true;
             this.xtTPUtils.Appearance.Header.Options.UseTextOptions = true;
@@ -1350,6 +1352,7 @@
             this.xtTPUtils.Appearance.PageClient.Font = new System.Drawing.Font("Ebrima", 8.25F);
             this.xtTPUtils.Appearance.PageClient.Options.UseBackColor = true;
             this.xtTPUtils.Appearance.PageClient.Options.UseFont = true;
+            this.xtTPUtils.AutoScroll = true;
             this.xtTPUtils.Controls.Add(this.groupControl6);
             this.xtTPUtils.Controls.Add(this.groupControl5);
             this.xtTPUtils.Controls.Add(this.btEnviar);
@@ -1357,6 +1360,8 @@
             this.xtTPUtils.Controls.Add(this.groupControl3);
             this.xtTPUtils.Controls.Add(this.groupControl2);
             this.xtTPUtils.Controls.Add(this.groupControl1);
+            this.xtTPUtils.FireScrollEventOnMouseWheel = true;
+            this.xtTPUtils.InvertTouchScroll = true;
             this.xtTPUtils.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtTPUtils.Name = "xtTPUtils";
             this.xtTPUtils.Size = new System.Drawing.Size(1446, 736);
@@ -2802,6 +2807,7 @@
             // 
             // xtTPTramos
             // 
+            this.xtTPTramos.AllowTouchScroll = true;
             this.xtTPTramos.Appearance.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtTPTramos.Appearance.Header.Options.UseFont = true;
             this.xtTPTramos.Appearance.Header.Options.UseTextOptions = true;
