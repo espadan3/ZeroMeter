@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using Microsoft.VisualBasic;
+using System.CodeDom;
+using System.Data.OleDb;
 
 
 namespace ZeroTrip
@@ -118,14 +120,23 @@ namespace ZeroTrip
                 cbOrientacion.ResetText();
 
                 rgTipoTramo.Enabled = false;
+
+
                 if (cbTipo.Text == "Varias")
                 {
                     rgTipoTramo.EditValue = ((dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TipoTramo"]).ToString());
                     rgTipoTramo.Enabled = true;
                 }
                 else
+                {
+                    //rgTipoTramo.Enabled = true;
+                    rgTipoTramo.EditValueChanged -= rgTipoTramo_EditValueChanged;
                     rgTipoTramo.EditValue = cbTipo.Text;
- 
+                    //rgTipoTramo.Enabled = false;
+                    rgTipoTramo.EditValueChanged += rgTipoTramo_EditValueChanged;
+                }
+    
+
             }
 
             gcMedias.Focus();
@@ -1119,9 +1130,9 @@ namespace ZeroTrip
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
                    // btAdd_Click(sender, e);
-                    cbDescripcion.Focus();
-                    cbDescripcion.SelectionStart = 0;
-                    cbDescripcion.SelectionLength = cbDescripcion.Text.Length;
+                    cbOrientacion.Focus();
+                    cbOrientacion.SelectionStart = 0;
+                    cbOrientacion.SelectionLength = cbDescripcion.Text.Length;
                 }
 
             }

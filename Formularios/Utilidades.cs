@@ -644,10 +644,11 @@ namespace ZeroTrip
                                 {
                                     simpleSound.SoundLocation = Application.StartupPath.ToString() + @"\Sonidos\Incidencia.wav";
                                     picOrientacion.Visible = true;
-                                    lbTipoIncidencia.Visible = true;
+                                    
                                     label19.Visible = true;
-                                    label20.Visible = true;
-                                    lbDistAInci.Visible = true;
+                                    
+                                    //lbDistAInci.Visible = true;
+                                    //lbTipoIncidencia.Visible = true;
                                     //lbComenInci.Visible = true;
                                     //if (chkBRecalAuto.Checked)
                                     //{
@@ -1198,7 +1199,18 @@ namespace ZeroTrip
             }
             dbCalibreActivo = (double)config.GetCal1();
             GrabarLog("Calibre activo " + dbCalibreActivo.ToString());
-            if (bEnCompeticion) GuardaCalibre();
+
+            if (rgCalibre.EditValue.ToString() == "Biciclometro")
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
+            }
+            else
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(config.GetCalMopuTerra())) / Convert.ToInt64(dbCalibreActivo)).ToString();
+            }
+
+            if (bEnCompeticion) 
+                GuardaCalibre();
 
             if (PSerieARD.IsOpen)
             {
@@ -1222,6 +1234,16 @@ namespace ZeroTrip
             }
             dbCalibreActivo = (double)config.GetCal2();
             GrabarLog("Calibre activo " + dbCalibreActivo.ToString());
+
+            if (rgCalibre.EditValue.ToString() == "Biciclometro")
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
+            }
+            else
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(config.GetCalMopuTerra())) / Convert.ToInt64(dbCalibreActivo)).ToString();
+            }
+
             if (bEnCompeticion) GuardaCalibre();
 
             if (PSerieARD.IsOpen)
@@ -1246,6 +1268,16 @@ namespace ZeroTrip
             }
             dbCalibreActivo = (double)config.GetCal3();
             GrabarLog("Calibre activo " + dbCalibreActivo.ToString());
+
+            if (rgCalibre.EditValue.ToString() == "Biciclometro")
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
+            }
+            else
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(config.GetCalMopuTerra())) / Convert.ToInt64(dbCalibreActivo)).ToString();
+            }
+
             if (bEnCompeticion) GuardaCalibre();
 
             if (PSerieARD.IsOpen)
@@ -1293,8 +1325,15 @@ namespace ZeroTrip
         private void rgCalibre_EditValueChanged(object sender, EventArgs e)
         {
             config.SetTipoMedidor(rgCalibre.Text);
-            //   string a = rgMedidor.EditValue.ToString();
-            //   int B = rgMedidor.SelectedIndex;
+
+            if (rgCalibre.EditValue.ToString() == "Biciclometro")
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
+            }
+            else
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(config.GetCalMopuTerra())) / Convert.ToInt64(dbCalibreActivo)).ToString();
+            }
         }
 
         private void rgDecaMetro_SelectedIndexChanged(object sender, EventArgs e)

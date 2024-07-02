@@ -1558,8 +1558,7 @@ namespace ZeroTrip
 
             // Calculamos la distancia entre hitos a partir del calibre activo y del configurado como MOPU
 
-            teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
-
+ 
             // Enviaremos el calibre si hiciera falta para calcular la velocidad en la tarjeta.
             //if (PSerieARD.IsOpen)
             //{
@@ -1583,6 +1582,16 @@ namespace ZeroTrip
                 Gb.bMetros = true;
             else
                 Gb.bMetros = false;
+
+            if (rgCalibre.EditValue.ToString() == "Biciclometro")
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
+            }
+            else
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(config.GetCalMopuTerra())) / Convert.ToInt64(dbCalibreActivo)).ToString();
+            }
+
 
             lbPulsos.Text = "0";
 
