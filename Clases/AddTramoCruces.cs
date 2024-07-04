@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using Microsoft.VisualBasic;
+using ZeroTrip.ZeroTripBBDDDataSetTableAdapters;
 
 namespace ZeroTrip
 {
@@ -39,7 +39,7 @@ namespace ZeroTrip
             string[] arAux;
             int nSegundo;
             int nMili;
-            int nUltReg; //Indice base 0 del ultimo registro registrado en la tabla Datos (Cambios de media)
+         //   int nUltReg; //Indice base 0 del ultimo registro registrado en la tabla Datos (Cambios de media)
 
 
             NumberFormatInfo provider = new NumberFormatInfo();
@@ -50,7 +50,7 @@ namespace ZeroTrip
 
             dtDatos = datosTableAdapter.GetUltimoDato(nTramo, nTramo);
 
-            nUltReg = dsDatos.Tables["Datos"].Rows.Count;
+          //  nUltReg = dsDatos.Tables["Datos"].Rows.Count;
 
 
             switch (szTipoTramo)
@@ -579,5 +579,66 @@ namespace ZeroTrip
 
         } // End de SelectTipo
 
+
+        public void AddCruces()
+        {
+
+            // DataTable dtIncidencias;
+
+            short nRegs = Convert.ToInt16(incidenciasTableAdapter.CuentaIncidencias(nTramo));
+
+            NumberFormatInfo provider = new NumberFormatInfo();
+
+            provider.NumberDecimalSeparator = ",";
+            provider.NumberGroupSeparator = ".";
+            provider.NumberGroupSizes = new int[] { 3 };
+            //nHasta = int.Parse(tHasta.Text.Replace(".", ""));
+
+            incidenciasTableAdapter.Insert(nTramo,
+                                            Convert.ToInt16(nRegs + 1),
+                                            Convert.ToInt32(tePosicion.Text.Replace(".", "")),
+                                            cbDescripcion.SelectedItem.ToString(),
+                                            cbOrientacion.SelectedItem.ToString(),
+                                            // Convert.ToByte(cbOrientacion.SelectedItem),
+                                            "X");
+            if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nRegs-1]["Posicion"]) > Convert.ToInt32(tePosicion.Text.Replace(".", "")))
+            {
+
+                ZeroTripBBDDDataSet.IncidenciasDataTable tbPosicion = new ZeroTripBBDDDataSet.IncidenciasDataTable();
+
+                //quiere decir que hemos metido un cruce que no va por orden, luego tenemos que reordenar.
+                incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
+                incidenciasTableAdapter.FillByPosicion(tbPosicion, nTramo);
+               
+                nRegs = Convert.ToInt16(incidenciasTableAdapter.CuentaIncidencias(nTramo));
+
+                int a = 1;
+
+                foreach (ZeroTripBBDDDataSet.IncidenciasRow rwDato in dsIncidencias.Incidencias)
+                {
+                    dsIncidencias.Incidencias.Rows[a-1]["Posicion"] = tbPosicion[a-1]["Posicion"];
+                    a++;
+
+                }
+
+            }
+
+            if (dsIncidencias.Tables["Incidencias"].GetChanges() != null)
+            {
+                incidenciasTableAdapter.Update(dsIncidencias.Incidencias);
+
+
+                dsIncidencias.AcceptChanges();
+
+            }
+
+            incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
+            // gcMedias.RefreshDataSource();
+            gcIncidencias.RefreshDataSource();
+            gvIncidencias.MoveLast();
+            tePosicion.Focus();
+
+
+        }
     } // End de Class
 }

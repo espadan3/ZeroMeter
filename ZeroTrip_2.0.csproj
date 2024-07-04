@@ -156,7 +156,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\AddTramo.cs">
+    <Compile Include="Clases\AddTramoCruces.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clases\BluetoothClass.cs" />

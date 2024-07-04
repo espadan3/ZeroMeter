@@ -449,30 +449,7 @@ namespace ZeroTrip
         {
             bReCargaTramo = false;
 
-            // DataTable dtIncidencias;
-
-            short nRegs = Convert.ToInt16(incidenciasTableAdapter.CuentaIncidencias(nTramo));
-
-            NumberFormatInfo provider = new NumberFormatInfo();
-
-            provider.NumberDecimalSeparator = ",";
-            provider.NumberGroupSeparator = ".";
-            provider.NumberGroupSizes = new int[] { 3 };
-            //nHasta = int.Parse(tHasta.Text.Replace(".", ""));
-
-            incidenciasTableAdapter.Insert(nTramo, 
-                                            Convert.ToInt16(nRegs + 1),
-                                            Convert.ToInt32(tePosicion.Text.Replace(".", "")),
-                                            cbDescripcion.SelectedItem.ToString(), 
-                                            cbOrientacion.SelectedItem.ToString(),
-                                           // Convert.ToByte(cbOrientacion.SelectedItem),
-                                            "X");
-
-            incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
-            gcMedias.RefreshDataSource();
-            gcIncidencias.RefreshDataSource();
-            gvIncidencias.MoveLast();
-            tePosicion.Focus();
+            AddCruces();
 
             // Si el tramo cargado en memoria es el que acabamos de modificar, lo recargamos.
             if (nTramoCron == Convert.ToInt16(cbTramos.Text.Substring(6)))
