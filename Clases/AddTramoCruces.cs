@@ -616,21 +616,23 @@ namespace ZeroTrip
 
                 foreach (ZeroTripBBDDDataSet.IncidenciasRow rwDato in dsIncidencias.Incidencias)
                 {
-                    dsIncidencias.Incidencias.Rows[a-1]["Posicion"] = tbPosicion[a-1]["Posicion"];
+                    dsIncidencias.Incidencias.Rows[a - 1]["Posicion"] = tbPosicion[a - 1]["Posicion"];
+                    dsIncidencias.Incidencias.Rows[a - 1]["Orientacion"] = tbPosicion[a - 1]["Orientacion"];
                     a++;
+
+                }
+
+                if (dsIncidencias.Tables["Incidencias"].GetChanges() != null)
+                {
+                    incidenciasTableAdapter.Update(dsIncidencias.Incidencias);
+
+
+                    dsIncidencias.AcceptChanges();
 
                 }
 
             }
 
-            if (dsIncidencias.Tables["Incidencias"].GetChanges() != null)
-            {
-                incidenciasTableAdapter.Update(dsIncidencias.Incidencias);
-
-
-                dsIncidencias.AcceptChanges();
-
-            }
 
             incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
             // gcMedias.RefreshDataSource();
@@ -640,5 +642,7 @@ namespace ZeroTrip
 
 
         }
+
+
     } // End de Class
 }

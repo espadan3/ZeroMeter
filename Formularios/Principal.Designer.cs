@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frPrincipal));
+            this.ritbVelocidad = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.ritbTime = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.xtTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtTPCarrera = new DevExpress.XtraTab.XtraTabPage();
             this.lbCandado = new System.Windows.Forms.Label();
@@ -239,6 +239,8 @@
             this.incidenciasTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.IncidenciasTableAdapter();
             this.PSerieARD = new System.IO.Ports.SerialPort(this.components);
             this.logTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.LogTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ritbVelocidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ritbTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtTabControl)).BeginInit();
             this.xtTabControl.SuspendLayout();
             this.xtTPCarrera.SuspendLayout();
@@ -310,8 +312,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.datosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMedias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemTextEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemTimeEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIncidencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.incidenciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsIncidencias)).BeginInit();
@@ -337,6 +337,33 @@
             this.scContenedor.Panel2.SuspendLayout();
             this.scContenedor.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ritbVelocidad
+            // 
+            this.ritbVelocidad.AutoHeight = false;
+            this.ritbVelocidad.DisplayFormat.FormatString = "n4";
+            this.ritbVelocidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.ritbVelocidad.EditFormat.FormatString = "n4";
+            this.ritbVelocidad.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.ritbVelocidad.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.ritbVelocidad.Mask.EditMask = "f4";
+            this.ritbVelocidad.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.ritbVelocidad.Name = "ritbVelocidad";
+            // 
+            // ritbTime
+            // 
+            this.ritbTime.Appearance.Options.UseTextOptions = true;
+            this.ritbTime.AutoHeight = false;
+            this.ritbTime.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.ritbTime.DisplayFormat.FormatString = "HH:mm:ss,f";
+            this.ritbTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ritbTime.EditFormat.FormatString = "HH:mm:ss,f";
+            this.ritbTime.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ritbTime.Mask.EditMask = "HH:mm:ss,f";
+            this.ritbTime.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.ritbTime.Mask.UseMaskAsDisplayFormat = true;
+            this.ritbTime.Name = "ritbTime";
             // 
             // xtTabControl
             // 
@@ -2939,6 +2966,12 @@
             "C11",
             "T3",
             "T9",
+            "TS2",
+            "TS3",
+            "TS4",
+            "TS8",
+            "TS9",
+            "TS10",
             "S3",
             "S9",
             "S12",
@@ -3447,16 +3480,7 @@
             this.gcVelocidad.AppearanceHeader.Options.UseTextOptions = true;
             this.gcVelocidad.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gcVelocidad.Caption = "Velocidad";
-            repositoryItemTextEdit3.AutoHeight = false;
-            repositoryItemTextEdit3.DisplayFormat.FormatString = "n4";
-            repositoryItemTextEdit3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            repositoryItemTextEdit3.EditFormat.FormatString = "n4";
-            repositoryItemTextEdit3.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            repositoryItemTextEdit3.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            repositoryItemTextEdit3.Mask.EditMask = "f4";
-            repositoryItemTextEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            repositoryItemTextEdit3.Name = "ritbVelocidad";
-            this.gcVelocidad.ColumnEdit = repositoryItemTextEdit3;
+            this.gcVelocidad.ColumnEdit = this.ritbVelocidad;
             this.gcVelocidad.DisplayFormat.FormatString = "n4";
             this.gcVelocidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gcVelocidad.FieldName = "Velocidad";
@@ -3479,19 +3503,7 @@
             this.gcTiempoAcum.AppearanceHeader.Options.UseTextOptions = true;
             this.gcTiempoAcum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gcTiempoAcum.Caption = "T.Acum";
-            repositoryItemTimeEdit3.Appearance.Options.UseTextOptions = true;
-            repositoryItemTimeEdit3.AutoHeight = false;
-            repositoryItemTimeEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            repositoryItemTimeEdit3.DisplayFormat.FormatString = "HH:mm:ss,f";
-            repositoryItemTimeEdit3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            repositoryItemTimeEdit3.EditFormat.FormatString = "HH:mm:ss,f";
-            repositoryItemTimeEdit3.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            repositoryItemTimeEdit3.Mask.EditMask = "HH:mm:ss,f";
-            repositoryItemTimeEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            repositoryItemTimeEdit3.Mask.UseMaskAsDisplayFormat = true;
-            repositoryItemTimeEdit3.Name = "ritbTime";
-            this.gcTiempoAcum.ColumnEdit = repositoryItemTimeEdit3;
+            this.gcTiempoAcum.ColumnEdit = this.ritbTime;
             this.gcTiempoAcum.DisplayFormat.FormatString = "HH:mm:ss,f";
             this.gcTiempoAcum.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gcTiempoAcum.FieldName = "TiempoAcum";
@@ -3514,7 +3526,7 @@
             this.gcTiempoParcial.AppearanceHeader.Options.UseTextOptions = true;
             this.gcTiempoParcial.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gcTiempoParcial.Caption = "T.Parcial";
-            this.gcTiempoParcial.ColumnEdit = repositoryItemTimeEdit3;
+            this.gcTiempoParcial.ColumnEdit = this.ritbTime;
             this.gcTiempoParcial.DisplayFormat.FormatString = "hh:mm:ss,sss";
             this.gcTiempoParcial.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gcTiempoParcial.FieldName = "TiempoParcial";
@@ -4392,6 +4404,8 @@
             this.Text = "ZeroTrip - Regularidad";
             this.Load += new System.EventHandler(this.frPrincipal_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frPrincipal_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.ritbVelocidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ritbTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtTabControl)).EndInit();
             this.xtTabControl.ResumeLayout(false);
             this.xtTPCarrera.ResumeLayout(false);
@@ -4471,8 +4485,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.datosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMedias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemTextEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemTimeEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIncidencias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.incidenciasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsIncidencias)).EndInit();
@@ -4713,6 +4725,8 @@
         private DevExpress.XtraEditors.SimpleButton btMenos1Min;
         private DevExpress.XtraEditors.SimpleButton btMas1Min;
         private DevExpress.XtraEditors.TextEdit teCalMopuTerra;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit ritbVelocidad;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit ritbTime;
     }
 }
 
