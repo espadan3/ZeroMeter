@@ -7,6 +7,7 @@ using System.IO.Ports;
 using System.Data;
 using System.Windows.Forms;
 using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 //using System.Net;
 //using System.Net.Sockets;
 
@@ -391,18 +392,7 @@ namespace ZeroTrip
 
         //---------------------------------------------------------------------------------------------------------
 
-        private void btEnviar_Click(object sender, EventArgs e)
-        {
 
-            String szCadena = "R";
-
-            PSerieARD.Write(szCadena);
-
-            szCadena = PSerieARD.ReadLine();
-
-            //PuertoSerie.Write(szCadena, 0, szCadena.Length);
-            //PuertoSerie.WriteLine(DateTime.Now.ToString());
-        }
 
         //---------------------------------------------------------------------------------------------------------
 
@@ -872,7 +862,6 @@ namespace ZeroTrip
         }
 
         //-----------------------------------------------------------------------------------
-
 
         private void DiaNoche(string szDiaNoche)
         {
@@ -1401,6 +1390,80 @@ namespace ZeroTrip
 
 
         #endregion Calibracion
+
+        #region Otros
+
+        private void btDescargaLog_Click(object sender, EventArgs e)
+        {
+
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+
+            string userFolder = Environment.UserName;
+            // Almacenamos la ruta de la carpeta de descargas en una string
+            string pathToSaveFile = "C:\\Users\\" + userFolder + "\\Downloads\\";
+            string strFichero;
+            strFichero = ("log_" + Convert.ToString(DateTime.Now.ToLongTimeString()) + ".xlsx").Replace(":", "");
+            strFichero = pathToSaveFile + strFichero;
+
+            try
+            {
+                //Previous code was referring to the wrong class, throwing an exception
+                xlApp = new Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add(misValue);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                logTableAdapter.Fill(dsLog.Log);
+
+                for (int i = 0; i <= dsLog.Log.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j <= dsLog.Log.Columns.Count - 1; j++)
+                    {
+                        xlWorkSheet.Cells[i + 1, j + 1] = dsLog.Log.Rows[i].ItemArray[j].ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(strFichero, Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.Close(true, misValue, misValue);
+                xlApp.Quit();
+
+                //Excel.XlSaveConflictResolution.xlUserResolution,
+
+                releaseObject(xlApp);
+                releaseObject(xlWorkBook);
+                releaseObject(xlWorkSheet);
+
+                if (Util.AvisoConRespuesta("Borrar el log", "¿Deseas borrar el log de la Base de Datos?"))
+                    logTableAdapter.LimpiarLog();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        private static void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch
+            {
+                obj = null;
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+
+        #endregion Otros
 
     }
 }

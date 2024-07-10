@@ -34,6 +34,7 @@
             this.ritbTime = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.xtTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtTPCarrera = new DevExpress.XtraTab.XtraTabPage();
+            this.btEnviar = new DevExpress.XtraEditors.SimpleButton();
             this.lbCandado = new System.Windows.Forms.Label();
             this.btMenos10 = new DevExpress.XtraEditors.SimpleButton();
             this.btMenos1 = new DevExpress.XtraEditors.SimpleButton();
@@ -89,6 +90,7 @@
             this.lbFaltaCambio = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.xtTPUtils = new DevExpress.XtraTab.XtraTabPage();
+            this.btDescargaLog = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.teCalMopuTerra = new DevExpress.XtraEditors.TextEdit();
             this.rbTamanioRueda = new DevExpress.XtraEditors.RadioGroup();
@@ -118,7 +120,6 @@
             this.teDistRecorrida = new DevExpress.XtraEditors.TextEdit();
             this.teDistOrg = new DevExpress.XtraEditors.TextEdit();
             this.label23 = new System.Windows.Forms.Label();
-            this.btEnviar = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.btLimpiar = new DevExpress.XtraEditors.SimpleButton();
             this.btVelocidad = new System.Windows.Forms.Button();
@@ -161,7 +162,6 @@
             this.rgSegDec = new DevExpress.XtraEditors.RadioGroup();
             this.cbDescripcion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
-            this.cbOrientacion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btAddVineta = new DevExpress.XtraEditors.SimpleButton();
             this.tePosicion = new DevExpress.XtraEditors.TextEdit();
             this.lbOrientacion = new DevExpress.XtraEditors.LabelControl();
@@ -239,6 +239,9 @@
             this.incidenciasTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.IncidenciasTableAdapter();
             this.PSerieARD = new System.IO.Ports.SerialPort(this.components);
             this.logTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.LogTableAdapter();
+            this.dsLog = new ZeroTrip.ZeroTripBBDDDataSet();
+            this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbOrientacion = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ritbVelocidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ritbTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtTabControl)).BeginInit();
@@ -303,7 +306,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbOrientacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tePosicion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSalida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTipo.Properties)).BeginInit();
@@ -336,6 +338,9 @@
             this.scContenedor.Panel1.SuspendLayout();
             this.scContenedor.Panel2.SuspendLayout();
             this.scContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbOrientacion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ritbVelocidad
@@ -404,6 +409,7 @@
             this.xtTPCarrera.Appearance.PageClient.Options.UseFont = true;
             this.xtTPCarrera.Appearance.PageClient.Options.UseForeColor = true;
             this.xtTPCarrera.AutoScroll = true;
+            this.xtTPCarrera.Controls.Add(this.btEnviar);
             this.xtTPCarrera.Controls.Add(this.lbCandado);
             this.xtTPCarrera.Controls.Add(this.btMenos10);
             this.xtTPCarrera.Controls.Add(this.btMenos1);
@@ -448,6 +454,23 @@
             this.xtTPCarrera.Size = new System.Drawing.Size(1446, 736);
             this.xtTPCarrera.TabPageWidth = 150;
             this.xtTPCarrera.Text = "&Carrera";
+            // 
+            // btEnviar
+            // 
+            this.btEnviar.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEnviar.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(37)))), ((int)(((byte)(127)))));
+            this.btEnviar.Appearance.Options.UseFont = true;
+            this.btEnviar.Appearance.Options.UseForeColor = true;
+            this.btEnviar.Appearance.Options.UseTextOptions = true;
+            this.btEnviar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btEnviar.Location = new System.Drawing.Point(366, 524);
+            this.btEnviar.LookAndFeel.SkinName = "The Asphalt World";
+            this.btEnviar.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btEnviar.Name = "btEnviar";
+            this.btEnviar.Size = new System.Drawing.Size(117, 21);
+            this.btEnviar.TabIndex = 65;
+            this.btEnviar.Text = "Para Pruebas";
+            this.btEnviar.Visible = false;
             // 
             // lbCandado
             // 
@@ -1380,9 +1403,9 @@
             this.xtTPUtils.Appearance.PageClient.Options.UseBackColor = true;
             this.xtTPUtils.Appearance.PageClient.Options.UseFont = true;
             this.xtTPUtils.AutoScroll = true;
+            this.xtTPUtils.Controls.Add(this.btDescargaLog);
             this.xtTPUtils.Controls.Add(this.groupControl6);
             this.xtTPUtils.Controls.Add(this.groupControl5);
-            this.xtTPUtils.Controls.Add(this.btEnviar);
             this.xtTPUtils.Controls.Add(this.groupControl4);
             this.xtTPUtils.Controls.Add(this.groupControl3);
             this.xtTPUtils.Controls.Add(this.groupControl2);
@@ -1394,6 +1417,25 @@
             this.xtTPUtils.Size = new System.Drawing.Size(1446, 736);
             this.xtTPUtils.TabPageWidth = 150;
             this.xtTPUtils.Text = "&Utilidades";
+            // 
+            // btDescargaLog
+            // 
+            this.btDescargaLog.Appearance.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDescargaLog.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.btDescargaLog.Appearance.Options.UseFont = true;
+            this.btDescargaLog.Appearance.Options.UseForeColor = true;
+            this.btDescargaLog.Appearance.Options.UseTextOptions = true;
+            this.btDescargaLog.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btDescargaLog.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btDescargaLog.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btDescargaLog.Location = new System.Drawing.Point(722, 441);
+            this.btDescargaLog.LookAndFeel.SkinName = "iMaginary";
+            this.btDescargaLog.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btDescargaLog.Name = "btDescargaLog";
+            this.btDescargaLog.Size = new System.Drawing.Size(160, 41);
+            this.btDescargaLog.TabIndex = 12;
+            this.btDescargaLog.Text = "Descargar Log";
+            this.btDescargaLog.Click += new System.EventHandler(this.btDescargaLog_Click);
             // 
             // groupControl6
             // 
@@ -2023,24 +2065,6 @@
             this.label23.Size = new System.Drawing.Size(136, 21);
             this.label23.TabIndex = 0;
             this.label23.Text = "Dist. Organización";
-            // 
-            // btEnviar
-            // 
-            this.btEnviar.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEnviar.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(37)))), ((int)(((byte)(127)))));
-            this.btEnviar.Appearance.Options.UseFont = true;
-            this.btEnviar.Appearance.Options.UseForeColor = true;
-            this.btEnviar.Appearance.Options.UseTextOptions = true;
-            this.btEnviar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btEnviar.Location = new System.Drawing.Point(638, 565);
-            this.btEnviar.LookAndFeel.SkinName = "The Asphalt World";
-            this.btEnviar.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btEnviar.Name = "btEnviar";
-            this.btEnviar.Size = new System.Drawing.Size(117, 21);
-            this.btEnviar.TabIndex = 4;
-            this.btEnviar.Text = "E&nviar";
-            this.btEnviar.Visible = false;
-            this.btEnviar.Click += new System.EventHandler(this.btEnviar_Click);
             // 
             // groupControl4
             // 
@@ -2934,76 +2958,6 @@
             this.groupControl9.Size = new System.Drawing.Size(181, 252);
             this.groupControl9.TabIndex = 10;
             this.groupControl9.Text = "Entrada de datos Viñetas";
-            // 
-            // cbOrientacion
-            // 
-            this.cbOrientacion.Location = new System.Drawing.Point(31, 123);
-            this.cbOrientacion.Name = "cbOrientacion";
-            this.cbOrientacion.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.cbOrientacion.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrientacion.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
-            this.cbOrientacion.Properties.Appearance.Options.UseBackColor = true;
-            this.cbOrientacion.Properties.Appearance.Options.UseFont = true;
-            this.cbOrientacion.Properties.Appearance.Options.UseForeColor = true;
-            this.cbOrientacion.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrientacion.Properties.AppearanceDropDown.ForeColor = System.Drawing.Color.Gray;
-            this.cbOrientacion.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.cbOrientacion.Properties.AppearanceDropDown.Options.UseForeColor = true;
-            this.cbOrientacion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cbOrientacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbOrientacion.Properties.Items.AddRange(new object[] {
-            "C1",
-            "C2",
-            "C3",
-            "C4",
-            "C5",
-            "C6",
-            "C7",
-            "C8",
-            "C9",
-            "C10",
-            "C11",
-            "T3",
-            "T9",
-            "TS2",
-            "TS3",
-            "TS4",
-            "TS8",
-            "TS9",
-            "TS10",
-            "S3",
-            "S9",
-            "S12",
-            "R1",
-            "R2",
-            "R3",
-            "R4",
-            "R5",
-            "R7",
-            "R8",
-            "R9",
-            "R10",
-            "R11",
-            "R12",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cbOrientacion.Properties.LookAndFeel.SkinName = "Money Twins";
-            this.cbOrientacion.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cbOrientacion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbOrientacion.Size = new System.Drawing.Size(109, 48);
-            this.cbOrientacion.TabIndex = 12;
-            this.cbOrientacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbOrientacion_KeyPress);
             // 
             // btAddVineta
             // 
@@ -4389,6 +4343,87 @@
             // 
             this.logTableAdapter.ClearBeforeFill = true;
             // 
+            // dsLog
+            // 
+            this.dsLog.DataSetName = "dsLog";
+            this.dsLog.EnforceConstraints = false;
+            this.dsLog.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // logBindingSource
+            // 
+            this.logBindingSource.AllowNew = true;
+            this.logBindingSource.DataMember = "Log";
+            this.logBindingSource.DataSource = this.dsLog;
+            // 
+            // cbOrientacion
+            // 
+            this.cbOrientacion.Location = new System.Drawing.Point(35, 123);
+            this.cbOrientacion.Name = "cbOrientacion";
+            this.cbOrientacion.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cbOrientacion.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbOrientacion.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
+            this.cbOrientacion.Properties.Appearance.Options.UseBackColor = true;
+            this.cbOrientacion.Properties.Appearance.Options.UseFont = true;
+            this.cbOrientacion.Properties.Appearance.Options.UseForeColor = true;
+            this.cbOrientacion.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbOrientacion.Properties.AppearanceDropDown.ForeColor = System.Drawing.Color.Gray;
+            this.cbOrientacion.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cbOrientacion.Properties.AppearanceDropDown.Options.UseForeColor = true;
+            this.cbOrientacion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cbOrientacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbOrientacion.Properties.Items.AddRange(new object[] {
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10",
+            "C11",
+            "T3",
+            "T9",
+            "TS2",
+            "TS3",
+            "TS4",
+            "TS8",
+            "TS9",
+            "TS10",
+            "S3",
+            "S9",
+            "S12",
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R11",
+            "R12",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbOrientacion.Properties.LookAndFeel.SkinName = "Money Twins";
+            this.cbOrientacion.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cbOrientacion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbOrientacion.Size = new System.Drawing.Size(109, 48);
+            this.cbOrientacion.TabIndex = 67;
+            // 
             // frPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4476,7 +4511,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
             this.groupControl9.ResumeLayout(false);
             this.groupControl9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbOrientacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tePosicion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSalida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTipo.Properties)).EndInit();
@@ -4511,6 +4545,9 @@
             this.scContenedor.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scContenedor)).EndInit();
             this.scContenedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dsLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbOrientacion.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4559,7 +4596,6 @@
         private System.IO.Ports.SerialPort PSeriePDA;
         private DevExpress.XtraEditors.SimpleButton btOpenPortPDA;
         private DevExpress.XtraEditors.ComboBoxEdit cbPortPDA;
-        private DevExpress.XtraEditors.SimpleButton btEnviar;
         private DevExpress.XtraEditors.GroupControl gcAdd;
         private DevExpress.XtraEditors.TextEdit tVelocidad;
         private DevExpress.XtraEditors.TextEdit tHasta;
@@ -4686,7 +4722,6 @@
         private DevExpress.XtraEditors.TextEdit tePosicion;
         private DevExpress.XtraEditors.GroupControl groupControl9;
         private DevExpress.XtraEditors.SimpleButton btAddVineta;
-        private DevExpress.XtraEditors.ComboBoxEdit cbOrientacion;
         private DevExpress.XtraEditors.ComboBoxEdit cbDescripcion;
         private DevExpress.XtraEditors.ComboBoxEdit cbTramoACalcar;
         private System.Windows.Forms.CheckBox chkCalcar;
@@ -4727,6 +4762,11 @@
         private DevExpress.XtraEditors.TextEdit teCalMopuTerra;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit ritbVelocidad;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit ritbTime;
+        private DevExpress.XtraEditors.SimpleButton btEnviar;
+        private ZeroTripBBDDDataSet dsLog;
+        private System.Windows.Forms.BindingSource logBindingSource;
+        private DevExpress.XtraEditors.SimpleButton btDescargaLog;
+        private DevExpress.XtraEditors.ComboBoxEdit cbOrientacion;
     }
 }
 

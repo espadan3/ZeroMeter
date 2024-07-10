@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-//using System.Text;
+//using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.Media;
@@ -38,6 +38,9 @@ namespace ZeroTrip
         public ZeroTrip.ZeroTripBBDDDataSet.TramosDataTable tbInfoTr = new ZeroTripBBDDDataSet.TramosDataTable();
         // datos de las incidencias y cruces del tramo
         public ZeroTrip.ZeroTripBBDDDataSet.IncidenciasDataTable tbIncidenciasTr = new ZeroTripBBDDDataSet.IncidenciasDataTable();
+
+        // datos de las incidencias y cruces del tramo
+        public ZeroTrip.ZeroTripBBDDDataSet.LogDataTable tbLogTr = new ZeroTripBBDDDataSet.LogDataTable();
 
         // Array con tres columnas: la primera es calibre, la segunda es el número de pulsos hasta el que aplica ese calibre y la tercera es la distancia equivalente
         public double[,] anCalibres = new double[1, 3];
@@ -145,6 +148,8 @@ namespace ZeroTrip
 
         private void frPrincipal_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dsLog.Log' Puede moverla o quitarla según sea necesario.
+            //this.logTableAdapter.Fill(this.dsLog.Log);
             // TODO: esta línea de código carga datos en la tabla 'ZeroTripBBDDDataSet.Datos' Puede moverla o quitarla según sea necesario.
             //this.datosTableAdapter.Fill(this.dsDatos.Datos);
 
@@ -1399,8 +1404,6 @@ namespace ZeroTrip
             }
 
         }
-
-
 
         //-----------------------------------------------------------------------------------
 
