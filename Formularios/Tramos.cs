@@ -192,8 +192,11 @@ namespace ZeroTrip
                 // el radio button para los tipos de tramo, solo lo habilitamos para el tipo VARIOS.
                 rgTipoTramo.Enabled = false;
                 if (cbTipo.Text != "Varios")
+                {
+                    rgTipoTramo.EditValueChanged -= rgTipoTramo_EditValueChanged;
                     rgTipoTramo.EditValue = cbTipo.Text;
-
+                    rgTipoTramo.EditValueChanged += rgTipoTramo_EditValueChanged;
+                }
                 switch (cbTipo.Text)
                 {
                     case "Medias":
@@ -506,7 +509,7 @@ namespace ZeroTrip
 
                     if (dsDatos.Tables["Datos"].GetChanges() != null)
                     {
-                        datosTableAdapter.Update(dsDatos);
+                        //datosTableAdapter.Update(dsDatos);
 
 
                         dsDatos.AcceptChanges();
@@ -565,7 +568,7 @@ namespace ZeroTrip
                 case "Remove":
                     BorrarDato();
 
-                    dsDatos.Datos.AcceptChanges();
+                     dsDatos.Datos.AcceptChanges();
                     //datosTableAdapter.Fill(dsDatos.Datos, nTramo);
                     //gcMedias.RefreshDataSource();
                     break;
@@ -1088,8 +1091,8 @@ namespace ZeroTrip
                     else
                     {
                         tVelocidad.Focus();
-                        tVelocidad.SelectionStart = 0;
-                        tVelocidad.SelectionLength = tVelocidad.Text.Length;
+                        tVelocidad.SelectionStart = tVelocidad.Text.Length;
+                        //tVelocidad.SelectionLength = tVelocidad.Text.Length;
                     }
 
                 }

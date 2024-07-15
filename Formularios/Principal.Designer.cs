@@ -162,6 +162,7 @@
             this.rgSegDec = new DevExpress.XtraEditors.RadioGroup();
             this.cbDescripcion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
+            this.cbOrientacion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btAddVineta = new DevExpress.XtraEditors.SimpleButton();
             this.tePosicion = new DevExpress.XtraEditors.TextEdit();
             this.lbOrientacion = new DevExpress.XtraEditors.LabelControl();
@@ -241,7 +242,7 @@
             this.logTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.LogTableAdapter();
             this.dsLog = new ZeroTrip.ZeroTripBBDDDataSet();
             this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cbOrientacion = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.ritbVelocidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ritbTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtTabControl)).BeginInit();
@@ -306,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbOrientacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tePosicion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSalida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTipo.Properties)).BeginInit();
@@ -340,7 +342,8 @@
             this.scContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbOrientacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
             this.SuspendLayout();
             // 
             // ritbVelocidad
@@ -409,6 +412,7 @@
             this.xtTPCarrera.Appearance.PageClient.Options.UseFont = true;
             this.xtTPCarrera.Appearance.PageClient.Options.UseForeColor = true;
             this.xtTPCarrera.AutoScroll = true;
+            this.xtTPCarrera.Controls.Add(this.groupControl8);
             this.xtTPCarrera.Controls.Add(this.btEnviar);
             this.xtTPCarrera.Controls.Add(this.lbCandado);
             this.xtTPCarrera.Controls.Add(this.btMenos10);
@@ -418,11 +422,8 @@
             this.xtTPCarrera.Controls.Add(this.btMas1);
             this.xtTPCarrera.Controls.Add(this.btMas10);
             this.xtTPCarrera.Controls.Add(this.btSigCMManual);
-            this.xtTPCarrera.Controls.Add(this.btEliminarReajuste);
             this.xtTPCarrera.Controls.Add(this.picOrientacion);
             this.xtTPCarrera.Controls.Add(this.lbFreeze);
-            this.xtTPCarrera.Controls.Add(this.btRERecalibra);
-            this.xtTPCarrera.Controls.Add(this.btSigRecalibre);
             this.xtTPCarrera.Controls.Add(this.btFreeze);
             this.xtTPCarrera.Controls.Add(this.teSigRecalibre);
             this.xtTPCarrera.Controls.Add(this.lbVelRE);
@@ -430,12 +431,9 @@
             this.xtTPCarrera.Controls.Add(this.cbTramoACalcar);
             this.xtTPCarrera.Controls.Add(this.label16);
             this.xtTPCarrera.Controls.Add(this.chkCalcar);
-            this.xtTPCarrera.Controls.Add(this.chkBRecalAuto);
-            this.xtTPCarrera.Controls.Add(this.lbDifPorRecal);
             this.xtTPCarrera.Controls.Add(this.grpSigVel);
             this.xtTPCarrera.Controls.Add(this.groupControl7);
             this.xtTPCarrera.Controls.Add(this.label30);
-            this.xtTPCarrera.Controls.Add(this.btRecalibrar);
             this.xtTPCarrera.Controls.Add(this.teRecalibre);
             this.xtTPCarrera.Controls.Add(this.btSigCM);
             this.xtTPCarrera.Controls.Add(this.lbSigCMRE);
@@ -477,7 +475,7 @@
             this.lbCandado.AutoSize = true;
             this.lbCandado.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCandado.ForeColor = System.Drawing.Color.Navy;
-            this.lbCandado.Location = new System.Drawing.Point(1050, 173);
+            this.lbCandado.Location = new System.Drawing.Point(1050, 196);
             this.lbCandado.Name = "lbCandado";
             this.lbCandado.Size = new System.Drawing.Size(24, 13);
             this.lbCandado.TabIndex = 64;
@@ -527,7 +525,7 @@
             // btBloqMetros
             // 
             this.btBloqMetros.ImageOptions.Image = global::ZeroTrip.Properties.Resources.lock_open;
-            this.btBloqMetros.Location = new System.Drawing.Point(1035, 194);
+            this.btBloqMetros.Location = new System.Drawing.Point(1035, 217);
             this.btBloqMetros.LookAndFeel.SkinName = "The Asphalt World";
             this.btBloqMetros.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btBloqMetros.Name = "btBloqMetros";
@@ -572,7 +570,7 @@
             this.btSigCMManual.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btSigCMManual.Appearance.Options.UseFont = true;
             this.btSigCMManual.Appearance.Options.UseForeColor = true;
-            this.btSigCMManual.Location = new System.Drawing.Point(779, 393);
+            this.btSigCMManual.Location = new System.Drawing.Point(491, 360);
             this.btSigCMManual.LookAndFeel.SkinName = "iMaginary";
             this.btSigCMManual.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btSigCMManual.Name = "btSigCMManual";
@@ -586,7 +584,7 @@
             this.btEliminarReajuste.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.btEliminarReajuste.Appearance.Options.UseFont = true;
             this.btEliminarReajuste.Appearance.Options.UseForeColor = true;
-            this.btEliminarReajuste.Location = new System.Drawing.Point(945, 106);
+            this.btEliminarReajuste.Location = new System.Drawing.Point(143, 106);
             this.btEliminarReajuste.LookAndFeel.SkinName = "iMaginary";
             this.btEliminarReajuste.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btEliminarReajuste.Name = "btEliminarReajuste";
@@ -601,7 +599,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picOrientacion.Image = global::ZeroTrip.Properties.Resources._12;
-            this.picOrientacion.Location = new System.Drawing.Point(1118, 344);
+            this.picOrientacion.Location = new System.Drawing.Point(1053, 344);
             this.picOrientacion.Name = "picOrientacion";
             this.picOrientacion.Size = new System.Drawing.Size(293, 231);
             this.picOrientacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -613,7 +611,7 @@
             this.lbFreeze.BackColor = System.Drawing.Color.Transparent;
             this.lbFreeze.Font = new System.Drawing.Font("Digiface", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFreeze.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbFreeze.Location = new System.Drawing.Point(764, 177);
+            this.lbFreeze.Location = new System.Drawing.Point(740, 205);
             this.lbFreeze.Name = "lbFreeze";
             this.lbFreeze.Size = new System.Drawing.Size(269, 83);
             this.lbFreeze.TabIndex = 46;
@@ -626,7 +624,7 @@
             this.btRERecalibra.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.btRERecalibra.Appearance.Options.UseFont = true;
             this.btRERecalibra.Appearance.Options.UseForeColor = true;
-            this.btRERecalibra.Location = new System.Drawing.Point(945, 34);
+            this.btRERecalibra.Location = new System.Drawing.Point(143, 17);
             this.btRERecalibra.LookAndFeel.SkinName = "iMaginary";
             this.btRERecalibra.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btRERecalibra.Name = "btRERecalibra";
@@ -641,7 +639,7 @@
             this.btSigRecalibre.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.btSigRecalibre.Appearance.Options.UseFont = true;
             this.btSigRecalibre.Appearance.Options.UseForeColor = true;
-            this.btSigRecalibre.Location = new System.Drawing.Point(1194, 106);
+            this.btSigRecalibre.Location = new System.Drawing.Point(362, 106);
             this.btSigRecalibre.LookAndFeel.SkinName = "iMaginary";
             this.btSigRecalibre.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btSigRecalibre.Name = "btSigRecalibre";
@@ -656,7 +654,7 @@
             this.btFreeze.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.btFreeze.Appearance.Options.UseFont = true;
             this.btFreeze.Appearance.Options.UseForeColor = true;
-            this.btFreeze.Location = new System.Drawing.Point(594, 191);
+            this.btFreeze.Location = new System.Drawing.Point(545, 191);
             this.btFreeze.LookAndFeel.SkinName = "iMaginary";
             this.btFreeze.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btFreeze.Name = "btFreeze";
@@ -668,7 +666,7 @@
             // teSigRecalibre
             // 
             this.teSigRecalibre.EditValue = "0";
-            this.teSigRecalibre.Location = new System.Drawing.Point(598, 112);
+            this.teSigRecalibre.Location = new System.Drawing.Point(549, 112);
             this.teSigRecalibre.Name = "teSigRecalibre";
             this.teSigRecalibre.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.teSigRecalibre.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -703,7 +701,7 @@
             this.lbVelRE.AutoSize = true;
             this.lbVelRE.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVelRE.ForeColor = System.Drawing.Color.Navy;
-            this.lbVelRE.Location = new System.Drawing.Point(554, 280);
+            this.lbVelRE.Location = new System.Drawing.Point(505, 280);
             this.lbVelRE.Name = "lbVelRE";
             this.lbVelRE.Size = new System.Drawing.Size(55, 13);
             this.lbVelRE.TabIndex = 52;
@@ -712,7 +710,7 @@
             // teVelRE
             // 
             this.teVelRE.EditValue = "0";
-            this.teVelRE.Location = new System.Drawing.Point(540, 296);
+            this.teVelRE.Location = new System.Drawing.Point(491, 296);
             this.teVelRE.Name = "teVelRE";
             this.teVelRE.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.teVelRE.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -849,9 +847,9 @@
             // 
             this.chkBRecalAuto.AutoSize = true;
             this.chkBRecalAuto.ForeColor = System.Drawing.Color.Navy;
-            this.chkBRecalAuto.Location = new System.Drawing.Point(957, 7);
+            this.chkBRecalAuto.Location = new System.Drawing.Point(28, 141);
             this.chkBRecalAuto.Name = "chkBRecalAuto";
-            this.chkBRecalAuto.Size = new System.Drawing.Size(79, 17);
+            this.chkBRecalAuto.Size = new System.Drawing.Size(78, 17);
             this.chkBRecalAuto.TabIndex = 49;
             this.chkBRecalAuto.Text = "Recal Auto";
             this.chkBRecalAuto.UseVisualStyleBackColor = true;
@@ -861,7 +859,7 @@
             // 
             this.lbDifPorRecal.AutoSize = true;
             this.lbDifPorRecal.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDifPorRecal.Location = new System.Drawing.Point(869, 44);
+            this.lbDifPorRecal.Location = new System.Drawing.Point(50, 49);
             this.lbDifPorRecal.Name = "lbDifPorRecal";
             this.lbDifPorRecal.Size = new System.Drawing.Size(34, 39);
             this.lbDifPorRecal.TabIndex = 48;
@@ -878,13 +876,13 @@
             this.grpSigVel.Controls.Add(this.lbSigVelocidad);
             this.grpSigVel.Controls.Add(this.lbDistActVel);
             this.grpSigVel.Controls.Add(this.lbActVelocidad);
-            this.grpSigVel.Location = new System.Drawing.Point(28, 266);
+            this.grpSigVel.Location = new System.Drawing.Point(16, 266);
             this.grpSigVel.LookAndFeel.SkinName = "The Asphalt World";
             this.grpSigVel.LookAndFeel.UseDefaultLookAndFeel = false;
             this.grpSigVel.LookAndFeel.UseWindowsXPTheme = true;
             this.grpSigVel.Name = "grpSigVel";
             this.grpSigVel.ShowCaption = false;
-            this.grpSigVel.Size = new System.Drawing.Size(479, 76);
+            this.grpSigVel.Size = new System.Drawing.Size(449, 76);
             this.grpSigVel.TabIndex = 0;
             this.grpSigVel.Text = "grpSigVel";
             // 
@@ -967,13 +965,13 @@
             this.groupControl7.Controls.Add(this.lbHoraSalida);
             this.groupControl7.Controls.Add(this.lbSalida);
             this.groupControl7.Controls.Add(this.lbTipoTramo);
-            this.groupControl7.Location = new System.Drawing.Point(40, 14);
+            this.groupControl7.Location = new System.Drawing.Point(16, 14);
             this.groupControl7.LookAndFeel.SkinName = "Black";
             this.groupControl7.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl7.LookAndFeel.UseWindowsXPTheme = true;
             this.groupControl7.Name = "groupControl7";
             this.groupControl7.ShowCaption = false;
-            this.groupControl7.Size = new System.Drawing.Size(467, 246);
+            this.groupControl7.Size = new System.Drawing.Size(449, 246);
             this.groupControl7.TabIndex = 42;
             // 
             // btMenos1Min
@@ -1168,7 +1166,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.Navy;
-            this.label30.Location = new System.Drawing.Point(616, 14);
+            this.label30.Location = new System.Drawing.Point(567, 14);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(115, 13);
             this.label30.TabIndex = 41;
@@ -1176,13 +1174,15 @@
             // 
             // btRecalibrar
             // 
+            this.btRecalibrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btRecalibrar.Appearance.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRecalibrar.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.btRecalibrar.Appearance.Options.UseFont = true;
             this.btRecalibrar.Appearance.Options.UseForeColor = true;
-            this.btRecalibrar.Location = new System.Drawing.Point(1194, 28);
+            this.btRecalibrar.Location = new System.Drawing.Point(362, 17);
             this.btRecalibrar.LookAndFeel.SkinName = "iMaginary";
             this.btRecalibrar.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btRecalibrar.MinimumSize = new System.Drawing.Size(100, 40);
             this.btRecalibrar.Name = "btRecalibrar";
             this.btRecalibrar.Size = new System.Drawing.Size(160, 60);
             this.btRecalibrar.TabIndex = 10;
@@ -1192,7 +1192,7 @@
             // teRecalibre
             // 
             this.teRecalibre.EditValue = "0";
-            this.teRecalibre.Location = new System.Drawing.Point(557, 30);
+            this.teRecalibre.Location = new System.Drawing.Point(508, 30);
             this.teRecalibre.Name = "teRecalibre";
             this.teRecalibre.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.teRecalibre.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1229,7 +1229,7 @@
             this.btSigCM.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btSigCM.Appearance.Options.UseFont = true;
             this.btSigCM.Appearance.Options.UseForeColor = true;
-            this.btSigCM.Location = new System.Drawing.Point(765, 297);
+            this.btSigCM.Location = new System.Drawing.Point(695, 348);
             this.btSigCM.LookAndFeel.SkinName = "iMaginary";
             this.btSigCM.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btSigCM.Name = "btSigCM";
@@ -1243,7 +1243,7 @@
             this.lbSigCMRE.AutoSize = true;
             this.lbSigCMRE.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSigCMRE.ForeColor = System.Drawing.Color.Navy;
-            this.lbSigCMRE.Location = new System.Drawing.Point(668, 280);
+            this.lbSigCMRE.Location = new System.Drawing.Point(619, 280);
             this.lbSigCMRE.Name = "lbSigCMRE";
             this.lbSigCMRE.Size = new System.Drawing.Size(42, 13);
             this.lbSigCMRE.TabIndex = 37;
@@ -1252,7 +1252,7 @@
             // teSigCMRE
             // 
             this.teSigCMRE.EditValue = "0";
-            this.teSigCMRE.Location = new System.Drawing.Point(632, 296);
+            this.teSigCMRE.Location = new System.Drawing.Point(583, 296);
             this.teSigCMRE.Name = "teSigCMRE";
             this.teSigCMRE.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.teSigCMRE.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1299,7 +1299,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Navy;
-            this.label19.Location = new System.Drawing.Point(999, 373);
+            this.label19.Location = new System.Drawing.Point(946, 359);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(19, 13);
             this.label19.TabIndex = 0;
@@ -1321,7 +1321,7 @@
             // 
             this.lbDistAInci.Font = new System.Drawing.Font("Digiface", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDistAInci.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbDistAInci.Location = new System.Drawing.Point(955, 405);
+            this.lbDistAInci.Location = new System.Drawing.Point(902, 391);
             this.lbDistAInci.Name = "lbDistAInci";
             this.lbDistAInci.Size = new System.Drawing.Size(107, 43);
             this.lbDistAInci.TabIndex = 0;
@@ -2959,6 +2959,75 @@
             this.groupControl9.TabIndex = 10;
             this.groupControl9.Text = "Entrada de datos Viñetas";
             // 
+            // cbOrientacion
+            // 
+            this.cbOrientacion.Location = new System.Drawing.Point(35, 123);
+            this.cbOrientacion.Name = "cbOrientacion";
+            this.cbOrientacion.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cbOrientacion.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbOrientacion.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
+            this.cbOrientacion.Properties.Appearance.Options.UseBackColor = true;
+            this.cbOrientacion.Properties.Appearance.Options.UseFont = true;
+            this.cbOrientacion.Properties.Appearance.Options.UseForeColor = true;
+            this.cbOrientacion.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbOrientacion.Properties.AppearanceDropDown.ForeColor = System.Drawing.Color.Gray;
+            this.cbOrientacion.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cbOrientacion.Properties.AppearanceDropDown.Options.UseForeColor = true;
+            this.cbOrientacion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cbOrientacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbOrientacion.Properties.Items.AddRange(new object[] {
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10",
+            "C11",
+            "T3",
+            "T9",
+            "TS2",
+            "TS3",
+            "TS4",
+            "TS8",
+            "TS9",
+            "TS10",
+            "S3",
+            "S9",
+            "S12",
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R11",
+            "R12",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbOrientacion.Properties.LookAndFeel.SkinName = "Money Twins";
+            this.cbOrientacion.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cbOrientacion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbOrientacion.Size = new System.Drawing.Size(109, 48);
+            this.cbOrientacion.TabIndex = 67;
+            // 
             // btAddVineta
             // 
             this.btAddVineta.Appearance.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4076,6 +4145,7 @@
             // scContenedor.Panel1
             // 
             this.scContenedor.Panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.scContenedor.Panel1.Controls.Add(this.lbDiferencia);
             this.scContenedor.Panel1.Controls.Add(this.lbCrono);
             this.scContenedor.Panel1.Controls.Add(this.label4);
             this.scContenedor.Panel1.Controls.Add(this.lbVelocidad);
@@ -4084,7 +4154,6 @@
             this.scContenedor.Panel1.Controls.Add(this.label3);
             this.scContenedor.Panel1.Controls.Add(this.lbFaltaCam);
             this.scContenedor.Panel1.Controls.Add(this.lbPulsos);
-            this.scContenedor.Panel1.Controls.Add(this.lbDiferencia);
             this.scContenedor.Panel1.Controls.Add(this.lbLitVariable);
             this.scContenedor.Panel1.Controls.Add(this.btSalir);
             this.scContenedor.Panel1.Controls.Add(this.lbLitCuentaAtras);
@@ -4110,7 +4179,7 @@
             this.lbCrono.AutoSize = true;
             this.lbCrono.Font = new System.Drawing.Font("Digiface", 54.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCrono.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbCrono.Location = new System.Drawing.Point(1165, 116);
+            this.lbCrono.Location = new System.Drawing.Point(1121, 116);
             this.lbCrono.Name = "lbCrono";
             this.lbCrono.Size = new System.Drawing.Size(282, 89);
             this.lbCrono.TabIndex = 0;
@@ -4144,7 +4213,7 @@
             this.lbDistTeorica.BackColor = System.Drawing.Color.Transparent;
             this.lbDistTeorica.Font = new System.Drawing.Font("Digiface", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDistTeorica.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbDistTeorica.Location = new System.Drawing.Point(1005, 135);
+            this.lbDistTeorica.Location = new System.Drawing.Point(977, 135);
             this.lbDistTeorica.Name = "lbDistTeorica";
             this.lbDistTeorica.Size = new System.Drawing.Size(154, 54);
             this.lbDistTeorica.TabIndex = 6;
@@ -4157,7 +4226,7 @@
             this.lbDistReal.BackColor = System.Drawing.Color.Transparent;
             this.lbDistReal.Font = new System.Drawing.Font("Digiface", 120F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDistReal.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbDistReal.Location = new System.Drawing.Point(479, 6);
+            this.lbDistReal.Location = new System.Drawing.Point(449, 6);
             this.lbDistReal.Name = "lbDistReal";
             this.lbDistReal.Size = new System.Drawing.Size(506, 195);
             this.lbDistReal.TabIndex = 27;
@@ -4169,7 +4238,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(1274, 102);
+            this.label3.Location = new System.Drawing.Point(1230, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 0;
@@ -4201,7 +4270,7 @@
             this.lbDiferencia.BackColor = System.Drawing.Color.Transparent;
             this.lbDiferencia.Font = new System.Drawing.Font("Digiface", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiferencia.ForeColor = System.Drawing.Color.Red;
-            this.lbDiferencia.Location = new System.Drawing.Point(950, 22);
+            this.lbDiferencia.Location = new System.Drawing.Point(907, 7);
             this.lbDiferencia.Name = "lbDiferencia";
             this.lbDiferencia.Size = new System.Drawing.Size(255, 93);
             this.lbDiferencia.TabIndex = 30;
@@ -4254,7 +4323,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(1291, 10);
+            this.label2.Location = new System.Drawing.Point(1248, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 4;
@@ -4265,7 +4334,7 @@
             this.lbHora.AutoSize = true;
             this.lbHora.Font = new System.Drawing.Font("Digiface", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHora.ForeColor = System.Drawing.Color.Peru;
-            this.lbHora.Location = new System.Drawing.Point(1211, 36);
+            this.lbHora.Location = new System.Drawing.Point(1168, 36);
             this.lbHora.Name = "lbHora";
             this.lbHora.Size = new System.Drawing.Size(191, 59);
             this.lbHora.TabIndex = 0;
@@ -4355,74 +4424,24 @@
             this.logBindingSource.DataMember = "Log";
             this.logBindingSource.DataSource = this.dsLog;
             // 
-            // cbOrientacion
+            // groupControl8
             // 
-            this.cbOrientacion.Location = new System.Drawing.Point(35, 123);
-            this.cbOrientacion.Name = "cbOrientacion";
-            this.cbOrientacion.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.cbOrientacion.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrientacion.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
-            this.cbOrientacion.Properties.Appearance.Options.UseBackColor = true;
-            this.cbOrientacion.Properties.Appearance.Options.UseFont = true;
-            this.cbOrientacion.Properties.Appearance.Options.UseForeColor = true;
-            this.cbOrientacion.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrientacion.Properties.AppearanceDropDown.ForeColor = System.Drawing.Color.Gray;
-            this.cbOrientacion.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.cbOrientacion.Properties.AppearanceDropDown.Options.UseForeColor = true;
-            this.cbOrientacion.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cbOrientacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbOrientacion.Properties.Items.AddRange(new object[] {
-            "C1",
-            "C2",
-            "C3",
-            "C4",
-            "C5",
-            "C6",
-            "C7",
-            "C8",
-            "C9",
-            "C10",
-            "C11",
-            "T3",
-            "T9",
-            "TS2",
-            "TS3",
-            "TS4",
-            "TS8",
-            "TS9",
-            "TS10",
-            "S3",
-            "S9",
-            "S12",
-            "R1",
-            "R2",
-            "R3",
-            "R4",
-            "R5",
-            "R7",
-            "R8",
-            "R9",
-            "R10",
-            "R11",
-            "R12",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cbOrientacion.Properties.LookAndFeel.SkinName = "Money Twins";
-            this.cbOrientacion.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.cbOrientacion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbOrientacion.Size = new System.Drawing.Size(109, 48);
-            this.cbOrientacion.TabIndex = 67;
+            this.groupControl8.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.groupControl8.Appearance.Options.UseBackColor = true;
+            this.groupControl8.Controls.Add(this.btRecalibrar);
+            this.groupControl8.Controls.Add(this.lbDifPorRecal);
+            this.groupControl8.Controls.Add(this.btSigRecalibre);
+            this.groupControl8.Controls.Add(this.btRERecalibra);
+            this.groupControl8.Controls.Add(this.btEliminarReajuste);
+            this.groupControl8.Controls.Add(this.chkBRecalAuto);
+            this.groupControl8.Location = new System.Drawing.Point(798, 4);
+            this.groupControl8.LookAndFeel.SkinName = "Black";
+            this.groupControl8.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.groupControl8.LookAndFeel.UseWindowsXPTheme = true;
+            this.groupControl8.Name = "groupControl8";
+            this.groupControl8.ShowCaption = false;
+            this.groupControl8.Size = new System.Drawing.Size(541, 184);
+            this.groupControl8.TabIndex = 67;
             // 
             // frPrincipal
             // 
@@ -4511,6 +4530,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
             this.groupControl9.ResumeLayout(false);
             this.groupControl9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbOrientacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tePosicion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSalida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTipo.Properties)).EndInit();
@@ -4547,7 +4567,9 @@
             this.scContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dsLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbOrientacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
+            this.groupControl8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4767,6 +4789,7 @@
         private System.Windows.Forms.BindingSource logBindingSource;
         private DevExpress.XtraEditors.SimpleButton btDescargaLog;
         private DevExpress.XtraEditors.ComboBoxEdit cbOrientacion;
+        private DevExpress.XtraEditors.GroupControl groupControl8;
     }
 }
 
