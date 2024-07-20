@@ -160,12 +160,42 @@ namespace ZeroTrip
 
         }
 
+        [ConfigurationProperty("VID", DefaultValue = @"2341")]
+        public string VID
+        {
+            get
+            {
+                return (string)this["VID"];
+            }
+
+            set
+            {
+                this["VID"] = value;
+            }
+
+        }
+
+        [ConfigurationProperty("PID", DefaultValue = @"43")]
+        public string PID
+        {
+            get
+            {
+                return (string)this["PID"];
+            }
+
+            set
+            {
+                this["PID"] = value;
+            }
+
+        }
+
 
     }
- 
-//###################################################################
 
-  #region Declaraciones para Datos de calibracion
+    //###################################################################
+
+    #region Declaraciones para Datos de calibracion
 
     public sealed class CalibracionSection : ConfigurationSection
   {
@@ -858,8 +888,45 @@ namespace ZeroTrip
 
         }
 
+        public string GetVID()
+        {
 
-        
+            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).VID);
+
+        }
+
+        public void SetVID(string szVID)
+        {
+            DatosGeneralesSection custSection = new DatosGeneralesSection();
+
+            custSection = configFile.GetSection(szDatosGenerales) as DatosGeneralesSection;
+
+            custSection.VID = szVID;
+
+            custSection.SectionInformation.ForceSave = true;
+            configFile.Save(ConfigurationSaveMode.Full);
+
+        }
+
+        public string GetPID()
+        {
+
+            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).PID);
+
+        }
+
+        public void SetPID(string szPID)
+        {
+            DatosGeneralesSection custSection = new DatosGeneralesSection();
+
+            custSection = configFile.GetSection(szDatosGenerales) as DatosGeneralesSection;
+
+            custSection.PID = szPID;
+
+            custSection.SectionInformation.ForceSave = true;
+            configFile.Save(ConfigurationSaveMode.Full);
+
+        }
 
 
         //-----------------------       CALIBRACION -------------------

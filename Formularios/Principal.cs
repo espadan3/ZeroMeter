@@ -18,6 +18,9 @@ using InTheHand.Net;
 using InTheHand.Net.Bluetooth;
 using InTheHand.Net.Sockets;
 using System.Management;
+using System.Deployment.Application;
+using System.Reflection;
+using System.Diagnostics;
 
 
 
@@ -187,6 +190,9 @@ namespace ZeroTrip
             {
                 cbBLTDevs.Properties.Items.Add(dev.DeviceName);
             }
+
+            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+            lbVersion.Text = fileVersionInfo.ProductVersion;
 
             Inicializar();
 
@@ -1046,7 +1052,12 @@ namespace ZeroTrip
             szAux = "";
 
             if (szTipoTramo == "Varias")
-                szTipoSector = tbDatosTr[nSectorIdeal - 1].TipoTramo;
+                if(nSectorIdeal == 9999)
+                    szTipoSector = szTipoTramo;
+                else
+                {
+                    szTipoSector = tbDatosTr[nSectorIdeal - 1].TipoTramo;
+                }
             else
                 szTipoSector = szTipoTramo;
 
@@ -1290,7 +1301,8 @@ namespace ZeroTrip
 
         public void CalcDistReal()
         {
-             string szCadena = "";
+            string szCadena;
+
             nDifMetros = 0;
 
             try
@@ -1404,6 +1416,8 @@ namespace ZeroTrip
             }
 
         }
+
+
 
         //-----------------------------------------------------------------------------------
 
@@ -1523,6 +1537,10 @@ namespace ZeroTrip
             teCorreccion.Text = config.GetMaxCorreccion();
             teDistHitos.Text = config.GetDistanciaHitos();
             teDistTablas.Text = config.GetDistanciaTablas();
+
+            teVID.Text = config.GetVID();
+            tePID.Text = config.GetPID();
+
 
             // CALIBRES Recuperamos los datos de los calibres guardados y establecemos el calibre activo
             teCal1.Text = config.GetCal1().ToString();
@@ -1664,8 +1682,10 @@ namespace ZeroTrip
         {
             if (!MyUSBARDConnected)
             {
-                if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true))
-                {
+                //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true) ||
+                //    USBClass.GetUSBDevice(2341, 42, ref USBDeviceProperties, true))
+                    if (USBClass.GetUSBDevice(Convert.ToUInt16(config.GetVID()), Convert.ToUInt16(config.GetPID()), ref USBDeviceProperties, true))
+                    {
                     //My Device is connected
                     cbPortARD.Text = USBDeviceProperties.COMPort;
                     MyUSBARDConnected = true;

@@ -51,7 +51,7 @@ namespace ZeroTrip
             //String dataName = AppDomain.CurrentDomain.BaseDirectory;
             string dataName = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
            
-            String fileName = "ZeroTripBBDD.accdb"; 
+            String fileName = "ZeroTripBBDD.accdb";
 #else
 #if PC
             String fileName = "ZeroTripBBDD.accdb";
@@ -78,15 +78,16 @@ namespace ZeroTrip
 #endif
 #endif
 #else
-#if PC
+// Por aqui entramos si estamos en modo Release
+//#if PC
             // Por aqui entramos si estamos en modo Release desde VS. Comprobar comportamiento en ejecucion
-            String fileName = "ZeroTripBBDD.accdb";
-            string dataName = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
-            //String dataName = System.AppDomain.CurrentDomain.BaseDirectory;
-#else
+//            String fileName = "ZeroTripBBDD.accdb";
+//            string dataName = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
+            ////String dataName = System.AppDomain.CurrentDomain.BaseDirectory;
+//#else
             String fileName = "ZeroTripBBDD.accdb";
             String dataName = System.AppDomain.CurrentDomain.BaseDirectory;
-#endif
+//#endif
 #endif
 
             //OOOOJJJJJOOOOOO Falta manejar el nombre del fichero para cogerlo del fichero de configuracion.
@@ -1160,12 +1161,20 @@ namespace ZeroTrip
             config.SetDistanciaTablas(teDistTablas.Text);
         }
 
-
         private void teCalMopuBici_EditValueChanged(object sender, EventArgs e)
         {
             config.SetCalMopuBici(double.Parse(teCalMopuBici.Text.Replace(".", "")));
         }
 
+        private void tePID_EditValueChanged(object sender, EventArgs e)
+        {
+            config.SetAvisoCM(tePID.Text);
+        }
+
+        private void teVID_EditValueChanged(object sender, EventArgs e)
+        {
+            config.SetAvisoCM(teVID.Text);
+        }
 
         private void teCalMopuTerra_EditValueChanged(object sender, EventArgs e)
         {

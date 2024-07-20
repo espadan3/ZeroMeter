@@ -10,12 +10,13 @@ using DevExpress.XtraEditors;
 using System.Globalization;
 using Microsoft.VisualBasic;
 using ZeroTrip.ZeroTripBBDDDataSetTableAdapters;
+using DevExpress.Utils;
 
 namespace ZeroTrip
 {
-        partial class frPrincipal
+    partial class frPrincipal
 
-  //  class AddTramo
+    //  class AddTramo
     {
         //Utiles Util = new Utiles();
         //short nTramo;
@@ -39,7 +40,7 @@ namespace ZeroTrip
             string[] arAux;
             int nSegundo;
             int nMili;
-         //   int nUltReg; //Indice base 0 del ultimo registro registrado en la tabla Datos (Cambios de media)
+            //   int nUltReg; //Indice base 0 del ultimo registro registrado en la tabla Datos (Cambios de media)
 
 
             NumberFormatInfo provider = new NumberFormatInfo();
@@ -50,7 +51,7 @@ namespace ZeroTrip
 
             dtDatos = datosTableAdapter.GetUltimoDato(nTramo, nTramo);
 
-          //  nUltReg = dsDatos.Tables["Datos"].Rows.Count;
+            //  nUltReg = dsDatos.Tables["Datos"].Rows.Count;
 
 
             switch (szTipoTramo)
@@ -213,7 +214,7 @@ namespace ZeroTrip
                             nMinuto.ToString() + ":" + nSegundo2.ToString() + "." + nMili2.ToString());
                         dtmTParcial = dtmTAcumulado.Subtract(Convert.ToDateTime(dtDatos.Rows[0]["TiempoAcum"]).TimeOfDay);
 
-                        dSigSeg = ((Convert.ToDouble(nSegundo2) + Convert.ToDouble(nMili2)/10)) + ((Convert.ToDouble(dtmTParcial.Second) + Convert.ToDouble(dtmTParcial.Millisecond)/1000));
+                        dSigSeg = ((Convert.ToDouble(nSegundo2) + Convert.ToDouble(nMili2) / 10)) + ((Convert.ToDouble(dtmTParcial.Second) + Convert.ToDouble(dtmTParcial.Millisecond) / 1000));
                         if (dSigSeg >= 60)
                             dSigSeg -= 60;
                         tVelocidad.Text = dSigSeg.ToString();
@@ -308,31 +309,18 @@ namespace ZeroTrip
             rwDatos["TiempoParcial"] = dtmTParcial;
             rwDatos["TipoTramo"] = rgTipoTramo.Text;
 
-            
+
             dsDatos.Tables["Datos"].Rows.Add(rwDatos);
-            int a = dsDatos.Tables["Datos"].Rows.Count;
+            // int a = dsDatos.Tables["Datos"].Rows.Count;
             if (dsDatos.Tables["Datos"].Rows[dsDatos.Tables["Datos"].Rows.Count - 1]["IdTramo"] == DBNull.Value)
             {
                 dsDatos.Tables["Datos"].Rows[dsDatos.Tables["Datos"].Rows.Count - 1].Delete();
             }
 
-            //datosTableAdapter.Insert(nTramo,
-            //                        Convert.ToInt16(nRegs + 1),
-            //                        nDesde,
-            //                        nHasta,
-            //                        nParcial,
-            //                        (double)dbVelocidad,
-            //                        dtmTParcial,
-            //                        dtmTAcumulado,r
-            //                        rgTipoTramo.Text);
-
             if (dsDatos.Tables["Datos"].GetChanges() != null)
             {
                 datosTableAdapter.Update(dsDatos);
-                
-
                 dsDatos.AcceptChanges();
-
             }
 
 
@@ -357,225 +345,225 @@ namespace ZeroTrip
             int nParcial;
 
             switch (szTipoTramo)
-                {
-                    case "Medias":
-                    case "RefExternas":
-                        lbDos.Text = "Velocidad";
-                        if (dsDatos.Datos.Rows.Count != 0)
-                            tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"])).ToString();
-                        else
-                            tHasta.Text = "0";
-
-                        tVelocidad.Text = "0,000";
-                        gcAdd.Text = "Entrada de datos para Medias";
-                        lbUno.Text = "Hasta";
-                        lbDos.Text = "Velocidad";
-                        tHasta.Enabled = true;
-                        tVelocidad.Visible = true;
-                        teTPaso.Visible = false;
-                        tHor.Visible = false;
-                        tSec.Visible = false;
-                        tMin.Visible = false;
-                        tVelocidad.Visible = true;
-                        tVelocidad.Properties.DisplayFormat.FormatString = "n4";
-                        tVelocidad.Properties.EditFormat.FormatString = "n4";
-                        tVelocidad.Properties.Mask.EditMask = "n4";
-
-                        gcDesde.OptionsColumn.AllowEdit = false;
-                        gcHasta.OptionsColumn.AllowEdit = true;
-                        gcHasta.OptionsColumn.AllowFocus = true;
-                        gcParcial.OptionsColumn.AllowEdit = false;
-                        gcVelocidad.OptionsColumn.AllowEdit = true;
-                        gcVelocidad.OptionsColumn.AllowFocus = true;
-                        if (szTipoTramo == "RefExternas")
-                        {
-                            gcTiempoParcial.OptionsColumn.AllowEdit = true;
-                            gcTiempoAcum.OptionsColumn.AllowEdit = true;
-                        }
-                        else
-                        {
-                            gcTiempoParcial.OptionsColumn.AllowEdit = false;
-                            gcTiempoAcum.OptionsColumn.AllowEdit = false;
-                        }
-                        break;
-                    case "Tablas":
-                        lbDos.Text = "Segundo";
-                        if (dsDatos.Datos.Rows.Count != 0)
-                            tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + Convert.ToInt32(teDistTablas.Text)).ToString();
-                        else
-                            tHasta.Text = "0";
-
-                        tVelocidad.Text = "0,000";
-                        gcAdd.Text = "Entrada de datos para Tablas";
-                        lbUno.Text = "Hasta";
-                        lbDos.Text = "Segundo";
-                        tHasta.Enabled = true;
-                        tVelocidad.Visible = true;
-                        teTPaso.Visible = false;
-                        tHor.Visible = false;
-                        tSec.Visible = false;
-                        tMin.Visible = false;
-                        tVelocidad.Properties.DisplayFormat.FormatString = "n1";
-                        tVelocidad.Properties.EditFormat.FormatString = "n1";
-                        tVelocidad.Properties.Mask.EditMask = "n1";
-
-                        gcDesde.OptionsColumn.AllowEdit = false;
-                        gcHasta.OptionsColumn.AllowEdit = true;
-                        gcHasta.OptionsColumn.AllowFocus = true;
-                        gcParcial.OptionsColumn.AllowEdit = true;
-                        gcParcial.OptionsColumn.AllowFocus = true;
-                        gcVelocidad.OptionsColumn.AllowEdit = false;
-                        gcTiempoParcial.OptionsColumn.AllowEdit = false;
-                        gcTiempoAcum.OptionsColumn.AllowEdit = true;
-                        gcTiempoAcum.OptionsColumn.AllowFocus = true;
-
-                        break;
-                    case "Viñetas":
-                    case "Sectores":
-                        lbDos.Text = "Tiempo";
-                        if (dsDatos.Datos.Rows.Count != 0)
-                        {
-                            tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + 100).ToString();
-                            teTPaso.Time = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"]));
-                            tHor.Text = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"])).Hour.ToString();
-                            tMin.Text = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"])).Minute.ToString();
-                            tSec.Text = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"])).Second.ToString();
-                        }
-
+            {
+                case "Medias":
+                case "RefExternas":
+                    lbDos.Text = "Velocidad";
+                    if (dsDatos.Datos.Rows.Count != 0)
+                        tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"])).ToString();
+                    else
                         tHasta.Text = "0";
-                        gcAdd.Text = "Entrada de datos para Viñetas y Sectores";
-                        lbUno.Text = "Por";
-                        lbDos.Text = "Tiempo de paso";
-                        tHasta.Enabled = true;
-                        tVelocidad.Visible = false;
-                        teTPaso.Visible = false;
-                        tHor.Visible = true;
-                        tSec.Visible = true;
-                        tMin.Visible = true;
-                        tHasta.Focus();
 
+                    tVelocidad.Text = "0,000";
+                    gcAdd.Text = "Entrada de datos para Medias";
+                    lbUno.Text = "Hasta";
+                    lbDos.Text = "Velocidad";
+                    tHasta.Enabled = true;
+                    tVelocidad.Visible = true;
+                    teTPaso.Visible = false;
+                    tHor.Visible = false;
+                    tSec.Visible = false;
+                    tMin.Visible = false;
+                    tVelocidad.Visible = true;
+                    tVelocidad.Properties.DisplayFormat.FormatString = "n4";
+                    tVelocidad.Properties.EditFormat.FormatString = "n4";
+                    tVelocidad.Properties.Mask.EditMask = "n4";
 
-                        gcDesde.OptionsColumn.AllowEdit = false;
-                        gcHasta.OptionsColumn.AllowEdit = true;
-                        gcHasta.OptionsColumn.AllowFocus = true;
-                        gcParcial.OptionsColumn.AllowEdit = false;
-                        gcVelocidad.OptionsColumn.AllowEdit = true;
-                        gcVelocidad.OptionsColumn.AllowFocus = true;
-                        gcTiempoParcial.OptionsColumn.AllowEdit = false;
+                    gcDesde.OptionsColumn.AllowEdit = false;
+                    gcHasta.OptionsColumn.AllowEdit = true;
+                    gcHasta.OptionsColumn.AllowFocus = true;
+                    gcParcial.OptionsColumn.AllowEdit = false;
+                    gcVelocidad.OptionsColumn.AllowEdit = true;
+                    gcVelocidad.OptionsColumn.AllowFocus = true;
+                    if (szTipoTramo == "RefExternas")
+                    {
+                        gcTiempoParcial.OptionsColumn.AllowEdit = true;
                         gcTiempoAcum.OptionsColumn.AllowEdit = true;
-                        gcTiempoAcum.OptionsColumn.AllowFocus = true;
-
-                        break;
-
-                    case "HitosH":
-                        //   case "HitosK":
-
-                        if (cbTipo.Text.ToString() == "HitosK")
-                            nParcial = 1000;
-                        else
-                            nParcial = 100;
-
-                        lbDos.Text = "Segundo";
-                        if (dsDatos.Datos.Rows.Count != 0)
-                            tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + nParcial).ToString();
-                        teTPaso.Visible = false;
-                        tHor.Visible = false;
-                        tSec.Visible = false;
-                        tMin.Visible = false;
-                        tHasta.Enabled = true;
-                        tVelocidad.Visible = true;
-                        tVelocidad.Properties.DisplayFormat.FormatString = "n1";
-                        tVelocidad.Properties.EditFormat.FormatString = "n1";
-                        tVelocidad.Properties.Mask.EditMask = "n1";
-
-                        gcDesde.OptionsColumn.AllowEdit = false;
-                        gcHasta.OptionsColumn.AllowEdit = true;
-                        gcHasta.OptionsColumn.AllowFocus = true;
-                        gcParcial.OptionsColumn.AllowEdit = false;
-                        gcVelocidad.OptionsColumn.AllowEdit = false;
+                    }
+                    else
+                    {
                         gcTiempoParcial.OptionsColumn.AllowEdit = false;
-                        gcTiempoAcum.OptionsColumn.AllowEdit = true;
-                        gcTiempoAcum.OptionsColumn.AllowFocus = true;
+                        gcTiempoAcum.OptionsColumn.AllowEdit = false;
+                    }
+                    break;
+                case "Tablas":
+                    lbDos.Text = "Segundo";
+                    if (dsDatos.Datos.Rows.Count != 0)
+                        tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + Convert.ToInt32(teDistTablas.Text)).ToString();
+                    else
+                        tHasta.Text = "0";
 
-                        break;
+                    tVelocidad.Text = "0,000";
+                    gcAdd.Text = "Entrada de datos para Tablas";
+                    lbUno.Text = "Hasta";
+                    lbDos.Text = "Segundo";
+                    tHasta.Enabled = true;
+                    tVelocidad.Visible = true;
+                    teTPaso.Visible = false;
+                    tHor.Visible = false;
+                    tSec.Visible = false;
+                    tMin.Visible = false;
+                    tVelocidad.Properties.DisplayFormat.FormatString = "n1";
+                    tVelocidad.Properties.EditFormat.FormatString = "n1";
+                    tVelocidad.Properties.Mask.EditMask = "n1";
 
-                    case "Hitos":
-                    case "HitosK":
+                    gcDesde.OptionsColumn.AllowEdit = false;
+                    gcHasta.OptionsColumn.AllowEdit = true;
+                    gcHasta.OptionsColumn.AllowFocus = true;
+                    gcParcial.OptionsColumn.AllowEdit = true;
+                    gcParcial.OptionsColumn.AllowFocus = true;
+                    gcVelocidad.OptionsColumn.AllowEdit = false;
+                    gcTiempoParcial.OptionsColumn.AllowEdit = false;
+                    gcTiempoAcum.OptionsColumn.AllowEdit = true;
+                    gcTiempoAcum.OptionsColumn.AllowFocus = true;
+
+                    break;
+                case "Viñetas":
+                case "Sectores":
+                    lbDos.Text = "Tiempo";
+                    if (dsDatos.Datos.Rows.Count != 0)
+                    {
+                        tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + 100).ToString();
+                        teTPaso.Time = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"]));
+                        tHor.Text = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"])).Hour.ToString();
+                        tMin.Text = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"])).Minute.ToString();
+                        tSec.Text = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"])).Second.ToString();
+                    }
+
+                    tHasta.Text = "0";
+                    gcAdd.Text = "Entrada de datos para Viñetas y Sectores";
+                    lbUno.Text = "Por";
+                    lbDos.Text = "Tiempo de paso";
+                    tHasta.Enabled = true;
+                    tVelocidad.Visible = false;
+                    teTPaso.Visible = false;
+                    tHor.Visible = true;
+                    tSec.Visible = true;
+                    tMin.Visible = true;
+                    tHasta.Focus();
+
+
+                    gcDesde.OptionsColumn.AllowEdit = false;
+                    gcHasta.OptionsColumn.AllowEdit = true;
+                    gcHasta.OptionsColumn.AllowFocus = true;
+                    gcParcial.OptionsColumn.AllowEdit = false;
+                    gcVelocidad.OptionsColumn.AllowEdit = true;
+                    gcVelocidad.OptionsColumn.AllowFocus = true;
+                    gcTiempoParcial.OptionsColumn.AllowEdit = false;
+                    gcTiempoAcum.OptionsColumn.AllowEdit = true;
+                    gcTiempoAcum.OptionsColumn.AllowFocus = true;
+
+                    break;
+
+                case "HitosH":
+                    //   case "HitosK":
+
+                    if (cbTipo.Text.ToString() == "HitosK")
                         nParcial = 1000;
-                        lbDos.Text = "Tiempo";
+                    else
+                        nParcial = 100;
+
+                    lbDos.Text = "Segundo";
+                    if (dsDatos.Datos.Rows.Count != 0)
+                        tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + nParcial).ToString();
+                    teTPaso.Visible = false;
+                    tHor.Visible = false;
+                    tSec.Visible = false;
+                    tMin.Visible = false;
+                    tHasta.Enabled = true;
+                    tVelocidad.Visible = true;
+                    tVelocidad.Properties.DisplayFormat.FormatString = "n1";
+                    tVelocidad.Properties.EditFormat.FormatString = "n1";
+                    tVelocidad.Properties.Mask.EditMask = "n1";
+
+                    gcDesde.OptionsColumn.AllowEdit = false;
+                    gcHasta.OptionsColumn.AllowEdit = true;
+                    gcHasta.OptionsColumn.AllowFocus = true;
+                    gcParcial.OptionsColumn.AllowEdit = false;
+                    gcVelocidad.OptionsColumn.AllowEdit = false;
+                    gcTiempoParcial.OptionsColumn.AllowEdit = false;
+                    gcTiempoAcum.OptionsColumn.AllowEdit = true;
+                    gcTiempoAcum.OptionsColumn.AllowFocus = true;
+
+                    break;
+
+                case "Hitos":
+                case "HitosK":
+                    nParcial = 1000;
+                    lbDos.Text = "Tiempo";
+                    if (dsDatos.Datos.Rows.Count != 0)
+                    {
+                        tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + nParcial).ToString();
+                        teTPaso.Time = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"]));
+                    }
+                    teTPaso.Visible = false;
+
+                    tHor.Visible = true;
+                    tSec.Visible = true;
+                    tMin.Visible = true;
+
+                    tVelocidad.Visible = false;
+                    tHasta.Enabled = true;
+
+                    gcDesde.OptionsColumn.AllowEdit = false;
+                    gcHasta.OptionsColumn.AllowEdit = true;
+                    gcHasta.OptionsColumn.AllowFocus = true;
+                    gcParcial.OptionsColumn.AllowEdit = false;
+                    gcVelocidad.OptionsColumn.AllowEdit = false;
+                    gcTiempoParcial.OptionsColumn.AllowEdit = false;
+                    gcTiempoAcum.OptionsColumn.AllowEdit = true;
+                    gcTiempoAcum.OptionsColumn.AllowFocus = true;
+
+                    break;
+
+                case "Varias":
+                    nParcial = 0;
+                    //rgTipoTramo.Enabled = true;
+                    //lbDos.Text = "Tiempo";
+                    if (dsDatos.Datos.Rows.Count != 0)
+                    {
+                        tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + nParcial).ToString();
+                        teTPaso.Time = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"]));
                         if (dsDatos.Datos.Rows.Count != 0)
-                        {
-                            tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + nParcial).ToString();
-                            teTPaso.Time = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"]));
-                        }
-                        teTPaso.Visible = false;
+                            rgTipoTramo.EditValue = (dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TipoTramo"]).ToString();
+                        else
+                            rgTipoTramo.EditValue = "Medias";
+                        //(Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TipoTramo"]));
+                    }
+                    //teTPaso.Visible = false;
 
-                        tHor.Visible = true;
-                        tSec.Visible = true;
-                        tMin.Visible = true;
+                    //if (rgTipoTramo.Text == "Medias")
+                    //{
+                    //    tVelocidad.Visible = true;
+                    //    tHor.Visible = false;
+                    //    tSec.Visible = false;
+                    //    tMin.Visible = false;
+                    //}
+                    //else
+                    //{
+                    //    tVelocidad.Visible = false;
 
-                        tVelocidad.Visible = false;
-                        tHasta.Enabled = true;
+                    //    tHor.Visible = true;
+                    //    tSec.Visible = true;
+                    //    tMin.Visible = true;
+                    //}
 
-                        gcDesde.OptionsColumn.AllowEdit = false;
-                        gcHasta.OptionsColumn.AllowEdit = true;
-                        gcHasta.OptionsColumn.AllowFocus = true;
-                        gcParcial.OptionsColumn.AllowEdit = false;
-                        gcVelocidad.OptionsColumn.AllowEdit = false;
-                        gcTiempoParcial.OptionsColumn.AllowEdit = false;
-                        gcTiempoAcum.OptionsColumn.AllowEdit = true;
-                        gcTiempoAcum.OptionsColumn.AllowFocus = true;
+                    //tHasta.Enabled = true;
 
-                        break;
+                    gcDesde.OptionsColumn.AllowEdit = false;
+                    gcHasta.OptionsColumn.AllowEdit = true;
+                    gcHasta.OptionsColumn.AllowFocus = true;
+                    gcParcial.OptionsColumn.AllowEdit = false;
+                    gcVelocidad.OptionsColumn.AllowEdit = true;
+                    gcVelocidad.OptionsColumn.AllowFocus = true;
+                    gcTiempoParcial.OptionsColumn.AllowEdit = false;
+                    gcTiempoAcum.OptionsColumn.AllowEdit = true;
+                    gcTiempoAcum.OptionsColumn.AllowFocus = true;
 
-                    case "Varias":
-                        nParcial = 0;
-                        //rgTipoTramo.Enabled = true;
-                        //lbDos.Text = "Tiempo";
-                        if (dsDatos.Datos.Rows.Count != 0)
-                        {
-                            tHasta.Text = (Convert.ToInt32(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["Hasta"]) + nParcial).ToString();
-                            teTPaso.Time = (Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TiempoAcum"]));
-                            if (dsDatos.Datos.Rows.Count != 0)
-                                rgTipoTramo.EditValue = (dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TipoTramo"]).ToString();
-                            else
-                                rgTipoTramo.EditValue = "Medias";
-                            //(Convert.ToDateTime(dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TipoTramo"]));
-                        }
-                        //teTPaso.Visible = false;
-
-                        //if (rgTipoTramo.Text == "Medias")
-                        //{
-                        //    tVelocidad.Visible = true;
-                        //    tHor.Visible = false;
-                        //    tSec.Visible = false;
-                        //    tMin.Visible = false;
-                        //}
-                        //else
-                        //{
-                        //    tVelocidad.Visible = false;
-
-                        //    tHor.Visible = true;
-                        //    tSec.Visible = true;
-                        //    tMin.Visible = true;
-                        //}
-
-                        //tHasta.Enabled = true;
-
-                        gcDesde.OptionsColumn.AllowEdit = false;
-                        gcHasta.OptionsColumn.AllowEdit = true;
-                        gcHasta.OptionsColumn.AllowFocus = true;
-                        gcParcial.OptionsColumn.AllowEdit = false;
-                        gcVelocidad.OptionsColumn.AllowEdit = true;
-                        gcVelocidad.OptionsColumn.AllowFocus = true;
-                        gcTiempoParcial.OptionsColumn.AllowEdit = false;
-                        gcTiempoAcum.OptionsColumn.AllowEdit = true;
-                        gcTiempoAcum.OptionsColumn.AllowFocus = true;
-
-                        break;
-                    default:
-                        break;
-                }
+                    break;
+                default:
+                    break;
+            }
 
         } // End de SelectTipo
 
@@ -601,7 +589,7 @@ namespace ZeroTrip
                                             cbOrientacion.SelectedItem.ToString(),
                                             // Convert.ToByte(cbOrientacion.SelectedItem),
                                             "X");
-            if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nRegs-1]["Posicion"]) > Convert.ToInt32(tePosicion.Text.Replace(".", "")))
+            if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nRegs - 1]["Posicion"]) > Convert.ToInt32(tePosicion.Text.Replace(".", "")))
             {
 
                 ZeroTripBBDDDataSet.IncidenciasDataTable tbPosicion = new ZeroTripBBDDDataSet.IncidenciasDataTable();
@@ -609,7 +597,7 @@ namespace ZeroTrip
                 //quiere decir que hemos metido un cruce que no va por orden, luego tenemos que reordenar.
                 incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
                 incidenciasTableAdapter.FillByPosicion(tbPosicion, nTramo);
-               
+
                 nRegs = Convert.ToInt16(incidenciasTableAdapter.CuentaIncidencias(nTramo));
 
                 int a = 1;
@@ -644,5 +632,73 @@ namespace ZeroTrip
         }
 
 
-    } // End de Class
+        public void InicializarTramo(short nTramo, string szTipo)
+        {
+
+            DateTime dtmTParcial = DateTime.Today, dtmTAcumulado = DateTime.Today;
+
+            //DataTable dtTablaDatos = dsDatos.Tables["Datos"];
+            DataRow rwDatos = dsDatos.Tables["Datos"].NewRow();
+
+            short nRegs = Convert.ToInt16(datosTableAdapter.ContarDatos(nTramo));
+
+            bReCargaTramo = false;
+
+            switch (szTipo)
+            {
+                case "Medias":
+                case "RefExternas":
+
+                    //dsDatos.Tables["Datos"].Rows.Add(rwDatos);
+
+                    //dsDatos.Datos[0]["IdTramo"] = nTramo;
+                    //dsDatos.Datos[0]["IdDato"] = Convert.ToInt16(nRegs + 1);
+                    //dsDatos.Datos[0]["Desde"] = 0;
+                    //dsDatos.Datos[0]["Hasta"] = 2000;
+                    //dsDatos.Datos[0]["Parcial"] = 2000;
+                    //dsDatos.Datos[0]["Velocidad"] = (double)49;
+                    //dtmTParcial = Util.Tiempo(2000, (decimal)49);
+                    //dtmTAcumulado = dtmTParcial;
+                    //dsDatos.Datos[0]["TiempoAcum"] = dtmTAcumulado;
+                    //dsDatos.Datos[0]["TiempoParcial"] = dtmTParcial;
+                    //dsDatos.Datos[0]["TipoTramo"] = "Medias";
+
+                    rwDatos["IdTramo"] = nTramo;
+                    rwDatos["IdDato"] = Convert.ToInt16(nRegs + 1);
+                    rwDatos["Desde"] = 0;
+                    rwDatos["Hasta"] = 2000;
+                    rwDatos["Parcial"] = 2000;
+                    rwDatos["Velocidad"] = (double)49;
+                    dtmTParcial = Util.Tiempo(2000, (decimal)49);
+                    dtmTAcumulado = dtmTParcial;
+                    rwDatos["TiempoAcum"] = dtmTAcumulado;
+                    rwDatos["TiempoParcial"] = dtmTParcial;
+                    rwDatos["TipoTramo"] = "Medias";
+
+                    dsDatos.Tables["Datos"].Rows.Add(rwDatos);
+                    dsDatos.Datos.Rows.RemoveAt(1);
+
+                    break;
+                default:
+                    break;
+
+
+            }
+
+            if (dsDatos.Tables["Datos"].GetChanges() != null)
+            {
+                datosTableAdapter.Update(dsDatos);
+                dsDatos.AcceptChanges();
+            }
+
+
+            datosTableAdapter.Fill(dsDatos.Datos, nTramo);
+            gcMedias.RefreshDataSource();
+
+            gvMedias.MoveLast();
+
+
+            bReCargaTramo = true;
+        } // End de Class
+    }
 }

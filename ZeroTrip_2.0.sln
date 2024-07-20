@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroTrip_2.0", "ZeroTrip_2.0.csproj", "{14BF27F1-EF3C-48BC-926E-B927139448A6}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZeroTrip_2.0_install", "..\ZeroTrip_2.0_install\ZeroTrip_2.0_install.vdproj", "{BEA9E35B-0065-403D-96B4-82AE602EC497}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZeroTrip_2.0_install", ".\Instalador\ZeroTrip_2.0_install.vdproj", "{BEA9E35B-0065-403D-96B4-82AE602EC497}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

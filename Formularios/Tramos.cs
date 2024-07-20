@@ -124,7 +124,10 @@ namespace ZeroTrip
 
                 if (cbTipo.Text == "Varias")
                 {
-                    rgTipoTramo.EditValue = ((dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TipoTramo"]).ToString());
+                    if (dsDatos.Datos.Rows.Count != 0)
+                        rgTipoTramo.EditValue = ((dsDatos.Datos.Rows[dsDatos.Datos.Rows.Count - 1]["TipoTramo"]).ToString());
+                    else
+                        rgTipoTramo.EditValue = "Medias";
                     rgTipoTramo.Enabled = true;
                 }
                 else
@@ -147,6 +150,10 @@ namespace ZeroTrip
         private void rgTipoTramo_EditValueChanged(object sender, EventArgs e)
         {
             SelectTipo(rgTipoTramo.Text);
+
+            if (dsDatos.Datos.Rows.Count ==0)
+
+                InicializarTramo(nTramo, rgTipoTramo.Text);
 
             btActTramo_Click(sender, e);
         }
