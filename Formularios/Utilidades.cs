@@ -1357,15 +1357,42 @@ namespace ZeroTrip
         }
 
 
-        private void rbTamanioRueda_SelectedIndexChanged(object sender, EventArgs e)
+        private void rgSonda_SelectedIndexChanged(object sender, EventArgs e)
  
         {
             String szCadena;
 
             if (PSerieARD.IsOpen)
             {
-                switch (rbTamanioRueda.Text)
+                switch (rgSonda.Text)
                 { 
+
+                    case "Derecha":
+                        szCadena = "D"; 
+                        break;
+                    case "Izquierda:":
+                        szCadena = "I"; 
+                        break;
+                    default:
+                        szCadena = "D";
+                        break;
+                }
+
+                PSerieARD.Write(szCadena);
+                szCadena = PSerieARD.ReadLine();
+            }
+
+            config.SetSonda(rgSonda.Text);
+        }
+
+        private void rbTamanioRueda_SelectedIndexChanged (object sender, EventArgs e)
+        {
+            String szCadena;
+
+            if (PSerieARD.IsOpen)
+            {
+                switch (rbTamanioRueda.Text)
+                {
 
                     case "L":
                         szCadena = "A"; // pone 40 msg de retardo para ruedas más grandes
@@ -1395,6 +1422,7 @@ namespace ZeroTrip
             }
 
             config.SetTamanioRueda(rbTamanioRueda.Text);
+
         }
 
 

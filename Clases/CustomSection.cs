@@ -365,8 +365,23 @@ namespace ZeroTrip
             }
 
         }
- 
-       [ConfigurationProperty("TamanioRueda", DefaultValue = @"L")]
+
+        [ConfigurationProperty("Sonda", DefaultValue = @"Derecha")]
+        public string Sonda
+        {
+            get
+            {
+                return (string)this["Sonda"];
+            }
+
+            set
+            {
+                this["Sonda"] = value;
+            }
+
+        }
+
+        [ConfigurationProperty("TamanioRueda", DefaultValue = @"L")]
         public string TamanioRueda
         {
             get
@@ -1132,6 +1147,13 @@ namespace ZeroTrip
 
         }
 
+        public string GetSonda()
+        {
+
+            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).Sonda);
+
+        }
+
         public void SetDecaMetros(string szDecaMetros)
         {
             CalibracionSection custSection = new CalibracionSection();
@@ -1139,6 +1161,19 @@ namespace ZeroTrip
             custSection = configFile.GetSection(szSecCalibracion) as CalibracionSection;
 
             custSection.DecaMetros = szDecaMetros;
+
+            custSection.SectionInformation.ForceSave = false;
+            configFile.Save(ConfigurationSaveMode.Full);
+
+        }
+
+        public void SetSonda(string szSonda)
+        {
+            CalibracionSection custSection = new CalibracionSection();
+
+            custSection = configFile.GetSection(szSecCalibracion) as CalibracionSection;
+
+            custSection.Sonda = szSonda;
 
             custSection.SectionInformation.ForceSave = false;
             configFile.Save(ConfigurationSaveMode.Full);

@@ -102,7 +102,7 @@ WHERE        (IdTramo = ?)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ContarDatos" Modifier="Public" Name="ContarDatos" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ContarDatos">
+              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ContarDatos" Modifier="Public" Name="ContarDatos" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ContarDatos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -250,7 +250,7 @@ ORDER BY IdIncidencia</CommandText>
               <Mapping SourceColumn="Comentarios" DataSetColumn="Comentarios" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CuentaIncidencias" Modifier="Public" Name="CuentaIncidencias" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CuentaIncidencias">
+              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CuentaIncidencias" Modifier="Public" Name="CuentaIncidencias" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CuentaIncidencias">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -536,18 +536,18 @@ VALUES        (?, ?, ?, ?, ?, ?, ?)</CommandText>
         <xs:element name="Incidencias" msprop:Generator_RowEvHandlerName="IncidenciasRowChangeEventHandler" msprop:Generator_RowDeletedName="IncidenciasRowDeleted" msprop:Generator_RowDeletingName="IncidenciasRowDeleting" msprop:Generator_RowEvArgName="IncidenciasRowChangeEvent" msprop:Generator_TablePropName="Incidencias" msprop:Generator_RowChangedName="IncidenciasRowChanged" msprop:Generator_UserTableName="Incidencias" msprop:Generator_RowChangingName="IncidenciasRowChanging" msprop:Generator_RowClassName="IncidenciasRow" msprop:Generator_TableClassName="IncidenciasDataTable" msprop:Generator_TableVarName="tableIncidencias">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Tramo" msprop:Generator_UserColumnName="Tramo" msprop:Generator_ColumnPropNameInTable="TramoColumn" msprop:Generator_ColumnPropNameInRow="Tramo" msprop:Generator_ColumnVarNameInTable="columnTramo" type="xs:short" />
-              <xs:element name="IdIncidencia" msprop:Generator_UserColumnName="IdIncidencia" msprop:Generator_ColumnPropNameInTable="IdIncidenciaColumn" msprop:Generator_ColumnPropNameInRow="IdIncidencia" msprop:Generator_ColumnVarNameInTable="columnIdIncidencia" type="xs:short" />
-              <xs:element name="Posicion" msprop:Generator_UserColumnName="Posicion" msprop:Generator_ColumnPropNameInTable="PosicionColumn" msprop:Generator_ColumnPropNameInRow="Posicion" msprop:Generator_ColumnVarNameInTable="columnPosicion" type="xs:int" minOccurs="0" />
-              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" minOccurs="0">
+              <xs:element name="Tramo" msprop:Generator_ColumnPropNameInTable="TramoColumn" msprop:Generator_ColumnPropNameInRow="Tramo" msprop:Generator_UserColumnName="Tramo" msprop:Generator_ColumnVarNameInTable="columnTramo" type="xs:short" />
+              <xs:element name="IdIncidencia" msprop:Generator_ColumnPropNameInTable="IdIncidenciaColumn" msprop:Generator_ColumnPropNameInRow="IdIncidencia" msprop:Generator_UserColumnName="IdIncidencia" msprop:Generator_ColumnVarNameInTable="columnIdIncidencia" type="xs:short" />
+              <xs:element name="Posicion" msprop:Generator_ColumnPropNameInTable="PosicionColumn" msprop:Generator_ColumnPropNameInRow="Posicion" msprop:Generator_UserColumnName="Posicion" msprop:Generator_ColumnVarNameInTable="columnPosicion" type="xs:int" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Orientacion" msprop:Generator_UserColumnName="Orientacion" msprop:Generator_ColumnPropNameInTable="OrientacionColumn" msprop:Generator_ColumnPropNameInRow="Orientacion" msprop:Generator_ColumnVarNameInTable="columnOrientacion" type="xs:string" minOccurs="0" />
-              <xs:element name="Comentarios" msprop:Generator_UserColumnName="Comentarios" msprop:Generator_ColumnPropNameInTable="ComentariosColumn" msprop:Generator_ColumnPropNameInRow="Comentarios" msprop:Generator_ColumnVarNameInTable="columnComentarios" minOccurs="0">
+              <xs:element name="Orientacion" msprop:Generator_ColumnPropNameInTable="OrientacionColumn" msprop:Generator_ColumnPropNameInRow="Orientacion" msprop:Generator_UserColumnName="Orientacion" msprop:Generator_ColumnVarNameInTable="columnOrientacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Comentarios" msprop:Generator_ColumnPropNameInTable="ComentariosColumn" msprop:Generator_ColumnPropNameInRow="Comentarios" msprop:Generator_UserColumnName="Comentarios" msprop:Generator_ColumnVarNameInTable="columnComentarios" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -560,56 +560,56 @@ VALUES        (?, ?, ?, ?, ?, ?, ?)</CommandText>
         <xs:element name="Tramos" msprop:Generator_RowEvHandlerName="TramosRowChangeEventHandler" msprop:Generator_RowDeletedName="TramosRowDeleted" msprop:Generator_RowDeletingName="TramosRowDeleting" msprop:Generator_RowEvArgName="TramosRowChangeEvent" msprop:Generator_TablePropName="Tramos" msprop:Generator_RowChangedName="TramosRowChanged" msprop:Generator_UserTableName="Tramos" msprop:Generator_RowChangingName="TramosRowChanging" msprop:Generator_RowClassName="TramosRow" msprop:Generator_TableClassName="TramosDataTable" msprop:Generator_TableVarName="tableTramos">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IdTramo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IdTramo" msprop:Generator_ColumnPropNameInTable="IdTramoColumn" msprop:Generator_ColumnPropNameInRow="IdTramo" msprop:Generator_ColumnVarNameInTable="columnIdTramo" type="xs:int" />
-              <xs:element name="Tramo" msprop:Generator_UserColumnName="Tramo" msprop:Generator_ColumnPropNameInTable="TramoColumn" msprop:Generator_ColumnPropNameInRow="Tramo" msprop:Generator_ColumnVarNameInTable="columnTramo" minOccurs="0">
+              <xs:element name="IdTramo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdTramoColumn" msprop:Generator_ColumnPropNameInRow="IdTramo" msprop:Generator_UserColumnName="IdTramo" msprop:Generator_ColumnVarNameInTable="columnIdTramo" type="xs:int" />
+              <xs:element name="Tramo" msprop:Generator_ColumnPropNameInTable="TramoColumn" msprop:Generator_ColumnPropNameInRow="Tramo" msprop:Generator_UserColumnName="Tramo" msprop:Generator_ColumnVarNameInTable="columnTramo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TipoTramo" msprop:Generator_UserColumnName="TipoTramo" msprop:Generator_ColumnPropNameInTable="TipoTramoColumn" msprop:Generator_ColumnPropNameInRow="TipoTramo" msprop:Generator_ColumnVarNameInTable="columnTipoTramo" minOccurs="0">
+              <xs:element name="TipoTramo" msprop:Generator_ColumnPropNameInTable="TipoTramoColumn" msprop:Generator_ColumnPropNameInRow="TipoTramo" msprop:Generator_UserColumnName="TipoTramo" msprop:Generator_ColumnVarNameInTable="columnTipoTramo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="HoraSalida" msprop:Generator_UserColumnName="HoraSalida" msprop:Generator_ColumnPropNameInTable="HoraSalidaColumn" msprop:Generator_ColumnPropNameInRow="HoraSalida" msprop:Generator_ColumnVarNameInTable="columnHoraSalida" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HoraSalida" msprop:Generator_ColumnPropNameInTable="HoraSalidaColumn" msprop:Generator_ColumnPropNameInRow="HoraSalida" msprop:Generator_UserColumnName="HoraSalida" msprop:Generator_ColumnVarNameInTable="columnHoraSalida" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="Sectores" msprop:Generator_RowEvHandlerName="SectoresRowChangeEventHandler" msprop:Generator_RowDeletedName="SectoresRowDeleted" msprop:Generator_RowDeletingName="SectoresRowDeleting" msprop:Generator_RowEvArgName="SectoresRowChangeEvent" msprop:Generator_TablePropName="Sectores" msprop:Generator_RowChangedName="SectoresRowChanged" msprop:Generator_UserTableName="Sectores" msprop:Generator_RowChangingName="SectoresRowChanging" msprop:Generator_RowClassName="SectoresRow" msprop:Generator_TableClassName="SectoresDataTable" msprop:Generator_TableVarName="tableSectores">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IdTramo" msprop:Generator_UserColumnName="IdTramo" msprop:Generator_ColumnPropNameInTable="IdTramoColumn" msprop:Generator_ColumnPropNameInRow="IdTramo" msprop:Generator_ColumnVarNameInTable="columnIdTramo" type="xs:int" />
-              <xs:element name="Distancia" msprop:Generator_UserColumnName="Distancia" msprop:Generator_ColumnPropNameInTable="DistanciaColumn" msprop:Generator_ColumnPropNameInRow="Distancia" msprop:Generator_ColumnVarNameInTable="columnDistancia" type="xs:int" minOccurs="0" />
-              <xs:element name="Sectores" msprop:Generator_UserColumnName="Sectores" msprop:Generator_ColumnPropNameInTable="SectoresColumn" msprop:Generator_ColumnPropNameInRow="Sectores" msprop:Generator_ColumnVarNameInTable="columnSectores" type="xs:int" minOccurs="0" />
-              <xs:element name="TiempoMax" msprop:Generator_UserColumnName="TiempoMax" msprop:Generator_ColumnPropNameInTable="TiempoMaxColumn" msprop:Generator_ColumnPropNameInRow="TiempoMax" msprop:Generator_ColumnVarNameInTable="columnTiempoMax" type="xs:int" minOccurs="0" />
-              <xs:element name="TiempoMin" msprop:Generator_UserColumnName="TiempoMin" msprop:Generator_ColumnPropNameInTable="TiempoMinColumn" msprop:Generator_ColumnPropNameInRow="TiempoMin" msprop:Generator_ColumnVarNameInTable="columnTiempoMin" minOccurs="0">
+              <xs:element name="IdTramo" msprop:Generator_ColumnPropNameInTable="IdTramoColumn" msprop:Generator_ColumnPropNameInRow="IdTramo" msprop:Generator_UserColumnName="IdTramo" msprop:Generator_ColumnVarNameInTable="columnIdTramo" type="xs:int" />
+              <xs:element name="Distancia" msprop:Generator_ColumnPropNameInTable="DistanciaColumn" msprop:Generator_ColumnPropNameInRow="Distancia" msprop:Generator_UserColumnName="Distancia" msprop:Generator_ColumnVarNameInTable="columnDistancia" type="xs:int" minOccurs="0" />
+              <xs:element name="Sectores" msprop:Generator_ColumnPropNameInTable="SectoresColumn" msprop:Generator_ColumnPropNameInRow="Sectores" msprop:Generator_UserColumnName="Sectores" msprop:Generator_ColumnVarNameInTable="columnSectores" type="xs:int" minOccurs="0" />
+              <xs:element name="TiempoMax" msprop:Generator_ColumnPropNameInTable="TiempoMaxColumn" msprop:Generator_ColumnPropNameInRow="TiempoMax" msprop:Generator_UserColumnName="TiempoMax" msprop:Generator_ColumnVarNameInTable="columnTiempoMax" type="xs:int" minOccurs="0" />
+              <xs:element name="TiempoMin" msprop:Generator_ColumnPropNameInTable="TiempoMinColumn" msprop:Generator_ColumnPropNameInRow="TiempoMin" msprop:Generator_UserColumnName="TiempoMin" msprop:Generator_ColumnVarNameInTable="columnTiempoMin" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="VelocidadMin" msprop:Generator_UserColumnName="VelocidadMin" msprop:Generator_ColumnPropNameInTable="VelocidadMinColumn" msprop:Generator_ColumnPropNameInRow="VelocidadMin" msprop:Generator_ColumnVarNameInTable="columnVelocidadMin" type="xs:float" minOccurs="0" />
-              <xs:element name="VelocidadMax" msprop:Generator_UserColumnName="VelocidadMax" msprop:Generator_ColumnPropNameInTable="VelocidadMaxColumn" msprop:Generator_ColumnPropNameInRow="VelocidadMax" msprop:Generator_ColumnVarNameInTable="columnVelocidadMax" type="xs:float" minOccurs="0" />
-              <xs:element name="Velocidad" msprop:Generator_UserColumnName="Velocidad" msprop:Generator_ColumnPropNameInTable="VelocidadColumn" msprop:Generator_ColumnPropNameInRow="Velocidad" msprop:Generator_ColumnVarNameInTable="columnVelocidad" type="xs:float" minOccurs="0" />
+              <xs:element name="VelocidadMin" msprop:Generator_ColumnPropNameInTable="VelocidadMinColumn" msprop:Generator_ColumnPropNameInRow="VelocidadMin" msprop:Generator_UserColumnName="VelocidadMin" msprop:Generator_ColumnVarNameInTable="columnVelocidadMin" type="xs:float" minOccurs="0" />
+              <xs:element name="VelocidadMax" msprop:Generator_ColumnPropNameInTable="VelocidadMaxColumn" msprop:Generator_ColumnPropNameInRow="VelocidadMax" msprop:Generator_UserColumnName="VelocidadMax" msprop:Generator_ColumnVarNameInTable="columnVelocidadMax" type="xs:float" minOccurs="0" />
+              <xs:element name="Velocidad" msprop:Generator_ColumnPropNameInTable="VelocidadColumn" msprop:Generator_ColumnPropNameInRow="Velocidad" msprop:Generator_UserColumnName="Velocidad" msprop:Generator_ColumnVarNameInTable="columnVelocidad" type="xs:float" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="Log" msprop:Generator_RowEvHandlerName="LogRowChangeEventHandler" msprop:Generator_RowDeletedName="LogRowDeleted" msprop:Generator_RowDeletingName="LogRowDeleting" msprop:Generator_RowEvArgName="LogRowChangeEvent" msprop:Generator_TablePropName="Log" msprop:Generator_RowChangedName="LogRowChanged" msprop:Generator_UserTableName="Log" msprop:Generator_RowChangingName="LogRowChanging" msprop:Generator_RowClassName="LogRow" msprop:Generator_TableClassName="LogDataTable" msprop:Generator_TableVarName="tableLog">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
-              <xs:element name="Tramo" msprop:Generator_UserColumnName="Tramo" msprop:Generator_ColumnPropNameInTable="TramoColumn" msprop:Generator_ColumnPropNameInRow="Tramo" msprop:Generator_ColumnVarNameInTable="columnTramo" type="xs:int" minOccurs="0" />
-              <xs:element name="Hora" msprop:Generator_UserColumnName="Hora" msprop:Generator_ColumnPropNameInTable="HoraColumn" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_ColumnVarNameInTable="columnHora" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DistanciaTeorica" msprop:Generator_UserColumnName="DistanciaTeorica" msprop:Generator_ColumnPropNameInTable="DistanciaTeoricaColumn" msprop:Generator_ColumnPropNameInRow="DistanciaTeorica" msprop:Generator_ColumnVarNameInTable="columnDistanciaTeorica" type="xs:int" minOccurs="0" />
-              <xs:element name="DistanciaReal" msprop:Generator_UserColumnName="DistanciaReal" msprop:Generator_ColumnPropNameInTable="DistanciaRealColumn" msprop:Generator_ColumnPropNameInRow="DistanciaReal" msprop:Generator_ColumnVarNameInTable="columnDistanciaReal" type="xs:int" minOccurs="0" />
-              <xs:element name="Crono" msprop:Generator_UserColumnName="Crono" msprop:Generator_ColumnPropNameInTable="CronoColumn" msprop:Generator_ColumnPropNameInRow="Crono" msprop:Generator_ColumnVarNameInTable="columnCrono" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Velocidad" msprop:Generator_UserColumnName="Velocidad" msprop:Generator_ColumnPropNameInTable="VelocidadColumn" msprop:Generator_ColumnPropNameInRow="Velocidad" msprop:Generator_ColumnVarNameInTable="columnVelocidad" type="xs:double" minOccurs="0" />
-              <xs:element name="Datos" msprop:Generator_UserColumnName="Datos" msprop:Generator_ColumnPropNameInTable="DatosColumn" msprop:Generator_ColumnPropNameInRow="Datos" msprop:Generator_ColumnVarNameInTable="columnDatos" minOccurs="0">
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="Tramo" msprop:Generator_ColumnPropNameInTable="TramoColumn" msprop:Generator_ColumnPropNameInRow="Tramo" msprop:Generator_UserColumnName="Tramo" msprop:Generator_ColumnVarNameInTable="columnTramo" type="xs:int" minOccurs="0" />
+              <xs:element name="Hora" msprop:Generator_ColumnPropNameInTable="HoraColumn" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_UserColumnName="Hora" msprop:Generator_ColumnVarNameInTable="columnHora" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DistanciaTeorica" msprop:Generator_ColumnPropNameInTable="DistanciaTeoricaColumn" msprop:Generator_ColumnPropNameInRow="DistanciaTeorica" msprop:Generator_UserColumnName="DistanciaTeorica" msprop:Generator_ColumnVarNameInTable="columnDistanciaTeorica" type="xs:int" minOccurs="0" />
+              <xs:element name="DistanciaReal" msprop:Generator_ColumnPropNameInTable="DistanciaRealColumn" msprop:Generator_ColumnPropNameInRow="DistanciaReal" msprop:Generator_UserColumnName="DistanciaReal" msprop:Generator_ColumnVarNameInTable="columnDistanciaReal" type="xs:int" minOccurs="0" />
+              <xs:element name="Crono" msprop:Generator_ColumnPropNameInTable="CronoColumn" msprop:Generator_ColumnPropNameInRow="Crono" msprop:Generator_UserColumnName="Crono" msprop:Generator_ColumnVarNameInTable="columnCrono" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Velocidad" msprop:Generator_ColumnPropNameInTable="VelocidadColumn" msprop:Generator_ColumnPropNameInRow="Velocidad" msprop:Generator_UserColumnName="Velocidad" msprop:Generator_ColumnVarNameInTable="columnVelocidad" type="xs:double" minOccurs="0" />
+              <xs:element name="Datos" msprop:Generator_ColumnPropNameInTable="DatosColumn" msprop:Generator_ColumnPropNameInRow="Datos" msprop:Generator_UserColumnName="Datos" msprop:Generator_ColumnVarNameInTable="columnDatos" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -622,15 +622,15 @@ VALUES        (?, ?, ?, ?, ?, ?, ?)</CommandText>
         <xs:element name="Datos" msprop:Generator_RowEvHandlerName="DatosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosRowDeleted" msprop:Generator_RowDeletingName="DatosRowDeleting" msprop:Generator_RowEvArgName="DatosRowChangeEvent" msprop:Generator_TablePropName="Datos" msprop:Generator_RowChangedName="DatosRowChanged" msprop:Generator_UserTableName="Datos" msprop:Generator_RowChangingName="DatosRowChanging" msprop:Generator_RowClassName="DatosRow" msprop:Generator_TableClassName="DatosDataTable" msprop:Generator_TableVarName="tableDatos">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IdTramo" msprop:Generator_UserColumnName="IdTramo" msprop:Generator_ColumnPropNameInTable="IdTramoColumn" msprop:Generator_ColumnPropNameInRow="IdTramo" msprop:Generator_ColumnVarNameInTable="columnIdTramo" type="xs:short" />
-              <xs:element name="IdDato" msprop:Generator_UserColumnName="IdDato" msprop:Generator_ColumnPropNameInTable="IdDatoColumn" msprop:Generator_ColumnPropNameInRow="IdDato" msprop:Generator_ColumnVarNameInTable="columnIdDato" type="xs:short" />
-              <xs:element name="Desde" msprop:Generator_UserColumnName="Desde" msprop:Generator_ColumnPropNameInTable="DesdeColumn" msprop:Generator_ColumnPropNameInRow="Desde" msprop:Generator_ColumnVarNameInTable="columnDesde" type="xs:int" minOccurs="0" />
-              <xs:element name="Hasta" msprop:Generator_UserColumnName="Hasta" msprop:Generator_ColumnPropNameInTable="HastaColumn" msprop:Generator_ColumnPropNameInRow="Hasta" msprop:Generator_ColumnVarNameInTable="columnHasta" type="xs:int" minOccurs="0" />
-              <xs:element name="Parcial" msprop:Generator_UserColumnName="Parcial" msprop:Generator_ColumnPropNameInTable="ParcialColumn" msprop:Generator_ColumnPropNameInRow="Parcial" msprop:Generator_ColumnVarNameInTable="columnParcial" type="xs:int" minOccurs="0" />
-              <xs:element name="Velocidad" msprop:Generator_UserColumnName="Velocidad" msprop:Generator_ColumnPropNameInTable="VelocidadColumn" msprop:Generator_ColumnPropNameInRow="Velocidad" msprop:Generator_ColumnVarNameInTable="columnVelocidad" type="xs:double" minOccurs="0" />
-              <xs:element name="TiempoParcial" msprop:Generator_UserColumnName="TiempoParcial" msprop:Generator_ColumnPropNameInTable="TiempoParcialColumn" msprop:Generator_ColumnPropNameInRow="TiempoParcial" msprop:Generator_ColumnVarNameInTable="columnTiempoParcial" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TiempoAcum" msprop:Generator_UserColumnName="TiempoAcum" msprop:Generator_ColumnPropNameInTable="TiempoAcumColumn" msprop:Generator_ColumnPropNameInRow="TiempoAcum" msprop:Generator_ColumnVarNameInTable="columnTiempoAcum" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TipoTramo" msprop:Generator_UserColumnName="TipoTramo" msprop:Generator_ColumnPropNameInTable="TipoTramoColumn" msprop:Generator_ColumnPropNameInRow="TipoTramo" msprop:Generator_ColumnVarNameInTable="columnTipoTramo" minOccurs="0">
+              <xs:element name="IdTramo" msprop:Generator_ColumnPropNameInTable="IdTramoColumn" msprop:Generator_ColumnPropNameInRow="IdTramo" msprop:Generator_UserColumnName="IdTramo" msprop:Generator_ColumnVarNameInTable="columnIdTramo" type="xs:short" />
+              <xs:element name="IdDato" msprop:Generator_ColumnPropNameInTable="IdDatoColumn" msprop:Generator_ColumnPropNameInRow="IdDato" msprop:Generator_UserColumnName="IdDato" msprop:Generator_ColumnVarNameInTable="columnIdDato" type="xs:short" />
+              <xs:element name="Desde" msprop:Generator_ColumnPropNameInTable="DesdeColumn" msprop:Generator_ColumnPropNameInRow="Desde" msprop:Generator_UserColumnName="Desde" msprop:Generator_ColumnVarNameInTable="columnDesde" type="xs:int" minOccurs="0" />
+              <xs:element name="Hasta" msprop:Generator_ColumnPropNameInTable="HastaColumn" msprop:Generator_ColumnPropNameInRow="Hasta" msprop:Generator_UserColumnName="Hasta" msprop:Generator_ColumnVarNameInTable="columnHasta" type="xs:int" minOccurs="0" />
+              <xs:element name="Parcial" msprop:Generator_ColumnPropNameInTable="ParcialColumn" msprop:Generator_ColumnPropNameInRow="Parcial" msprop:Generator_UserColumnName="Parcial" msprop:Generator_ColumnVarNameInTable="columnParcial" type="xs:int" minOccurs="0" />
+              <xs:element name="Velocidad" msprop:Generator_ColumnPropNameInTable="VelocidadColumn" msprop:Generator_ColumnPropNameInRow="Velocidad" msprop:Generator_UserColumnName="Velocidad" msprop:Generator_ColumnVarNameInTable="columnVelocidad" type="xs:double" minOccurs="0" />
+              <xs:element name="TiempoParcial" msprop:Generator_ColumnPropNameInTable="TiempoParcialColumn" msprop:Generator_ColumnPropNameInRow="TiempoParcial" msprop:Generator_UserColumnName="TiempoParcial" msprop:Generator_ColumnVarNameInTable="columnTiempoParcial" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TiempoAcum" msprop:Generator_ColumnPropNameInTable="TiempoAcumColumn" msprop:Generator_ColumnPropNameInRow="TiempoAcum" msprop:Generator_UserColumnName="TiempoAcum" msprop:Generator_ColumnVarNameInTable="columnTiempoAcum" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TipoTramo" msprop:Generator_ColumnPropNameInTable="TipoTramoColumn" msprop:Generator_ColumnPropNameInRow="TipoTramo" msprop:Generator_UserColumnName="TipoTramo" msprop:Generator_ColumnVarNameInTable="columnTipoTramo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />

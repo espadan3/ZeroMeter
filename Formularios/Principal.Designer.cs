@@ -94,6 +94,7 @@
             this.lbVersion = new System.Windows.Forms.Label();
             this.btDescargaLog = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.rgSonda = new DevExpress.XtraEditors.RadioGroup();
             this.teCalMopuTerra = new DevExpress.XtraEditors.TextEdit();
             this.rbTamanioRueda = new DevExpress.XtraEditors.RadioGroup();
             this.label1 = new System.Windows.Forms.Label();
@@ -269,6 +270,7 @@
             this.xtTPUtils.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rgSonda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCalMopuTerra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbTamanioRueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCalMopuBici.Properties)).BeginInit();
@@ -393,7 +395,7 @@
             this.xtTabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtTabControl.Name = "xtTabControl";
             this.xtTabControl.SelectedTabPage = this.xtTPCarrera;
-            this.xtTabControl.Size = new System.Drawing.Size(1370, 579);
+            this.xtTabControl.Size = new System.Drawing.Size(1484, 745);
             this.xtTabControl.TabIndex = 0;
             this.xtTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtTPCarrera,
@@ -456,7 +458,7 @@
             this.xtTPCarrera.Controls.Add(this.label6);
             this.xtTPCarrera.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtTPCarrera.Name = "xtTPCarrera";
-            this.xtTPCarrera.Size = new System.Drawing.Size(1332, 571);
+            this.xtTPCarrera.Size = new System.Drawing.Size(1446, 737);
             this.xtTPCarrera.TabPageWidth = 150;
             this.xtTPCarrera.Text = "&Carrera";
             // 
@@ -690,13 +692,11 @@
             // 
             // picOrientacion
             // 
-            this.picOrientacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picOrientacion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picOrientacion.Image = global::ZeroTrip.Properties.Resources._12;
-            this.picOrientacion.Location = new System.Drawing.Point(1035, 348);
+            this.picOrientacion.Location = new System.Drawing.Point(1035, 339);
             this.picOrientacion.Name = "picOrientacion";
-            this.picOrientacion.Size = new System.Drawing.Size(711, 701);
+            this.picOrientacion.Size = new System.Drawing.Size(304, 236);
             this.picOrientacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picOrientacion.TabIndex = 30;
             this.picOrientacion.TabStop = false;
@@ -1443,7 +1443,7 @@
             this.xtTPUtils.InvertTouchScroll = true;
             this.xtTPUtils.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtTPUtils.Name = "xtTPUtils";
-            this.xtTPUtils.Size = new System.Drawing.Size(1332, 571);
+            this.xtTPUtils.Size = new System.Drawing.Size(1454, 594);
             this.xtTPUtils.TabPageWidth = 150;
             this.xtTPUtils.Text = "&Utilidades";
             // 
@@ -1453,7 +1453,7 @@
             this.lbVersion.BackColor = System.Drawing.Color.Transparent;
             this.lbVersion.Font = new System.Drawing.Font("Ebrima", 12F);
             this.lbVersion.ForeColor = System.Drawing.Color.Navy;
-            this.lbVersion.Location = new System.Drawing.Point(1034, 180);
+            this.lbVersion.Location = new System.Drawing.Point(1030, 165);
             this.lbVersion.Name = "lbVersion";
             this.lbVersion.Size = new System.Drawing.Size(63, 21);
             this.lbVersion.TabIndex = 34;
@@ -1486,6 +1486,7 @@
             this.groupControl6.AppearanceCaption.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupControl6.AppearanceCaption.Options.UseFont = true;
             this.groupControl6.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl6.Controls.Add(this.rgSonda);
             this.groupControl6.Controls.Add(this.teCalMopuTerra);
             this.groupControl6.Controls.Add(this.rbTamanioRueda);
             this.groupControl6.Controls.Add(this.label1);
@@ -1510,10 +1511,29 @@
             this.groupControl6.TabIndex = 17;
             this.groupControl6.Text = "Calibre";
             // 
+            // rgSonda
+            // 
+            this.rgSonda.Location = new System.Drawing.Point(18, 332);
+            this.rgSonda.Name = "rgSonda";
+            this.rgSonda.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rgSonda.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.rgSonda.Properties.Appearance.Options.UseFont = true;
+            this.rgSonda.Properties.Appearance.Options.UseForeColor = true;
+            this.rgSonda.Properties.Appearance.Options.UseTextOptions = true;
+            this.rgSonda.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.rgSonda.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Derecha", "Derecha"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Izquierda", "Izquierda")});
+            this.rgSonda.Properties.LookAndFeel.SkinName = "The Asphalt World";
+            this.rgSonda.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.rgSonda.Size = new System.Drawing.Size(320, 51);
+            this.rgSonda.TabIndex = 62;
+            this.rgSonda.SelectedIndexChanged += new System.EventHandler(this.rgSonda_SelectedIndexChanged);
+            // 
             // teCalMopuTerra
             // 
             this.teCalMopuTerra.EditValue = "0";
-            this.teCalMopuTerra.Location = new System.Drawing.Point(216, 248);
+            this.teCalMopuTerra.Location = new System.Drawing.Point(222, 206);
             this.teCalMopuTerra.Name = "teCalMopuTerra";
             this.teCalMopuTerra.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.teCalMopuTerra.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1546,7 +1566,7 @@
             // 
             // rbTamanioRueda
             // 
-            this.rbTamanioRueda.Location = new System.Drawing.Point(18, 329);
+            this.rbTamanioRueda.Location = new System.Drawing.Point(18, 274);
             this.rbTamanioRueda.Name = "rbTamanioRueda";
             this.rbTamanioRueda.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbTamanioRueda.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
@@ -1571,7 +1591,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(20, 254);
+            this.label1.Location = new System.Drawing.Point(26, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 21);
             this.label1.TabIndex = 60;
@@ -1580,7 +1600,7 @@
             // teCalMopuBici
             // 
             this.teCalMopuBici.EditValue = "0";
-            this.teCalMopuBici.Location = new System.Drawing.Point(100, 248);
+            this.teCalMopuBici.Location = new System.Drawing.Point(106, 206);
             this.teCalMopuBici.Name = "teCalMopuBici";
             this.teCalMopuBici.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.teCalMopuBici.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1616,7 +1636,7 @@
             this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
             this.label32.ForeColor = System.Drawing.Color.Navy;
-            this.label32.Location = new System.Drawing.Point(105, 303);
+            this.label32.Location = new System.Drawing.Point(105, 248);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(155, 23);
             this.label32.TabIndex = 48;
@@ -1624,7 +1644,7 @@
             // 
             // rgDecaMetro
             // 
-            this.rgDecaMetro.Location = new System.Drawing.Point(18, 475);
+            this.rgDecaMetro.Location = new System.Drawing.Point(18, 454);
             this.rgDecaMetro.Name = "rgDecaMetro";
             this.rgDecaMetro.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgDecaMetro.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
@@ -1643,7 +1663,7 @@
             // 
             // rgCalibre
             // 
-            this.rgCalibre.Location = new System.Drawing.Point(18, 402);
+            this.rgCalibre.Location = new System.Drawing.Point(18, 393);
             this.rgCalibre.Name = "rgCalibre";
             this.rgCalibre.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgCalibre.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
@@ -1658,7 +1678,6 @@
             this.rgCalibre.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.rgCalibre.Size = new System.Drawing.Size(320, 51);
             this.rgCalibre.TabIndex = 44;
-            this.rgCalibre.EditValueChanged += new System.EventHandler(this.rgCalibre_EditValueChanged);
             // 
             // label28
             // 
@@ -1877,11 +1896,11 @@
             this.groupControl5.Controls.Add(this.teDistRecorrida);
             this.groupControl5.Controls.Add(this.teDistOrg);
             this.groupControl5.Controls.Add(this.label23);
-            this.groupControl5.Location = new System.Drawing.Point(1007, 209);
+            this.groupControl5.Location = new System.Drawing.Point(1011, 188);
             this.groupControl5.LookAndFeel.SkinName = "The Asphalt World";
             this.groupControl5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(424, 401);
+            this.groupControl5.Size = new System.Drawing.Size(397, 396);
             this.groupControl5.TabIndex = 16;
             this.groupControl5.Text = "ReCalibrado";
             // 
@@ -1890,7 +1909,7 @@
             this.lbCalibres.BackColor = System.Drawing.Color.Transparent;
             this.lbCalibres.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCalibres.ForeColor = System.Drawing.Color.Navy;
-            this.lbCalibres.Location = new System.Drawing.Point(56, 348);
+            this.lbCalibres.Location = new System.Drawing.Point(56, 327);
             this.lbCalibres.Name = "lbCalibres";
             this.lbCalibres.Size = new System.Drawing.Size(316, 51);
             this.lbCalibres.TabIndex = 18;
@@ -1898,7 +1917,7 @@
             // 
             // rgMedidor
             // 
-            this.rgMedidor.Location = new System.Drawing.Point(74, 212);
+            this.rgMedidor.Location = new System.Drawing.Point(50, 204);
             this.rgMedidor.Name = "rgMedidor";
             this.rgMedidor.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgMedidor.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
@@ -1917,7 +1936,7 @@
             // teCalNuevo
             // 
             this.teCalNuevo.EditValue = "";
-            this.teCalNuevo.Location = new System.Drawing.Point(234, 145);
+            this.teCalNuevo.Location = new System.Drawing.Point(212, 145);
             this.teCalNuevo.Name = "teCalNuevo";
             this.teCalNuevo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.teCalNuevo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1953,7 +1972,7 @@
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Ebrima", 12F);
             this.label25.ForeColor = System.Drawing.Color.Navy;
-            this.label25.Location = new System.Drawing.Point(264, 123);
+            this.label25.Location = new System.Drawing.Point(242, 123);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(109, 21);
             this.label25.TabIndex = 0;
@@ -1965,7 +1984,7 @@
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Ebrima", 12F);
             this.label24.ForeColor = System.Drawing.Color.Navy;
-            this.label24.Location = new System.Drawing.Point(264, 37);
+            this.label24.Location = new System.Drawing.Point(242, 37);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(107, 21);
             this.label24.TabIndex = 0;
@@ -2008,7 +2027,7 @@
             // 
             this.btCalcCal.Font = new System.Drawing.Font("Ebrima", 14F);
             this.btCalcCal.ForeColor = System.Drawing.Color.Navy;
-            this.btCalcCal.Location = new System.Drawing.Point(138, 276);
+            this.btCalcCal.Location = new System.Drawing.Point(114, 265);
             this.btCalcCal.Name = "btCalcCal";
             this.btCalcCal.Size = new System.Drawing.Size(175, 55);
             this.btCalcCal.TabIndex = 33;
@@ -2031,7 +2050,7 @@
             // teDistRecorrida
             // 
             this.teDistRecorrida.EditValue = "";
-            this.teDistRecorrida.Location = new System.Drawing.Point(234, 61);
+            this.teDistRecorrida.Location = new System.Drawing.Point(212, 61);
             this.teDistRecorrida.Name = "teDistRecorrida";
             this.teDistRecorrida.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.teDistRecorrida.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2115,7 +2134,7 @@
             this.btOpenPortPDA.Appearance.Options.UseForeColor = true;
             this.btOpenPortPDA.Appearance.Options.UseTextOptions = true;
             this.btOpenPortPDA.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btOpenPortPDA.Location = new System.Drawing.Point(629, 557);
+            this.btOpenPortPDA.Location = new System.Drawing.Point(629, 544);
             this.btOpenPortPDA.LookAndFeel.SkinName = "iMaginary";
             this.btOpenPortPDA.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btOpenPortPDA.Name = "btOpenPortPDA";
@@ -2127,7 +2146,7 @@
             // 
             // cbPortPDA
             // 
-            this.cbPortPDA.Location = new System.Drawing.Point(466, 563);
+            this.cbPortPDA.Location = new System.Drawing.Point(466, 550);
             this.cbPortPDA.Name = "cbPortPDA";
             this.cbPortPDA.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.cbPortPDA.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 14F, System.Drawing.FontStyle.Bold);
@@ -2175,11 +2194,11 @@
             this.groupControl4.Controls.Add(this.lb99);
             this.groupControl4.Controls.Add(this.tbDistancia);
             this.groupControl4.Controls.Add(this.label21);
-            this.groupControl4.Location = new System.Drawing.Point(722, 235);
+            this.groupControl4.Location = new System.Drawing.Point(710, 237);
             this.groupControl4.LookAndFeel.SkinName = "The Asphalt World";
             this.groupControl4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(261, 182);
+            this.groupControl4.Size = new System.Drawing.Size(295, 182);
             this.groupControl4.TabIndex = 15;
             this.groupControl4.Text = "Calculadora V=S/T";
             // 
@@ -2383,13 +2402,14 @@
             this.groupControl3.Controls.Add(this.teHora);
             this.groupControl3.Controls.Add(this.btInicio);
             this.groupControl3.Controls.Add(this.tePrueba);
-            this.groupControl3.Location = new System.Drawing.Point(1012, 3);
+            this.groupControl3.Location = new System.Drawing.Point(1016, 10);
             this.groupControl3.LookAndFeel.SkinName = "The Asphalt World";
             this.groupControl3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(424, 172);
+            this.groupControl3.Size = new System.Drawing.Size(392, 157);
             this.groupControl3.TabIndex = 14;
             this.groupControl3.Text = "Tiempo";
+            this.groupControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl3_Paint);
             // 
             // btSincronizar
             // 
@@ -2401,11 +2421,11 @@
             this.btSincronizar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btSincronizar.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btSincronizar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btSincronizar.Location = new System.Drawing.Point(259, 33);
+            this.btSincronizar.Location = new System.Drawing.Point(244, 33);
             this.btSincronizar.LookAndFeel.SkinName = "iMaginary";
             this.btSincronizar.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btSincronizar.Name = "btSincronizar";
-            this.btSincronizar.Size = new System.Drawing.Size(160, 60);
+            this.btSincronizar.Size = new System.Drawing.Size(133, 60);
             this.btSincronizar.TabIndex = 11;
             this.btSincronizar.Text = "&Sincronizar";
             this.btSincronizar.Click += new System.EventHandler(this.btSincronizar_Click);
@@ -2413,7 +2433,7 @@
             // teHora
             // 
             this.teHora.EditValue = new System.DateTime(2011, 8, 22, 0, 0, 0, 0);
-            this.teHora.Location = new System.Drawing.Point(26, 31);
+            this.teHora.Location = new System.Drawing.Point(11, 31);
             this.teHora.Name = "teHora";
             this.teHora.Properties.Appearance.BackColor = System.Drawing.Color.Ivory;
             this.teHora.Properties.Appearance.Font = new System.Drawing.Font("Digiface", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2446,11 +2466,11 @@
             this.btInicio.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btInicio.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btInicio.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btInicio.Location = new System.Drawing.Point(259, 116);
+            this.btInicio.Location = new System.Drawing.Point(244, 105);
             this.btInicio.LookAndFeel.SkinName = "iMaginary";
             this.btInicio.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btInicio.Name = "btInicio";
-            this.btInicio.Size = new System.Drawing.Size(160, 41);
+            this.btInicio.Size = new System.Drawing.Size(133, 41);
             this.btInicio.TabIndex = 10;
             this.btInicio.Text = "Modificar (Y)";
             this.btInicio.Click += new System.EventHandler(this.btInicio_Click);
@@ -2458,7 +2478,7 @@
             // tePrueba
             // 
             this.tePrueba.EditValue = new System.DateTime(2011, 9, 27, 0, 0, 0, 0);
-            this.tePrueba.Location = new System.Drawing.Point(26, 119);
+            this.tePrueba.Location = new System.Drawing.Point(11, 108);
             this.tePrueba.Name = "tePrueba";
             this.tePrueba.Properties.Appearance.BackColor = System.Drawing.Color.Ivory;
             this.tePrueba.Properties.Appearance.Font = new System.Drawing.Font("Digiface", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2801,7 +2821,7 @@
             this.groupControl1.Controls.Add(this.cbBLTDevs);
             this.groupControl1.Controls.Add(this.btOpenPortARD);
             this.groupControl1.Controls.Add(this.cbPortARD);
-            this.groupControl1.Location = new System.Drawing.Point(710, 3);
+            this.groupControl1.Location = new System.Drawing.Point(710, 10);
             this.groupControl1.LookAndFeel.SkinName = "The Asphalt World";
             this.groupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl1.Name = "groupControl1";
@@ -3023,7 +3043,7 @@
             this.xtTPTramos.Controls.Add(this.labelControl2);
             this.xtTPTramos.Controls.Add(this.labelControl1);
             this.xtTPTramos.Name = "xtTPTramos";
-            this.xtTPTramos.Size = new System.Drawing.Size(1332, 571);
+            this.xtTPTramos.Size = new System.Drawing.Size(1446, 737);
             this.xtTPTramos.TabPageWidth = 150;
             this.xtTPTramos.Text = "&Tramos";
             // 
@@ -3090,7 +3110,7 @@
             this.groupControl9.Controls.Add(this.tePosicion);
             this.groupControl9.Controls.Add(this.lbOrientacion);
             this.groupControl9.Controls.Add(this.lbPosicion);
-            this.groupControl9.Location = new System.Drawing.Point(1219, 193);
+            this.groupControl9.Location = new System.Drawing.Point(1189, 193);
             this.groupControl9.LookAndFeel.SkinName = "The Asphalt World";
             this.groupControl9.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl9.Name = "groupControl9";
@@ -3396,6 +3416,14 @@
             // gcMedias
             // 
             this.gcMedias.DataSource = this.datosBindingSource;
+            this.gcMedias.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.White;
+            this.gcMedias.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.gcMedias.EmbeddedNavigator.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.gcMedias.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gcMedias.EmbeddedNavigator.Appearance.Options.UseBorderColor = true;
+            this.gcMedias.EmbeddedNavigator.Appearance.Options.UseFont = true;
+            this.gcMedias.EmbeddedNavigator.Appearance.Options.UseForeColor = true;
+            this.gcMedias.EmbeddedNavigator.Appearance.Options.UseTextOptions = true;
             this.gcMedias.EmbeddedNavigator.Buttons.First.Visible = false;
             this.gcMedias.EmbeddedNavigator.Buttons.Last.Visible = false;
             this.gcMedias.EmbeddedNavigator.Buttons.Next.Visible = false;
@@ -3445,7 +3473,7 @@
             this.gvMedias.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
             this.gvMedias.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
             this.gvMedias.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.gvMedias.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvMedias.Appearance.Empty.BackColor = System.Drawing.Color.White;
             this.gvMedias.Appearance.Empty.Options.UseBackColor = true;
             this.gvMedias.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
             this.gvMedias.Appearance.FilterCloseButton.BackColor2 = System.Drawing.Color.White;
@@ -3721,6 +3749,8 @@
             // gcIncidencias
             // 
             this.gcIncidencias.DataSource = this.incidenciasBindingSource;
+            this.gcIncidencias.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.gcIncidencias.EmbeddedNavigator.Appearance.Options.UseFont = true;
             this.gcIncidencias.EmbeddedNavigator.Buttons.First.Visible = false;
             this.gcIncidencias.EmbeddedNavigator.Buttons.Last.Visible = false;
             this.gcIncidencias.EmbeddedNavigator.Buttons.Next.Visible = false;
@@ -3993,13 +4023,13 @@
             this.gcAdd.LookAndFeel.SkinName = "The Asphalt World";
             this.gcAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gcAdd.Name = "gcAdd";
-            this.gcAdd.Size = new System.Drawing.Size(697, 114);
+            this.gcAdd.Size = new System.Drawing.Size(667, 114);
             this.gcAdd.TabIndex = 9;
             this.gcAdd.Text = "Entrada de datos";
             // 
             // rgTipoTramo
             // 
-            this.rgTipoTramo.Location = new System.Drawing.Point(55, 23);
+            this.rgTipoTramo.Location = new System.Drawing.Point(19, 23);
             this.rgTipoTramo.Name = "rgTipoTramo";
             this.rgTipoTramo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.rgTipoTramo.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4026,7 +4056,7 @@
             // tSec
             // 
             this.tSec.EditValue = "";
-            this.tSec.Location = new System.Drawing.Point(407, 57);
+            this.tSec.Location = new System.Drawing.Point(371, 57);
             this.tSec.Name = "tSec";
             this.tSec.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tSec.Properties.Appearance.Options.UseFont = true;
@@ -4050,7 +4080,7 @@
             // tMin
             // 
             this.tMin.EditValue = "0";
-            this.tMin.Location = new System.Drawing.Point(336, 58);
+            this.tMin.Location = new System.Drawing.Point(300, 58);
             this.tMin.Name = "tMin";
             this.tMin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tMin.Properties.Appearance.Options.UseFont = true;
@@ -4072,7 +4102,7 @@
             // tHor
             // 
             this.tHor.EditValue = "";
-            this.tHor.Location = new System.Drawing.Point(285, 58);
+            this.tHor.Location = new System.Drawing.Point(249, 58);
             this.tHor.Name = "tHor";
             this.tHor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tHor.Properties.Appearance.Options.UseFont = true;
@@ -4093,7 +4123,7 @@
             // teTPaso
             // 
             this.teTPaso.EditValue = new System.DateTime(((long)(0)));
-            this.teTPaso.Location = new System.Drawing.Point(285, 57);
+            this.teTPaso.Location = new System.Drawing.Point(249, 57);
             this.teTPaso.Name = "teTPaso";
             this.teTPaso.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.teTPaso.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4125,7 +4155,7 @@
             this.lbDos.Appearance.Options.UseForeColor = true;
             this.lbDos.Appearance.Options.UseTextOptions = true;
             this.lbDos.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lbDos.Location = new System.Drawing.Point(310, 45);
+            this.lbDos.Location = new System.Drawing.Point(274, 45);
             this.lbDos.Name = "lbDos";
             this.lbDos.Size = new System.Drawing.Size(39, 12);
             this.lbDos.TabIndex = 0;
@@ -4141,7 +4171,7 @@
             this.lbUno.Appearance.Options.UseForeColor = true;
             this.lbUno.Appearance.Options.UseTextOptions = true;
             this.lbUno.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lbUno.Location = new System.Drawing.Point(122, 45);
+            this.lbUno.Location = new System.Drawing.Point(86, 45);
             this.lbUno.Name = "lbUno";
             this.lbUno.Size = new System.Drawing.Size(23, 12);
             this.lbUno.TabIndex = 0;
@@ -4150,7 +4180,7 @@
             // tVelocidad
             // 
             this.tVelocidad.EditValue = "";
-            this.tVelocidad.Location = new System.Drawing.Point(285, 60);
+            this.tVelocidad.Location = new System.Drawing.Point(249, 60);
             this.tVelocidad.Name = "tVelocidad";
             this.tVelocidad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tVelocidad.Properties.Appearance.Options.UseFont = true;
@@ -4172,7 +4202,7 @@
             // tHasta
             // 
             this.tHasta.EditValue = "";
-            this.tHasta.Location = new System.Drawing.Point(55, 59);
+            this.tHasta.Location = new System.Drawing.Point(19, 59);
             this.tHasta.Name = "tHasta";
             this.tHasta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tHasta.Properties.Appearance.Options.UseFont = true;
@@ -4198,7 +4228,7 @@
             this.btAdd.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.btAdd.Appearance.Options.UseFont = true;
             this.btAdd.Appearance.Options.UseForeColor = true;
-            this.btAdd.Location = new System.Drawing.Point(564, 51);
+            this.btAdd.Location = new System.Drawing.Point(528, 51);
             this.btAdd.LookAndFeel.SkinName = "Blue";
             this.btAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btAdd.Name = "btAdd";
@@ -4308,8 +4338,8 @@
             this.scContenedor.Panel2.Controls.Add(this.xtTabControl);
             this.scContenedor.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.scContenedor.Panel2.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scContenedor.Size = new System.Drawing.Size(1370, 749);
-            this.scContenedor.SplitterDistance = 166;
+            this.scContenedor.Size = new System.Drawing.Size(1484, 961);
+            this.scContenedor.SplitterDistance = 212;
             this.scContenedor.TabIndex = 1;
             this.scContenedor.TabStop = false;
             // 
@@ -4568,7 +4598,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btSalir;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1484, 961);
             this.Controls.Add(this.scContenedor);
             this.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -4605,6 +4635,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             this.groupControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rgSonda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCalMopuTerra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbTamanioRueda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCalMopuBici.Properties)).EndInit();
@@ -4919,6 +4950,7 @@
         private System.Windows.Forms.Label label12;
         private DevExpress.XtraEditors.TextEdit tePID;
         private DevExpress.XtraEditors.TextEdit teVID;
+        private DevExpress.XtraEditors.RadioGroup rgSonda;
     }
 }
 

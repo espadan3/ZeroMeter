@@ -21,6 +21,8 @@ using System.Management;
 using System.Deployment.Application;
 using System.Reflection;
 using System.Diagnostics;
+using System.Device.Location;
+
 
 
 
@@ -129,9 +131,10 @@ namespace ZeroTrip
             USBPort.USBDeviceRemoved +=
               new USBClass.USBDeviceEventHandler(USBPort_USBDeviceRemoved);
 
-            if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true))
+            //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true))
+            if (USBClass.GetUSBDevice(Convert.ToUInt16(config.GetVID()), Convert.ToUInt16(config.GetPID()), ref USBDeviceProperties, true))
 
-            {
+                {
                 //My Device is connected
 
                 cbPortARD.Text = USBDeviceProperties.COMPort;
@@ -207,6 +210,14 @@ namespace ZeroTrip
 
             //Habilitamos el timer auxiliar para que se inicie el proceso de sincronización y arranque del timer principal.
             tmAux.Enabled = true;
+
+
+            //GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
+
+            //// Do not suppress prompt, and wait 1000 milliseconds to start.
+            //watcher.TryStart(false, TimeSpan.FromMilliseconds(3000));
+
+            //GeoCoordinate coord = watcher.Position.Location;
 
             //   teDirBBDD.Text = Gb.sDirectorioDatos;
         }
@@ -1417,7 +1428,10 @@ namespace ZeroTrip
 
         }
 
+        private void groupControl3_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
         //-----------------------------------------------------------------------------------
 
@@ -1597,8 +1611,10 @@ namespace ZeroTrip
             tMin.Visible = false;
             tSec.Visible = false;
 
+            rgSonda.EditValue = config.GetSonda();
             rgCalibre.EditValue = config.GetTipoMedidor();
             rgDecaMetro.EditValue = config.GetDecaMetros();
+
             if (rgDecaMetro.Text == "Metros")
                 Gb.bMetros = true;
             else
@@ -1652,7 +1668,7 @@ namespace ZeroTrip
         }
 
         //-----------------------------------------------------------------------------------
-
+            
         private static Array ResizeArray(Array arr, int[] newSizes)
         {
             if (newSizes.Length != arr.Rank)
@@ -1682,7 +1698,7 @@ namespace ZeroTrip
         {
             if (!MyUSBARDConnected)
             {
-                //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true) ||
+                //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true) || // la 43 es la mia, la de Javier es 42
                 //    USBClass.GetUSBDevice(2341, 42, ref USBDeviceProperties, true))
                     if (USBClass.GetUSBDevice(Convert.ToUInt16(config.GetVID()), Convert.ToUInt16(config.GetPID()), ref USBDeviceProperties, true))
                     {
@@ -1691,8 +1707,6 @@ namespace ZeroTrip
                     MyUSBARDConnected = true;
 
                     AbrirPuertoSonda(USBDeviceProperties.COMPort, USBDeviceProperties.FriendlyName);
-
-
 
                 }
             }
