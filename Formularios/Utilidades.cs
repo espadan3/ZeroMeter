@@ -467,13 +467,6 @@ namespace ZeroTrip
 
         //---------------------------------------------------------------------------------------------------------
 
-        private void ARD_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-
-        }
-
-        //---------------------------------------------------------------------------------------------------------
-
         public int SectorParaDistancia(int nSectorAct)
         {
             // Devuelve el sector dentro de un tramo en el que nos encontramos en función del tiempo de crono transcurrido
@@ -1370,7 +1363,7 @@ namespace ZeroTrip
                     case "Derecha":
                         szCadena = "D"; 
                         break;
-                    case "Izquierda:":
+                    case "Izquierda":
                         szCadena = "I"; 
                         break;
                     default:
@@ -1499,8 +1492,15 @@ namespace ZeroTrip
             }
         }
 
+        private void btLimpiaBBDD_Click(object sender, EventArgs e)
+        {
+            if (Util.AvisoConRespuesta("Vamos a limpiar la BBDD. Esto implica: \r   - Eliminar Medias\r   - Eliminar Cruces\r   - Borrar todos los registros de log\r   - Poner como fecha/hora inicio de todos los tramos el día 1 del siguiente mes.\r\r\r" +
+                "¿Estas conforme?", "Limpiar BBDD"))
+                Util.EjecutarSql("Select * from Tramos");
+        }
+    }
 
         #endregion Otros
 
-    }
+    
 }

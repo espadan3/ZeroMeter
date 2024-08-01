@@ -1152,7 +1152,7 @@ using System.Windows.Forms;
                 ExpectedDeviceID = ExpectedDeviceID.ToLowerInvariant();
                 
                 h = Win32Wrapper.SetupDiGetClassDevs(IntPtr.Zero, DevEnum, IntPtr.Zero, (int)(Win32Wrapper.DIGCF.DIGCF_PRESENT | Win32Wrapper.DIGCF.DIGCF_ALLCLASSES));
-                if (h.ToInt32() != INVALID_HANDLE_VALUE)
+                if (h.ToInt64() != INVALID_HANDLE_VALUE)
                 {
                     bool Success = true;
                     uint i = 0;

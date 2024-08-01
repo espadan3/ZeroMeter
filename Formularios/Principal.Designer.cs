@@ -249,6 +249,7 @@
             this.logTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.LogTableAdapter();
             this.dsLog = new ZeroTrip.ZeroTripBBDDDataSet();
             this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btLimpiaBBDD = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ritbVelocidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ritbTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtTabControl)).BeginInit();
@@ -1429,6 +1430,7 @@
             this.xtTPUtils.Appearance.PageClient.Options.UseBackColor = true;
             this.xtTPUtils.Appearance.PageClient.Options.UseFont = true;
             this.xtTPUtils.AutoScroll = true;
+            this.xtTPUtils.Controls.Add(this.btLimpiaBBDD);
             this.xtTPUtils.Controls.Add(this.lbVersion);
             this.xtTPUtils.Controls.Add(this.btDescargaLog);
             this.xtTPUtils.Controls.Add(this.groupControl6);
@@ -1443,7 +1445,7 @@
             this.xtTPUtils.InvertTouchScroll = true;
             this.xtTPUtils.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtTPUtils.Name = "xtTPUtils";
-            this.xtTPUtils.Size = new System.Drawing.Size(1454, 594);
+            this.xtTPUtils.Size = new System.Drawing.Size(1446, 737);
             this.xtTPUtils.TabPageWidth = 150;
             this.xtTPUtils.Text = "&Utilidades";
             // 
@@ -1469,7 +1471,7 @@
             this.btDescargaLog.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btDescargaLog.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btDescargaLog.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btDescargaLog.Location = new System.Drawing.Point(722, 434);
+            this.btDescargaLog.Location = new System.Drawing.Point(710, 425);
             this.btDescargaLog.LookAndFeel.SkinName = "iMaginary";
             this.btDescargaLog.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btDescargaLog.Name = "btDescargaLog";
@@ -2409,7 +2411,6 @@
             this.groupControl3.Size = new System.Drawing.Size(392, 157);
             this.groupControl3.TabIndex = 14;
             this.groupControl3.Text = "Tiempo";
-            this.groupControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl3_Paint);
             // 
             // btSincronizar
             // 
@@ -4575,7 +4576,6 @@
             // PSerieARD
             // 
             this.PSerieARD.PortName = "COM8";
-            this.PSerieARD.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.ARD_DataReceived);
             // 
             // logTableAdapter
             // 
@@ -4592,6 +4592,25 @@
             this.logBindingSource.AllowNew = true;
             this.logBindingSource.DataMember = "Log";
             this.logBindingSource.DataSource = this.dsLog;
+            // 
+            // btLimpiaBBDD
+            // 
+            this.btLimpiaBBDD.Appearance.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLimpiaBBDD.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.btLimpiaBBDD.Appearance.Options.UseFont = true;
+            this.btLimpiaBBDD.Appearance.Options.UseForeColor = true;
+            this.btLimpiaBBDD.Appearance.Options.UseTextOptions = true;
+            this.btLimpiaBBDD.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btLimpiaBBDD.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btLimpiaBBDD.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btLimpiaBBDD.Location = new System.Drawing.Point(710, 472);
+            this.btLimpiaBBDD.LookAndFeel.SkinName = "iMaginary";
+            this.btLimpiaBBDD.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btLimpiaBBDD.Name = "btLimpiaBBDD";
+            this.btLimpiaBBDD.Size = new System.Drawing.Size(160, 41);
+            this.btLimpiaBBDD.TabIndex = 35;
+            this.btLimpiaBBDD.Text = "Limpiar BBDD";
+            this.btLimpiaBBDD.Click += new System.EventHandler(this.btLimpiaBBDD_Click);
             // 
             // frPrincipal
             // 
@@ -4951,6 +4970,7 @@
         private DevExpress.XtraEditors.TextEdit tePID;
         private DevExpress.XtraEditors.TextEdit teVID;
         private DevExpress.XtraEditors.RadioGroup rgSonda;
+        private DevExpress.XtraEditors.SimpleButton btLimpiaBBDD;
     }
 }
 

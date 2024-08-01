@@ -1428,10 +1428,6 @@ namespace ZeroTrip
 
         }
 
-        private void groupControl3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         //-----------------------------------------------------------------------------------
 
