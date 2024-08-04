@@ -143,8 +143,21 @@ namespace ZeroTrip
                         //dtmTParcial = Util.Tiempo(nParcial, dbVelocidad);
                         //teTPaso.Time.Hour = Convert.ToInt16(tHor.Text);
 
-                        dtmTAcumulado = DateTime.Parse(tHor.Text + ":" +
-                            tMin.Text + ":" + nSegundo.ToString() + "." + nMili.ToString());
+                        if (rgAcumParc.EditValue.ToString() == "Parcial")
+                        {
+                            //Tenemos que sumar al acumulado anterior el parcial para este Hito
+                            //int a = 1;
+                            dtmTAcumulado = Convert.ToDateTime(dtDatos.Rows[dtDatos.Rows.Count - 1]["TiempoAcum"]).AddMinutes(Convert.ToInt16(tMin.Text));
+                            dtmTAcumulado = dtmTAcumulado.AddSeconds(nSegundo);
+                            dtmTAcumulado = dtmTAcumulado.AddMilliseconds(nMili*100);   
+                            ///seguir aqui
+                        }
+                        else
+                        {
+                            //dejamos el calculo como siempre
+                            dtmTAcumulado = DateTime.Parse(tHor.Text + ":" +
+                                tMin.Text + ":" + nSegundo.ToString() + "." + nMili.ToString());
+                        }
 
                         //dtmTAcumulado = teTPaso.Time;
                         dtmTParcial = dtmTAcumulado.Subtract(Convert.ToDateTime(dtDatos.Rows[0]["TiempoAcum"]).TimeOfDay);
@@ -365,6 +378,7 @@ namespace ZeroTrip
                     tSec.Visible = false;
                     tMin.Visible = false;
                     tVelocidad.Visible = true;
+                    rgAcumParc.Visible = false;
                     tVelocidad.Properties.DisplayFormat.FormatString = "n4";
                     tVelocidad.Properties.EditFormat.FormatString = "n4";
                     tVelocidad.Properties.Mask.EditMask = "n4";
@@ -403,6 +417,7 @@ namespace ZeroTrip
                     tHor.Visible = false;
                     tSec.Visible = false;
                     tMin.Visible = false;
+                    rgAcumParc.Visible = false;
                     tVelocidad.Properties.DisplayFormat.FormatString = "n1";
                     tVelocidad.Properties.EditFormat.FormatString = "n1";
                     tVelocidad.Properties.Mask.EditMask = "n1";
@@ -440,6 +455,7 @@ namespace ZeroTrip
                     tHor.Visible = true;
                     tSec.Visible = true;
                     tMin.Visible = true;
+                    rgAcumParc.Visible = false;
                     tHasta.Focus();
 
 
@@ -472,6 +488,7 @@ namespace ZeroTrip
                     tMin.Visible = false;
                     tHasta.Enabled = true;
                     tVelocidad.Visible = true;
+                    rgAcumParc.Visible = false;
                     tVelocidad.Properties.DisplayFormat.FormatString = "n1";
                     tVelocidad.Properties.EditFormat.FormatString = "n1";
                     tVelocidad.Properties.Mask.EditMask = "n1";
@@ -489,7 +506,8 @@ namespace ZeroTrip
 
                 case "Hitos":
                 case "HitosK":
-                    nParcial = 1000;
+                  //  nParcial = 1000;
+                    nParcial = Convert.ToInt32(teDistHitos.Text);   
                     lbDos.Text = "Tiempo";
                     if (dsDatos.Datos.Rows.Count != 0)
                     {
@@ -504,6 +522,8 @@ namespace ZeroTrip
 
                     tVelocidad.Visible = false;
                     tHasta.Enabled = true;
+                    rgAcumParc.Visible = true;
+                    rgAcumParc.EditValue = "Acumulado";
 
                     gcDesde.OptionsColumn.AllowEdit = false;
                     gcHasta.OptionsColumn.AllowEdit = true;

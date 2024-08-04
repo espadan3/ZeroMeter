@@ -91,6 +91,8 @@
             this.lbFaltaCambio = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.xtTPUtils = new DevExpress.XtraTab.XtraTabPage();
+            this.teFechaInicio = new DevExpress.XtraEditors.TimeEdit();
+            this.btLimpiaBBDD = new DevExpress.XtraEditors.SimpleButton();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btDescargaLog = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
@@ -166,7 +168,7 @@
             this.btOpenPortARD = new DevExpress.XtraEditors.SimpleButton();
             this.cbPortARD = new DevExpress.XtraEditors.ComboBoxEdit();
             this.xtTPTramos = new DevExpress.XtraTab.XtraTabPage();
-            this.rgSegDec = new DevExpress.XtraEditors.RadioGroup();
+            this.rgAcumParc = new DevExpress.XtraEditors.RadioGroup();
             this.cbDescripcion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
             this.cbOrientacion = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -249,7 +251,6 @@
             this.logTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.LogTableAdapter();
             this.dsLog = new ZeroTrip.ZeroTripBBDDDataSet();
             this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btLimpiaBBDD = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ritbVelocidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ritbTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtTabControl)).BeginInit();
@@ -269,6 +270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.teRecalibre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teSigCMRE.Properties)).BeginInit();
             this.xtTPUtils.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teFechaInicio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgSonda.Properties)).BeginInit();
@@ -315,7 +317,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbBLTDevs.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPortARD.Properties)).BeginInit();
             this.xtTPTramos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rgSegDec.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgAcumParc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
@@ -1430,6 +1432,7 @@
             this.xtTPUtils.Appearance.PageClient.Options.UseBackColor = true;
             this.xtTPUtils.Appearance.PageClient.Options.UseFont = true;
             this.xtTPUtils.AutoScroll = true;
+            this.xtTPUtils.Controls.Add(this.teFechaInicio);
             this.xtTPUtils.Controls.Add(this.btLimpiaBBDD);
             this.xtTPUtils.Controls.Add(this.lbVersion);
             this.xtTPUtils.Controls.Add(this.btDescargaLog);
@@ -1448,6 +1451,57 @@
             this.xtTPUtils.Size = new System.Drawing.Size(1446, 737);
             this.xtTPUtils.TabPageWidth = 150;
             this.xtTPUtils.Text = "&Utilidades";
+            // 
+            // teFechaInicio
+            // 
+            this.teFechaInicio.EditValue = new System.DateTime(2011, 9, 27, 0, 0, 0, 0);
+            this.teFechaInicio.Location = new System.Drawing.Point(710, 519);
+            this.teFechaInicio.Name = "teFechaInicio";
+            this.teFechaInicio.Properties.Appearance.BackColor = System.Drawing.Color.Ivory;
+            this.teFechaInicio.Properties.Appearance.Font = new System.Drawing.Font("Digiface", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teFechaInicio.Properties.Appearance.ForeColor = System.Drawing.Color.MediumBlue;
+            this.teFechaInicio.Properties.Appearance.Options.UseBackColor = true;
+            this.teFechaInicio.Properties.Appearance.Options.UseFont = true;
+            this.teFechaInicio.Properties.Appearance.Options.UseForeColor = true;
+            this.teFechaInicio.Properties.Appearance.Options.UseTextOptions = true;
+            this.teFechaInicio.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.teFechaInicio.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.teFechaInicio.Properties.AppearanceFocused.BackColor = System.Drawing.Color.Transparent;
+            this.teFechaInicio.Properties.AppearanceFocused.Font = new System.Drawing.Font("Digiface", 18F, System.Drawing.FontStyle.Bold);
+            this.teFechaInicio.Properties.AppearanceFocused.ForeColor = System.Drawing.Color.DarkBlue;
+            this.teFechaInicio.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.teFechaInicio.Properties.AppearanceFocused.Options.UseFont = true;
+            this.teFechaInicio.Properties.AppearanceFocused.Options.UseForeColor = true;
+            this.teFechaInicio.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.teFechaInicio.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.teFechaInicio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.teFechaInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.teFechaInicio.Properties.LookAndFeel.SkinName = "Money Twins";
+            this.teFechaInicio.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.teFechaInicio.Properties.MaskSettings.Set("mask", "d");
+            this.teFechaInicio.Size = new System.Drawing.Size(160, 38);
+            this.teFechaInicio.TabIndex = 36;
+            this.teFechaInicio.TabStop = false;
+            // 
+            // btLimpiaBBDD
+            // 
+            this.btLimpiaBBDD.Appearance.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLimpiaBBDD.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.btLimpiaBBDD.Appearance.Options.UseFont = true;
+            this.btLimpiaBBDD.Appearance.Options.UseForeColor = true;
+            this.btLimpiaBBDD.Appearance.Options.UseTextOptions = true;
+            this.btLimpiaBBDD.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btLimpiaBBDD.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btLimpiaBBDD.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btLimpiaBBDD.Location = new System.Drawing.Point(710, 472);
+            this.btLimpiaBBDD.LookAndFeel.SkinName = "iMaginary";
+            this.btLimpiaBBDD.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btLimpiaBBDD.Name = "btLimpiaBBDD";
+            this.btLimpiaBBDD.Size = new System.Drawing.Size(160, 41);
+            this.btLimpiaBBDD.TabIndex = 35;
+            this.btLimpiaBBDD.Text = "Limpiar BBDD";
+            this.btLimpiaBBDD.Click += new System.EventHandler(this.btLimpiaBBDD_Click);
             // 
             // lbVersion
             // 
@@ -2136,7 +2190,7 @@
             this.btOpenPortPDA.Appearance.Options.UseForeColor = true;
             this.btOpenPortPDA.Appearance.Options.UseTextOptions = true;
             this.btOpenPortPDA.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btOpenPortPDA.Location = new System.Drawing.Point(629, 544);
+            this.btOpenPortPDA.Location = new System.Drawing.Point(296, 582);
             this.btOpenPortPDA.LookAndFeel.SkinName = "iMaginary";
             this.btOpenPortPDA.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btOpenPortPDA.Name = "btOpenPortPDA";
@@ -2148,7 +2202,7 @@
             // 
             // cbPortPDA
             // 
-            this.cbPortPDA.Location = new System.Drawing.Point(466, 550);
+            this.cbPortPDA.Location = new System.Drawing.Point(133, 588);
             this.cbPortPDA.Name = "cbPortPDA";
             this.cbPortPDA.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.cbPortPDA.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 14F, System.Drawing.FontStyle.Bold);
@@ -3027,7 +3081,7 @@
             this.xtTPTramos.Appearance.PageClient.BackColor = System.Drawing.Color.Black;
             this.xtTPTramos.Appearance.PageClient.Options.UseBackColor = true;
             this.xtTPTramos.AutoScroll = true;
-            this.xtTPTramos.Controls.Add(this.rgSegDec);
+            this.xtTPTramos.Controls.Add(this.rgAcumParc);
             this.xtTPTramos.Controls.Add(this.cbDescripcion);
             this.xtTPTramos.Controls.Add(this.groupControl9);
             this.xtTPTramos.Controls.Add(this.teSalida);
@@ -3048,25 +3102,26 @@
             this.xtTPTramos.TabPageWidth = 150;
             this.xtTPTramos.Text = "&Tramos";
             // 
-            // rgSegDec
+            // rgAcumParc
             // 
-            this.rgSegDec.Location = new System.Drawing.Point(1279, 567);
-            this.rgSegDec.Name = "rgSegDec";
-            this.rgSegDec.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rgSegDec.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
-            this.rgSegDec.Properties.Appearance.Options.UseFont = true;
-            this.rgSegDec.Properties.Appearance.Options.UseForeColor = true;
-            this.rgSegDec.Properties.Appearance.Options.UseTextOptions = true;
-            this.rgSegDec.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.rgSegDec.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.rgSegDec.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Segundo", "Segundo"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Decima", "Décima")});
-            this.rgSegDec.Properties.LookAndFeel.SkinName = "The Asphalt World";
-            this.rgSegDec.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.rgSegDec.Size = new System.Drawing.Size(99, 49);
-            this.rgSegDec.TabIndex = 46;
-            this.rgSegDec.Visible = false;
+            this.rgAcumParc.AutoSize = true;
+            this.rgAcumParc.Location = new System.Drawing.Point(1201, 474);
+            this.rgAcumParc.Name = "rgAcumParc";
+            this.rgAcumParc.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rgAcumParc.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.rgAcumParc.Properties.Appearance.Options.UseFont = true;
+            this.rgAcumParc.Properties.Appearance.Options.UseForeColor = true;
+            this.rgAcumParc.Properties.Appearance.Options.UseTextOptions = true;
+            this.rgAcumParc.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.rgAcumParc.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.rgAcumParc.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Acumulado", "Acumulado"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Parcial", "Parcial")});
+            this.rgAcumParc.Properties.LookAndFeel.SkinName = "The Asphalt World";
+            this.rgAcumParc.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.rgAcumParc.Size = new System.Drawing.Size(168, 25);
+            this.rgAcumParc.TabIndex = 46;
+            this.rgAcumParc.Visible = false;
             // 
             // cbDescripcion
             // 
@@ -4593,25 +4648,6 @@
             this.logBindingSource.DataMember = "Log";
             this.logBindingSource.DataSource = this.dsLog;
             // 
-            // btLimpiaBBDD
-            // 
-            this.btLimpiaBBDD.Appearance.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLimpiaBBDD.Appearance.ForeColor = System.Drawing.Color.Navy;
-            this.btLimpiaBBDD.Appearance.Options.UseFont = true;
-            this.btLimpiaBBDD.Appearance.Options.UseForeColor = true;
-            this.btLimpiaBBDD.Appearance.Options.UseTextOptions = true;
-            this.btLimpiaBBDD.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btLimpiaBBDD.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btLimpiaBBDD.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btLimpiaBBDD.Location = new System.Drawing.Point(710, 472);
-            this.btLimpiaBBDD.LookAndFeel.SkinName = "iMaginary";
-            this.btLimpiaBBDD.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btLimpiaBBDD.Name = "btLimpiaBBDD";
-            this.btLimpiaBBDD.Size = new System.Drawing.Size(160, 41);
-            this.btLimpiaBBDD.TabIndex = 35;
-            this.btLimpiaBBDD.Text = "Limpiar BBDD";
-            this.btLimpiaBBDD.Click += new System.EventHandler(this.btLimpiaBBDD_Click);
-            // 
             // frPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4651,6 +4687,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.teSigCMRE.Properties)).EndInit();
             this.xtTPUtils.ResumeLayout(false);
             this.xtTPUtils.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teFechaInicio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             this.groupControl6.PerformLayout();
@@ -4702,7 +4739,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbPortARD.Properties)).EndInit();
             this.xtTPTramos.ResumeLayout(false);
             this.xtTPTramos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rgSegDec.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgAcumParc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
             this.groupControl9.ResumeLayout(false);
@@ -4932,7 +4969,7 @@
         private System.Windows.Forms.Label lbVelRE;
         private DevExpress.XtraEditors.TextEdit teVelRE;
         private DevExpress.XtraEditors.RadioGroup rgDecaMetro;
-        private DevExpress.XtraEditors.RadioGroup rgSegDec;
+        private DevExpress.XtraEditors.RadioGroup rgAcumParc;
         private DevExpress.XtraEditors.TextEdit teSigRecalibre;
         private DevExpress.XtraEditors.SimpleButton btFreeze;
         private DevExpress.XtraEditors.SimpleButton btSigRecalibre;
@@ -4971,6 +5008,7 @@
         private DevExpress.XtraEditors.TextEdit teVID;
         private DevExpress.XtraEditors.RadioGroup rgSonda;
         private DevExpress.XtraEditors.SimpleButton btLimpiaBBDD;
+        private DevExpress.XtraEditors.TimeEdit teFechaInicio;
     }
 }
 

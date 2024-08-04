@@ -204,6 +204,7 @@ namespace ZeroTrip
 
             teTPaso.Visible = false;
             tePrueba.Time = DateTime.Now;
+            teFechaInicio.Time = DateTime.Now;
 
             btReset.Focus();
             //recConnetionBLT();
@@ -1628,7 +1629,7 @@ namespace ZeroTrip
 
             lbPulsos.Text = "0";
 
-            rgSegDec.EditValue = "Segundo";
+            rgAcumParc.EditValue = "Segundo";
 
             chkCalcar.Checked = false;
             Gb.bTramoACalcar = false;

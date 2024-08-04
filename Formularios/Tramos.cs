@@ -133,10 +133,10 @@ namespace ZeroTrip
                 else
                 {
                     //rgTipoTramo.Enabled = true;
-                    rgTipoTramo.EditValueChanged -= rgTipoTramo_EditValueChanged;
+                   // rgTipoTramo.EditValueChanged -= rgTipoTramo_EditValueChanged;
                     rgTipoTramo.EditValue = cbTipo.Text;
                     //rgTipoTramo.Enabled = false;
-                    rgTipoTramo.EditValueChanged += rgTipoTramo_EditValueChanged;
+                    //rgTipoTramo.EditValueChanged += rgTipoTramo_EditValueChanged;
                 }
     
 
@@ -230,6 +230,7 @@ namespace ZeroTrip
                         tHor.Visible = false;
                         tSec.Visible = false;
                         tMin.Visible = false;
+                        rgAcumParc.Visible = false;
                         tVelocidad.Properties.DisplayFormat.FormatString = "n4";
                         tVelocidad.Properties.EditFormat.FormatString = "n4";
                         tVelocidad.Properties.Mask.EditMask = "n4";
@@ -259,6 +260,7 @@ namespace ZeroTrip
                         tHor.Visible = false;
                         tSec.Visible = false;
                         tMin.Visible = false;
+                        rgAcumParc.Visible = false;
                         tVelocidad.Properties.DisplayFormat.FormatString = "n1";
                         tVelocidad.Properties.EditFormat.FormatString = "n1";
                         tVelocidad.Properties.Mask.EditMask = "n1";
@@ -296,6 +298,8 @@ namespace ZeroTrip
                         tHor.Visible = false;
                         tSec.Visible = false;
                         tMin.Visible = false;
+                        rgAcumParc.Visible = false;
+                        
                         tVelocidad.Properties.DisplayFormat.FormatString = "n1";
                         tVelocidad.Properties.EditFormat.FormatString = "n1";
                         tVelocidad.Properties.Mask.EditMask = "n1";
@@ -329,6 +333,8 @@ namespace ZeroTrip
                         tHor.Visible = true;
                         tSec.Visible = true;
                         tMin.Visible = true;
+                        rgAcumParc.Visible = true;
+                        rgAcumParc.EditValue = "Acumulado";
                         tVelocidad.Properties.DisplayFormat.FormatString = "n0";
                         tVelocidad.Properties.EditFormat.FormatString = "n0";
                         tVelocidad.Properties.Mask.EditMask = "n0";
@@ -358,6 +364,7 @@ namespace ZeroTrip
                         tHor.Visible = true;
                         tSec.Visible = true;
                         tMin.Visible = true;
+                        rgAcumParc.Visible = false;
                         tVelocidad.Properties.DisplayFormat.FormatString = "n0";
                         tVelocidad.Properties.EditFormat.FormatString = "n0";
                         tVelocidad.Properties.Mask.EditMask = "n0";
@@ -386,6 +393,7 @@ namespace ZeroTrip
                         tHor.Visible = true;
                         tSec.Visible = true;
                         tMin.Visible = true;
+                        rgAcumParc.Visible = false;
                         tVelocidad.Properties.DisplayFormat.FormatString = "n0";
                         tVelocidad.Properties.EditFormat.FormatString = "n0";
                         tVelocidad.Properties.Mask.EditMask = "n0";
@@ -414,6 +422,7 @@ namespace ZeroTrip
                         tHor.Visible = false;
                         tSec.Visible = false;
                         tMin.Visible = false;
+                        rgAcumParc.Visible = false;
                         tVelocidad.Properties.DisplayFormat.FormatString = "n4";
                         tVelocidad.Properties.EditFormat.FormatString = "n4";
                         tVelocidad.Properties.Mask.EditMask = "n4";
