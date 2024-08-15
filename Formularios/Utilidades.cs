@@ -1205,11 +1205,11 @@ namespace ZeroTrip
             if (bEnCompeticion) 
                 GuardaCalibre();
 
-            if (PSerieARD.IsOpen)
-            {
-                PSerieARD.Write(dbCalibreActivo.ToString());
-                String szCadena = PSerieARD.ReadLine();
-            }
+            //if (PSerieARD.IsOpen)
+            //{
+            //    PSerieARD.Write(dbCalibreActivo.ToString());
+            //    String szCadena = PSerieARD.ReadLine();
+            //}
         }
 
         private void btCal2_Click(object sender, EventArgs e)
@@ -1239,11 +1239,11 @@ namespace ZeroTrip
 
             if (bEnCompeticion) GuardaCalibre();
 
-            if (PSerieARD.IsOpen)
-            {
-                PSerieARD.Write(dbCalibreActivo.ToString());
-                String szCadena = PSerieARD.ReadLine();
-            }
+            //if (PSerieARD.IsOpen)
+            //{
+            //    PSerieARD.Write(dbCalibreActivo.ToString());
+            //    String szCadena = PSerieARD.ReadLine();
+            //}
         }
 
         private void btCal3_Click(object sender, EventArgs e)
@@ -1273,11 +1273,11 @@ namespace ZeroTrip
 
             if (bEnCompeticion) GuardaCalibre();
 
-            if (PSerieARD.IsOpen)
-            {
-                PSerieARD.Write(dbCalibreActivo.ToString());
-                String szCadena = PSerieARD.ReadLine();
-            }
+            //if (PSerieARD.IsOpen)
+            //{
+            //    PSerieARD.Write(dbCalibreActivo.ToString());
+            //    String szCadena = PSerieARD.ReadLine();
+            //}
         }
 
         public void GuardaCalibre()
