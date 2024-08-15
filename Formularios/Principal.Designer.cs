@@ -34,6 +34,7 @@
             this.ritbTime = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.xtTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtTPCarrera = new DevExpress.XtraTab.XtraTabPage();
+            this.btTiempoSector = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
             this.btRecalibrar = new DevExpress.XtraEditors.SimpleButton();
             this.lbDifPorRecal = new System.Windows.Forms.Label();
@@ -424,6 +425,7 @@
             this.xtTPCarrera.Appearance.PageClient.Options.UseFont = true;
             this.xtTPCarrera.Appearance.PageClient.Options.UseForeColor = true;
             this.xtTPCarrera.AutoScroll = true;
+            this.xtTPCarrera.Controls.Add(this.btTiempoSector);
             this.xtTPCarrera.Controls.Add(this.groupControl8);
             this.xtTPCarrera.Controls.Add(this.btEnviar);
             this.xtTPCarrera.Controls.Add(this.lbCandado);
@@ -464,6 +466,23 @@
             this.xtTPCarrera.Size = new System.Drawing.Size(1446, 737);
             this.xtTPCarrera.TabPageWidth = 150;
             this.xtTPCarrera.Text = "&Carrera";
+            // 
+            // btTiempoSector
+            // 
+            this.btTiempoSector.Appearance.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTiempoSector.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.btTiempoSector.Appearance.Options.UseFont = true;
+            this.btTiempoSector.Appearance.Options.UseForeColor = true;
+            this.btTiempoSector.Appearance.Options.UseTextOptions = true;
+            this.btTiempoSector.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btTiempoSector.Location = new System.Drawing.Point(695, 433);
+            this.btTiempoSector.LookAndFeel.SkinName = "iMaginary";
+            this.btTiempoSector.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btTiempoSector.Name = "btTiempoSector";
+            this.btTiempoSector.Size = new System.Drawing.Size(160, 60);
+            this.btTiempoSector.TabIndex = 68;
+            this.btTiempoSector.Text = "Tiempo paso primer sector (Q)";
+            this.btTiempoSector.Click += new System.EventHandler(this.btTiempoSector_Click);
             // 
             // groupControl8
             // 
@@ -4621,7 +4640,7 @@
             // 
             // PSeriePDA
             // 
-            this.PSeriePDA.PortName = "COM4";
+            this.PSeriePDA.PortName = "COM7";
             this.PSeriePDA.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.PuertoSerie_DataReceived);
             // 
             // incidenciasTableAdapter
@@ -4630,7 +4649,8 @@
             // 
             // PSerieARD
             // 
-            this.PSerieARD.PortName = "COM8";
+            this.PSerieARD.BaudRate = 115200;
+            this.PSerieARD.PortName = "COM3";
             // 
             // logTableAdapter
             // 
@@ -5009,6 +5029,7 @@
         private DevExpress.XtraEditors.RadioGroup rgSonda;
         private DevExpress.XtraEditors.SimpleButton btLimpiaBBDD;
         private DevExpress.XtraEditors.TimeEdit teFechaInicio;
+        private DevExpress.XtraEditors.SimpleButton btTiempoSector;
     }
 }
 

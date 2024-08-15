@@ -141,7 +141,9 @@ namespace ZeroTrip
             lbHoraSalida.Text = dtSalidaTr.TimeOfDay.ToString();
 
             lbTipoTramo.Text = tbInfoTr[0].TipoTramo.ToString();
-            
+            btTiempoSector.Visible = false;
+            btTiempoSector.Enabled = false;
+
             switch (tbInfoTr[0].TipoTramo)
             {
                 case "Tablas":
@@ -219,13 +221,16 @@ namespace ZeroTrip
                     break;
 
                 case "Sectores":
-                    lbLitVariable.Visible = false;
-                    lbVariable.Visible = false;
-                    lbCuentaAtras.Visible = false;
-                    lbLitCuentaAtras.Visible = false;
-                    //lbVariable.Text = tbDatosTr[0].Hasta.ToString();
-                    //lbLitVariable.Text = "Siguiente Distancia";
-                    //lbVelocidad.Text = "";
+                    btTiempoSector.Visible = true;
+                    btTiempoSector.Enabled = true;
+                    lbLitVariable.Visible = true;
+                    lbVariable.Visible = true;
+                    lbCuentaAtras.Visible = true;
+                    lbLitCuentaAtras.Visible = true;
+                    lbLitCuentaAtras.Text = "Cuenta Atrás";
+                    lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+                    lbLitVariable.Text = "Siguiente Distancia";
+                    lbVelocidad.Text = "";
                     lbSigVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
                     lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
                     lbSigCMRE.Visible = false;
@@ -394,9 +399,6 @@ namespace ZeroTrip
         //---------------------------------------------------------------------------------------------------------
 
 
-
-        //---------------------------------------------------------------------------------------------------------
-
         private void PuertoSerie_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             int bytes = PSeriePDA.BytesToRead;
@@ -428,7 +430,7 @@ namespace ZeroTrip
                 }
                 ResetContador();
                 PSerieARD.WriteTimeout = 500;
-
+                
 
             }
             catch (Exception ex)
@@ -1161,12 +1163,12 @@ namespace ZeroTrip
 
         private void tePID_EditValueChanged(object sender, EventArgs e)
         {
-            config.SetAvisoCM(tePID.Text);
+            config.SetPID((tePID.Text.Replace(".", "")));
         }
 
         private void teVID_EditValueChanged(object sender, EventArgs e)
         {
-            config.SetAvisoCM(teVID.Text);
+            config.SetVID((teVID.Text.Replace(".", "")));
         }
 
         private void teCalMopuTerra_EditValueChanged(object sender, EventArgs e)

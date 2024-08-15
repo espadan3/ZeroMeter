@@ -604,6 +604,12 @@ namespace ZeroTrip
                 case (Keys.Y):
                     btInicio_Click(sender, e);                  
                     break;
+                case (Keys.Q):
+                    if (btTiempoSector.Enabled)
+                    {
+                        btTiempoSector_Click(sender, e);
+                    }
+                    break;
                 case (Keys.D):
                     if (btMas1.Enabled)
                     {
@@ -730,6 +736,15 @@ namespace ZeroTrip
             CargaTramo(Convert.ToInt16(nTramoCron));
         }
 
+
+        private void btTiempoSector_Click(object sender, EventArgs e)
+        {
+            // Tenemos que tomar el tiempo empleado en el primer sector y aplicarlo a los demás.
+
+            //Como ya hemos hecho todo, ocultamos el boton
+            btTiempoSector.Enabled = false;
+            btTiempoSector.Visible = false;
+        }
 
         #endregion CONTROLES
 
@@ -1695,7 +1710,7 @@ namespace ZeroTrip
         {
             if (!MyUSBARDConnected)
             {
-                //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true) || // la 43 es la mia, la de Javier es 42
+                //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true) || // la 43 es la mia, la de Javier es 42, y la R4 es 69
                 //    USBClass.GetUSBDevice(2341, 42, ref USBDeviceProperties, true))
                     if (USBClass.GetUSBDevice(Convert.ToUInt16(config.GetVID()), Convert.ToUInt16(config.GetPID()), ref USBDeviceProperties, true))
                     {
