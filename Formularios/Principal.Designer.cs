@@ -1753,6 +1753,7 @@
             this.rgCalibre.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.rgCalibre.Size = new System.Drawing.Size(320, 51);
             this.rgCalibre.TabIndex = 44;
+            this.rgCalibre.SelectedIndexChanged += new System.EventHandler(this.rgCalibre_SelectedIndexChanged);
             // 
             // label28
             // 

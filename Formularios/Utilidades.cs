@@ -1315,7 +1315,7 @@ namespace ZeroTrip
             config.SetCal3(double.Parse(teCal3.Text.Replace(".", "")));
         }
 
-        private void rgCalibre_EditValueChanged(object sender, EventArgs e)
+        private void rgCalibre_SelectedIndexChanged(object sender, EventArgs e)
         {
             config.SetTipoMedidor(rgCalibre.Text);
 
