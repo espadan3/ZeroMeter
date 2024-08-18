@@ -239,6 +239,8 @@ namespace ZeroTrip
                     btSigCMManual.Visible = false;
                     lbVelRE.Visible = false;
                     teVelRE.Visible = false;
+                    btTiempoSector.Visible = true;
+                    btTiempoSector.Enabled = true;
                     break;
 
                 case "RefExternas":

@@ -1,35 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using InTheHand.Net.Sockets;
+using Microsoft.VisualBasic;
+using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-//using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+using System.Globalization;
 using System.IO.Ports;
 using System.Media;
-using Microsoft.VisualBasic;
-using System.Globalization;
-
-using USBClassLibrary;
-using BTLibrary;
-
-using InTheHand.Net;
-using InTheHand.Net.Bluetooth;
-using InTheHand.Net.Sockets;
-using System.Management;
-using System.Deployment.Application;
 using System.Reflection;
-using System.Diagnostics;
-using System.Device.Location;
+//using System.Linq;
+using System.Windows.Forms;
+using USBClassLibrary;
 
 
 
 
 namespace ZeroTrip
 
-    // Cuando pulso stop no se debe inicializar todo en pantalla.
-    // Quitar barra deslizante con diferencia
+// Cuando pulso stop no se debe inicializar todo en pantalla.
+// Quitar barra deslizante con diferencia
 
 
 {
@@ -706,6 +695,8 @@ namespace ZeroTrip
                 btMas10.Enabled = true;
                 btMenos10.Enabled = true;
                 btMenos1.Enabled = true;
+                btMas1Min.Enabled = true;
+                btMenos1Min.Enabled = true;
             }
             else
             {
@@ -715,6 +706,8 @@ namespace ZeroTrip
                 btMas10.Enabled = false;
                 btMenos10.Enabled = false;
                 btMenos1.Enabled = false;
+                btMas1Min.Enabled = false;
+                btMenos1Min.Enabled = false;
             }
         }
 
@@ -1655,9 +1648,16 @@ namespace ZeroTrip
             btMas10.Enabled = false;
             btMenos10.Enabled = false;
             btMenos1.Enabled = false;
+            btMenos1Min.Enabled = false;
+            btMas1Min.Enabled = false;
 
             btBloqMetros.Image = ZeroTrip.Properties.Resources._lock;
             btBloqMetros.Text = "Cerrado";
+
+            //Sólo mostramos y habilitamos est botón cuando se cargue un tramo a Sectores.
+            btTiempoSector.Enabled = false;
+            btTiempoSector.Visible = false;
+
 
         }
 

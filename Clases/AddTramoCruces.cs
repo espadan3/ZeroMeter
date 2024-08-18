@@ -11,6 +11,8 @@ using System.Globalization;
 using Microsoft.VisualBasic;
 using ZeroTrip.ZeroTripBBDDDataSetTableAdapters;
 using DevExpress.Utils;
+//using DevExpress.Office.Crypto;
+//using Microsoft.Office.Interop.Excel;
 
 namespace ZeroTrip
 {
@@ -18,7 +20,7 @@ namespace ZeroTrip
 
     //  class AddTramo
     {
-        //Utiles Util = new Utiles();
+        //Utiles Util = new Utiles();   
         //short nTramo;
 
         public void AddTramo(string szTipoTramo)
@@ -655,70 +657,126 @@ namespace ZeroTrip
         public void InicializarTramo(short nTramo, string szTipo)
         {
 
-            DateTime dtmTParcial = DateTime.Today, dtmTAcumulado = DateTime.Today;
+            DateTime dtmTParcial = DateTime.Today, dtmTAcumulado = DateTime.Today, dtmAntTAcumulado = DateTime.Today;
 
             //DataTable dtTablaDatos = dsDatos.Tables["Datos"];
             DataRow rwDatos = dsDatos.Tables["Datos"].NewRow();
 
             short nRegs = Convert.ToInt16(datosTableAdapter.ContarDatos(nTramo));
 
-            bReCargaTramo = false;
-
-            switch (szTipo)
+            if (Util.AvisoConRespuesta("Vas a inicializar un tramo a " + szTipo + ". ¿Quieres añadir registros por defecto?", "Inicialización de Tramos."))
             {
-                case "Medias":
-                case "RefExternas":
 
-                    //dsDatos.Tables["Datos"].Rows.Add(rwDatos);
+                bReCargaTramo = false;
 
-                    //dsDatos.Datos[0]["IdTramo"] = nTramo;
-                    //dsDatos.Datos[0]["IdDato"] = Convert.ToInt16(nRegs + 1);
-                    //dsDatos.Datos[0]["Desde"] = 0;
-                    //dsDatos.Datos[0]["Hasta"] = 2000;
-                    //dsDatos.Datos[0]["Parcial"] = 2000;
-                    //dsDatos.Datos[0]["Velocidad"] = (double)49;
-                    //dtmTParcial = Util.Tiempo(2000, (decimal)49);
-                    //dtmTAcumulado = dtmTParcial;
-                    //dsDatos.Datos[0]["TiempoAcum"] = dtmTAcumulado;
-                    //dsDatos.Datos[0]["TiempoParcial"] = dtmTParcial;
-                    //dsDatos.Datos[0]["TipoTramo"] = "Medias";
+                switch (szTipo)
+                {
+                    case "Medias":
 
-                    rwDatos["IdTramo"] = nTramo;
-                    rwDatos["IdDato"] = Convert.ToInt16(nRegs + 1);
-                    rwDatos["Desde"] = 0;
-                    rwDatos["Hasta"] = 2000;
-                    rwDatos["Parcial"] = 2000;
-                    rwDatos["Velocidad"] = (double)49;
-                    dtmTParcial = Util.Tiempo(2000, (decimal)49);
+                        rwDatos["IdTramo"] = nTramo;
+                        rwDatos["IdDato"] = Convert.ToInt16(nRegs + 1);
+                        rwDatos["Desde"] = 0;
+                        rwDatos["Hasta"] = 2000;
+                        rwDatos["Parcial"] = 2000;
+                        rwDatos["Velocidad"] = (double)49;
+                        dtmTParcial = Util.Tiempo(2000, (decimal)49);
+                        dtmTAcumulado = dtmTParcial;
+                        rwDatos["TiempoAcum"] = dtmTAcumulado;
+                        rwDatos["TiempoParcial"] = dtmTParcial;
+                        rwDatos["TipoTramo"] = "Medias";
+
+                        dsDatos.Tables["Datos"].Rows.Add(rwDatos);
+                        dsDatos.Datos.Rows.RemoveAt(1);
+
+                        break;
+
+                    case "RefExternas":
+                        CrearFilaDatos(20, 20000, 49, "RefExternas");
+                        break;
+                    case "Sectores":
+                        CrearFilaDatos(Convert.ToInt16(teNumSectores.Text.ToString()),
+                            Convert.ToInt32(Convert.ToInt32(int.Parse(teLonTotalSectores.Text.Replace(".", "")).ToString())/ Convert.ToInt32(teNumSectores.Text.ToString())), 
+                            49,
+                            "Sectores");
+                        break;
+                    default:
+                        break;
+
+
+                }
+
+                if (dsDatos.Tables["Datos"].GetChanges() != null)
+                {
+                    datosTableAdapter.Update(dsDatos);
+                    dsDatos.AcceptChanges();
+                }
+
+
+                datosTableAdapter.Fill(dsDatos.Datos, nTramo);
+                gcMedias.RefreshDataSource();
+
+                gvMedias.MoveLast();
+
+
+                bReCargaTramo = true;
+            }   
+        }
+
+        private void CrearFilaDatos(Int16 nFilas, Int32 nHast, Double dVelo, String szTipoTramo)
+        {
+
+            Int32 nAntHasta = 0;
+            Int32 nNewHasta = nHast;
+            DateTime dtmTParcial = DateTime.Today, dtmTAcumulado = DateTime.Today, dtmAntTAcumulado = DateTime.Today;
+
+            for (int i = 1; i <= nFilas; i++)
+            {
+                DataRow rwDatos2 = dsDatos.Tables["Datos"].NewRow();
+                rwDatos2["IdTramo"] = nTramo;
+                rwDatos2["IdDato"] = i;
+                rwDatos2["Desde"] = nAntHasta;
+                rwDatos2["Hasta"] = nNewHasta;
+                rwDatos2["Parcial"] = nNewHasta - nAntHasta;
+                rwDatos2["Velocidad"] = dVelo;
+                dtmTParcial = Util.Tiempo(nNewHasta - nAntHasta, (decimal)dVelo);
+                if (i == 1)
+                {
                     dtmTAcumulado = dtmTParcial;
-                    rwDatos["TiempoAcum"] = dtmTAcumulado;
-                    rwDatos["TiempoParcial"] = dtmTParcial;
-                    rwDatos["TipoTramo"] = "Medias";
+                    dtmAntTAcumulado = dtmTParcial;
+                }
 
-                    dsDatos.Tables["Datos"].Rows.Add(rwDatos);
-                    dsDatos.Datos.Rows.RemoveAt(1);
+                else
+                {
+                    // dtmTAcumulado = dtmAntTAcumulado.AddTicks(dtmTParcial.Ticks);
+                    dtmTAcumulado = dtmAntTAcumulado.AddTicks((dtmTParcial.TimeOfDay).Ticks);
+                    dtmAntTAcumulado = dtmTAcumulado;
+                }
+                rwDatos2["TiempoAcum"] = dtmTAcumulado;
+                rwDatos2["TiempoParcial"] = dtmTParcial;
+                rwDatos2["TipoTramo"] = szTipoTramo;
 
-                    break;
-                default:
-                    break;
+                dsDatos.Tables["Datos"].Rows.Add(rwDatos2);
+                nAntHasta = nNewHasta;
 
-
+                switch (szTipoTramo)
+                {
+                    case "Medias":
+                        nNewHasta += 1000;
+                        break;
+                    case "RefExternas":
+                        nNewHasta += 1000;
+                        break;
+                    case "Sectores":
+                        nNewHasta += nHast;
+                        break;
+                    default:
+                        break;
+                }
+               // nNewHasta += 1000;
+                dsDatos.Datos.Rows.RemoveAt(dsDatos.Datos.Rows.Count - 1);
             }
-
-            if (dsDatos.Tables["Datos"].GetChanges() != null)
-            {
-                datosTableAdapter.Update(dsDatos);
-                dsDatos.AcceptChanges();
-            }
-
-
-            datosTableAdapter.Fill(dsDatos.Datos, nTramo);
-            gcMedias.RefreshDataSource();
-
-            gvMedias.MoveLast();
-
-
-            bReCargaTramo = true;
-        } // End de Class
+        }
+        
+        // End de Class
     }
 }

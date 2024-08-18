@@ -169,6 +169,16 @@
             this.btOpenPortARD = new DevExpress.XtraEditors.SimpleButton();
             this.cbPortARD = new DevExpress.XtraEditors.ComboBoxEdit();
             this.xtTPTramos = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
+            this.teTiempoTotalSectores = new DevExpress.XtraEditors.TimeEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.teVeloSector = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.teLonTotalSectores = new DevExpress.XtraEditors.TextEdit();
+            this.btCrearSectores = new DevExpress.XtraEditors.SimpleButton();
+            this.teNumSectores = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.rgAcumParc = new DevExpress.XtraEditors.RadioGroup();
             this.cbDescripcion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
@@ -318,6 +328,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbBLTDevs.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPortARD.Properties)).BeginInit();
             this.xtTPTramos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
+            this.groupControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teTiempoTotalSectores.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teVeloSector.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teLonTotalSectores.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teNumSectores.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgAcumParc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
@@ -3101,6 +3117,7 @@
             this.xtTPTramos.Appearance.PageClient.BackColor = System.Drawing.Color.Black;
             this.xtTPTramos.Appearance.PageClient.Options.UseBackColor = true;
             this.xtTPTramos.AutoScroll = true;
+            this.xtTPTramos.Controls.Add(this.groupControl10);
             this.xtTPTramos.Controls.Add(this.rgAcumParc);
             this.xtTPTramos.Controls.Add(this.cbDescripcion);
             this.xtTPTramos.Controls.Add(this.groupControl9);
@@ -3122,12 +3139,199 @@
             this.xtTPTramos.TabPageWidth = 150;
             this.xtTPTramos.Text = "&Tramos";
             // 
+            // groupControl10
+            // 
+            this.groupControl10.Appearance.Options.UseBackColor = true;
+            this.groupControl10.Appearance.Options.UseImage = true;
+            this.groupControl10.Appearance.Options.UseTextOptions = true;
+            this.groupControl10.Controls.Add(this.teTiempoTotalSectores);
+            this.groupControl10.Controls.Add(this.labelControl7);
+            this.groupControl10.Controls.Add(this.teVeloSector);
+            this.groupControl10.Controls.Add(this.labelControl6);
+            this.groupControl10.Controls.Add(this.teLonTotalSectores);
+            this.groupControl10.Controls.Add(this.btCrearSectores);
+            this.groupControl10.Controls.Add(this.teNumSectores);
+            this.groupControl10.Controls.Add(this.labelControl4);
+            this.groupControl10.Controls.Add(this.labelControl5);
+            this.groupControl10.Location = new System.Drawing.Point(1189, 455);
+            this.groupControl10.LookAndFeel.SkinName = "The Asphalt World";
+            this.groupControl10.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.groupControl10.Name = "groupControl10";
+            this.groupControl10.Size = new System.Drawing.Size(181, 265);
+            this.groupControl10.TabIndex = 68;
+            this.groupControl10.Text = "Entrada de datos Sectores";
+            // 
+            // teTiempoTotalSectores
+            // 
+            this.teTiempoTotalSectores.EditValue = new System.DateTime(2011, 9, 27, 0, 0, 0, 0);
+            this.teTiempoTotalSectores.Location = new System.Drawing.Point(36, 181);
+            this.teTiempoTotalSectores.Name = "teTiempoTotalSectores";
+            this.teTiempoTotalSectores.Properties.Appearance.BackColor = System.Drawing.Color.Ivory;
+            this.teTiempoTotalSectores.Properties.Appearance.Font = new System.Drawing.Font("Digiface", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teTiempoTotalSectores.Properties.Appearance.ForeColor = System.Drawing.Color.MediumBlue;
+            this.teTiempoTotalSectores.Properties.Appearance.Options.UseBackColor = true;
+            this.teTiempoTotalSectores.Properties.Appearance.Options.UseFont = true;
+            this.teTiempoTotalSectores.Properties.Appearance.Options.UseForeColor = true;
+            this.teTiempoTotalSectores.Properties.Appearance.Options.UseTextOptions = true;
+            this.teTiempoTotalSectores.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.teTiempoTotalSectores.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.teTiempoTotalSectores.Properties.AppearanceFocused.BackColor = System.Drawing.Color.Transparent;
+            this.teTiempoTotalSectores.Properties.AppearanceFocused.Font = new System.Drawing.Font("Digiface", 18F, System.Drawing.FontStyle.Bold);
+            this.teTiempoTotalSectores.Properties.AppearanceFocused.ForeColor = System.Drawing.Color.DarkBlue;
+            this.teTiempoTotalSectores.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.teTiempoTotalSectores.Properties.AppearanceFocused.Options.UseFont = true;
+            this.teTiempoTotalSectores.Properties.AppearanceFocused.Options.UseForeColor = true;
+            this.teTiempoTotalSectores.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.teTiempoTotalSectores.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.teTiempoTotalSectores.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.teTiempoTotalSectores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.teTiempoTotalSectores.Properties.LookAndFeel.SkinName = "Money Twins";
+            this.teTiempoTotalSectores.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.teTiempoTotalSectores.Size = new System.Drawing.Size(108, 38);
+            this.teTiempoTotalSectores.TabIndex = 72;
+            this.teTiempoTotalSectores.TabStop = false;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Ebrima", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControl7.Appearance.Options.UseBackColor = true;
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseForeColor = true;
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl7.Location = new System.Drawing.Point(64, 166);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(52, 12);
+            this.labelControl7.TabIndex = 71;
+            this.labelControl7.Text = "Tiempo Total";
+            // 
+            // teVeloSector
+            // 
+            this.teVeloSector.EditValue = "0,0";
+            this.teVeloSector.Location = new System.Drawing.Point(40, 131);
+            this.teVeloSector.Name = "teVeloSector";
+            this.teVeloSector.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.teVeloSector.Properties.Appearance.Options.UseFont = true;
+            this.teVeloSector.Properties.Appearance.Options.UseTextOptions = true;
+            this.teVeloSector.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.teVeloSector.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.teVeloSector.Properties.DisplayFormat.FormatString = "n1";
+            this.teVeloSector.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.teVeloSector.Properties.EditFormat.FormatString = "n1";
+            this.teVeloSector.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.teVeloSector.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.teVeloSector.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.teVeloSector.Properties.MaskSettings.Set("mask", "n1");
+            this.teVeloSector.Size = new System.Drawing.Size(100, 32);
+            this.teVeloSector.TabIndex = 70;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Ebrima", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControl6.Appearance.Options.UseBackColor = true;
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl6.Location = new System.Drawing.Point(50, 117);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(81, 12);
+            this.labelControl6.TabIndex = 69;
+            this.labelControl6.Text = "Velocidad por Sector";
+            // 
+            // teLonTotalSectores
+            // 
+            this.teLonTotalSectores.EditValue = "";
+            this.teLonTotalSectores.Location = new System.Drawing.Point(40, 82);
+            this.teLonTotalSectores.Name = "teLonTotalSectores";
+            this.teLonTotalSectores.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.teLonTotalSectores.Properties.Appearance.Options.UseFont = true;
+            this.teLonTotalSectores.Properties.Appearance.Options.UseTextOptions = true;
+            this.teLonTotalSectores.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.teLonTotalSectores.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.teLonTotalSectores.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.teLonTotalSectores.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.teLonTotalSectores.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.teLonTotalSectores.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.teLonTotalSectores.Properties.MaskSettings.Set("mask", "n0");
+            this.teLonTotalSectores.Size = new System.Drawing.Size(100, 32);
+            this.teLonTotalSectores.TabIndex = 68;
+            // 
+            // btCrearSectores
+            // 
+            this.btCrearSectores.Appearance.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCrearSectores.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.btCrearSectores.Appearance.Options.UseFont = true;
+            this.btCrearSectores.Appearance.Options.UseForeColor = true;
+            this.btCrearSectores.Location = new System.Drawing.Point(10, 228);
+            this.btCrearSectores.LookAndFeel.SkinName = "Blue";
+            this.btCrearSectores.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btCrearSectores.Name = "btCrearSectores";
+            this.btCrearSectores.Size = new System.Drawing.Size(163, 34);
+            this.btCrearSectores.TabIndex = 13;
+            this.btCrearSectores.Text = "Crear";
+            this.btCrearSectores.Click += new System.EventHandler(this.btCrearSectores_Click);
+            // 
+            // teNumSectores
+            // 
+            this.teNumSectores.EditValue = "";
+            this.teNumSectores.Location = new System.Drawing.Point(40, 35);
+            this.teNumSectores.Name = "teNumSectores";
+            this.teNumSectores.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.teNumSectores.Properties.Appearance.Options.UseFont = true;
+            this.teNumSectores.Properties.Appearance.Options.UseTextOptions = true;
+            this.teNumSectores.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.teNumSectores.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.teNumSectores.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.teNumSectores.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.teNumSectores.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.teNumSectores.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.teNumSectores.Properties.MaskSettings.Set("mask", "n0");
+            this.teNumSectores.Size = new System.Drawing.Size(100, 32);
+            this.teNumSectores.TabIndex = 10;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Ebrima", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControl4.Appearance.Options.UseBackColor = true;
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseForeColor = true;
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl4.Location = new System.Drawing.Point(53, 68);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(75, 12);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Logitud total tramo";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Ebrima", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControl5.Appearance.Options.UseBackColor = true;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl5.Location = new System.Drawing.Point(50, 21);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(81, 12);
+            this.labelControl5.TabIndex = 7;
+            this.labelControl5.Text = "Número de Sectores";
+            // 
             // rgAcumParc
             // 
-            this.rgAcumParc.AutoSize = true;
-            this.rgAcumParc.Location = new System.Drawing.Point(1201, 474);
+            this.rgAcumParc.Location = new System.Drawing.Point(1189, 392);
             this.rgAcumParc.Name = "rgAcumParc";
-            this.rgAcumParc.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rgAcumParc.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 12F);
             this.rgAcumParc.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.rgAcumParc.Properties.Appearance.Options.UseFont = true;
             this.rgAcumParc.Properties.Appearance.Options.UseForeColor = true;
@@ -3139,13 +3343,13 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Parcial", "Parcial")});
             this.rgAcumParc.Properties.LookAndFeel.SkinName = "The Asphalt World";
             this.rgAcumParc.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.rgAcumParc.Size = new System.Drawing.Size(168, 25);
+            this.rgAcumParc.Size = new System.Drawing.Size(181, 57);
             this.rgAcumParc.TabIndex = 46;
             this.rgAcumParc.Visible = false;
             // 
             // cbDescripcion
             // 
-            this.cbDescripcion.Location = new System.Drawing.Point(1269, 640);
+            this.cbDescripcion.Location = new System.Drawing.Point(1168, 704);
             this.cbDescripcion.Name = "cbDescripcion";
             this.cbDescripcion.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.cbDescripcion.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3190,13 +3394,13 @@
             this.groupControl9.LookAndFeel.SkinName = "The Asphalt World";
             this.groupControl9.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(181, 252);
+            this.groupControl9.Size = new System.Drawing.Size(181, 192);
             this.groupControl9.TabIndex = 10;
-            this.groupControl9.Text = "Entrada de datos Viñetas";
+            this.groupControl9.Text = "Entrada de datos Cruces";
             // 
             // cbOrientacion
             // 
-            this.cbOrientacion.Location = new System.Drawing.Point(35, 123);
+            this.cbOrientacion.Location = new System.Drawing.Point(35, 94);
             this.cbOrientacion.Name = "cbOrientacion";
             this.cbOrientacion.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.cbOrientacion.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3269,11 +3473,11 @@
             this.btAddVineta.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.btAddVineta.Appearance.Options.UseFont = true;
             this.btAddVineta.Appearance.Options.UseForeColor = true;
-            this.btAddVineta.Location = new System.Drawing.Point(44, 184);
+            this.btAddVineta.Location = new System.Drawing.Point(48, 149);
             this.btAddVineta.LookAndFeel.SkinName = "Blue";
             this.btAddVineta.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btAddVineta.Name = "btAddVineta";
-            this.btAddVineta.Size = new System.Drawing.Size(82, 47);
+            this.btAddVineta.Size = new System.Drawing.Size(82, 36);
             this.btAddVineta.TabIndex = 13;
             this.btAddVineta.Text = "Ad&d";
             this.btAddVineta.Click += new System.EventHandler(this.btAddVineta_Click);
@@ -3281,7 +3485,7 @@
             // tePosicion
             // 
             this.tePosicion.EditValue = "";
-            this.tePosicion.Location = new System.Drawing.Point(35, 55);
+            this.tePosicion.Location = new System.Drawing.Point(35, 35);
             this.tePosicion.Name = "tePosicion";
             this.tePosicion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tePosicion.Properties.Appearance.Options.UseFont = true;
@@ -3295,7 +3499,6 @@
             this.tePosicion.Properties.MaskSettings.Set("mask", "n0");
             this.tePosicion.Size = new System.Drawing.Size(100, 42);
             this.tePosicion.TabIndex = 10;
-            this.tePosicion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tePosicion_KeyPress);
             // 
             // lbOrientacion
             // 
@@ -3307,7 +3510,7 @@
             this.lbOrientacion.Appearance.Options.UseForeColor = true;
             this.lbOrientacion.Appearance.Options.UseTextOptions = true;
             this.lbOrientacion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lbOrientacion.Location = new System.Drawing.Point(62, 105);
+            this.lbOrientacion.Location = new System.Drawing.Point(62, 81);
             this.lbOrientacion.Name = "lbOrientacion";
             this.lbOrientacion.Size = new System.Drawing.Size(46, 12);
             this.lbOrientacion.TabIndex = 0;
@@ -3323,7 +3526,7 @@
             this.lbPosicion.Appearance.Options.UseForeColor = true;
             this.lbPosicion.Appearance.Options.UseTextOptions = true;
             this.lbPosicion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lbPosicion.Location = new System.Drawing.Point(69, 37);
+            this.lbPosicion.Location = new System.Drawing.Point(69, 21);
             this.lbPosicion.Name = "lbPosicion";
             this.lbPosicion.Size = new System.Drawing.Size(32, 12);
             this.lbPosicion.TabIndex = 7;
@@ -3405,7 +3608,7 @@
             this.lbDescripcion.Appearance.Options.UseForeColor = true;
             this.lbDescripcion.Appearance.Options.UseTextOptions = true;
             this.lbDescripcion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lbDescripcion.Location = new System.Drawing.Point(1292, 622);
+            this.lbDescripcion.Location = new System.Drawing.Point(1191, 686);
             this.lbDescripcion.Name = "lbDescripcion";
             this.lbDescripcion.Size = new System.Drawing.Size(45, 12);
             this.lbDescripcion.TabIndex = 0;
@@ -4347,7 +4550,7 @@
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(1266, 532);
+            this.labelControl2.Location = new System.Drawing.Point(1054, 718);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(71, 13);
             this.labelControl2.TabIndex = 0;
@@ -4760,6 +4963,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbPortARD.Properties)).EndInit();
             this.xtTPTramos.ResumeLayout(false);
             this.xtTPTramos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
+            this.groupControl10.ResumeLayout(false);
+            this.groupControl10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teTiempoTotalSectores.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teVeloSector.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teLonTotalSectores.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teNumSectores.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgAcumParc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
@@ -5031,6 +5241,16 @@
         private DevExpress.XtraEditors.SimpleButton btLimpiaBBDD;
         private DevExpress.XtraEditors.TimeEdit teFechaInicio;
         private DevExpress.XtraEditors.SimpleButton btTiempoSector;
+        private DevExpress.XtraEditors.GroupControl groupControl10;
+        private DevExpress.XtraEditors.SimpleButton btCrearSectores;
+        private DevExpress.XtraEditors.TextEdit teNumSectores;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit teLonTotalSectores;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit teVeloSector;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TimeEdit teTiempoTotalSectores;
     }
 }
 

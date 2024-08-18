@@ -53,31 +53,31 @@ namespace ZeroTrip
             try
             {
 
-                tramosTableAdapter.GetData(Convert.ToInt16(cbTramos.Text.Substring(7)));
-                //tramosTableAdapter.Update(
-                //                             cbTramos.Text,
-                //                             cbTipo.Text,
-                //                             Convert.ToDateTime(teSalida.Text),
-                //                             Convert.ToInt16(cbTramos.Text.Substring(7)));
-                tramosTableAdapter.Insert(
-                            Convert.ToInt16(cbTramos.Text.Substring(6)),
-                            cbTramos.Text,
-                            cbTipo.Text,
-                            teSalida.Time);
+                DataTable dtbTramo = tramosTableAdapter.GetData(Convert.ToInt16(cbTramos.Text.Substring(6)));
+                tramosTableAdapter.Update(
+                                             cbTramos.Text,
+                                             cbTipo.Text,
+                                             Convert.ToDateTime(teSalida.Text),
+                                             Convert.ToInt16(cbTramos.Text.Substring(6)));
+                //tramosTableAdapter.Insert(
+                //            Convert.ToInt16(cbTramos.Text.Substring(6)),
+                //            cbTramos.Text,
+                //            cbTipo.Text,
+                //            teSalida.Time);
             }
             catch (Exception ex)
             {
-                //Util.AvisoConEx(ex, "ll", "kk");
-                //tramosTableAdapter.Insert(
-                //                            Convert.ToInt16(cbTramos.Text.Substring(7)),
-                //                            cbTramos.Text,
-                //                            cbTipo.Text,
-                //                            Convert.ToDateTime(teSalida.Text));
-                tramosTableAdapter.Update(
-                             cbTramos.Text,
-                             cbTipo.Text,
-                             teSalida.Time,
-                             Convert.ToInt16(cbTramos.Text.Substring(6)));
+                Util.AvisoConEx(ex, "ll", "kk");
+                tramosTableAdapter.Insert(
+                                            Convert.ToInt16(cbTramos.Text.Substring(7)),
+                                            cbTramos.Text,
+                                            cbTipo.Text,
+                                            Convert.ToDateTime(teSalida.Text));
+                //tramosTableAdapter.Update(
+                //             cbTramos.Text,
+                //             cbTipo.Text,
+                //             teSalida.Time,
+                //             Convert.ToInt16(cbTramos.Text.Substring(6)));
 
 
             }
@@ -133,10 +133,11 @@ namespace ZeroTrip
                 else
                 {
                     //rgTipoTramo.Enabled = true;
-                   // rgTipoTramo.EditValueChanged -= rgTipoTramo_EditValueChanged;
+                    rgTipoTramo.EditValueChanged -= rgTipoTramo_EditValueChanged;
                     rgTipoTramo.EditValue = cbTipo.Text;
                     //rgTipoTramo.Enabled = false;
-                    //rgTipoTramo.EditValueChanged += rgTipoTramo_EditValueChanged;
+                    rgTipoTramo.EditValueChanged += rgTipoTramo_EditValueChanged;
+                    SelectTipo(rgTipoTramo.Text);
                 }
     
 
@@ -155,7 +156,8 @@ namespace ZeroTrip
 
                 InicializarTramo(nTramo, rgTipoTramo.Text);
 
-            btActTramo_Click(sender, e);
+            // Duda sobre el siguiente comentario. NO SE PORQUE LO INVOCO Y NO SE PORQUE LO COMENTO
+             btActTramo_Click(sender, e);
         }
 
         //-----------------------------------------------------------------------------------
@@ -186,6 +188,8 @@ namespace ZeroTrip
                         gcMedias.Focus();
                         return;
                     }
+                  //  dsTramos.Tramos.AcceptChanges();
+                    btActTramo_Click(sender, e);
                     dsDatos.Datos.AcceptChanges();
                     datosTableAdapter.Fill(dsDatos.Datos, nTramo);
                     incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
@@ -203,6 +207,10 @@ namespace ZeroTrip
                     rgTipoTramo.EditValueChanged -= rgTipoTramo_EditValueChanged;
                     rgTipoTramo.EditValue = cbTipo.Text;
                     rgTipoTramo.EditValueChanged += rgTipoTramo_EditValueChanged;
+
+                    if (dsDatos.Datos.Rows.Count == 0)
+
+                        InicializarTramo(nTramo, rgTipoTramo.Text);
                 }
                 switch (cbTipo.Text)
                 {
@@ -777,6 +785,81 @@ namespace ZeroTrip
         }
 
         #endregion CONTROLES
+
+        #region SECTORES
+
+        private void btCrearSectores_Click(object sender, EventArgs e)
+        {
+            // Se debe informar el numero de sectores, la longituf total del tramo y, o la velocidad por sector o el 
+            // tiempo total a emplear
+
+            if (DatosSectoresValidos())
+            {
+                CrearFilaDatos(Convert.ToInt16(teNumSectores.Text.ToString()),
+                            Convert.ToInt32(Convert.ToInt32(int.Parse(teLonTotalSectores.Text.Replace(".", "")).ToString()) / Convert.ToInt32(teNumSectores.Text.ToString())),
+                            49,
+                            "Sectores");
+                    
+                //Int32 nNewHasta = 20000;
+
+                //for (int i = 1; i <= 20; i++)
+                //{
+                //    DataRow rwDatos2 = dsDatos.Tables["Datos"].NewRow();
+                //    rwDatos2["IdTramo"] = nTramo;
+                //    rwDatos2["IdDato"] = i;
+                //    rwDatos2["Desde"] = nAntHasta;
+                //    rwDatos2["Hasta"] = nNewHasta;
+                //    rwDatos2["Parcial"] = nNewHasta - nAntHasta;
+                //    rwDatos2["Velocidad"] = (double)49;
+                //    dtmTParcial = Util.Tiempo(nNewHasta - nAntHasta, (decimal)49);
+                //    if (i == 1)
+                //    {
+                //        dtmTAcumulado = dtmTParcial;
+                //        dtmAntTAcumulado = dtmTParcial;
+                //    }
+
+                //    else
+                //    {
+                //        // dtmTAcumulado = dtmAntTAcumulado.AddTicks(dtmTParcial.Ticks);
+                //        dtmTAcumulado = dtmAntTAcumulado.AddTicks((dtmTParcial.TimeOfDay).Ticks);
+                //        dtmAntTAcumulado = dtmTAcumulado;
+                //    }
+                //    rwDatos2["TiempoAcum"] = dtmTAcumulado;
+                //    rwDatos2["TiempoParcial"] = dtmTParcial;
+                //    rwDatos2["TipoTramo"] = "RefExternas";
+
+                //    dsDatos.Tables["Datos"].Rows.Add(rwDatos2);
+                //    nAntHasta = nNewHasta;
+                //    nNewHasta += 1000;
+                //    dsDatos.Datos.Rows.RemoveAt(dsDatos.Datos.Rows.Count - 1);
+                //}
+            }
+
+        }
+
+        private bool DatosSectoresValidos()
+        {
+
+            if (teNumSectores.Text == "0")
+            {
+                Util.AvisoConError("No se ha informado el número de Sectores", "Error Sectores");
+                return(false);
+            }
+            if (teLonTotalSectores.Text == "0")
+            {
+                Util.AvisoConError("No se ha informado la longitud total del Tramo de Sectores", "Error Sectores");
+                return (false);
+            }
+            if (teVeloSector.Text == "0,0" && teTiempoTotalSectores.Text == "0:00:00")
+            {
+                Util.AvisoConError("Se debe informar o bien la velocidad de cada Sector o el tiempo total a emplear en tramo", "Error Sectores");
+                return (false);
+            }
+
+            return (true);
+        }
+
+        #endregion SECTORES
 
 
         #region VARIOS
