@@ -169,7 +169,7 @@
             this.btOpenPortARD = new DevExpress.XtraEditors.SimpleButton();
             this.cbPortARD = new DevExpress.XtraEditors.ComboBoxEdit();
             this.xtTPTramos = new DevExpress.XtraTab.XtraTabPage();
-            this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
+            this.gcSectores = new DevExpress.XtraEditors.GroupControl();
             this.teTiempoTotalSectores = new DevExpress.XtraEditors.TimeEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.teVeloSector = new DevExpress.XtraEditors.TextEdit();
@@ -328,8 +328,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbBLTDevs.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPortARD.Properties)).BeginInit();
             this.xtTPTramos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
-            this.groupControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSectores)).BeginInit();
+            this.gcSectores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teTiempoTotalSectores.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teVeloSector.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teLonTotalSectores.Properties)).BeginInit();
@@ -491,7 +491,7 @@
             this.btTiempoSector.Appearance.Options.UseForeColor = true;
             this.btTiempoSector.Appearance.Options.UseTextOptions = true;
             this.btTiempoSector.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btTiempoSector.Location = new System.Drawing.Point(695, 433);
+            this.btTiempoSector.Location = new System.Drawing.Point(707, 279);
             this.btTiempoSector.LookAndFeel.SkinName = "iMaginary";
             this.btTiempoSector.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btTiempoSector.Name = "btTiempoSector";
@@ -1293,7 +1293,7 @@
             this.btSigCM.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btSigCM.Appearance.Options.UseFont = true;
             this.btSigCM.Appearance.Options.UseForeColor = true;
-            this.btSigCM.Location = new System.Drawing.Point(695, 348);
+            this.btSigCM.Location = new System.Drawing.Point(707, 348);
             this.btSigCM.LookAndFeel.SkinName = "iMaginary";
             this.btSigCM.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btSigCM.Name = "btSigCM";
@@ -3117,7 +3117,7 @@
             this.xtTPTramos.Appearance.PageClient.BackColor = System.Drawing.Color.Black;
             this.xtTPTramos.Appearance.PageClient.Options.UseBackColor = true;
             this.xtTPTramos.AutoScroll = true;
-            this.xtTPTramos.Controls.Add(this.groupControl10);
+            this.xtTPTramos.Controls.Add(this.gcSectores);
             this.xtTPTramos.Controls.Add(this.rgAcumParc);
             this.xtTPTramos.Controls.Add(this.cbDescripcion);
             this.xtTPTramos.Controls.Add(this.groupControl9);
@@ -3139,27 +3139,27 @@
             this.xtTPTramos.TabPageWidth = 150;
             this.xtTPTramos.Text = "&Tramos";
             // 
-            // groupControl10
+            // gcSectores
             // 
-            this.groupControl10.Appearance.Options.UseBackColor = true;
-            this.groupControl10.Appearance.Options.UseImage = true;
-            this.groupControl10.Appearance.Options.UseTextOptions = true;
-            this.groupControl10.Controls.Add(this.teTiempoTotalSectores);
-            this.groupControl10.Controls.Add(this.labelControl7);
-            this.groupControl10.Controls.Add(this.teVeloSector);
-            this.groupControl10.Controls.Add(this.labelControl6);
-            this.groupControl10.Controls.Add(this.teLonTotalSectores);
-            this.groupControl10.Controls.Add(this.btCrearSectores);
-            this.groupControl10.Controls.Add(this.teNumSectores);
-            this.groupControl10.Controls.Add(this.labelControl4);
-            this.groupControl10.Controls.Add(this.labelControl5);
-            this.groupControl10.Location = new System.Drawing.Point(1189, 455);
-            this.groupControl10.LookAndFeel.SkinName = "The Asphalt World";
-            this.groupControl10.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(181, 265);
-            this.groupControl10.TabIndex = 68;
-            this.groupControl10.Text = "Entrada de datos Sectores";
+            this.gcSectores.Appearance.Options.UseBackColor = true;
+            this.gcSectores.Appearance.Options.UseImage = true;
+            this.gcSectores.Appearance.Options.UseTextOptions = true;
+            this.gcSectores.Controls.Add(this.teTiempoTotalSectores);
+            this.gcSectores.Controls.Add(this.labelControl7);
+            this.gcSectores.Controls.Add(this.teVeloSector);
+            this.gcSectores.Controls.Add(this.labelControl6);
+            this.gcSectores.Controls.Add(this.teLonTotalSectores);
+            this.gcSectores.Controls.Add(this.btCrearSectores);
+            this.gcSectores.Controls.Add(this.teNumSectores);
+            this.gcSectores.Controls.Add(this.labelControl4);
+            this.gcSectores.Controls.Add(this.labelControl5);
+            this.gcSectores.Location = new System.Drawing.Point(1189, 455);
+            this.gcSectores.LookAndFeel.SkinName = "The Asphalt World";
+            this.gcSectores.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.gcSectores.Name = "gcSectores";
+            this.gcSectores.Size = new System.Drawing.Size(181, 265);
+            this.gcSectores.TabIndex = 68;
+            this.gcSectores.Text = "Entrada de datos Sectores";
             // 
             // teTiempoTotalSectores
             // 
@@ -3189,7 +3189,7 @@
             this.teTiempoTotalSectores.Properties.LookAndFeel.SkinName = "Money Twins";
             this.teTiempoTotalSectores.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.teTiempoTotalSectores.Size = new System.Drawing.Size(108, 38);
-            this.teTiempoTotalSectores.TabIndex = 72;
+            this.teTiempoTotalSectores.TabIndex = 15;
             this.teTiempoTotalSectores.TabStop = false;
             // 
             // labelControl7
@@ -3226,7 +3226,7 @@
             this.teVeloSector.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.teVeloSector.Properties.MaskSettings.Set("mask", "n1");
             this.teVeloSector.Size = new System.Drawing.Size(100, 32);
-            this.teVeloSector.TabIndex = 70;
+            this.teVeloSector.TabIndex = 14;
             // 
             // labelControl6
             // 
@@ -3260,7 +3260,7 @@
             this.teLonTotalSectores.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.teLonTotalSectores.Properties.MaskSettings.Set("mask", "n0");
             this.teLonTotalSectores.Size = new System.Drawing.Size(100, 32);
-            this.teLonTotalSectores.TabIndex = 68;
+            this.teLonTotalSectores.TabIndex = 13;
             // 
             // btCrearSectores
             // 
@@ -3293,7 +3293,7 @@
             this.teNumSectores.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.teNumSectores.Properties.MaskSettings.Set("mask", "n0");
             this.teNumSectores.Size = new System.Drawing.Size(100, 32);
-            this.teNumSectores.TabIndex = 10;
+            this.teNumSectores.TabIndex = 12;
             // 
             // labelControl4
             // 
@@ -3465,7 +3465,7 @@
             this.cbOrientacion.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cbOrientacion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbOrientacion.Size = new System.Drawing.Size(109, 48);
-            this.cbOrientacion.TabIndex = 67;
+            this.cbOrientacion.TabIndex = 11;
             // 
             // btAddVineta
             // 
@@ -4963,9 +4963,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbPortARD.Properties)).EndInit();
             this.xtTPTramos.ResumeLayout(false);
             this.xtTPTramos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
-            this.groupControl10.ResumeLayout(false);
-            this.groupControl10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSectores)).EndInit();
+            this.gcSectores.ResumeLayout(false);
+            this.gcSectores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teTiempoTotalSectores.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teVeloSector.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teLonTotalSectores.Properties)).EndInit();
@@ -5241,7 +5241,7 @@
         private DevExpress.XtraEditors.SimpleButton btLimpiaBBDD;
         private DevExpress.XtraEditors.TimeEdit teFechaInicio;
         private DevExpress.XtraEditors.SimpleButton btTiempoSector;
-        private DevExpress.XtraEditors.GroupControl groupControl10;
+        private DevExpress.XtraEditors.GroupControl gcSectores;
         private DevExpress.XtraEditors.SimpleButton btCrearSectores;
         private DevExpress.XtraEditors.TextEdit teNumSectores;
         private DevExpress.XtraEditors.LabelControl labelControl4;

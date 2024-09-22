@@ -182,17 +182,22 @@ namespace ZeroTrip
                 {
                     if (Util.AvisoConRespuesta("Vas a cambiar el tipo de tramo, eso implica borrar los "
                          + "registros anteriores ¿Estas de acuerdo?", "Cambio de tipo de tramo. OJO!!."))
+                    { 
                         datosTableAdapter.BorrraTramo(nTramo);
+
+                        btActTramo_Click(sender, e);
+                        dsDatos.Datos.AcceptChanges();
+                        datosTableAdapter.Fill(dsDatos.Datos, nTramo);
+                        incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
+                    }
                     else
                     {
                         gcMedias.Focus();
-                        return;
+                        btActTramo_Click(sender, e);
+                        // return;
                     }
                   //  dsTramos.Tramos.AcceptChanges();
-                    btActTramo_Click(sender, e);
-                    dsDatos.Datos.AcceptChanges();
-                    datosTableAdapter.Fill(dsDatos.Datos, nTramo);
-                    incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
+
 
                 }
 
@@ -212,6 +217,10 @@ namespace ZeroTrip
 
                         InicializarTramo(nTramo, rgTipoTramo.Text);
                 }
+
+                gcSectores.Visible = false;
+                gcSectores.Enabled = false;
+
                 switch (cbTipo.Text)
                 {
                     case "Medias":
@@ -405,6 +414,9 @@ namespace ZeroTrip
                         tVelocidad.Properties.DisplayFormat.FormatString = "n0";
                         tVelocidad.Properties.EditFormat.FormatString = "n0";
                         tVelocidad.Properties.Mask.EditMask = "n0";
+
+                        gcSectores.Visible = true;
+                        gcSectores.Enabled = true;
                         break;
 
                     case "Varias":
@@ -514,7 +526,7 @@ namespace ZeroTrip
                 if ((e.ListChangedType.ToString() == "ItemChanged") && (e.OldIndex != -1))
                 //if ((e.ListChangedType.ToString() == "ItemChanged") && cbTipo.Text == "Medias")
                 {
-                    if ( cbTipo.Text.ToString() != "Viñetas" && cbTipo.Text.ToString() != "Sectores" && cbTipo.Text.ToString() != "Tablas")
+                    if ( cbTipo.Text.ToString() != "Viñetas" && cbTipo.Text.ToString() != "Tablas")
                         for (Int16 i = Convert.ToInt16(e.NewIndex); i < dsDatos.Tables["Datos"].Rows.Count; i++)
                             Modificar(i);
                     else
@@ -947,6 +959,7 @@ namespace ZeroTrip
             {
                 case "Medias":
                 case "RefExternas":
+                case "Sectores":
                     drFila = dsDatos.Tables["Datos"].Rows[nFila];
                     nHasta = 0;
                     if (drFila.HasVersion(DataRowVersion.Original))
@@ -997,7 +1010,7 @@ namespace ZeroTrip
 
 
                 case "Viñetas":
-                case "Sectores":
+                
                     nHasta = 0;
                     drFila = dsDatos.Tables["Datos"].Rows[nFila];
                     //nHasta = int.Parse(tHasta.Text.Replace(".", ""));
@@ -1127,14 +1140,14 @@ namespace ZeroTrip
             //                        nIdDato);
             //(short)(nFila+1));
 
-            //if (dsDatos.Tables["Datos"].GetChanges() != null)
-            //{
-            //    datosTableAdapter.Update(dsDatos);
+            if (dsDatos.Tables["Datos"].GetChanges() != null)
+            {
+                datosTableAdapter.Update(dsDatos);
 
 
-            //    dsDatos.AcceptChanges();
+                dsDatos.AcceptChanges();
 
-            //}
+            }
 
 
             //////bReCargaTramo = false;

@@ -732,8 +732,64 @@ namespace ZeroTrip
 
         private void btTiempoSector_Click(object sender, EventArgs e)
         {
-            // Tenemos que tomar el tiempo empleado en el primer sector y aplicarlo a los demás.
+            ZeroTrip.ZeroTripBBDDDataSet.DatosDataTable dtSectores = datosTableAdapter.GetData((short)nTramoCron);
+            DataRow drFila = dtSectores.NewRow(); 
+            DateTime dtmTParcial = DateTime.Today.Date, dtmTAcumulado = DateTime.Today.Date;
 
+            int nDesde, nHasta, nParcial, nAntHasta = 0;
+            decimal dbVelocidad;
+
+            datosTableAdapter.Fill(dtSectores, (short)nTramoCron);
+
+            NumberFormatInfo provider = new NumberFormatInfo();
+
+            provider.NumberDecimalSeparator = ",";
+            provider.NumberGroupSeparator = ".";
+            provider.NumberGroupSizes = new int[] { 3 };
+
+            // Tenemos que tomar el tiempo empleado en el primer sector y aplicarlo a los demás.
+            for (Int16 i = 1; i <= dtSectores.Rows.Count; i++)
+            {
+                if (i == 1)
+                {
+                    nDesde = 0;
+                    nHasta = nHasta = (int)dtSectores.Rows[i - 1]["Hasta"];
+                    dtmTParcial = dtmTParcial.AddMilliseconds(tsCrono.TotalMilliseconds);
+                }
+                else
+                {
+                    nDesde = nAntHasta;
+                    nHasta = (int)dtSectores.Rows[i - 1]["Hasta"];
+                  //  dtmTParcial = ((DateTime)dtSectores.Rows[i-2]["TiempoAcum"]).AddMilliseconds(tsCrono.TotalMilliseconds);
+                }
+
+                nParcial = nHasta - nDesde;
+                nAntHasta = nHasta;
+                dbVelocidad = (decimal)((Convert.ToDouble(nParcial) / 1000) / (dtmTParcial.TimeOfDay.TotalHours));
+
+                // dsDatos.Datos.Rows[i - 1]["TiempoParcial"] = dtmTParcial;
+
+                //drFila["IdTramo"] = nTramoCron;
+                //drFila["IdDato"] = i;
+                ////drFila["Desde"] = dsDatos.Datos.Rows[i - 1]["Desde"];
+                ////drFila["Hasta"] = dsDatos.Datos.Rows[i - 1]["Hasta"];
+                //drFila["Desde"] = nDesde;
+                //drFila["Hasta"] = nHasta;
+                //drFila["Parcial"] = nParcial;
+                //drFila["Velocidad"] = (double)dbVelocidad;
+                if (i == 1)
+                    drFila["TiempoAcum"] = dtmTParcial;
+                else
+                    //drFila["TiempoAcum"] = dsDatos.Datos.Rows[i - 2]["TiempoAcum"];
+                    drFila["TiempoAcum"] = Convert.ToDateTime(dtSectores.Rows[i - 2]["TiempoAcum"]).Add(dtmTParcial.TimeOfDay);
+                //drFila["TiempoParcial"] = dtmTParcial;
+                //drFila["TipoTramo"] = "Sectores";
+
+                datosTableAdapter.ModificaFila(nDesde, nHasta, nParcial, (decimal)dbVelocidad, dtmTParcial, Convert.ToDateTime(drFila["TiempoAcum"]), (short)nTramoCron, i) ;
+
+                dtSectores = datosTableAdapter.GetData((short)nTramoCron);
+ 
+            }
             //Como ya hemos hecho todo, ocultamos el boton
             btTiempoSector.Enabled = false;
             btTiempoSector.Visible = false;
@@ -1500,7 +1556,11 @@ namespace ZeroTrip
             lbVelRE.Visible = false;
             teVelRE.Visible = false;
             btSigCM.Visible = false;
+            btSigCM.Enabled = false;
             btSigCMManual.Visible = false;
+
+            gcSectores.Visible = false;
+            gcSectores.Enabled = false;
 
             //Abrimos el fichero con los datos de configuracion
 

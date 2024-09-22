@@ -359,8 +359,13 @@ namespace ZeroTrip
         {
             int nParcial;
 
+            // Solo se mostrará cuando sean Sectores.
+            gcSectores.Enabled = false;
+            gcSectores.Visible = false;
+
             switch (szTipoTramo)
             {
+
                 case "Medias":
                 case "RefExternas":
                     lbDos.Text = "Velocidad";
@@ -460,6 +465,11 @@ namespace ZeroTrip
                     rgAcumParc.Visible = false;
                     tHasta.Focus();
 
+                    if (szTipoTramo == "Sectores")
+                    {
+                        gcSectores.Visible = true;
+                        gcSectores.Enabled = true;
+                    }
 
                     gcDesde.OptionsColumn.AllowEdit = false;
                     gcHasta.OptionsColumn.AllowEdit = true;

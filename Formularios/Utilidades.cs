@@ -161,6 +161,7 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
                     btSigCMManual.Visible = false;
                     lbVelRE.Visible = false;
                     teVelRE.Visible = false;
@@ -178,7 +179,9 @@ namespace ZeroTrip
                     lbDistActVel.Text = "";
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
+                    btSigCM.Enabled = false;
                     btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
                     btSigCMManual.Visible = false;
                     lbVelRE.Visible = false;
                     teVelRE.Visible = false;
@@ -196,6 +199,7 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
                     btSigCMManual.Visible = false;
                     lbVelRE.Visible = false;
                     teVelRE.Visible = false;
@@ -215,6 +219,7 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
                     btSigCMManual.Visible = false;
                     lbVelRE.Visible = false;
                     teVelRE.Visible = false;
@@ -236,6 +241,7 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = false;
                     teSigCMRE.Visible = false;
                     btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
                     btSigCMManual.Visible = false;
                     lbVelRE.Visible = false;
                     teVelRE.Visible = false;
@@ -256,6 +262,7 @@ namespace ZeroTrip
                     lbSigCMRE.Visible = true;
                     teSigCMRE.Visible = true;
                     btSigCM.Visible = true;
+                    btSigCM.Enabled = true;
                     btSigCMManual.Visible = true;
                     lbVelRE.Visible = true;
                     teVelRE.Visible = true;
