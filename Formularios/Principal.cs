@@ -489,17 +489,17 @@ namespace ZeroTrip
 
                 btFreeze_Click(sender, e);
 
-                foreach (DataRow drFila in tbDatosTr)
-                {
-                    // Grabamos en BBDD las distancias que hemos ido poniendo para cada referencia
-                    {
+                //foreach (DataRow drFila in tbDatosTr)
+                //{
+                //    // Grabamos en BBDD las distancias que hemos ido poniendo para cada referencia
+                //    {
 
-                        dbVel = decimal.Parse(drFila["Velocidad"].ToString(), provider);
-                        datosTableAdapter.ModificaFila((int)drFila["Desde"], (int)drFila["Hasta"], (int)drFila["Parcial"], 
-                            (decimal)dbVel, (DateTime)drFila["TiempoParcial"], (DateTime)drFila["TiempoAcum"], (short)drFila["IdTramo"], (short)drFila["IdDato"]);
+                //        dbVel = decimal.Parse(drFila["Velocidad"].ToString(), provider);
+                //        datosTableAdapter.ModificaFila((int)drFila["Desde"], (int)drFila["Hasta"], (int)drFila["Parcial"], 
+                //            (decimal)dbVel, (DateTime)drFila["TiempoParcial"], (DateTime)drFila["TiempoAcum"], (short)drFila["IdTramo"], (short)drFila["IdDato"]);
 
-                    }
-                }
+                //    }
+                //}
             }
 
         }
@@ -1492,6 +1492,16 @@ namespace ZeroTrip
             }
 
         }
+
+        //private void tePosicion_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+
+        //}
+
+        //private void cbOrientacion_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+
+        //}
 
 
         //-----------------------------------------------------------------------------------

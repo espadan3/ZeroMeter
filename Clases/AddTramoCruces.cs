@@ -621,12 +621,16 @@ namespace ZeroTrip
                                             cbOrientacion.SelectedItem.ToString(),
                                             // Convert.ToByte(cbOrientacion.SelectedItem),
                                             "X");
+            dsIncidencias.Incidencias.AcceptChanges();
+            //incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
+
+            //Si la distancia de la fila anterior es mayor que la que acabo de meter
+            //quiere decir que hemos metido un cruce que no va por orden, luego tenemos que reordenar.
             if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nRegs - 1]["Posicion"]) > Convert.ToInt32(tePosicion.Text.Replace(".", "")))
             {
-
+                
                 ZeroTripBBDDDataSet.IncidenciasDataTable tbPosicion = new ZeroTripBBDDDataSet.IncidenciasDataTable();
 
-                //quiere decir que hemos metido un cruce que no va por orden, luego tenemos que reordenar.
                 incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
                 incidenciasTableAdapter.FillByPosicion(tbPosicion, nTramo);
 

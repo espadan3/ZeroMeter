@@ -546,8 +546,6 @@ namespace ZeroTrip
                     if (dsDatos.Tables["Datos"].GetChanges() != null)
                     {
                         datosTableAdapter.Update(dsDatos);
-
-
                         dsDatos.AcceptChanges();
 
                     }

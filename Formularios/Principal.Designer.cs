@@ -3466,6 +3466,7 @@
             this.cbOrientacion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbOrientacion.Size = new System.Drawing.Size(109, 48);
             this.cbOrientacion.TabIndex = 11;
+            this.cbOrientacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbOrientacion_KeyPress);
             // 
             // btAddVineta
             // 
@@ -3499,6 +3500,7 @@
             this.tePosicion.Properties.MaskSettings.Set("mask", "n0");
             this.tePosicion.Size = new System.Drawing.Size(100, 42);
             this.tePosicion.TabIndex = 10;
+            this.tePosicion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tePosicion_KeyPress);
             // 
             // lbOrientacion
             // 
