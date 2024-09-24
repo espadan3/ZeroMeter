@@ -545,7 +545,7 @@ namespace ZeroTrip
 
                     if (dsDatos.Tables["Datos"].GetChanges() != null)
                     {
-                        //datosTableAdapter.Update(dsDatos);
+                        datosTableAdapter.Update(dsDatos);
 
 
                         dsDatos.AcceptChanges();
@@ -1142,10 +1142,10 @@ namespace ZeroTrip
 
             if (dsDatos.Tables["Datos"].GetChanges() != null)
             {
-                datosTableAdapter.Update(dsDatos);
+                //datosTableAdapter.Update(dsDatos);
 
 
-                dsDatos.AcceptChanges();
+                //dsDatos.AcceptChanges();
 
             }
 

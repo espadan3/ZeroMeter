@@ -701,7 +701,7 @@ namespace ZeroTrip
                         break;
 
                     case "RefExternas":
-                        CrearFilaDatos(20, 20000, 49, "RefExternas");
+                        CrearFilaDatos(15, 20000, 49, "RefExternas");
                         break;
                     case "Sectores":
                         CrearFilaDatos(Convert.ToInt16(teNumSectores.Text.ToString()),
