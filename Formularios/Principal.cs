@@ -1582,55 +1582,6 @@ namespace ZeroTrip
 
             rgDiaNoche.EditValue = config.GetDiaNoche();
 
-            rbTamanioRueda.EditValue = config.GetTamanioRueda();
-
-            if (PSerieARD.IsOpen)
-            {
-                String szCadena;
-                switch (rbTamanioRueda.Text)
-                {
-
-                    case "L":
-                        szCadena = "A"; // pone 40 msg de retardo para ruedas más grandes
-                        break;
-                    case "M":
-                        szCadena = "B"; // pone 30 msg de retardo para ruedas más pequeñas
-                        break;
-                    case "S":
-                        szCadena = "C"; // pone 22 msg de retardo para ruedas mucho más pequeñas para hasta 140 Km/h
-                        break;
-                    default:
-                        szCadena = "B";
-                        break;
-                }
-
-                //Con calibre 880
-                // 40 ms hasta 75 Km/h
-                // 30 ms hasta 100 Km/h
-                // 25 ms hasta 125 Km/h
-                // 20 ms hasta 150 Km/h
-
-                //    szCadena = "C"; // este no lo usamos todavia
-                //    break;
-
-                PSerieARD.Write(szCadena);
-                szCadena = PSerieARD.ReadLine();
-
-                
-            }
-
-            DiaNoche(rgDiaNoche.Text);
-
-            teDistCM.Text = config.GetAvisoCM().ToString();
-            teDistCruce.Text = config.GetAvisoCruces();
-            teCorreccion.Text = config.GetMaxCorreccion();
-            teDistHitos.Text = config.GetDistanciaHitos();
-            teDistTablas.Text = config.GetDistanciaTablas();
-
-            teVID.Text = config.GetVID();
-            tePID.Text = config.GetPID();
-
-
             // CALIBRES Recuperamos los datos de los calibres guardados y establecemos el calibre activo
             teCal1.Text = config.GetCal1().ToString();
             teCal2.Text = config.GetCal2().ToString();
@@ -1666,6 +1617,92 @@ namespace ZeroTrip
                 dbCalibreActivo = (double)config.GetCal3();
             }
 
+            rgSonda.EditValue = config.GetSonda();
+            rgCalibre.EditValue = config.GetTipoMedidor();
+            rgDecaMetro.EditValue = config.GetDecaMetros();
+
+            if (rgDecaMetro.Text == "Metros")
+                Gb.bMetros = true;
+            else
+                Gb.bMetros = false;
+
+            rbTamanioRueda.EditValue = config.GetTamanioRueda();
+
+            if (rgCalibre.EditValue.ToString() == "Biciclometro")
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
+            }
+            else
+            {
+                teDistHitos.Text = ((1000 * Convert.ToInt64(config.GetCalMopuTerra())) / Convert.ToInt64(dbCalibreActivo)).ToString();
+            }
+
+
+            if (PSerieARD.IsOpen)
+            {
+                String szCadena;
+                switch (rbTamanioRueda.Text)
+                {
+
+                    case "L":
+                        szCadena = "A"; // pone 40 msg de retardo para ruedas más grandes
+                        break;
+                    case "M":
+                        szCadena = "B"; // pone 30 msg de retardo para ruedas más pequeñas
+                        break;
+                    case "S":
+                        szCadena = "C"; // pone 22 msg de retardo para ruedas mucho más pequeñas para hasta 140 Km/h
+                        break;
+                    default:
+                        szCadena = "B";
+                        break;
+                }
+
+                //Con calibre 880
+                // 40 ms hasta 75 Km/h
+                // 30 ms hasta 100 Km/h
+                // 25 ms hasta 125 Km/h
+                // 20 ms hasta 150 Km/h
+
+                //    szCadena = "C"; // este no lo usamos todavia
+                //    break;
+
+                PSerieARD.Write(szCadena);
+                szCadena = PSerieARD.ReadLine();
+
+                switch (rgSonda.Text)
+                {
+
+                    case "Derecha":
+                        szCadena = "D"; // pone 40 msg de retardo para ruedas más grandes
+                        break;
+                    case "Izquierda":
+                        szCadena = "I"; // pone 30 msg de retardo para ruedas más pequeñas
+                        break;
+                    default:
+                        szCadena = "D";
+                        break;
+                }
+
+                PSerieARD.Write(szCadena);
+                szCadena = PSerieARD.ReadLine();
+
+            }
+
+            DiaNoche(rgDiaNoche.Text);
+
+            teDistCM.Text = config.GetAvisoCM().ToString();
+            teDistCruce.Text = config.GetAvisoCruces();
+            teCorreccion.Text = config.GetMaxCorreccion();
+            teDistHitos.Text = config.GetDistanciaHitos();
+            teDistTablas.Text = config.GetDistanciaTablas();
+
+            teVID.Text = config.GetVID();
+            tePID.Text = config.GetPID();
+
+
+   
+
             // Calculamos la distancia entre hitos a partir del calibre activo y del configurado como MOPU
 
  
@@ -1685,25 +1722,6 @@ namespace ZeroTrip
             tHor.Visible = false;
             tMin.Visible = false;
             tSec.Visible = false;
-
-            rgSonda.EditValue = config.GetSonda();
-            rgCalibre.EditValue = config.GetTipoMedidor();
-            rgDecaMetro.EditValue = config.GetDecaMetros();
-
-            if (rgDecaMetro.Text == "Metros")
-                Gb.bMetros = true;
-            else
-                Gb.bMetros = false;
-
-            if (rgCalibre.EditValue.ToString() == "Biciclometro")
-            {
-                teDistHitos.Text = ((1000 * Convert.ToInt64(dbCalibreActivo)) / Convert.ToInt64(config.GetCalMopuBici())).ToString();
-            }
-            else
-            {
-                teDistHitos.Text = ((1000 * Convert.ToInt64(config.GetCalMopuTerra())) / Convert.ToInt64(dbCalibreActivo)).ToString();
-            }
-
 
             lbPulsos.Text = "0";
 

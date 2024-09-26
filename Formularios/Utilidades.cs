@@ -347,26 +347,10 @@ namespace ZeroTrip
 
         private void btOpenPortPDA_Click(object sender, EventArgs e)
         {
-            /*
-            try
-            {
-                PSeriePDA.Close();
-                PSeriePDA.PortName = cbPortPDA.Text;
-                if (PSeriePDA.IsOpen)
-                    PSeriePDA.Close();
-
-                PSeriePDA.Open();
-                PSeriePDA.WriteTimeout = 500;
-                
-            }
-            catch (Exception ex)
-            {
-                Util.AvisoConEx(ex, "Puerto " + PSeriePDA.PortName + " no disponible o no existe", "Error en puerto");
-
-            }
-              */
 
             AbrirPuertoPDA(cbPortPDA.Text, "Apertura de puerto PDA manualmente.");
+
+
         }
 
         //---------------------------------------------------------------------------------------------------------
@@ -439,7 +423,28 @@ namespace ZeroTrip
                 }
                 ResetContador();
                 PSerieARD.WriteTimeout = 500;
-                
+
+                if (PSerieARD.IsOpen)
+                {
+                    String szCadena;
+                    switch (rgSonda.Text)
+                    {
+
+                        case "Derecha":
+                            szCadena = "D"; // pone 40 msg de retardo para ruedas más grandes
+                            break;
+                        case "Izquierda":
+                            szCadena = "I"; // pone 30 msg de retardo para ruedas más pequeñas
+                            break;
+                        default:
+                            szCadena = "D";
+                            break;
+                    }
+
+                    PSerieARD.Write(szCadena);
+                    szCadena = PSerieARD.ReadLine();
+
+                }
 
             }
             catch (Exception ex)
