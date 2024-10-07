@@ -626,43 +626,46 @@ namespace ZeroTrip
 
             //Si la distancia de la fila anterior es mayor que la que acabo de meter
             //quiere decir que hemos metido un cruce que no va por orden, luego tenemos que reordenar.
-            if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nRegs - 1]["Posicion"]) > Convert.ToInt32(tePosicion.Text.Replace(".", "")))
+            if (nRegs > 0)
             {
-                
-                ZeroTripBBDDDataSet.IncidenciasDataTable tbPosicion = new ZeroTripBBDDDataSet.IncidenciasDataTable();
-
-                incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
-                incidenciasTableAdapter.FillByPosicion(tbPosicion, nTramo);
-
-                nRegs = Convert.ToInt16(incidenciasTableAdapter.CuentaIncidencias(nTramo));
-
-                int a = 1;
-
-                foreach (ZeroTripBBDDDataSet.IncidenciasRow rwDato in dsIncidencias.Incidencias)
+                if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nRegs - 1]["Posicion"]) > Convert.ToInt32(tePosicion.Text.Replace(".", "")))
                 {
-                    dsIncidencias.Incidencias.Rows[a - 1]["Posicion"] = tbPosicion[a - 1]["Posicion"];
-                    dsIncidencias.Incidencias.Rows[a - 1]["Orientacion"] = tbPosicion[a - 1]["Orientacion"];
-                    a++;
+
+                    ZeroTripBBDDDataSet.IncidenciasDataTable tbPosicion = new ZeroTripBBDDDataSet.IncidenciasDataTable();
+
+                    incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
+                    incidenciasTableAdapter.FillByPosicion(tbPosicion, nTramo);
+
+                    nRegs = Convert.ToInt16(incidenciasTableAdapter.CuentaIncidencias(nTramo));
+
+                    int a = 1;
+
+                    foreach (ZeroTripBBDDDataSet.IncidenciasRow rwDato in dsIncidencias.Incidencias)
+                    {
+                        dsIncidencias.Incidencias.Rows[a - 1]["Posicion"] = tbPosicion[a - 1]["Posicion"];
+                        dsIncidencias.Incidencias.Rows[a - 1]["Orientacion"] = tbPosicion[a - 1]["Orientacion"];
+                        a++;
+
+                    }
+
+                    if (dsIncidencias.Tables["Incidencias"].GetChanges() != null)
+                    {
+                        incidenciasTableAdapter.Update(dsIncidencias.Incidencias);
+
+
+                        dsIncidencias.AcceptChanges();
+
+                    }
 
                 }
-
-                if (dsIncidencias.Tables["Incidencias"].GetChanges() != null)
-                {
-                    incidenciasTableAdapter.Update(dsIncidencias.Incidencias);
-
-
-                    dsIncidencias.AcceptChanges();
-
                 }
-
-            }
 
 
             incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
             // gcMedias.RefreshDataSource();
             gcIncidencias.RefreshDataSource();
             gvIncidencias.MoveLast();
-            tePosicion.Focus();
+            //tePosicion.Focus();
 
 
         }

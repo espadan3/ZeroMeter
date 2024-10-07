@@ -862,7 +862,7 @@ namespace ZeroTrip
                 {
                     DateTime dtAux;
                     dtAux = new DateTime(tsCrono.Ticks);
-                    logTableAdapter.Insert(nTramoCron, DateTime.Now, nDistIdeal, (nDifPorRecalibre + nDistReal), (dtAux), Convert.ToDecimal(dbVelActual), szDatos);
+                    logTableAdapter.Insert(nTramoCron, DateTime.Now, nDistIdeal, (nDifPorRecalibre + nDistReal + nCorrecionMetros), (dtAux), Convert.ToDecimal(dbVelActual), szDatos);
                 }
                 catch (Exception ex)
                 {
@@ -1093,9 +1093,9 @@ namespace ZeroTrip
         private void btCalcCal_Click(object sender, EventArgs e)
         {
 
-            if (!Util.IsNumeric(teCalActual.Text) || teCalActual.Text == "0" ||
-                !Util.IsNumeric(teDistOrg.Text) || teDistOrg.Text == "0" ||
-                !Util.IsNumeric(teDistRecorrida.Text) || teDistRecorrida.Text == "0")
+            if (!(Util.IsNumeric(Convert.ToDouble((teCalActual.Text).Replace(".", "")))) || teCalActual.Text == "0" ||
+                !(Util.IsNumeric(Convert.ToDouble((teDistOrg.Text).Replace(".", "")))) || teDistOrg.Text == "0" ||
+                !(Util.IsNumeric(Convert.ToDouble((teDistRecorrida.Text).Replace(".", "")))) || teDistRecorrida.Text == "0")
             {
                 Util.AvisoConError("Falta algún dato para el cálculo.", "Recalibración.");
                 return;

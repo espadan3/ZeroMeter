@@ -1480,7 +1480,7 @@ namespace ZeroTrip
                     nDistReal = Convert.ToInt32(dbDistReal);
                     dbPulsosAnt = dbPulsos;
 
-                    if (dbPulsos % 100 == 0) //bueno
+                    if (dbPulsos % 50 == 0) //bueno
                         GrabarLog("Pulsos: " + dbPulsos.ToString());
                 }
             }
