@@ -17,10 +17,6 @@ using USBClassLibrary;
 
 namespace ZeroTrip
 
-// Cuando pulso stop no se debe inicializar todo en pantalla.
-// Quitar barra deslizante con diferencia
-
-
 {
     public partial class frPrincipal : Form
     {
@@ -123,7 +119,7 @@ namespace ZeroTrip
             //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true))
             if (USBClass.GetUSBDevice(Convert.ToUInt16(config.GetVID()), Convert.ToUInt16(config.GetPID()), ref USBDeviceProperties, true))
 
-                {
+            {
                 //My Device is connected
 
                 cbPortARD.Text = USBDeviceProperties.COMPort;
@@ -171,7 +167,7 @@ namespace ZeroTrip
 
             nCorrecionMetros = 0;
             lbCorreccion.Text = "0";
-            
+
             foreach (string port in ports)
             {
                 cbPortPDA.Properties.Items.Add(port);
@@ -217,7 +213,7 @@ namespace ZeroTrip
         private void recConnetionBLT()
         {
             BLTObj.localListener.BeginAcceptBluetoothClient(new AsyncCallback(BLTObj.AcceptConnection), BLTObj.localListener);
-            if (BLTObj.remoteDevice.Connected )
+            if (BLTObj.remoteDevice.Connected)
             {
                 string a = BLTObj.remoteDevice.RemoteMachineName;
                 BLTObj.localListener.BeginAcceptBluetoothClient(new AsyncCallback(BLTObj.AcceptConnection), BLTObj.localListener);
@@ -307,7 +303,7 @@ namespace ZeroTrip
         }
 
         //-----------------------------------------------------------------------------------
-   
+
         private void btRecalibrar_Click(object sender, EventArgs e)
         {
             //if (Util.EsNumerico(tbRecalibre.Text))
@@ -322,19 +318,19 @@ namespace ZeroTrip
 
                 //nDistRealAnt = nDistReal;
                 nDistRealAnt = nDistRealMedidor;
-                
+
                 // Si la diferencia por recalibre es positiva es que iba perdiendo metros, y si es negativa es que iba ganando
                 //nDifPorRecalibre = Int32.Parse(teRecalibre.Text.Replace(".", "")) - nDistReal;
                 nDifPorRecalibre = Int32.Parse(teRecalibre.Text.Replace(".", "")) - nDistRealMedidor;
 
                 lbDifPorRecal.Text = nDifPorRecalibre.ToString();
-                
+
                 // Ponemos a cero la posible correccion.
                 nCorrecionMetros = 0;
                 lbCorreccion.Text = "0";
 
                 GrabarLog("RECALIBRACION / Informado: " + teRecalibre.Text + " | Dist Arduino: " + nDistRealMedidor.ToString() + " | Mostrado: " + lbDistReal.Text + " | Dif: " + nDifPorRecalibre.ToString());
-             
+
             }
         }
 
@@ -357,12 +353,12 @@ namespace ZeroTrip
             GrabarLog("Eliminamos recalibración: " + teRecalibre.Text + " | Dist Arduino: " + nDistRealMedidor.ToString() + " | Mostrado: " + lbDistReal.Text + " | Dif: " + nDifPorRecalibre.ToString());
 
         }
- 
+
         //-----------------------------------------------------------------------------------
 
         private void btRERecalibra_Click(object sender, EventArgs e)
-            // He hecho un recalibrado y me he equivocado. En dDistRealAnt tengo la distancia real en la que estábamos en el momento de recalibre
-            //Aplico sobre esa distancia.
+        // He hecho un recalibrado y me he equivocado. En dDistRealAnt tengo la distancia real en la que estábamos en el momento de recalibre
+        //Aplico sobre esa distancia.
         {
             nDifPorRecalibre = Int32.Parse(teRecalibre.Text.Replace(".", "")) - nDistRealAnt;
             lbDifPorRecal.Text = nDifPorRecalibre.ToString();
@@ -374,7 +370,7 @@ namespace ZeroTrip
         }
 
         //-----------------------------------------------------------------------------------
-        
+
         private void cbTramoACalcar_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Si cambia el el contenido del combo y está activado el combo de tramo a calcar, entonces queremos calcar
@@ -396,12 +392,12 @@ namespace ZeroTrip
                 datosTableAdapter.BorrraTramo(nCalcarTramo);
                 tramosTableAdapter.GetData(nCalcarTramo);
 
-              //  tramosTableAdapter.Update(nCalcarTramo, "Tablas");
+                //  tramosTableAdapter.Update(nCalcarTramo, "Tablas");
             }
         }
 
         //-----------------------------------------------------------------------------------
-        
+
         private void chkCalcar_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCalcar.Checked)
@@ -425,34 +421,30 @@ namespace ZeroTrip
 
         // Aquí deberiamos gestionar los cambios de media en referencias externas.
         // El cambio se debe aplicar en la distancia REAL pues, aunque haya corrido mucho y vaya adelantado, es la distancia en la que tiene que aplicarse el cambio de media
-        // TODO: Solo se debe atender si el tramo es por Referencias externas
 
         {
 
-            decimal dbVelocidad, dbVel;
+            decimal dbVelocidad;
             DateTime dtmTParcial = DateTime.Today, dtmTAcumulado = DateTime.Today;
 
             NumberFormatInfo provider = new NumberFormatInfo();
 
             if (nSectorIdeal < tbDatosTr.Rows.Count)
-            { 
+            {
 
                 provider.NumberDecimalSeparator = ",";
                 provider.NumberGroupSeparator = ".";
                 provider.NumberGroupSizes = new int[] { 3 };
 
                 // recuperamos la velocidad del sector ideal. Como configuramos los sectores en una distancia muy larga, siempre nos va a dar uno bueno
-                dbVelocidad = decimal.Parse(tbDatosTr[nSectorIdeal-1].Velocidad.ToString(), provider);
+                dbVelocidad = decimal.Parse(tbDatosTr[nSectorIdeal - 1].Velocidad.ToString(), provider);
 
-                //GrabarLog("CAMBIO REF.EXTERNAS/ Velocidad aplicada: " + dbVelocidad.ToString() + " | Hasta: " + Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider) * 1000).ToString() );
                 GrabarLog("CAMBIO REF.EXTERNAS/ Velocidad aplicada: " + dbVelocidad.ToString() + " | Hasta: " + nDistReal.ToString());
-                //tbDatosTr[nSectorIdeal-1].Hasta = Convert.ToInt32(decimal.Parse(teSigCMRE.Text.ToString(), provider));
-                //tbDatosTr[nSectorIdeal - 1].Hasta = Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider)*1000);
-                
+
                 // Actualizamos la tabla en memoria tbDatosTr con la nueva información
                 tbDatosTr[nSectorIdeal - 1].Hasta = nDistReal;
-                tbDatosTr[nSectorIdeal-1].Parcial = tbDatosTr[nSectorIdeal-1].Hasta - tbDatosTr[nSectorIdeal-1].Desde;
-                dtmTParcial = Util.Tiempo(tbDatosTr[nSectorIdeal-1].Parcial, dbVelocidad);
+                tbDatosTr[nSectorIdeal - 1].Parcial = tbDatosTr[nSectorIdeal - 1].Hasta - tbDatosTr[nSectorIdeal - 1].Desde;
+                dtmTParcial = Util.Tiempo(tbDatosTr[nSectorIdeal - 1].Parcial, dbVelocidad);
                 tbDatosTr[nSectorIdeal - 1].TiempoParcial = dtmTParcial;
 
                 if (nSectorIdeal == 1)
@@ -469,42 +461,25 @@ namespace ZeroTrip
                 dbVelocidad = decimal.Parse(tbDatosTr[nSectorIdeal].Velocidad.ToString(), provider);
                 teVelRE.Text = tbDatosTr[nSectorIdeal].Velocidad.ToString("00.##");
 
-                //tbDatosTr[nSectorIdeal].Desde = Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider) * 1000);
+                //Actualizamos el siguente sector en memoria
                 tbDatosTr[nSectorIdeal].Desde = nDistReal;
                 tbDatosTr[nSectorIdeal].Parcial = tbDatosTr[nSectorIdeal].Hasta - tbDatosTr[nSectorIdeal].Desde;
-             
+
                 dtmTParcial = Util.Tiempo(tbDatosTr[nSectorIdeal].Parcial, dbVelocidad);
                 tbDatosTr[nSectorIdeal].TiempoParcial = dtmTParcial;
 
                 dtmTAcumulado = dtmTParcial.Add(Convert.ToDateTime(tbDatosTr[nSectorIdeal - 1].TiempoAcum).TimeOfDay);
 
-                if (nSectorIdeal > 1)
-
+                if (nSectorIdeal > 1
                 {
                     dtmTAcumulado = dtmTParcial.Add(Convert.ToDateTime(tbDatosTr[nSectorIdeal - 1].TiempoAcum).TimeOfDay);
                     tbDatosTr[nSectorIdeal].TiempoAcum = dtmTAcumulado;
                 }
 
-                //if (Gb.bFreeze)
-                //{
-                //    Gb.bFreeze = false;
-                //}
-
                 btFreeze_Click(sender, e);
 
                 datosTableAdapter.Update(tbDatosTr);
 
-                //foreach (DataRow drFila in tbDatosTr)
-                //{
-                //    // Grabamos en BBDD las distancias que hemos ido poniendo para cada referencia
-                //    {
-
-                //        dbVel = decimal.Parse(drFila["Velocidad"].ToString(), provider);
-                //        datosTableAdapter.ModificaFila((int)drFila["Desde"], (int)drFila["Hasta"], (int)drFila["Parcial"], 
-                //            (decimal)dbVel, (DateTime)drFila["TiempoParcial"], (DateTime)drFila["TiempoAcum"], (short)drFila["IdTramo"], (short)drFila["IdDato"]);
-
-                //    }
-                //}
             }
 
         }
@@ -519,34 +494,34 @@ namespace ZeroTrip
                 teRecalibre.BackColor = Color.Crimson;
 
 
-                if (chkBRecalAuto.Checked && nSigIncidecia > 0 && nSigIncidecia != 9999)
-                {
-                    CambiaDistRecalibre();
-                }
+            if (chkBRecalAuto.Checked && nSigIncidecia > 0 && nSigIncidecia != 9999)
+            {
+                CambiaDistRecalibre();
+            }
         }
 
         //-----------------------------------------------------------------------------------
-        
+
         private void btSigRecalibre_Click(object sender, EventArgs e)
         {
             if (nSigIncidecia > 0 && nSigIncidecia != 9999)
                 CambiaDistRecalibre();
             else
-                teSigRecalibre.Text = "--"; 
+                teSigRecalibre.Text = "--";
         }
 
         //-----------------------------------------------------------------------------------
 
         private void CambiaDistRecalibre()
 
-            // Pone en el Text Box para recalibrar, la siguiente distancia del dataSet de incidencias.
+        // Pone en el Text Box para recalibrar, la siguiente distancia del dataSet de incidencias.
         {
 
             teRecalibre.Text = tbIncidenciasTr[nSigIncidecia - 1].Posicion.ToString().Replace(".", "");
             if (nSigIncidecia < tbIncidenciasTr.Count)
                 teSigRecalibre.Text = tbIncidenciasTr[nSigIncidecia].Posicion.ToString().Replace(".", "");
             else
-                teSigRecalibre.Text = "--";       
+                teSigRecalibre.Text = "--";
         }
 
         //-----------------------------------------------------------------------------------
@@ -561,7 +536,7 @@ namespace ZeroTrip
             //else
             //{
             //    Gb.bFreeze = true;
-                lbFreeze.Text = (dbDistReal / 1000).ToString("00.#00").Substring(0, 6);
+            lbFreeze.Text = (dbDistReal / 1000).ToString("00.#00").Substring(0, 6);
             //}
         }
 
@@ -569,12 +544,12 @@ namespace ZeroTrip
 
         private void frPrincipal_KeyDown(object sender, KeyEventArgs e)
         {
-           if (Control.ModifierKeys == Keys.Shift)
+            if (Control.ModifierKeys == Keys.Shift)
             { int a = 1; }
 
             switch (e.KeyCode)
             {
-                
+
                 case (Keys.Space):
                     e.Handled = true;
                     btFreeze_Click(sender, e);
@@ -602,7 +577,7 @@ namespace ZeroTrip
                     }
                     break;
                 case (Keys.Y):
-                    btInicio_Click(sender, e);                  
+                    btInicio_Click(sender, e);
                     break;
                 case (Keys.Q):
                     if (btTiempoSector.Enabled)
@@ -635,13 +610,13 @@ namespace ZeroTrip
                     }
                     break;
                 case (Keys.M):
-                    if(rgDecaMetro.Text == "Metros")
+                    if (rgDecaMetro.Text == "Metros")
                         rgDecaMetro.EditValue = "Decametro";
                     else
                         rgDecaMetro.EditValue = "Metros";
                     //rgDecaMetro_SelectedIndexChanged(sender, e);
                     break;
-                   
+
                 default:
                     break;
                     //MessageBox.Show("Function F1 frPrincipal_KeyDown");
@@ -693,7 +668,7 @@ namespace ZeroTrip
             lbCorreccion.Text = nCorrecionMetros.ToString();
             GrabarLog("Correccion metros " + nCorrecionMetros.ToString());
         }
-        
+
         //-----------------------------------------------------------------------------------
 
         private void btBloqMetros_Click(object sender, EventArgs e)
@@ -744,7 +719,7 @@ namespace ZeroTrip
         private void btTiempoSector_Click(object sender, EventArgs e)
         {
             ZeroTrip.ZeroTripBBDDDataSet.DatosDataTable dtSectores = datosTableAdapter.GetData((short)nTramoCron);
-            DataRow drFila = dtSectores.NewRow(); 
+            DataRow drFila = dtSectores.NewRow();
             DateTime dtmTParcial = DateTime.Today.Date, dtmTAcumulado = DateTime.Today.Date;
 
             int nDesde, nHasta, nParcial, nAntHasta = 0;
@@ -771,7 +746,7 @@ namespace ZeroTrip
                 {
                     nDesde = nAntHasta;
                     nHasta = (int)dtSectores.Rows[i - 1]["Hasta"];
-                  //  dtmTParcial = ((DateTime)dtSectores.Rows[i-2]["TiempoAcum"]).AddMilliseconds(tsCrono.TotalMilliseconds);
+                    //  dtmTParcial = ((DateTime)dtSectores.Rows[i-2]["TiempoAcum"]).AddMilliseconds(tsCrono.TotalMilliseconds);
                 }
 
                 nParcial = nHasta - nDesde;
@@ -796,10 +771,10 @@ namespace ZeroTrip
                 //drFila["TiempoParcial"] = dtmTParcial;
                 //drFila["TipoTramo"] = "Sectores";
 
-                datosTableAdapter.ModificaFila(nDesde, nHasta, nParcial, (decimal)dbVelocidad, dtmTParcial, Convert.ToDateTime(drFila["TiempoAcum"]), (short)nTramoCron, i) ;
+                datosTableAdapter.ModificaFila(nDesde, nHasta, nParcial, (decimal)dbVelocidad, dtmTParcial, Convert.ToDateTime(drFila["TiempoAcum"]), (short)nTramoCron, i);
 
                 dtSectores = datosTableAdapter.GetData((short)nTramoCron);
- 
+
             }
             //Como ya hemos hecho todo, ocultamos el boton
             btTiempoSector.Enabled = false;
@@ -858,35 +833,40 @@ namespace ZeroTrip
                 {
                     if (tsCrono.Seconds != nSegundoAnterior) // muestro la diferencia cada segundo porque al ser en metros va muy rápido.
                     {
-                      
+
                         //if (dPulsos < 1)
                         //    a = 1;
-                        if (nDifMetros < -10) {
+                        if (nDifMetros < -10)
+                        {
                             lbDiferencia.ForeColor = Color.Blue;
-                         //   lbDiferencia.BackColor = Color.Coral;
+                            //   lbDiferencia.BackColor = Color.Coral;
                         }
-                        else if (nDifMetros < -5) { 
+                        else if (nDifMetros < -5)
+                        {
                             lbDiferencia.ForeColor = Color.Blue;
                         }
-                        else if (nDifMetros >= -5 && nDifMetros < 5) {
+                        else if (nDifMetros >= -5 && nDifMetros < 5)
+                        {
                             lbDiferencia.ForeColor = Color.LimeGreen;
                             lbDiferencia.BackColor = Color.Transparent;
                         }
-                        else if (nDifMetros > 5 ) {
+                        else if (nDifMetros > 5)
+                        {
                             lbDiferencia.ForeColor = Color.Red;
                         }
-                        else{
+                        else
+                        {
                             lbDiferencia.ForeColor = Color.Red;
-                           // lbDiferencia.BackColor = Color.DarkTurquoise;
+                            // lbDiferencia.BackColor = Color.DarkTurquoise;
                         }
 
                         lbDiferencia.Text = ((double)nDifMetros).ToString();
 
                         if (Gb.bTramoACalcar)
                         {
-                            
+
                             if (nCalcarSegundos >= 10)
-                            { 
+                            {
                                 //Grabamos 
                                 nCalcarRegs += 1;
                                 dtmCalcarTAcumulado = Convert.ToDateTime(lbCrono.Text.ToString());
@@ -910,7 +890,7 @@ namespace ZeroTrip
                                 nCalcarSegundos = 0;
                             }
                             nCalcarSegundos += 1;
-                        
+
                         }
 
                     } // if (tsCrono.Seconds != nSegundoAnterior)
@@ -941,7 +921,7 @@ namespace ZeroTrip
 
         public void CalcularCrono(ref TimeSpan tsCrSeg, ref TimeSpan tsCrMil)
         {
-           
+
             DateTime dtHoraActual = DateTime.Now;
 
             tsCrMil = dtSalidaTr.Subtract(dtHoraActual);
@@ -961,7 +941,7 @@ namespace ZeroTrip
 
 
             //if (!bEnCompeticion) //Cuando no estemos en competición no entramos aqui
-            
+
             {
 
                 switch (tsCrSeg.CompareTo(tsZero))
@@ -1017,19 +997,19 @@ namespace ZeroTrip
                 PSeriePDA.Write(szEnvDistancia + ";"  //Distancia ideal
                     + tsCrono.ToString() + ";"          // Crono
                     + DateTime.Now.ToLongTimeString() + ";"         // Hora actual
-                    //  + szEnvDistancia2 + ";"             // Punto de siguiente paso horario: hitos, viñetas, 
+                                                                    //  + szEnvDistancia2 + ";"             // Punto de siguiente paso horario: hitos, viñetas, 
                     + lbDistReal.Text + ";"             // Punto de siguiente paso horario: hitos, viñetas, tablas
-                    //  + szEnvCuentaAtras + ";"                // Cuenta atras
+                                                        //  + szEnvCuentaAtras + ";"                // Cuenta atras
                     + lbDiferencia.Text + ";"                // Cuenta atras / Diferencia de metros
                     + szVelocidad + ";"          // Velocidad actual
                     + szDireccionCruce + ";"      // direccion a tomar en cruce
                     + lbTipoIncidencia.Text + ";" // Tipo de incidencia
-                    //+ nFaltaCruce + ";"          // distancia hasta el siguiente cruce
+                                                  //+ nFaltaCruce + ";"          // distancia hasta el siguiente cruce
                     + lbDistAInci.Text + ";"     // distancia hasta el siguiente cruce
                     + dbVelSiguiente + ";"               // siguiente velocidad
                     + lbFaltaCam.Text        // distancia para el cambio de media
-                 //   + Gb.nLongTramo.ToString()
-                    );                  
+                                             //   + Gb.nLongTramo.ToString()
+                    );
             }
             catch (TimeoutException)
             {
@@ -1054,10 +1034,10 @@ namespace ZeroTrip
 
             try
             {
-                
+
                 if (nSigIncidecia != 0 && nSigIncidecia != 9999)
                 {
-                    szSigInci = (Convert.ToDouble(tbIncidenciasTr[nSigIncidecia - 1].Posicion)/1000).ToString("00.#00").Substring(0, 5); 
+                    szSigInci = (Convert.ToDouble(tbIncidenciasTr[nSigIncidecia - 1].Posicion) / 1000).ToString("00.#00").Substring(0, 5);
                 }
                 else
                 { szSigInci = "--,--"; }
@@ -1082,13 +1062,13 @@ namespace ZeroTrip
                     szDifMetros = "Fin";
 
 
-                string a = ( szTramo + ";"  // Nombre del tramo
+                string a = (szTramo + ";"  // Nombre del tramo
                     + DateTime.Now.ToLongTimeString() + ";"     // Hora actual
                     + szCrono + ";"                             // Crono
-                    // + lbDistReal.Text + ";"                     //Distancia REAL
+                                                                // + lbDistReal.Text + ";"                     //Distancia REAL
                     + (dbDistReal / 1000).ToString("00.#00").Substring(0, 5) + ";"
                     + szEnvDistancia + ";"                      //Distancia ideal
-                    //+ lbDiferencia.Text + ";"                   // Cuenta atras / Diferencia de metros
+                                                                //+ lbDiferencia.Text + ";"                   // Cuenta atras / Diferencia de metros
                     + szDifMetros + ";"                   // Cuenta atras / Diferencia de metros
                     + szVel + ";"          // Velocidad actual
                     + lbDistActVel.Text + ";"                   //Velocidad HASTA
@@ -1100,8 +1080,8 @@ namespace ZeroTrip
                     + lbDistAInci.Text + ";"                      // distancia hasta el siguiente cruce
                     + Gb.nLongTramo.ToString("#,##0") +               // Longitud del tramo
                     "\n");
-       
-                bool result = BLTObj.EnviarDatos(BLTObj.remoteDevice, a); 
+
+                bool result = BLTObj.EnviarDatos(BLTObj.remoteDevice, a);
 
             }
             catch (TimeoutException)
@@ -1113,7 +1093,7 @@ namespace ZeroTrip
                     Util.AvisoConRespuesta("No hay nada escuchando por el puerto " + PSeriePDA.PortName, "Error en puerto");
                 }
             }
-        }  
+        }
 
         //-----------------------------------------------------------------------------------
 
@@ -1141,7 +1121,7 @@ namespace ZeroTrip
             szAux = "";
 
             if (szTipoTramo == "Varias")
-                if(nSectorIdeal == 9999)
+                if (nSectorIdeal == 9999)
                     szTipoSector = szTipoTramo;
                 else
                 {
@@ -1237,7 +1217,7 @@ namespace ZeroTrip
                         lbFaltaCambio.Text = (((tbDatosTr[nSectorIdeal - 1].Hasta - nDistIdeal) / 10) + 1).ToString() + "0";
                         lbFaltaCam.Text = lbFaltaCambio.Text;
 
-                       // Sonidos("CambioMedia");
+                        // Sonidos("CambioMedia");
 
                         break;
 
@@ -1306,7 +1286,7 @@ namespace ZeroTrip
                 lbCuentaAtras.Text = "";
                 lbVelocidad.Text = "";
                 lbVariable.Text = "";
-               // lbDiferencia.Text = "0";
+                // lbDiferencia.Text = "0";
 
 
             }
@@ -1404,13 +1384,13 @@ namespace ZeroTrip
 #if DEBUG
 
                 if (bEnCompeticion)
-                    //if (bHayTramo && bEnCompeticion)
-                    {
+                //if (bHayTramo && bEnCompeticion)
+                {
                     Random r = new Random();
 
                     lbPulsos.Visible = true;
-                    
-                    dbPulsos = dbPulsos + r.Next(1,2); //+ r.NextDouble()
+
+                    dbPulsos = dbPulsos + r.Next(1, 2); //+ r.NextDouble()
 
                 } //if (bEnCompeticion)
 
@@ -1504,9 +1484,9 @@ namespace ZeroTrip
             }
             catch (Exception ex)
             {
- //PSerieARD.DiscardInBuffer();
+                //PSerieARD.DiscardInBuffer();
                 Util.AvisoConEx(ex, "Puerto " + PSeriePDA.PortName + " no disponible o no existe", "Error en puerto");
-               
+
             }
 
         }
@@ -1522,7 +1502,7 @@ namespace ZeroTrip
             lbCuentaAtras.Text = "";
             lbDistTeorica.Text = "00,000";
             lbDistReal.Text = "00,000";
-          
+
             lbDiferencia.Text = "0";
             lbVariable.Text = "";
             lbVelocidad.Text = "";
@@ -1563,9 +1543,9 @@ namespace ZeroTrip
                 Array.Clear(Gb.anAvInc, 0, Gb.anAvInc.Length);
             if (anCalibres != null)
             {
-                anCalibres = (double[,]) ResizeArray(anCalibres, new int[] { 1, 3 });
-               // anCalibres.Initialize();
-                
+                anCalibres = (double[,])ResizeArray(anCalibres, new int[] { 1, 3 });
+                // anCalibres.Initialize();
+
                 Array.Clear(anCalibres, 0, anCalibres.Length);
             }
 
@@ -1709,11 +1689,11 @@ namespace ZeroTrip
             tePID.Text = config.GetPID();
 
 
-   
+
 
             // Calculamos la distancia entre hitos a partir del calibre activo y del configurado como MOPU
 
- 
+
             // Enviaremos el calibre si hiciera falta para calcular la velocidad en la tarjeta.
             //if (PSerieARD.IsOpen)
             //{
@@ -1776,7 +1756,7 @@ namespace ZeroTrip
         }
 
         //-----------------------------------------------------------------------------------
-            
+
         private static Array ResizeArray(Array arr, int[] newSizes)
         {
             if (newSizes.Length != arr.Rank)
@@ -1787,7 +1767,7 @@ namespace ZeroTrip
             int length = arr.Length <= temp.Length ? arr.Length : temp.Length;
             Array.ConstrainedCopy(arr, 0, temp, 0, length);
             return temp;
-        } 
+        }
 
         #endregion VARIOS
 
@@ -1808,8 +1788,8 @@ namespace ZeroTrip
             {
                 //if (USBClass.GetUSBDevice(2341, 43, ref USBDeviceProperties, true) || // la 43 es la mia, la de Javier es 42, y la R4 es 69
                 //    USBClass.GetUSBDevice(2341, 42, ref USBDeviceProperties, true))
-                    if (USBClass.GetUSBDevice(Convert.ToUInt16(config.GetVID()), Convert.ToUInt16(config.GetPID()), ref USBDeviceProperties, true))
-                    {
+                if (USBClass.GetUSBDevice(Convert.ToUInt16(config.GetVID()), Convert.ToUInt16(config.GetPID()), ref USBDeviceProperties, true))
+                {
                     //My Device is connected
                     cbPortARD.Text = USBDeviceProperties.COMPort;
                     MyUSBARDConnected = true;
@@ -1874,7 +1854,7 @@ namespace ZeroTrip
                 {
                     // Quito este mensaje porque se me activa cuando bajo la tapa del PC
 
-                   // Util.AvisoConError("Se ha perdido la conexión con la PDA  " + USBDeviceProperties.FriendlyName, "PDA desconectada");
+                    // Util.AvisoConError("Se ha perdido la conexión con la PDA  " + USBDeviceProperties.FriendlyName, "PDA desconectada");
                     //if (PSerieARD.IsOpen)
                     //  PSerieARD.Close();
                 }
@@ -1883,9 +1863,9 @@ namespace ZeroTrip
         #endregion DETECTAR usb
 
 
- 
- 
+
+
     }
 
-   
+
 }

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Runtime.InteropServices;
-using System.IO.Ports;
-using System.Data;
-using System.Windows.Forms;
 using System.IO;
+using System.IO.Ports;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 //using System.Net;
 //using System.Net.Sockets;
@@ -50,7 +47,7 @@ namespace ZeroTrip
             //String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
             //String dataName = AppDomain.CurrentDomain.BaseDirectory;
             string dataName = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
-           
+
             String fileName = "ZeroTripBBDD.accdb";
 #else
 #if PC
@@ -133,7 +130,7 @@ namespace ZeroTrip
                 nSigIncidecia = 0;
             }
             // Obtenemos la longitud del tramo
-            Gb.nLongTramo = Convert.ToInt32(tbDatosTr[tbDatosTr.Count-1]["Hasta"]);
+            Gb.nLongTramo = Convert.ToInt32(tbDatosTr[tbDatosTr.Count - 1]["Hasta"]);
 
             //Obtenemos la hora de inicio del tramo
             dtSalidaTr = Convert.ToDateTime(tbInfoTr.Rows[0]["HoraSalida"]);
@@ -295,7 +292,8 @@ namespace ZeroTrip
         private void btConnectBLT_Click(object sender, EventArgs e)
         {
             // Al pulsar este botón, lo que hacemos es ponernos en modo listener de forma asincrona. El otro dispositivo debe conectar con nosotros
-            if (cbBLTDevs.SelectedItem != null) { 
+            if (cbBLTDevs.SelectedItem != null)
+            {
                 BLTObj.remoteDeviceNameAdmited = cbBLTDevs.SelectedItem.ToString();
 
                 BLTObj.localListener.BeginAcceptBluetoothClient(new AsyncCallback(BLTObj.AcceptConnection), BLTObj.localListener);
@@ -308,8 +306,8 @@ namespace ZeroTrip
         {
             tmCrono.Stop();
 
-             DateTime dtHora = Convert.ToDateTime(teHora.Text.ToString());
-             //dtHora = GetNetworkTime();
+            DateTime dtHora = Convert.ToDateTime(teHora.Text.ToString());
+            //dtHora = GetNetworkTime();
             // VblesGlobales.SYSTEMTIME st = new VblesGlobales.SYSTEMTIME();
             st.Year = short.Parse(dtHora.Year.ToString());
             st.Month = short.Parse(dtHora.Month.ToString());
@@ -323,7 +321,7 @@ namespace ZeroTrip
             tmCrono.Start();
 
         }
-   
+
         //---------------------------------------------------------------------------------------------------------
 
         private void AbrirPuertoPDA(string szPuerto, string szNombre)
@@ -370,7 +368,7 @@ namespace ZeroTrip
                 teSigRecalibre.Text = "0";
                 nDistReal = 0;
 
-                
+
 #if DEBUG
                 dbPulsosAnt = 0;
                 dbPulsos = 0;
@@ -579,7 +577,7 @@ namespace ZeroTrip
             {
                 //nSigInc = (Convert.ToInt16(tbIncidenciasTr[nInd].Posicion));
                 //if (nDistIdeal <= Convert.ToInt32(tbIncidenciasTr[nInd].Posicion))
-                    if (nDistReal <= Convert.ToInt32(tbIncidenciasTr[nInd].Posicion))
+                if (nDistReal <= Convert.ToInt32(tbIncidenciasTr[nInd].Posicion))
                     return (tbIncidenciasTr[nInd].IdIncidencia);
 
             }
@@ -647,9 +645,9 @@ namespace ZeroTrip
                                 {
                                     simpleSound.SoundLocation = Application.StartupPath.ToString() + @"\Sonidos\Incidencia.wav";
                                     picOrientacion.Visible = true;
-                                    
+
                                     label19.Visible = true;
-                                    
+
                                     //lbDistAInci.Visible = true;
                                     //lbTipoIncidencia.Visible = true;
                                     //lbComenInci.Visible = true;
@@ -889,7 +887,7 @@ namespace ZeroTrip
                 groupControl4.LookAndFeel.UseWindowsXPTheme = false;
                 groupControl5.LookAndFeel.UseWindowsXPTheme = false;
                 groupControl6.LookAndFeel.UseWindowsXPTheme = false;
-                
+
 
                 //label13.ForeColor = System.Drawing.Color.Navy;
                 //label14.ForeColor = System.Drawing.Color.Navy;
@@ -1017,7 +1015,7 @@ namespace ZeroTrip
                 chkSonido100.ForeColor = System.Drawing.Color.White;
                 chkLog.ForeColor = System.Drawing.Color.White;
                 rgDiaNoche.ForeColor = System.Drawing.Color.White;
-                
+
 
                 lbSigCMRE.ForeColor = System.Drawing.Color.White;
                 lbSalida.ForeColor = System.Drawing.Color.White;
@@ -1033,7 +1031,7 @@ namespace ZeroTrip
 
                 //scContenedor.Panel1.BackColor = System.Drawing.Color.Teal
                 scContenedor.Panel1.BackColor = System.Drawing.Color.MidnightBlue;
-               // scContenedor.Panel1.BackColor = System.Drawing.Color.DarkBlue;
+                // scContenedor.Panel1.BackColor = System.Drawing.Color.DarkBlue;
 
 
 
@@ -1219,7 +1217,7 @@ namespace ZeroTrip
                 teDistHitos.Text = ((1000 * Convert.ToInt64(config.GetCalMopuTerra())) / Convert.ToInt64(dbCalibreActivo)).ToString();
             }
 
-            if (bEnCompeticion) 
+            if (bEnCompeticion)
                 GuardaCalibre();
 
             //if (PSerieARD.IsOpen)
@@ -1307,13 +1305,13 @@ namespace ZeroTrip
             }
             else
             {
-                
+
                 anCalibres[anCalibres.GetLength(0) - 1, 0] = dbCalibreActivo;
                 anCalibres[anCalibres.GetLength(0) - 1, 1] = dbPulsos;
                 anCalibres[anCalibres.GetLength(0) - 1, 2] = dbDistIdeal;
-                
+
             }
-            anCalibres = (double[,])ResizeArray(anCalibres, new int[] { anCalibres.GetLength(0)+1, 3 });
+            anCalibres = (double[,])ResizeArray(anCalibres, new int[] { anCalibres.GetLength(0) + 1, 3 });
 
         }
 
@@ -1370,20 +1368,20 @@ namespace ZeroTrip
 
 
         private void rgSonda_SelectedIndexChanged(object sender, EventArgs e)
- 
+
         {
             String szCadena;
 
             if (PSerieARD.IsOpen)
             {
                 switch (rgSonda.Text)
-                { 
+                {
 
                     case "Derecha":
-                        szCadena = "D"; 
+                        szCadena = "D";
                         break;
                     case "Izquierda":
-                        szCadena = "I"; 
+                        szCadena = "I";
                         break;
                     default:
                         szCadena = "D";
@@ -1397,7 +1395,7 @@ namespace ZeroTrip
             config.SetSonda(rgSonda.Text);
         }
 
-        private void rbTamanioRueda_SelectedIndexChanged (object sender, EventArgs e)
+        private void rbTamanioRueda_SelectedIndexChanged(object sender, EventArgs e)
         {
             String szCadena;
 
@@ -1528,7 +1526,7 @@ namespace ZeroTrip
 
             if (Util.AvisoConRespuesta("Pero si quieres, podemos guardar una copia de la BBDD actual \r" +
                 "¿Quieres que hagamos la copia a ZeroTripBBDD_BACKUP.accdb?", "Salvar BBDD")) ;
-            { 
+            {
                 try
                 {
                     // Valida que el archivo `CopiaArchivoTexto.txt`:
@@ -1539,7 +1537,7 @@ namespace ZeroTrip
 
                     // Copia el archivo `ArchivoTexto.txt`:
                     archivoOrigen.CopyTo(fileDestino);
-               
+
                 }
                 catch (IOException ioex)
                 {
@@ -1550,10 +1548,10 @@ namespace ZeroTrip
             datosTableAdapter.LimpiarDatos();
             incidenciasTableAdapter.LimpiarIncidencias();
             logTableAdapter.LimpiarLog();
-           // DateTime date = DateTime.Now.AddMonths(1);
-           // DateTime dateTime = new DateTime(date.Year, date.Month, 1, 10, 0, 0);
+            // DateTime date = DateTime.Now.AddMonths(1);
+            // DateTime dateTime = new DateTime(date.Year, date.Month, 1, 10, 0, 0);
 
-            tramosTableAdapter.InicializarTodos(Convert.ToDateTime( teFechaInicio.Text));
+            tramosTableAdapter.InicializarTodos(Convert.ToDateTime(teFechaInicio.Text));
 
         }
 
