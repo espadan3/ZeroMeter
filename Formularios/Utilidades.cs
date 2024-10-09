@@ -144,137 +144,139 @@ namespace ZeroTrip
             btTiempoSector.Visible = false;
             btTiempoSector.Enabled = false;
 
-            switch (tbInfoTr[0].TipoTramo)
-            {
-                case "Tablas":
-                    lbLitVariable.Visible = false;
-                    lbVariable.Visible = false;
-                    lbCuentaAtras.Visible = false;
-                    lbLitCuentaAtras.Visible = false;
-                    lbVariable.Text = tbDatosTr[0].Hasta.ToString();
-                    lbLitCuentaAtras.Text = "Cuenta Atrás";
-                    lbLitVariable.Text = "Siguiente Distancia";
-                    lbActVelocidad.Text = "";
-                    lbSigVelocidad.Text = "";
-                    lbVelocidad.Text = "";
-                    lbDistActVel.Text = "";
-                    lbSigCMRE.Visible = false;
-                    teSigCMRE.Visible = false;
-                    btSigCM.Visible = false;
-                    btSigCM.Enabled = false;
-                    btSigCMManual.Visible = false;
-                    lbVelRE.Visible = false;
-                    teVelRE.Visible = false;
-                    break;
+            ConfiguraPantalla(tbInfoTr[0].TipoTramo);
 
-                case "Hitos":
-                    lbLitVariable.Visible = true;
-                    lbVariable.Visible = true;
-                    lbCuentaAtras.Visible = true;
-                    lbLitCuentaAtras.Visible = true;
-                    lbVariable.Text = tbDatosTr[0].Hasta.ToString();
-                    lbLitVariable.Text = "Siguiente Hito";
-                    lbVelocidad.Text = "";
-                    lbSigVelocidad.Text = "";
-                    lbDistActVel.Text = "";
-                    lbSigCMRE.Visible = false;
-                    teSigCMRE.Visible = false;
-                    btSigCM.Enabled = false;
-                    btSigCM.Visible = false;
-                    btSigCM.Enabled = false;
-                    btSigCMManual.Visible = false;
-                    lbVelRE.Visible = false;
-                    teVelRE.Visible = false;
+            //switch (tbInfoTr[0].TipoTramo)
+            //{
+            //    case "Tablas":
+            //        lbLitVariable.Visible = false;
+            //        lbVariable.Visible = false;
+            //        lbCuentaAtras.Visible = false;
+            //        lbLitCuentaAtras.Visible = false;
+            //        lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+            //        lbLitCuentaAtras.Text = "Cuenta Atrás";
+            //        lbLitVariable.Text = "Siguiente Distancia";
+            //        lbActVelocidad.Text = "";
+            //        lbSigVelocidad.Text = "";
+            //        lbVelocidad.Text = "";
+            //        lbDistActVel.Text = "";
+            //        lbSigCMRE.Visible = false;
+            //        teSigCMRE.Visible = false;
+            //        btSigCM.Visible = false;
+            //        btSigCM.Enabled = false;
+            //        btSigCMManual.Visible = false;
+            //        lbVelRE.Visible = false;
+            //        teVelRE.Visible = false;
+            //        break;
 
-                    break;
+            //    case "Hitos":
+            //        lbLitVariable.Visible = true;
+            //        lbVariable.Visible = true;
+            //        lbCuentaAtras.Visible = true;
+            //        lbLitCuentaAtras.Visible = true;
+            //        lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+            //        lbLitVariable.Text = "Siguiente Hito";
+            //        lbVelocidad.Text = "";
+            //        lbSigVelocidad.Text = "";
+            //        lbDistActVel.Text = "";
+            //        lbSigCMRE.Visible = false;
+            //        teSigCMRE.Visible = false;
+            //        btSigCM.Enabled = false;
+            //        btSigCM.Visible = false;
+            //        btSigCM.Enabled = false;
+            //        btSigCMManual.Visible = false;
+            //        lbVelRE.Visible = false;
+            //        teVelRE.Visible = false;
 
-                case "Medias":
-                    lbLitVariable.Visible = false;
-                    lbVariable.Visible = false;
-                    lbCuentaAtras.Visible = false;
-                    lbLitCuentaAtras.Visible = false;
-                    lbVelocidad.Text = "";
-                    lbActVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
-                    lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
-                    lbSigCMRE.Visible = false;
-                    teSigCMRE.Visible = false;
-                    btSigCM.Visible = false;
-                    btSigCM.Enabled = false;
-                    btSigCMManual.Visible = false;
-                    lbVelRE.Visible = false;
-                    teVelRE.Visible = false;
-                    break;
+            //        break;
 
-                case "Viñetas":
-                    lbLitVariable.Visible = false;
-                    lbVariable.Visible = false;
-                    lbCuentaAtras.Visible = false;
-                    lbLitCuentaAtras.Visible = false;
-                    //lbVariable.Text = tbDatosTr[0].Hasta.ToString();
-                    //lbLitCuentaAtras.Text = "Cuenta Atrás";
-                    //lbLitVariable.Text = "Siguiente Viñeta";
-                    lbVelocidad.Text = "";
-                    lbSigVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
-                    lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
-                    lbSigCMRE.Visible = false;
-                    teSigCMRE.Visible = false;
-                    btSigCM.Visible = false;
-                    btSigCM.Enabled = false;
-                    btSigCMManual.Visible = false;
-                    lbVelRE.Visible = false;
-                    teVelRE.Visible = false;
-                    break;
+            //    case "Medias":
+            //        lbLitVariable.Visible = false;
+            //        lbVariable.Visible = false;
+            //        lbCuentaAtras.Visible = false;
+            //        lbLitCuentaAtras.Visible = false;
+            //        lbVelocidad.Text = "";
+            //        lbActVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+            //        lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
+            //        lbSigCMRE.Visible = false;
+            //        teSigCMRE.Visible = false;
+            //        btSigCM.Visible = false;
+            //        btSigCM.Enabled = false;
+            //        btSigCMManual.Visible = false;
+            //        lbVelRE.Visible = false;
+            //        teVelRE.Visible = false;
+            //        break;
 
-                case "Sectores":
-                    btTiempoSector.Visible = true;
-                    btTiempoSector.Enabled = true;
-                    lbLitVariable.Visible = true;
-                    lbVariable.Visible = true;
-                    lbCuentaAtras.Visible = true;
-                    lbLitCuentaAtras.Visible = true;
-                    lbLitCuentaAtras.Text = "Cuenta Atrás";
-                    lbVariable.Text = tbDatosTr[0].Hasta.ToString();
-                    lbLitVariable.Text = "Siguiente Distancia";
-                    lbVelocidad.Text = "";
-                    lbSigVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
-                    lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
-                    lbSigCMRE.Visible = false;
-                    teSigCMRE.Visible = false;
-                    btSigCM.Visible = false;
-                    btSigCM.Enabled = false;
-                    btSigCMManual.Visible = false;
-                    lbVelRE.Visible = false;
-                    teVelRE.Visible = false;
-                    btTiempoSector.Visible = true;
-                    btTiempoSector.Enabled = true;
-                    break;
+            //    case "Viñetas":
+            //        lbLitVariable.Visible = false;
+            //        lbVariable.Visible = false;
+            //        lbCuentaAtras.Visible = false;
+            //        lbLitCuentaAtras.Visible = false;
+            //        //lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+            //        //lbLitCuentaAtras.Text = "Cuenta Atrás";
+            //        //lbLitVariable.Text = "Siguiente Viñeta";
+            //        lbVelocidad.Text = "";
+            //        lbSigVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+            //        lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
+            //        lbSigCMRE.Visible = false;
+            //        teSigCMRE.Visible = false;
+            //        btSigCM.Visible = false;
+            //        btSigCM.Enabled = false;
+            //        btSigCMManual.Visible = false;
+            //        lbVelRE.Visible = false;
+            //        teVelRE.Visible = false;
+            //        break;
 
-                case "RefExternas":
-                    lbLitVariable.Visible = false;
-                    lbVariable.Visible = false;
-                    lbCuentaAtras.Visible = false;
-                    lbLitCuentaAtras.Visible = false;
-                    ////lbVariable.Text = tbDatosTr[0].Hasta.ToString();
-                    ////lbLitVariable.Text = "Siguiente Distancia";
-                    lbVelocidad.Text = "";
-                    lbActVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
-                    lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
-                    lbSigCMRE.Visible = true;
-                    teSigCMRE.Visible = true;
-                    btSigCM.Visible = true;
-                    btSigCM.Enabled = true;
-                    btSigCMManual.Visible = true;
-                    lbVelRE.Visible = true;
-                    teVelRE.Visible = true;
-                    //btSigCM.Text = "2ª Media";
-                    //teSigCMRE.Text = tbDatosTr[0].Velocidad.ToString("00.##");
-                    teVelRE.Text = tbDatosTr[0].Velocidad.ToString("00.##");
-                    break;
+            //    case "Sectores":
+            //        btTiempoSector.Visible = true;
+            //        btTiempoSector.Enabled = true;
+            //        lbLitVariable.Visible = true;
+            //        lbVariable.Visible = true;
+            //        lbCuentaAtras.Visible = true;
+            //        lbLitCuentaAtras.Visible = true;
+            //        lbLitCuentaAtras.Text = "Cuenta Atrás";
+            //        lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+            //        lbLitVariable.Text = "Siguiente Distancia";
+            //        lbVelocidad.Text = "";
+            //        lbSigVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+            //        lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
+            //        lbSigCMRE.Visible = false;
+            //        teSigCMRE.Visible = false;
+            //        btSigCM.Visible = false;
+            //        btSigCM.Enabled = false;
+            //        btSigCMManual.Visible = false;
+            //        lbVelRE.Visible = false;
+            //        teVelRE.Visible = false;
+            //        btTiempoSector.Visible = true;
+            //        btTiempoSector.Enabled = true;
+            //        break;
 
-                default:
-                    break;
+            //    case "RefExternas":
+            //        lbLitVariable.Visible = false;
+            //        lbVariable.Visible = false;
+            //        lbCuentaAtras.Visible = false;
+            //        lbLitCuentaAtras.Visible = false;
+            //        ////lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+            //        ////lbLitVariable.Text = "Siguiente Distancia";
+            //        lbVelocidad.Text = "";
+            //        lbActVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+            //        lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
+            //        lbSigCMRE.Visible = true;
+            //        teSigCMRE.Visible = true;
+            //        btSigCM.Visible = true;
+            //        btSigCM.Enabled = true;
+            //        btSigCMManual.Visible = true;
+            //        lbVelRE.Visible = true;
+            //        teVelRE.Visible = true;
+            //        //btSigCM.Text = "2ª Media";
+            //        //teSigCMRE.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+            //        teVelRE.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+            //        break;
 
-            }
+            //    default:
+            //        break;
+
+            //}
 
 
 
@@ -486,6 +488,7 @@ namespace ZeroTrip
         public int SectorParaDistancia(int nSectorAct)
         {
             // Devuelve el sector dentro de un tramo en el que nos encontramos en función del tiempo de crono transcurrido
+            // Es decir, devuelve el sector de un tramo en el que deberías estar en función del tiempo en tramo
             TimeSpan tsTiempoAcum;
 
             if (nSectorAct != 0)
@@ -1553,9 +1556,160 @@ namespace ZeroTrip
             tramosTableAdapter.InicializarTodos(Convert.ToDateTime( teFechaInicio.Text));
 
         }
+
+
+        public void ConfiguraPantalla(string szTipo)
+        {
+
+            switch (szTipo)
+            {
+                case "Tablas":
+                    lbLitVariable.Visible = false;
+                    lbVariable.Visible = false;
+                    lbCuentaAtras.Visible = false;
+                    lbLitCuentaAtras.Visible = false;
+                    lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+                    lbLitCuentaAtras.Text = "Cuenta Atrás";
+                    lbLitVariable.Text = "Siguiente Distancia";
+                    lbActVelocidad.Text = "";
+                    lbSigVelocidad.Text = "";
+                    lbVelocidad.Text = "";
+                    lbDistActVel.Text = "";
+                    lbSigCMRE.Visible = false;
+                    teSigCMRE.Visible = false;
+                    btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
+                    btSigCMManual.Enabled = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
+                    lbFaltaCam.Visible = false;
+                    break;
+
+                case "Hitos":
+                    lbLitVariable.Visible = true;
+                    lbVariable.Visible = true;
+                    lbCuentaAtras.Visible = true;
+                    lbLitCuentaAtras.Visible = true;
+                    lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+                    lbLitVariable.Text = "Siguiente Hito";
+                    lbVelocidad.Text = "";
+                    lbSigVelocidad.Text = "";
+                    lbDistActVel.Text = "";
+                    lbSigCMRE.Visible = false;
+                    teSigCMRE.Visible = false;
+                    btSigCM.Enabled = false;
+                    btSigCM.Visible = false;
+                    btSigCMManual.Enabled = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
+                    lbFaltaCam.Visible = true;
+                    break;
+
+                case "Medias":
+                    lbLitVariable.Visible = false;
+                    lbVariable.Visible = false;
+                    lbCuentaAtras.Visible = false;
+                    lbLitCuentaAtras.Visible = false;
+                    lbVelocidad.Text = "";
+                    lbActVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+                    lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
+                    lbSigCMRE.Visible = false;
+                    teSigCMRE.Visible = false;
+                    btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
+                    btSigCMManual.Enabled = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
+                    lbFaltaCam.Visible = true;
+                    break;
+
+                case "Viñetas":
+                    lbLitVariable.Visible = false;
+                    lbVariable.Visible = false;
+                    lbCuentaAtras.Visible = false;
+                    lbLitCuentaAtras.Visible = false;
+                    //lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+                    //lbLitCuentaAtras.Text = "Cuenta Atrás";
+                    //lbLitVariable.Text = "Siguiente Viñeta";
+                    lbVelocidad.Text = "";
+                    lbSigVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+                    lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
+                    lbSigCMRE.Visible = false;
+                    teSigCMRE.Visible = false;
+                    btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
+                    btSigCMManual.Enabled = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
+                    lbFaltaCam.Visible = true;
+                    break;
+
+                case "Sectores":
+                    btTiempoSector.Visible = true;
+                    btTiempoSector.Enabled = true;
+                    lbLitVariable.Visible = true;
+                    lbVariable.Visible = true;
+                    lbCuentaAtras.Visible = true;
+                    lbLitCuentaAtras.Visible = true;
+                    lbLitCuentaAtras.Text = "Cuenta Atrás";
+                    lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+                    lbLitVariable.Text = "Siguiente Distancia";
+                    lbVelocidad.Text = "";
+                    lbSigVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+                    lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
+                    lbSigCMRE.Visible = false;
+                    teSigCMRE.Visible = false;
+                    btSigCM.Visible = false;
+                    btSigCM.Enabled = false;
+                    btSigCMManual.Enabled = false;
+                    btSigCMManual.Visible = false;
+                    lbVelRE.Visible = false;
+                    teVelRE.Visible = false;
+                    btTiempoSector.Visible = true;
+                    btTiempoSector.Enabled = true;
+                    lbFaltaCam.Visible = true;
+                    break;
+
+                case "RefExternas":
+                    lbLitVariable.Visible = false;
+                    lbVariable.Visible = false;
+                    lbCuentaAtras.Visible = false;
+                    lbLitCuentaAtras.Visible = false;
+                    ////lbVariable.Text = tbDatosTr[0].Hasta.ToString();
+                    ////lbLitVariable.Text = "Siguiente Distancia";
+                    lbVelocidad.Text = "";
+                    lbActVelocidad.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+                    lbDistActVel.Text = tbDatosTr[0].Hasta.ToString("#,##0");
+                    lbSigCMRE.Visible = true;
+                    teSigCMRE.Visible = true;
+                    btSigCM.Visible = true;
+                    btSigCM.Enabled = true;
+                    btSigCMManual.Enabled = true;
+                    btSigCMManual.Visible = true;
+                    lbVelRE.Visible = true;
+                    teVelRE.Visible = true;
+                    //btSigCM.Text = "2ª Media";
+                    //teSigCMRE.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+                    teVelRE.Text = tbDatosTr[0].Velocidad.ToString("00.##");
+                    lbFaltaCam.Visible = false;
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+
+
     }
 
-        #endregion Otros
 
-    
+    #endregion Otros
+
+
 }

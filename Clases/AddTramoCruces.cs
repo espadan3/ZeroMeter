@@ -741,6 +741,7 @@ namespace ZeroTrip
 
         private void CrearFilaDatos(Int16 nFilas, Int32 nHast, Double dVelo, String szTipoTramo)
         {
+            // Se utiliza para crear filas por defecto segun el tipo de tramo.
 
             Int32 nAntHasta = 0;
             Int32 nNewHasta = nHast;

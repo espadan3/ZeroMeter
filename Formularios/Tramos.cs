@@ -524,22 +524,19 @@ namespace ZeroTrip
             }
             else
                 if ((e.ListChangedType.ToString() == "ItemChanged") && (e.OldIndex != -1))
-                //if ((e.ListChangedType.ToString() == "ItemChanged") && cbTipo.Text == "Medias")
+               
                 {
                     if ( cbTipo.Text.ToString() != "Viñetas" && cbTipo.Text.ToString() != "Tablas")
+                    // Hacemos un bucle para modificar todos los registros a partir de este
                         for (Int16 i = Convert.ToInt16(e.NewIndex); i < dsDatos.Tables["Datos"].Rows.Count; i++)
                             Modificar(i);
                     else
                     {
+                        //Solo modificamos esa fila, pues no acumulamos
                         Modificar(Convert.ToInt16(e.NewIndex));
                         if (e.NewIndex + 1 < dsDatos.Datos.Rows.Count)
                             // Quiere decir que estamos modificando la última fila, luego no modificamos la siguiente.
                             Modificar(Convert.ToInt16(e.NewIndex + 1));
-
-                        //gcMedias.RefreshDataSource();
-                        //dsDatos.Datos.AcceptChanges();
-                        //datosTableAdapter.Fill(dsDatos.Datos, nTramo);
-                        //gvMedias.MoveLast(); 
 
                     }
 
@@ -908,7 +905,7 @@ namespace ZeroTrip
             {
                 if (j >= 0)
                 {
-                    /// OJO tengo que usar el indice del DataSet y no el del grid, por si han reordenado el grid
+                    // OJO tengo que usar el indice del DataSet y no el del grid, por si han reordenado el grid
                     short iDs = Convert.ToInt16(gvIncidencias.GetDataSourceRowIndex(j));
 
                     incidenciasTableAdapter.Delete(nTramo, Convert.ToInt16(dsIncidencias.Tables["Incidencias"].Rows[iDs]["IdIncidencia"].ToString()));
@@ -934,14 +931,15 @@ namespace ZeroTrip
 
         private void Modificar(short nFila)
         {
-            DataTable dtDatos;
-            //DateTime dtAux;
+
+            
             DateTime dtmTParcial = DateTime.Today, dtmTAcumulado = DateTime.Today;
-            //DataRow drFila;
+            
             DataRow drFila = dsDatos.Tables["Datos"].NewRow();
+
             Int32 nDesde, nHasta, nParcial;
             decimal dbVelocidad;
-            //short nRegs = Convert.ToInt16(datosTableAdapter.ContarDatos(nTramo));
+            
             Int16 nIdDato = Convert.ToInt16(dsDatos.Datos.Rows[nFila]["IdDato"]);
 
             NumberFormatInfo provider = new NumberFormatInfo();
@@ -950,7 +948,8 @@ namespace ZeroTrip
             provider.NumberGroupSeparator = ".";
             provider.NumberGroupSizes = new int[] { 3 };
 
-            dtDatos = datosTableAdapter.GetFila(nTramo, nIdDato);
+            // DataTable dtDatos;
+            //  dtDatos = datosTableAdapter.GetFila(nTramo, nIdDato);
 
 
             switch (cbTipo.Text.ToString())
@@ -967,7 +966,7 @@ namespace ZeroTrip
                     if (drFila.HasVersion(DataRowVersion.Proposed))
                         dbVelocidad = decimal.Parse(drFila["Velocidad", DataRowVersion.Proposed].ToString(), provider);
                     dbVelocidad = decimal.Parse(dsDatos.Datos.Rows[nFila]["Velocidad"].ToString(), provider);
-                    dbVelocidad = decimal.Parse(drFila["Velocidad", DataRowVersion.Current].ToString(), provider);
+                    //dbVelocidad = decimal.Parse(drFila["Velocidad", DataRowVersion.Current].ToString(), provider);
 
                     if (dbVelocidad == 0)
                     {
@@ -975,17 +974,17 @@ namespace ZeroTrip
                         return;
                     }
 
-                    if (dtDatos.Rows.Count == 0)
+                    //if (dtDatos.Rows.Count == 0)
+                    //{
+                    //    int a = dsDatos.Tables["Datos"].Rows.Count;
+                    //   nDesde = 0;
+                    //    nParcial = nHasta;
+                    //    dtmTParcial = Util.Tiempo(nParcial, dbVelocidad);
+                    //    dtmTAcumulado = dtmTParcial;
+                    //}
+                    //else
                     {
-                        //nRegs = 0;
-                        nDesde = 0;
-                        nParcial = nHasta;
-                        dtmTParcial = Util.Tiempo(nParcial, dbVelocidad);
-                        dtmTAcumulado = dtmTParcial;
-                    }
-                    else
-                    {
-                        //nRegs = Convert.ToInt16(dtDatos.Rows[0]["IdDato"]);
+                        int a = dsDatos.Tables["Datos"].Rows.Count;
                         if (nFila == 0)
                             nDesde = 0;
                         else
@@ -1003,7 +1002,6 @@ namespace ZeroTrip
                             dtmTAcumulado = dtmTParcial.Add(Convert.ToDateTime(dsDatos.Tables["Datos"].Rows[nFila - 1]["TiempoAcum"]).TimeOfDay);
                     }
 
-                    //tHasta.Focus();
                     break;
 
 
@@ -1022,15 +1020,15 @@ namespace ZeroTrip
                     //    return;
                     //}
 
-                    if (dtDatos.Rows.Count == 0)
-                    {
-                        //nRegs = 0;
-                        nDesde = 0;
-                        nParcial = nHasta;
-                        dtmTParcial = Convert.ToDateTime(dsDatos.Tables["Datos"].Rows[nFila]["TiempoAcum"]);
-                        dtmTAcumulado = dtmTParcial;
-                    }
-                    else
+                    //if (dtDatos.Rows.Count == 0)
+                    //{
+                    //    //nRegs = 0;
+                    //    nDesde = 0;
+                    //    nParcial = nHasta;
+                    //    dtmTParcial = Convert.ToDateTime(dsDatos.Tables["Datos"].Rows[nFila]["TiempoAcum"]);
+                    //    dtmTAcumulado = dtmTParcial;
+                    //}
+                    //else
                     {
                         //nRegs = Convert.ToInt16(dtDatos.Rows[0]["IdDato"]);
                         if (nFila == 0)
@@ -1057,7 +1055,7 @@ namespace ZeroTrip
 
 
                     dbVelocidad = (decimal)((Convert.ToDouble(nParcial) / 1000) / (dtmTParcial.TimeOfDay.TotalHours));
-                    //tHasta.Focus();
+      
 
                     break;
 
@@ -1071,21 +1069,21 @@ namespace ZeroTrip
                     else
                         nParcial = 1000;
 
-                    if (dtDatos.Rows.Count == 0)
-                    {
-                        nDesde = 0;
-                        nHasta = Convert.ToInt32(dsDatos.Datos.Rows[nFila]["Hasta"]);
-                        if (dsDatos.Datos.Rows[nFila].HasVersion(DataRowVersion.Current))
-                            nHasta = Convert.ToInt32(dsDatos.Datos.Rows[nFila]["Hasta", DataRowVersion.Current]);
-                        //int.Parse(tHasta.Text.Replace(".", ""));
-                        nParcial = nHasta;
-                        // tHasta.Enabled = false;
-                        // tHasta.Enabled = true;
-                        dtmTParcial = Convert.ToDateTime(dsDatos.Datos[nFila]["TiempoAcum"]);
-                        dtmTAcumulado = dtmTParcial;
+                    //if (dtDatos.Rows.Count == 0)
+                    //{
+                    //    nDesde = 0;
+                    //    nHasta = Convert.ToInt32(dsDatos.Datos.Rows[nFila]["Hasta"]);
+                    //    if (dsDatos.Datos.Rows[nFila].HasVersion(DataRowVersion.Current))
+                    //        nHasta = Convert.ToInt32(dsDatos.Datos.Rows[nFila]["Hasta", DataRowVersion.Current]);
+                    //    //int.Parse(tHasta.Text.Replace(".", ""));
+                    //    nParcial = nHasta;
+                    //    // tHasta.Enabled = false;
+                    //    // tHasta.Enabled = true;
+                    //    dtmTParcial = Convert.ToDateTime(dsDatos.Datos[nFila]["TiempoAcum"]);
+                    //    dtmTAcumulado = dtmTParcial;
 
-                    }
-                    else
+                    //}
+                    //else
                     {
                         if (nFila == 0)
                             nDesde = 0;
@@ -1106,7 +1104,7 @@ namespace ZeroTrip
 
                     }
                     dbVelocidad = (decimal)((Convert.ToDouble(nParcial) / 1000) / (dtmTParcial.TimeOfDay.TotalHours));
-                    //tVelocidad.Focus();
+                
                     break;
                 default:
                     return;
@@ -1125,33 +1123,6 @@ namespace ZeroTrip
             drFila["TiempoParcial"] = dtmTParcial;
             drFila["TipoTramo"] = rgTipoTramo.Text;
 
-
-            //datosTableAdapter.ModificaFila(nDesde,
-            //                        nHasta,
-            //                        nParcial,
-            //                        (dbVelocidad),
-            //                        dtmTParcial,
-            //                        dtmTAcumulado,
-            //      //                  cbTipo.Text,
-                                    
-            //                        nTramo,
-            //                        nIdDato);
-            //(short)(nFila+1));
-
-            if (dsDatos.Tables["Datos"].GetChanges() != null)
-            {
-                //datosTableAdapter.Update(dsDatos);
-
-
-                //dsDatos.AcceptChanges();
-
-            }
-
-
-            //////bReCargaTramo = false;
-            //////datosTableAdapter.Fill(dsDatos.Datos, nTramo);
-            //////gcMedias.RefreshDataSource();
-            //////bReCargaTramo = true;
 
         }
 

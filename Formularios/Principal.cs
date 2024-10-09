@@ -423,8 +423,10 @@ namespace ZeroTrip
 
         private void btSigCM_Click(object sender, EventArgs e)
 
-        //TODO: Aquí deberiamos gestionar los cambios de media en referencias externas.
-        //El cambio se debe aplicar en la distancia teórica, pues puede que haya corrido mucho y vaya adelantado
+        // Aquí deberiamos gestionar los cambios de media en referencias externas.
+        // El cambio se debe aplicar en la distancia REAL pues, aunque haya corrido mucho y vaya adelantado, es la distancia en la que tiene que aplicarse el cambio de media
+        // TODO: Solo se debe atender si el tramo es por Referencias externas
+
         {
 
             decimal dbVelocidad, dbVel;
@@ -439,12 +441,15 @@ namespace ZeroTrip
                 provider.NumberGroupSeparator = ".";
                 provider.NumberGroupSizes = new int[] { 3 };
 
+                // recuperamos la velocidad del sector ideal. Como configuramos los sectores en una distancia muy larga, siempre nos va a dar uno bueno
                 dbVelocidad = decimal.Parse(tbDatosTr[nSectorIdeal-1].Velocidad.ToString(), provider);
 
                 //GrabarLog("CAMBIO REF.EXTERNAS/ Velocidad aplicada: " + dbVelocidad.ToString() + " | Hasta: " + Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider) * 1000).ToString() );
                 GrabarLog("CAMBIO REF.EXTERNAS/ Velocidad aplicada: " + dbVelocidad.ToString() + " | Hasta: " + nDistReal.ToString());
                 //tbDatosTr[nSectorIdeal-1].Hasta = Convert.ToInt32(decimal.Parse(teSigCMRE.Text.ToString(), provider));
                 //tbDatosTr[nSectorIdeal - 1].Hasta = Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider)*1000);
+                
+                // Actualizamos la tabla en memoria tbDatosTr con la nueva información
                 tbDatosTr[nSectorIdeal - 1].Hasta = nDistReal;
                 tbDatosTr[nSectorIdeal-1].Parcial = tbDatosTr[nSectorIdeal-1].Hasta - tbDatosTr[nSectorIdeal-1].Desde;
                 dtmTParcial = Util.Tiempo(tbDatosTr[nSectorIdeal-1].Parcial, dbVelocidad);
@@ -467,13 +472,11 @@ namespace ZeroTrip
                 //tbDatosTr[nSectorIdeal].Desde = Convert.ToInt32(double.Parse(lbDistReal.Text.ToString(), provider) * 1000);
                 tbDatosTr[nSectorIdeal].Desde = nDistReal;
                 tbDatosTr[nSectorIdeal].Parcial = tbDatosTr[nSectorIdeal].Hasta - tbDatosTr[nSectorIdeal].Desde;
-               // tbDatosTr[nSectorIdeal].Velocidad = Convert.ToDouble(dbVelocidad);
-
+             
                 dtmTParcial = Util.Tiempo(tbDatosTr[nSectorIdeal].Parcial, dbVelocidad);
                 tbDatosTr[nSectorIdeal].TiempoParcial = dtmTParcial;
 
                 dtmTAcumulado = dtmTParcial.Add(Convert.ToDateTime(tbDatosTr[nSectorIdeal - 1].TiempoAcum).TimeOfDay);
-                //tbDatosTr[nSectorIdeal].TiempoAcum = dtmTAcumulado;
 
                 if (nSectorIdeal > 1)
 
@@ -482,12 +485,14 @@ namespace ZeroTrip
                     tbDatosTr[nSectorIdeal].TiempoAcum = dtmTAcumulado;
                 }
 
-                if (Gb.bFreeze)
-                {
-                    Gb.bFreeze = false;
-                }
+                //if (Gb.bFreeze)
+                //{
+                //    Gb.bFreeze = false;
+                //}
 
                 btFreeze_Click(sender, e);
+
+                datosTableAdapter.Update(tbDatosTr);
 
                 //foreach (DataRow drFila in tbDatosTr)
                 //{
@@ -548,16 +553,16 @@ namespace ZeroTrip
 
         private void btFreeze_Click(object sender, EventArgs e)
         {
-            if (Gb.bFreeze)
-            {
-                Gb.bFreeze = false;
-                lbFreeze.Text = "0".ToString();
-            }
-            else
-            {
-                Gb.bFreeze = true;
+            //if (Gb.bFreeze)
+            //{
+            //    Gb.bFreeze = false;
+            //    lbFreeze.Text = "0".ToString();
+            //}
+            //else
+            //{
+            //    Gb.bFreeze = true;
                 lbFreeze.Text = (dbDistReal / 1000).ToString("00.#00").Substring(0, 6);
-            }
+            //}
         }
 
         //-----------------------------------------------------------------------------------
@@ -569,13 +574,16 @@ namespace ZeroTrip
 
             switch (e.KeyCode)
             {
-                case (Keys.Add):
+                
+                case (Keys.Space):
+                    e.Handled = true;
                     btFreeze_Click(sender, e);
                     break;
                 case (Keys.Multiply):
                     btRecalibrar_Click(sender, e);
                     break;
-                case (Keys.Divide):
+                //case (Keys.Divide):
+                case (Keys.Add):
                     btSigRecalibre_Click(sender, e);
                     break;
                 case (Keys.F1):
@@ -588,7 +596,10 @@ namespace ZeroTrip
                     btStop_Click(sender, e);
                     break;
                 case (Keys.F3):
-                    btSigCM_Click(sender, e);
+                    if (tbDatosTr[nSectorIdeal - 1].TipoTramo.ToString() == "RefExternas")
+                    {
+                        btSigCM_Click(sender, e);
+                    }
                     break;
                 case (Keys.Y):
                     btInicio_Click(sender, e);                  
@@ -1125,6 +1136,8 @@ namespace ZeroTrip
             string szAux, szTipoSector;
 
             nSectorIdeal = SectorParaDistancia(nSectorIdeal);
+            if (nSectorIdeal == 2)
+            { int a = 1; }
             szAux = "";
 
             if (szTipoTramo == "Varias")
@@ -1132,6 +1145,11 @@ namespace ZeroTrip
                     szTipoSector = szTipoTramo;
                 else
                 {
+                    if (nSectorIdeal > 1 && (tbDatosTr[nSectorIdeal - 2].TipoTramo != tbDatosTr[nSectorIdeal - 1].TipoTramo))
+                    {
+                        ConfiguraPantalla(tbDatosTr[nSectorIdeal - 1].TipoTramo);
+                    }
+
                     szTipoSector = tbDatosTr[nSectorIdeal - 1].TipoTramo;
                 }
             else
@@ -1151,7 +1169,7 @@ namespace ZeroTrip
                         lbVariable.Text = tbDatosTr[nSectorIdeal - 1].Hasta.ToString("#,##0");
                         // szEnvCuentaAtras = lbCuentaAtras.Text;
 
-                        if (szTipoTramo == "Tablas")
+                        if (szTipoSector == "Tablas")
                         {
                             szVelocidad = (tbDatosTr[nSectorIdeal - 1].Velocidad).ToString("00.##");
                             lbVelocidad.Text = szVelocidad;
@@ -1492,16 +1510,6 @@ namespace ZeroTrip
             }
 
         }
-
-        //private void tePosicion_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-
-        //}
-
-        //private void cbOrientacion_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-
-        //}
 
 
         //-----------------------------------------------------------------------------------

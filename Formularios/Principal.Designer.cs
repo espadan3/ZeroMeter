@@ -533,7 +533,7 @@
             this.btRecalibrar.Name = "btRecalibrar";
             this.btRecalibrar.Size = new System.Drawing.Size(160, 60);
             this.btRecalibrar.TabIndex = 10;
-            this.btRecalibrar.Text = "Re&calibrar (*)";
+            this.btRecalibrar.Text = "Recalibrar (*)";
             this.btRecalibrar.Click += new System.EventHandler(this.btRecalibrar_Click);
             // 
             // lbDifPorRecal
@@ -558,7 +558,7 @@
             this.btSigRecalibre.Name = "btSigRecalibre";
             this.btSigRecalibre.Size = new System.Drawing.Size(160, 60);
             this.btSigRecalibre.TabIndex = 55;
-            this.btSigRecalibre.Text = "S&ig.Referencia (/)";
+            this.btSigRecalibre.Text = "Sig.Referencia (+)";
             this.btSigRecalibre.Click += new System.EventHandler(this.btSigRecalibre_Click);
             // 
             // btRERecalibra
@@ -573,7 +573,7 @@
             this.btRERecalibra.Name = "btRERecalibra";
             this.btRERecalibra.Size = new System.Drawing.Size(160, 60);
             this.btRERecalibra.TabIndex = 56;
-            this.btRERecalibra.Text = "RE_Recali&brar";
+            this.btRERecalibra.Text = "RE_Recalibrar";
             this.btRERecalibra.Click += new System.EventHandler(this.btRERecalibra_Click);
             // 
             // btEliminarReajuste
@@ -763,7 +763,7 @@
             this.btFreeze.Name = "btFreeze";
             this.btFreeze.Size = new System.Drawing.Size(160, 60);
             this.btFreeze.TabIndex = 54;
-            this.btFreeze.Text = "&Freeze (+)";
+            this.btFreeze.Text = "Freeze (Space)";
             this.btFreeze.Click += new System.EventHandler(this.btFreeze_Click);
             // 
             // teSigRecalibre
@@ -1098,7 +1098,7 @@
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(120, 60);
             this.btReset.TabIndex = 19;
-            this.btReset.Text = "&Reset";
+            this.btReset.Text = "Reset";
             this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // btStart
@@ -1113,7 +1113,7 @@
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(120, 60);
             this.btStart.TabIndex = 5;
-            this.btStart.Text = "&Start (F1)";
+            this.btStart.Text = "Start (F1)";
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
             // cbTramosRace
@@ -1206,7 +1206,7 @@
             this.btStop.Name = "btStop";
             this.btStop.Size = new System.Drawing.Size(120, 60);
             this.btStop.TabIndex = 6;
-            this.btStop.Text = "Sto&p (F12)";
+            this.btStop.Text = "Stop (F12)";
             this.btStop.Click += new System.EventHandler(this.btStop_Click);
             // 
             // lbHoraSalida
@@ -2518,7 +2518,7 @@
             this.btSincronizar.Name = "btSincronizar";
             this.btSincronizar.Size = new System.Drawing.Size(133, 60);
             this.btSincronizar.TabIndex = 11;
-            this.btSincronizar.Text = "&Sincronizar";
+            this.btSincronizar.Text = "Sincronizar";
             this.btSincronizar.Click += new System.EventHandler(this.btSincronizar_Click);
             // 
             // teHora
@@ -3480,7 +3480,7 @@
             this.btAddVineta.Name = "btAddVineta";
             this.btAddVineta.Size = new System.Drawing.Size(82, 36);
             this.btAddVineta.TabIndex = 13;
-            this.btAddVineta.Text = "Ad&d";
+            this.btAddVineta.Text = "Add";
             this.btAddVineta.Click += new System.EventHandler(this.btAddVineta_Click);
             // 
             // tePosicion
@@ -4282,7 +4282,7 @@
             this.btRecarga.Size = new System.Drawing.Size(116, 50);
             this.btRecarga.TabIndex = 10;
             this.btRecarga.TabStop = false;
-            this.btRecarga.Text = "Recar&ga";
+            this.btRecarga.Text = "Recarga";
             this.btRecarga.Click += new System.EventHandler(this.btRecarga_Click);
             // 
             // gcAdd
@@ -4515,7 +4515,7 @@
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(116, 55);
             this.btAdd.TabIndex = 6;
-            this.btAdd.Text = "&Add";
+            this.btAdd.Text = "Add";
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btActTramo
@@ -4531,7 +4531,7 @@
             this.btActTramo.Size = new System.Drawing.Size(116, 49);
             this.btActTramo.TabIndex = 0;
             this.btActTramo.TabStop = false;
-            this.btActTramo.Text = "Actuali&zar";
+            this.btActTramo.Text = "Actualizar";
             this.btActTramo.Click += new System.EventHandler(this.btActTramo_Click);
             // 
             // labelControl3
