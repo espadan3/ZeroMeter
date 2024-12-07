@@ -470,7 +470,7 @@ namespace ZeroTrip
 
                 dtmTAcumulado = dtmTParcial.Add(Convert.ToDateTime(tbDatosTr[nSectorIdeal - 1].TiempoAcum).TimeOfDay);
 
-                if (nSectorIdeal > 1
+                if (nSectorIdeal > 1)
                 {
                     dtmTAcumulado = dtmTParcial.Add(Convert.ToDateTime(tbDatosTr[nSectorIdeal - 1].TiempoAcum).TimeOfDay);
                     tbDatosTr[nSectorIdeal].TiempoAcum = dtmTAcumulado;

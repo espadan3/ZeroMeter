@@ -1512,47 +1512,47 @@ namespace ZeroTrip
         private void btLimpiaBBDD_Click(object sender, EventArgs e)
         {
             if (Util.AvisoConRespuesta("Vamos a limpiar la BBDD. Esto implica: \r   - Eliminar Medias\r   - Eliminar Cruces\r   - Borrar todos los registros de log\r Pondremos la fecha que selecciones dabajo del botón.\r\r\r" +
-                "¿Estas conforme?", "Limpiar BBDD")) ;
+                "¿Estas conforme?", "Limpiar BBDD"))
             //\r   - Poner como fecha/hora inicio de todos los tramos el día 1 del siguiente mes.
             //   Util.EjecutarSql("Select * from Tramos");
 
-
-
-            String fileOrigen = System.AppDomain.CurrentDomain.BaseDirectory + "\\ZeroTripBBDD.accdb";
-            String fileDestino = System.AppDomain.CurrentDomain.BaseDirectory + "ZeroTripBBDD_BACKUP.accdb";
-
-            FileInfo archivoOrigen = new FileInfo(fileOrigen);
-            FileInfo archivoDestino = new FileInfo(fileDestino);
-
-            if (Util.AvisoConRespuesta("Pero si quieres, podemos guardar una copia de la BBDD actual \r" +
-                "¿Quieres que hagamos la copia a ZeroTripBBDD_BACKUP.accdb?", "Salvar BBDD")) ;
             {
-                try
+
+                String fileOrigen = System.AppDomain.CurrentDomain.BaseDirectory + "\\ZeroTripBBDD.accdb";
+                String fileDestino = System.AppDomain.CurrentDomain.BaseDirectory + "ZeroTripBBDD_BACKUP.accdb";
+
+                FileInfo archivoOrigen = new FileInfo(fileOrigen);
+                FileInfo archivoDestino = new FileInfo(fileDestino);
+
+                if (Util.AvisoConRespuesta("Pero si quieres, podemos guardar una copia de la BBDD actual \r" +
+                    "¿Quieres que hagamos la copia a ZeroTripBBDD_BACKUP.accdb?", "Salvar BBDD"))
                 {
-                    // Valida que el archivo `CopiaArchivoTexto.txt`:
-                    if (File.Exists(fileDestino))
+                    try
                     {
-                        archivoDestino.Delete();
+                        // Valida que el archivo `CopiaArchivoTexto.txt`:
+                        if (File.Exists(fileDestino))
+                        {
+                            archivoDestino.Delete();
+                        }
+
+                        // Copia el archivo `ArchivoTexto.txt`:
+                        archivoOrigen.CopyTo(fileDestino);
+
                     }
-
-                    // Copia el archivo `ArchivoTexto.txt`:
-                    archivoOrigen.CopyTo(fileDestino);
-
+                    catch (IOException ioex)
+                    {
+                        Console.WriteLine(ioex.Message);
+                    }
                 }
-                catch (IOException ioex)
-                {
-                    Console.WriteLine(ioex.Message);
-                }
+
+                datosTableAdapter.LimpiarDatos();
+                incidenciasTableAdapter.LimpiarIncidencias();
+                logTableAdapter.LimpiarLog();
+                // DateTime date = DateTime.Now.AddMonths(1);
+                // DateTime dateTime = new DateTime(date.Year, date.Month, 1, 10, 0, 0);
+
+                tramosTableAdapter.InicializarTodos(Convert.ToDateTime(teFechaInicio.Text));
             }
-
-            datosTableAdapter.LimpiarDatos();
-            incidenciasTableAdapter.LimpiarIncidencias();
-            logTableAdapter.LimpiarLog();
-            // DateTime date = DateTime.Now.AddMonths(1);
-            // DateTime dateTime = new DateTime(date.Year, date.Month, 1, 10, 0, 0);
-
-            tramosTableAdapter.InicializarTodos(Convert.ToDateTime(teFechaInicio.Text));
-
         }
 
 
