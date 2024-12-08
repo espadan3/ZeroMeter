@@ -15,7 +15,7 @@ using USBClassLibrary;
 
 
 
-namespace ZeroTrip
+namespace ZeroMeter
 
 {
     public partial class frPrincipal : Form
@@ -23,14 +23,14 @@ namespace ZeroTrip
         public VblesGlobales Gb = new VblesGlobales();
 
         // datos de medias y tiempos de un tramo cronometrado
-        public ZeroTrip.ZeroTripBBDDDataSet.DatosDataTable tbDatosTr = new ZeroTripBBDDDataSet.DatosDataTable();
+        public ZeroMeter.ZeroMeterBBDDDataSet.DatosDataTable tbDatosTr = new ZeroMeterBBDDDataSet.DatosDataTable();
         // datos generales del tramo
-        public ZeroTrip.ZeroTripBBDDDataSet.TramosDataTable tbInfoTr = new ZeroTripBBDDDataSet.TramosDataTable();
+        public ZeroMeter.ZeroMeterBBDDDataSet.TramosDataTable tbInfoTr = new ZeroMeterBBDDDataSet.TramosDataTable();
         // datos de las incidencias y cruces del tramo
-        public ZeroTrip.ZeroTripBBDDDataSet.IncidenciasDataTable tbIncidenciasTr = new ZeroTripBBDDDataSet.IncidenciasDataTable();
+        public ZeroMeter.ZeroMeterBBDDDataSet.IncidenciasDataTable tbIncidenciasTr = new ZeroMeterBBDDDataSet.IncidenciasDataTable();
 
         // datos de las incidencias y cruces del tramo
-        public ZeroTrip.ZeroTripBBDDDataSet.LogDataTable tbLogTr = new ZeroTripBBDDDataSet.LogDataTable();
+        public ZeroMeter.ZeroMeterBBDDDataSet.LogDataTable tbLogTr = new ZeroMeterBBDDDataSet.LogDataTable();
 
         // Array con tres columnas: la primera es calibre, la segunda es el número de pulsos hasta el que aplica ese calibre y la tercera es la distancia equivalente
         public double[,] anCalibres = new double[1, 3];
@@ -85,7 +85,7 @@ namespace ZeroTrip
 
         SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
 
-        GestionConfig config = new GestionConfig(Application.StartupPath + @"\ConfigZeroTrip.exe.config");
+        GestionConfig config = new GestionConfig(Application.StartupPath + @"\ConfigZeroMeter.exe.config");
 
         //USB Detect
         public bool MyUSBARDConnected;
@@ -141,7 +141,7 @@ namespace ZeroTrip
         {
             // TODO: esta línea de código carga datos en la tabla 'dsLog.Log' Puede moverla o quitarla según sea necesario.
             //this.logTableAdapter.Fill(this.dsLog.Log);
-            // TODO: esta línea de código carga datos en la tabla 'ZeroTripBBDDDataSet.Datos' Puede moverla o quitarla según sea necesario.
+            // TODO: esta línea de código carga datos en la tabla 'ZeroMeterBBDDDataSet.Datos' Puede moverla o quitarla según sea necesario.
             //this.datosTableAdapter.Fill(this.dsDatos.Datos);
 
             BaseDeDatos();
@@ -675,7 +675,7 @@ namespace ZeroTrip
         {
             if (btBloqMetros.Tag.ToString() == "Cerrado")
             {
-                btBloqMetros.Image = ZeroTrip.Properties.Resources.lock_open;
+                btBloqMetros.Image = ZeroMeter.Properties.Resources.lock_open;
                 btBloqMetros.Tag = "Abierto";
                 btMas1.Enabled = true;
                 btMas10.Enabled = true;
@@ -686,7 +686,7 @@ namespace ZeroTrip
             }
             else
             {
-                btBloqMetros.Image = ZeroTrip.Properties.Resources._lock;
+                btBloqMetros.Image = ZeroMeter.Properties.Resources._lock;
                 btBloqMetros.Tag = "Cerrado";
                 btMas1.Enabled = false;
                 btMas10.Enabled = false;
@@ -718,7 +718,7 @@ namespace ZeroTrip
 
         private void btTiempoSector_Click(object sender, EventArgs e)
         {
-            ZeroTrip.ZeroTripBBDDDataSet.DatosDataTable dtSectores = datosTableAdapter.GetData((short)nTramoCron);
+            ZeroMeter.ZeroMeterBBDDDataSet.DatosDataTable dtSectores = datosTableAdapter.GetData((short)nTramoCron);
             DataRow drFila = dtSectores.NewRow();
             DateTime dtmTParcial = DateTime.Today.Date, dtmTAcumulado = DateTime.Today.Date;
 
@@ -1580,27 +1580,27 @@ namespace ZeroTrip
 
             if (config.GetSelCal1())
             {
-                btCal1.Image = ZeroTrip.Properties.Resources.tick;
-                btCal2.Image = ZeroTrip.Properties.Resources.cross;
-                btCal3.Image = ZeroTrip.Properties.Resources.cross;
+                btCal1.Image = ZeroMeter.Properties.Resources.tick;
+                btCal2.Image = ZeroMeter.Properties.Resources.cross;
+                btCal3.Image = ZeroMeter.Properties.Resources.cross;
 
                 dbCalibreActivo = (double)config.GetCal1();
             }
 
             if (config.GetSelCal2())
             {
-                btCal1.Image = ZeroTrip.Properties.Resources.cross;
-                btCal2.Image = ZeroTrip.Properties.Resources.tick;
-                btCal3.Image = ZeroTrip.Properties.Resources.cross;
+                btCal1.Image = ZeroMeter.Properties.Resources.cross;
+                btCal2.Image = ZeroMeter.Properties.Resources.tick;
+                btCal3.Image = ZeroMeter.Properties.Resources.cross;
 
                 dbCalibreActivo = (double)config.GetCal2();
             }
 
             if (config.GetSelCal3())
             {
-                btCal1.Image = ZeroTrip.Properties.Resources.cross;
-                btCal2.Image = ZeroTrip.Properties.Resources.cross;
-                btCal3.Image = ZeroTrip.Properties.Resources.tick;
+                btCal1.Image = ZeroMeter.Properties.Resources.cross;
+                btCal2.Image = ZeroMeter.Properties.Resources.cross;
+                btCal3.Image = ZeroMeter.Properties.Resources.tick;
 
                 dbCalibreActivo = (double)config.GetCal3();
             }
@@ -1727,7 +1727,7 @@ namespace ZeroTrip
             btMenos1Min.Enabled = false;
             btMas1Min.Enabled = false;
 
-            btBloqMetros.Image = ZeroTrip.Properties.Resources._lock;
+            btBloqMetros.Image = ZeroMeter.Properties.Resources._lock;
             btBloqMetros.Text = "Cerrado";
 
             //Sólo mostramos y habilitamos est botón cuando se cargue un tramo a Sectores.

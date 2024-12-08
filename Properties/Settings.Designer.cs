@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZeroTrip.Properties {
+namespace ZeroMeter.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,10 +26,10 @@ namespace ZeroTrip.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=|DataDirectory|\\ZeroTripBBDD.accdb")]
-        public string ZeroTripBBDDConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=|DataDirectory|\\ZeroMeterBBDD.accdb")]
+        public string ZeroMeterBBDDConnectionString {
             get {
-                return ((string)(this["ZeroTripBBDDConnectionString"]));
+                return ((string)(this["ZeroMeterBBDDConnectionString"]));
             }
         }
     }

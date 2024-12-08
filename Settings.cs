@@ -1,4 +1,4 @@
-﻿namespace ZeroTrip.Properties {
+﻿namespace ZeroMeter.Properties {
     
     
     // Esta clase le permite controlar eventos específicos en la clase de configuración:

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Xml;
 
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
     // Define a custom section.
     public sealed class DatosGeneralesSection :  ConfigurationSection
@@ -640,32 +640,32 @@ namespace ZeroTrip
 
 
             seccionDatosGenerales = configFile.GetSection(szDatosGenerales);
-            //string a = ((ZeroTrip.CustomSection)(seccionDatosGenerales)).FicheroDatos;
+            //string a = ((ZeroMeter.CustomSection)(seccionDatosGenerales)).FicheroDatos;
             configFile.SectionGroups.Clear(); // make changes to it 
             configFile.Save(ConfigurationSaveMode.Full);  // Save changes
 
             seccionCalibracion = configFile.GetSection(szSecCalibracion);
-            //string b = ((ZeroTrip.CustomSection)(szSecDescartes)).AplicarDescartes;
+            //string b = ((ZeroMeter.CustomSection)(szSecDescartes)).AplicarDescartes;
             configFile.SectionGroups.Clear(); // make changes to it 
             configFile.Save(ConfigurationSaveMode.Full);  // Save changes
 /*
             seccionPuntuaciones = configFile.GetSection(szSecPuntuaciones);
-            //string b = ((ZeroTrip.PuntuacionesSection)(seccionPuntuaciones)).EnSegundos.ToString();
+            //string b = ((ZeroMeter.PuntuacionesSection)(seccionPuntuaciones)).EnSegundos.ToString();
             configFile.SectionGroups.Clear(); // make changes to it 
             configFile.Save(ConfigurationSaveMode.Full);  // Save changes
 
             seccionSMS = configFile.GetSection(szSecSMS);
-            //string b = ((ZeroTrip.PuntuacionesSection)(seccionPuntuaciones)).EnSegundos.ToString();
+            //string b = ((ZeroMeter.PuntuacionesSection)(seccionPuntuaciones)).EnSegundos.ToString();
             configFile.SectionGroups.Clear(); // make changes to it 
             configFile.Save(ConfigurationSaveMode.Full);  // Save changes
 
             seccionSectores = configFile.GetSection(szSectores);
-            //string b = ((ZeroTrip.PuntuacionesSection)(seccionPuntuaciones)).EnSegundos.ToString();
+            //string b = ((ZeroMeter.PuntuacionesSection)(seccionPuntuaciones)).EnSegundos.ToString();
             configFile.SectionGroups.Clear(); // make changes to it 
             configFile.Save(ConfigurationSaveMode.Full);  // Save changes
 
             seccionEspeciales = configFile.GetSection(szEspeciales);
-            //string b = ((ZeroTrip.PuntuacionesSection)(seccionPuntuaciones)).EnSegundos.ToString();
+            //string b = ((ZeroMeter.PuntuacionesSection)(seccionPuntuaciones)).EnSegundos.ToString();
             configFile.SectionGroups.Clear(); // make changes to it 
             configFile.Save(ConfigurationSaveMode.Full);  // Save changes
 */
@@ -673,7 +673,7 @@ namespace ZeroTrip
 
         public bool GetSonido()
         {
-            if (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).Sonido == "Si")
+            if (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).Sonido == "Si")
                 return (true);
             else
                 return (false);
@@ -699,7 +699,7 @@ namespace ZeroTrip
 
         public bool GetLog()
         {
-            if (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).Log == "Si")
+            if (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).Log == "Si")
                 return (true);
             else
                 return (false);
@@ -725,7 +725,7 @@ namespace ZeroTrip
 
         public bool GetSonidoMetros()
         {
-            if (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).SonidoMetros == "Si")
+            if (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).SonidoMetros == "Si")
                 return (true);
             else
                 return (false);
@@ -766,7 +766,7 @@ namespace ZeroTrip
 
         public string GetDiaNoche()
         {
-            if (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).DiaNoche == "Dia")
+            if (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).DiaNoche == "Dia")
                 return ("Dia");
             else
                 return ("Noche");
@@ -806,7 +806,7 @@ namespace ZeroTrip
         public string GetAvisoCM()
         {
 
-            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).AvisoCM);
+            return (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).AvisoCM);
 
         }
 
@@ -826,7 +826,7 @@ namespace ZeroTrip
         public string GetAvisoCruces()
         {
 
-            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).AvisoCruces);
+            return (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).AvisoCruces);
 
         }
 
@@ -846,7 +846,7 @@ namespace ZeroTrip
         public string GetMaxCorreccion()
         {
 
-            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).MaxCorreccion);
+            return (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).MaxCorreccion);
 
         }
 
@@ -866,7 +866,7 @@ namespace ZeroTrip
         public string GetDistanciaHitos()
         {
 
-            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).DistanciaHitos);
+            return (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).DistanciaHitos);
 
         }
 
@@ -886,7 +886,7 @@ namespace ZeroTrip
         public string GetDistanciaTablas()
         {
 
-            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).DistanciaTablas);
+            return (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).DistanciaTablas);
 
         }
 
@@ -906,7 +906,7 @@ namespace ZeroTrip
         public string GetVID()
         {
 
-            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).VID);
+            return (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).VID);
 
         }
 
@@ -926,7 +926,7 @@ namespace ZeroTrip
         public string GetPID()
         {
 
-            return (((ZeroTrip.DatosGeneralesSection)(seccionDatosGenerales)).PID);
+            return (((ZeroMeter.DatosGeneralesSection)(seccionDatosGenerales)).PID);
 
         }
 
@@ -949,7 +949,7 @@ namespace ZeroTrip
         public double GetCal1()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).Cal1);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).Cal1);
 
         }
 
@@ -968,7 +968,7 @@ namespace ZeroTrip
 
         public bool GetSelCal1()
         {
-            if (((ZeroTrip.CalibracionSection)(seccionCalibracion)).SelCal1 == "Si")
+            if (((ZeroMeter.CalibracionSection)(seccionCalibracion)).SelCal1 == "Si")
                 return (true);
             else
                 return (false);
@@ -995,7 +995,7 @@ namespace ZeroTrip
         public double GetCal2()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).Cal2);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).Cal2);
 
         }
 
@@ -1015,7 +1015,7 @@ namespace ZeroTrip
 
         public bool GetSelCal2()
         {
-            if (((ZeroTrip.CalibracionSection)(seccionCalibracion)).SelCal2 == "Si")
+            if (((ZeroMeter.CalibracionSection)(seccionCalibracion)).SelCal2 == "Si")
                 return (true);
             else
                 return (false);
@@ -1040,7 +1040,7 @@ namespace ZeroTrip
         public double GetCal3()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).Cal3);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).Cal3);
 
         }
 
@@ -1059,7 +1059,7 @@ namespace ZeroTrip
 
         public bool GetSelCal3()
         {
-            if (((ZeroTrip.CalibracionSection)(seccionCalibracion)).SelCal3 == "Si")
+            if (((ZeroMeter.CalibracionSection)(seccionCalibracion)).SelCal3 == "Si")
                 return (true);
             else
                 return (false);
@@ -1084,14 +1084,14 @@ namespace ZeroTrip
         public double GetCalMopuBici()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).CalMopuBici);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).CalMopuBici);
 
         }
 
         public double GetCalMopuTerra()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).CalMopuTerra);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).CalMopuTerra);
 
         }
 
@@ -1123,7 +1123,7 @@ namespace ZeroTrip
         public string GetTipoMedidor()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).TipoMedidor);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).TipoMedidor);
 
         }
 
@@ -1143,14 +1143,14 @@ namespace ZeroTrip
         public string GetDecaMetros()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).DecaMetros);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).DecaMetros);
 
         }
 
         public string GetSonda()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).Sonda);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).Sonda);
 
         }
 
@@ -1183,7 +1183,7 @@ namespace ZeroTrip
         public string GetTamanioRueda()
         {
 
-            return (((ZeroTrip.CalibracionSection)(seccionCalibracion)).TamanioRueda);
+            return (((ZeroMeter.CalibracionSection)(seccionCalibracion)).TamanioRueda);
 
         }
 

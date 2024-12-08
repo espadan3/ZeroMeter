@@ -10,7 +10,7 @@ using DevExpress.XtraGrid.Views.BandedGrid;
     
 using System.Windows.Forms;
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
 	/// <summary>
 	/// Descripción breve de Utiles.

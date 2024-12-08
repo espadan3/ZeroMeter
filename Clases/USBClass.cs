@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 
-//namespace ZeroTrip
+//namespace ZeroMeter
     namespace USBClassLibrary
 {
     /// <summary>

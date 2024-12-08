@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
 }
-namespace ZeroTrip
+namespace ZeroMeter
 {
 
 
-    public partial class ZeroTripBBDDDataSet
+    public partial class ZeroMeterBBDDDataSet
     {
         partial class DatosDataTable
         {
@@ -24,15 +24,15 @@ namespace ZeroTrip
 
 
 
-namespace ZeroTrip {
+namespace ZeroMeter {
     
     
-    public partial class ZeroTripBBDDDataSet {
+    public partial class ZeroMeterBBDDDataSet {
     }
 }
 
 
-namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
+namespace ZeroMeter.ZeroMeterBBDDDataSetTableAdapters {
 
 
     public partial class DatosTableAdapter

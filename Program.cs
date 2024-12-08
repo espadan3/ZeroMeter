@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
     static class Program
     {

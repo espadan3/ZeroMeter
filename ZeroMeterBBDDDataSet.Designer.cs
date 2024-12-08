@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ZeroTrip {
+namespace ZeroMeter {
     
     
     /// <summary>
@@ -20,9 +20,9 @@ namespace ZeroTrip {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ZeroTripBBDDDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ZeroMeterBBDDDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ZeroTripBBDDDataSet : global::System.Data.DataSet {
+    public partial class ZeroMeterBBDDDataSet : global::System.Data.DataSet {
         
         private DatosDataTable tableDatos;
         
@@ -38,7 +38,7 @@ namespace ZeroTrip {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ZeroTripBBDDDataSet() {
+        public ZeroMeterBBDDDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -49,7 +49,7 @@ namespace ZeroTrip {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected ZeroTripBBDDDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ZeroMeterBBDDDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -187,7 +187,7 @@ namespace ZeroTrip {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ZeroTripBBDDDataSet cln = ((ZeroTripBBDDDataSet)(base.Clone()));
+            ZeroMeterBBDDDataSet cln = ((ZeroMeterBBDDDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -295,9 +295,9 @@ namespace ZeroTrip {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ZeroTripBBDDDataSet";
+            this.DataSetName = "ZeroMeterBBDDDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ZeroTripBBDDDataSet.xsd";
+            this.Namespace = "http://tempuri.org/ZeroMeterBBDDDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableDatos = new DatosDataTable();
@@ -353,7 +353,7 @@ namespace ZeroTrip {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ZeroTripBBDDDataSet ds = new ZeroTripBBDDDataSet();
+            ZeroMeterBBDDDataSet ds = new ZeroMeterBBDDDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -726,7 +726,7 @@ namespace ZeroTrip {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZeroTripBBDDDataSet ds = new ZeroTripBBDDDataSet();
+                ZeroMeterBBDDDataSet ds = new ZeroMeterBBDDDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1058,7 +1058,7 @@ namespace ZeroTrip {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZeroTripBBDDDataSet ds = new ZeroTripBBDDDataSet();
+                ZeroMeterBBDDDataSet ds = new ZeroMeterBBDDDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1415,7 +1415,7 @@ namespace ZeroTrip {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZeroTripBBDDDataSet ds = new ZeroTripBBDDDataSet();
+                ZeroMeterBBDDDataSet ds = new ZeroMeterBBDDDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1720,7 +1720,7 @@ namespace ZeroTrip {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZeroTripBBDDDataSet ds = new ZeroTripBBDDDataSet();
+                ZeroMeterBBDDDataSet ds = new ZeroMeterBBDDDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2080,7 +2080,7 @@ namespace ZeroTrip {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZeroTripBBDDDataSet ds = new ZeroTripBBDDDataSet();
+                ZeroMeterBBDDDataSet ds = new ZeroMeterBBDDDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3246,7 +3246,7 @@ namespace ZeroTrip {
         }
     }
 }
-namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
+namespace ZeroMeter.ZeroMeterBBDDDataSetTableAdapters {
     
     
     /// <summary>
@@ -3436,7 +3436,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::ZeroTrip.Properties.Settings.Default.ZeroTripBBDDConnectionString;
+            this._connection.ConnectionString = global::ZeroMeter.Properties.Settings.Default.ZeroMeterBBDDConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3511,7 +3511,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZeroTripBBDDDataSet.DatosDataTable dataTable, short IdTramo) {
+        public virtual int Fill(ZeroMeterBBDDDataSet.DatosDataTable dataTable, short IdTramo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(IdTramo));
             if ((this.ClearBeforeFill == true)) {
@@ -3525,10 +3525,10 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZeroTripBBDDDataSet.DatosDataTable GetData(short IdTramo) {
+        public virtual ZeroMeterBBDDDataSet.DatosDataTable GetData(short IdTramo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(IdTramo));
-            ZeroTripBBDDDataSet.DatosDataTable dataTable = new ZeroTripBBDDDataSet.DatosDataTable();
+            ZeroMeterBBDDDataSet.DatosDataTable dataTable = new ZeroMeterBBDDDataSet.DatosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3537,7 +3537,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(ZeroTripBBDDDataSet.DatosDataTable dataTable, short IdTramo) {
+        public virtual int FillBy(ZeroMeterBBDDDataSet.DatosDataTable dataTable, short IdTramo) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(IdTramo));
             if ((this.ClearBeforeFill == true)) {
@@ -3551,7 +3551,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillUltimoDato(ZeroTripBBDDDataSet.DatosDataTable dataTable, short IdTramo, short IdTramo1) {
+        public virtual int FillUltimoDato(ZeroMeterBBDDDataSet.DatosDataTable dataTable, short IdTramo, short IdTramo1) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(IdTramo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(IdTramo1));
@@ -3566,11 +3566,11 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual ZeroTripBBDDDataSet.DatosDataTable GetUltimoDato(short IdTramo, short IdTramo1) {
+        public virtual ZeroMeterBBDDDataSet.DatosDataTable GetUltimoDato(short IdTramo, short IdTramo1) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(IdTramo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(IdTramo1));
-            ZeroTripBBDDDataSet.DatosDataTable dataTable = new ZeroTripBBDDDataSet.DatosDataTable();
+            ZeroMeterBBDDDataSet.DatosDataTable dataTable = new ZeroMeterBBDDDataSet.DatosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3579,11 +3579,11 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual ZeroTripBBDDDataSet.DatosDataTable GetFila(short IdTramo, short IdDato) {
+        public virtual ZeroMeterBBDDDataSet.DatosDataTable GetFila(short IdTramo, short IdDato) {
             this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(IdTramo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(IdDato));
-            ZeroTripBBDDDataSet.DatosDataTable dataTable = new ZeroTripBBDDDataSet.DatosDataTable();
+            ZeroMeterBBDDDataSet.DatosDataTable dataTable = new ZeroMeterBBDDDataSet.DatosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3591,14 +3591,14 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet.DatosDataTable dataTable) {
+        public virtual int Update(ZeroMeterBBDDDataSet.DatosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet dataSet) {
+        public virtual int Update(ZeroMeterBBDDDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Datos");
         }
         
@@ -4191,7 +4191,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::ZeroTrip.Properties.Settings.Default.ZeroTripBBDDConnectionString;
+            this._connection.ConnectionString = global::ZeroMeter.Properties.Settings.Default.ZeroMeterBBDDConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4226,7 +4226,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZeroTripBBDDDataSet.IncidenciasDataTable dataTable, short Tramo) {
+        public virtual int Fill(ZeroMeterBBDDDataSet.IncidenciasDataTable dataTable, short Tramo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(Tramo));
             if ((this.ClearBeforeFill == true)) {
@@ -4240,10 +4240,10 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZeroTripBBDDDataSet.IncidenciasDataTable GetData(short Tramo) {
+        public virtual ZeroMeterBBDDDataSet.IncidenciasDataTable GetData(short Tramo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(Tramo));
-            ZeroTripBBDDDataSet.IncidenciasDataTable dataTable = new ZeroTripBBDDDataSet.IncidenciasDataTable();
+            ZeroMeterBBDDDataSet.IncidenciasDataTable dataTable = new ZeroMeterBBDDDataSet.IncidenciasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4252,7 +4252,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByPosicion(ZeroTripBBDDDataSet.IncidenciasDataTable dataTable, short Tramo) {
+        public virtual int FillByPosicion(ZeroMeterBBDDDataSet.IncidenciasDataTable dataTable, short Tramo) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(Tramo));
             if ((this.ClearBeforeFill == true)) {
@@ -4266,10 +4266,10 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual ZeroTripBBDDDataSet.IncidenciasDataTable GetDataByPosicion(short Tramo) {
+        public virtual ZeroMeterBBDDDataSet.IncidenciasDataTable GetDataByPosicion(short Tramo) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(Tramo));
-            ZeroTripBBDDDataSet.IncidenciasDataTable dataTable = new ZeroTripBBDDDataSet.IncidenciasDataTable();
+            ZeroMeterBBDDDataSet.IncidenciasDataTable dataTable = new ZeroMeterBBDDDataSet.IncidenciasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4277,14 +4277,14 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet.IncidenciasDataTable dataTable) {
+        public virtual int Update(ZeroMeterBBDDDataSet.IncidenciasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet dataSet) {
+        public virtual int Update(ZeroMeterBBDDDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Incidencias");
         }
         
@@ -4703,7 +4703,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::ZeroTrip.Properties.Settings.Default.ZeroTripBBDDConnectionString;
+            this._connection.ConnectionString = global::ZeroMeter.Properties.Settings.Default.ZeroMeterBBDDConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4721,7 +4721,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZeroTripBBDDDataSet.SectoresDataTable dataTable) {
+        public virtual int Fill(ZeroMeterBBDDDataSet.SectoresDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4734,9 +4734,9 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZeroTripBBDDDataSet.SectoresDataTable GetData() {
+        public virtual ZeroMeterBBDDDataSet.SectoresDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZeroTripBBDDDataSet.SectoresDataTable dataTable = new ZeroTripBBDDDataSet.SectoresDataTable();
+            ZeroMeterBBDDDataSet.SectoresDataTable dataTable = new ZeroMeterBBDDDataSet.SectoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4744,14 +4744,14 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet.SectoresDataTable dataTable) {
+        public virtual int Update(ZeroMeterBBDDDataSet.SectoresDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet dataSet) {
+        public virtual int Update(ZeroMeterBBDDDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Sectores");
         }
         
@@ -5233,7 +5233,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::ZeroTrip.Properties.Settings.Default.ZeroTripBBDDConnectionString;
+            this._connection.ConnectionString = global::ZeroMeter.Properties.Settings.Default.ZeroMeterBBDDConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5257,7 +5257,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZeroTripBBDDDataSet.TramosDataTable dataTable, int IdTramo) {
+        public virtual int Fill(ZeroMeterBBDDDataSet.TramosDataTable dataTable, int IdTramo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdTramo));
             if ((this.ClearBeforeFill == true)) {
@@ -5271,10 +5271,10 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZeroTripBBDDDataSet.TramosDataTable GetData(int IdTramo) {
+        public virtual ZeroMeterBBDDDataSet.TramosDataTable GetData(int IdTramo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdTramo));
-            ZeroTripBBDDDataSet.TramosDataTable dataTable = new ZeroTripBBDDDataSet.TramosDataTable();
+            ZeroMeterBBDDDataSet.TramosDataTable dataTable = new ZeroMeterBBDDDataSet.TramosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5282,14 +5282,14 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet.TramosDataTable dataTable) {
+        public virtual int Update(ZeroMeterBBDDDataSet.TramosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet dataSet) {
+        public virtual int Update(ZeroMeterBBDDDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Tramos");
         }
         
@@ -5648,7 +5648,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::ZeroTrip.Properties.Settings.Default.ZeroTripBBDDConnectionString;
+            this._connection.ConnectionString = global::ZeroMeter.Properties.Settings.Default.ZeroMeterBBDDConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5670,7 +5670,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZeroTripBBDDDataSet.LogDataTable dataTable) {
+        public virtual int Fill(ZeroMeterBBDDDataSet.LogDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5683,9 +5683,9 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZeroTripBBDDDataSet.LogDataTable GetData() {
+        public virtual ZeroMeterBBDDDataSet.LogDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZeroTripBBDDDataSet.LogDataTable dataTable = new ZeroTripBBDDDataSet.LogDataTable();
+            ZeroMeterBBDDDataSet.LogDataTable dataTable = new ZeroMeterBBDDDataSet.LogDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5693,14 +5693,14 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet.LogDataTable dataTable) {
+        public virtual int Update(ZeroMeterBBDDDataSet.LogDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZeroTripBBDDDataSet dataSet) {
+        public virtual int Update(ZeroMeterBBDDDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Log");
         }
         
@@ -6187,7 +6187,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(ZeroTripBBDDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ZeroMeterBBDDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._incidenciasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Incidencias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -6242,7 +6242,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(ZeroTripBBDDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ZeroMeterBBDDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._incidenciasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Incidencias.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -6292,7 +6292,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(ZeroTripBBDDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ZeroMeterBBDDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._datosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Datos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -6366,7 +6366,7 @@ namespace ZeroTrip.ZeroTripBBDDDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(ZeroTripBBDDDataSet dataSet) {
+        public virtual int UpdateAll(ZeroMeterBBDDDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

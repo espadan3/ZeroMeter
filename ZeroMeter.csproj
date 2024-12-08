@@ -8,8 +8,8 @@
     <ProjectGuid>{14BF27F1-EF3C-48BC-926E-B927139448A6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ZeroTrip</RootNamespace>
-    <AssemblyName>ZeroTrip</AssemblyName>
+    <RootNamespace>ZeroMeter</RootNamespace>
+    <AssemblyName>ZeroMeter</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -23,7 +23,7 @@
     <SccProvider>
     </SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Desarrollos\VS\ZeroTrip\Publicacion\</PublishUrl>
+    <PublishUrl>D:\Desarrollos\VS\ZeroMeter\Publicacion\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -67,10 +67,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ZeroTrip.Program</StartupObject>
+    <StartupObject>ZeroMeter.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>ZeroTrip.ico</ApplicationIcon>
+    <ApplicationIcon>ZeroMeter.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>6F1CEC0B39FF1AB48DC875A05191778B94123BA4</ManifestCertificateThumbprint>
@@ -170,7 +170,7 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -219,13 +219,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="ZeroTripBBDDDataSet.cs">
-      <DependentUpon>ZeroTripBBDDDataSet.xsd</DependentUpon>
+    <Compile Include="ZeroMeterBBDDDataSet.cs">
+      <DependentUpon>ZeroMeterBBDDDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ZeroTripBBDDDataSet.Designer.cs">
+    <Compile Include="ZeroMeterBBDDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ZeroTripBBDDDataSet.xsd</DependentUpon>
+      <DependentUpon>ZeroMeterBBDDDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Formularios\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -251,21 +251,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ZeroTripBBDDDataSet.xsc">
-      <DependentUpon>ZeroTripBBDDDataSet.xsd</DependentUpon>
+    <None Include="ZeroMeterBBDDDataSet.xsc">
+      <DependentUpon>ZeroMeterBBDDDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ZeroTripBBDDDataSet.xsd">
+    <None Include="ZeroMeterBBDDDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ZeroTripBBDDDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>ZeroMeterBBDDDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ZeroTripBBDDDataSet.xss">
-      <DependentUpon>ZeroTripBBDDDataSet.xsd</DependentUpon>
+    <None Include="ZeroMeterBBDDDataSet.xss">
+      <DependentUpon>ZeroMeterBBDDDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ZeroTrip_TemporaryKey.pfx" />
+    <None Include="ZeroMeter_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ZeroTripBBDD.accdb" />
+    <None Include="ZeroMeterBBDD.accdb" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="ADODB">
@@ -365,7 +365,7 @@
     <Content Include="Formas\TS8.gif" />
     <Content Include="Formas\TS9.gif" />
     <Content Include="readme.txt" />
-    <Content Include="ZeroTrip.ico" />
+    <Content Include="ZeroMeter.ico" />
     <None Include="tick.png" />
     <None Include="cross.png" />
     <None Include="Ok_ico.ico" />
@@ -479,7 +479,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>rem copy "D:\Mis Documentos\Visual Studio 2010\Projects\ZeroTrip_2.0\bin\Release\ZeroTrip.exe" "C:\Program Files (x86)\ZeroTrip_2.0"</PostBuildEvent>
+    <PostBuildEvent>rem copy "D:\Mis Documentos\Visual Studio 2010\Projects\ZeroMeter\bin\Release\ZeroMeter.exe" "C:\Program Files (x86)\ZeroMeter"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

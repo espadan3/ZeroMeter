@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
     public class USBWr
     {

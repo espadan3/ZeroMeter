@@ -1,4 +1,4 @@
-﻿namespace ZeroTrip
+﻿namespace ZeroMeter
 {
     partial class frPrincipal
     {
@@ -193,7 +193,7 @@
             this.cbTramos = new DevExpress.XtraEditors.ComboBoxEdit();
             this.gcMedias = new DevExpress.XtraGrid.GridControl();
             this.datosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsDatos = new ZeroTrip.ZeroTripBBDDDataSet();
+            this.dsDatos = new ZeroMeter.ZeroMeterBBDDDataSet();
             this.gvMedias = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcDesde = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcHasta = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -204,7 +204,7 @@
             this.gcTipoTramo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcIncidencias = new DevExpress.XtraGrid.GridControl();
             this.incidenciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsIncidencias = new ZeroTrip.ZeroTripBBDDDataSet();
+            this.dsIncidencias = new ZeroMeter.ZeroMeterBBDDDataSet();
             this.gvIncidencias = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcPosicion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -233,7 +233,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tramosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsTramos = new ZeroTrip.ZeroTripBBDDDataSet();
+            this.dsTramos = new ZeroMeter.ZeroMeterBBDDDataSet();
             this.scContenedor = new System.Windows.Forms.SplitContainer();
             this.lbDiferencia = new System.Windows.Forms.Label();
             this.lbCrono = new System.Windows.Forms.Label();
@@ -254,13 +254,13 @@
             this.lbVariable = new System.Windows.Forms.Label();
             this.tmAux = new System.Windows.Forms.Timer(this.components);
             this.tmCrono = new System.Windows.Forms.Timer(this.components);
-            this.datosTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.DatosTableAdapter();
-            this.tramosTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.TramosTableAdapter();
+            this.datosTableAdapter = new ZeroMeter.ZeroMeterBBDDDataSetTableAdapters.DatosTableAdapter();
+            this.tramosTableAdapter = new ZeroMeter.ZeroMeterBBDDDataSetTableAdapters.TramosTableAdapter();
             this.PSeriePDA = new System.IO.Ports.SerialPort(this.components);
-            this.incidenciasTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.IncidenciasTableAdapter();
+            this.incidenciasTableAdapter = new ZeroMeter.ZeroMeterBBDDDataSetTableAdapters.IncidenciasTableAdapter();
             this.PSerieARD = new System.IO.Ports.SerialPort(this.components);
-            this.logTableAdapter = new ZeroTrip.ZeroTripBBDDDataSetTableAdapters.LogTableAdapter();
-            this.dsLog = new ZeroTrip.ZeroTripBBDDDataSet();
+            this.logTableAdapter = new ZeroMeter.ZeroMeterBBDDDataSetTableAdapters.LogTableAdapter();
+            this.dsLog = new ZeroMeter.ZeroMeterBBDDDataSet();
             this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ritbVelocidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ritbTime)).BeginInit();
@@ -674,7 +674,7 @@
             // 
             // btBloqMetros
             // 
-            this.btBloqMetros.ImageOptions.Image = global::ZeroTrip.Properties.Resources.lock_open;
+            this.btBloqMetros.ImageOptions.Image = global::ZeroMeter.Properties.Resources.lock_open;
             this.btBloqMetros.Location = new System.Drawing.Point(1035, 217);
             this.btBloqMetros.LookAndFeel.SkinName = "The Asphalt World";
             this.btBloqMetros.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -731,7 +731,7 @@
             // picOrientacion
             // 
             this.picOrientacion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.picOrientacion.Image = global::ZeroTrip.Properties.Resources._12;
+            this.picOrientacion.Image = global::ZeroMeter.Properties.Resources._12;
             this.picOrientacion.Location = new System.Drawing.Point(1035, 339);
             this.picOrientacion.Name = "picOrientacion";
             this.picOrientacion.Size = new System.Drawing.Size(304, 236);
@@ -1793,7 +1793,7 @@
             this.btCal3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btCal3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btCal3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btCal3.ImageOptions.Image = global::ZeroTrip.Properties.Resources.cross;
+            this.btCal3.ImageOptions.Image = global::ZeroMeter.Properties.Resources.cross;
             this.btCal3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btCal3.Location = new System.Drawing.Point(278, 154);
             this.btCal3.LookAndFeel.SkinName = "The Asphalt World";
@@ -1859,7 +1859,7 @@
             this.btCal2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btCal2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btCal2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btCal2.ImageOptions.Image = global::ZeroTrip.Properties.Resources.cross;
+            this.btCal2.ImageOptions.Image = global::ZeroMeter.Properties.Resources.cross;
             this.btCal2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btCal2.Location = new System.Drawing.Point(278, 102);
             this.btCal2.LookAndFeel.SkinName = "The Asphalt World";
@@ -1925,7 +1925,7 @@
             this.btCal1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btCal1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btCal1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btCal1.ImageOptions.Image = global::ZeroTrip.Properties.Resources.tick;
+            this.btCal1.ImageOptions.Image = global::ZeroMeter.Properties.Resources.tick;
             this.btCal1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btCal1.Location = new System.Drawing.Point(278, 50);
             this.btCal1.LookAndFeel.SkinName = "The Asphalt World";
@@ -2304,7 +2304,7 @@
             this.btLimpiar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btLimpiar.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btLimpiar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btLimpiar.ImageOptions.Image = global::ZeroTrip.Properties.Resources.Sign_07;
+            this.btLimpiar.ImageOptions.Image = global::ZeroMeter.Properties.Resources.Sign_07;
             this.btLimpiar.Location = new System.Drawing.Point(213, 56);
             this.btLimpiar.LookAndFeel.SkinName = "The Asphalt World";
             this.btLimpiar.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -4258,7 +4258,7 @@
             // 
             // btBloqueo
             // 
-            this.btBloqueo.ImageOptions.Image = global::ZeroTrip.Properties.Resources.lock_open;
+            this.btBloqueo.ImageOptions.Image = global::ZeroMeter.Properties.Resources.lock_open;
             this.btBloqueo.Location = new System.Drawing.Point(37, 4);
             this.btBloqueo.LookAndFeel.SkinName = "The Asphalt World";
             this.btBloqueo.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -4886,7 +4886,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ZeroTrip - Regularidad";
+            this.Text = "ZeroMeter - Regularidad";
             this.Load += new System.EventHandler(this.frPrincipal_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frPrincipal_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ritbVelocidad)).EndInit();
@@ -5043,13 +5043,13 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbTipo;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.BindingSource datosBindingSource;
-        private ZeroTripBBDDDataSet dsDatos;
-        private ZeroTripBBDDDataSetTableAdapters.DatosTableAdapter datosTableAdapter;
+        private ZeroMeterBBDDDataSet dsDatos;
+        private ZeroMeterBBDDDataSetTableAdapters.DatosTableAdapter datosTableAdapter;
         private DevExpress.XtraEditors.SimpleButton btActTramo;
         private System.Windows.Forms.BindingSource tramosBindingSource;
-        private ZeroTripBBDDDataSet dsTramos;
-        private ZeroTripBBDDDataSetTableAdapters.TramosTableAdapter tramosTableAdapter;
-     //   private ZeroTripBBDDDataSetTableAdapters.LogTableAdapter logTableAdapter;
+        private ZeroMeterBBDDDataSet dsTramos;
+        private ZeroMeterBBDDDataSetTableAdapters.TramosTableAdapter tramosTableAdapter;
+     //   private ZeroMeterBBDDDataSetTableAdapters.LogTableAdapter logTableAdapter;
         private DevExpress.XtraEditors.TimeEdit teSalida;
         private DevExpress.XtraEditors.ComboBoxEdit cbTramosRace;
         private DevExpress.XtraGrid.Columns.GridColumn gcParcial;
@@ -5106,9 +5106,9 @@
         private System.Windows.Forms.Label label11;
         private DevExpress.XtraEditors.TextEdit teCorreccion;
         private System.Windows.Forms.Label label15;
-        private ZeroTripBBDDDataSetTableAdapters.IncidenciasTableAdapter incidenciasTableAdapter;
+        private ZeroMeterBBDDDataSetTableAdapters.IncidenciasTableAdapter incidenciasTableAdapter;
         private System.Windows.Forms.BindingSource incidenciasBindingSource;
-        private ZeroTripBBDDDataSet dsIncidencias;
+        private ZeroMeterBBDDDataSet dsIncidencias;
         private DevExpress.XtraGrid.GridControl gcIncidencias;
         private DevExpress.XtraGrid.Views.Grid.GridView gvIncidencias;
         private DevExpress.XtraGrid.Columns.GridColumn gcPosicion;
@@ -5179,7 +5179,7 @@
         private DevExpress.XtraEditors.TextEdit teRecalibre;
         private System.Windows.Forms.Label lbPulsos;
         private DevExpress.XtraEditors.CheckEdit chkLog;
-        private ZeroTripBBDDDataSetTableAdapters.LogTableAdapter logTableAdapter;
+        private ZeroMeterBBDDDataSetTableAdapters.LogTableAdapter logTableAdapter;
         private System.Windows.Forms.Label lbDifPorRecal;
         private System.Windows.Forms.CheckBox chkBRecalAuto;
         private DevExpress.XtraEditors.LabelControl lbOrientacion;
@@ -5229,7 +5229,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit ritbVelocidad;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit ritbTime;
         private DevExpress.XtraEditors.SimpleButton btEnviar;
-        private ZeroTripBBDDDataSet dsLog;
+        private ZeroMeterBBDDDataSet dsLog;
         private System.Windows.Forms.BindingSource logBindingSource;
         private DevExpress.XtraEditors.SimpleButton btDescargaLog;
         private DevExpress.XtraEditors.ComboBoxEdit cbOrientacion;

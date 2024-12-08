@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="ZeroTripBBDDDataSet" targetNamespace="http://tempuri.org/ZeroTripBBDDDataSet.xsd" xmlns:mstns="http://tempuri.org/ZeroTripBBDDDataSet.xsd" xmlns="http://tempuri.org/ZeroTripBBDDDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="ZeroMeterBBDDDataSet" targetNamespace="http://tempuri.org/ZeroMeterBBDDDataSet.xsd" xmlns:mstns="http://tempuri.org/ZeroMeterBBDDDataSet.xsd" xmlns="http://tempuri.org/ZeroMeterBBDDDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ZeroTripBBDDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ZeroTripBBDDConnectionString (Settings)" PropertyReference="ApplicationSettings.ZeroTrip.Properties.Settings.GlobalReference.Default.ZeroTripBBDDConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ZeroMeterBBDDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ZeroMeterBBDDConnectionString (Settings)" PropertyReference="ApplicationSettings.ZeroMeter.Properties.Settings.GlobalReference.Default.ZeroMeterBBDDConnectionString" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DatosTableAdapter" GeneratorDataComponentClassName="DatosTableAdapter" Name="Datos" UserDataComponentName="DatosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Datos
@@ -91,7 +91,7 @@ WHERE        (IdTramo = ?) AND (IdDato = ?)</CommandText>
               <Mapping SourceColumn="TipoTramo" DataSetColumn="TipoTramo" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BorrraTramo" Modifier="Public" Name="BorrraTramo" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="BorrraTramo">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BorrraTramo" Modifier="Public" Name="BorrraTramo" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="BorrraTramo">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Datos
@@ -102,7 +102,7 @@ WHERE        (IdTramo = ?)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ContarDatos" Modifier="Public" Name="ContarDatos" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ContarDatos">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ContarDatos" Modifier="Public" Name="ContarDatos" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ContarDatos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -115,7 +115,7 @@ GROUP BY IdTramo</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="Desde" Modifier="Public" Name="Desde" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Desde">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="Desde" Modifier="Public" Name="Desde" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Desde">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Hasta, TipoTramo FROM Datos WHERE (IdTramo = ?) AND (IdDato = ?)</CommandText>
@@ -126,7 +126,7 @@ GROUP BY IdTramo</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT Desde, Hasta, IdDato, IdTramo, Parcial, TiempoAcum, TiempoParcial, TipoTramo, Velocidad FROM Datos WHERE (IdTramo = ?)</CommandText>
@@ -136,7 +136,7 @@ GROUP BY IdTramo</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillUltimoDato" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUltimoDato" GeneratorSourceName="FillUltimoDato" GetMethodModifier="Public" GetMethodName="GetUltimoDato" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUltimoDato" UserSourceName="FillUltimoDato">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillUltimoDato" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUltimoDato" GeneratorSourceName="FillUltimoDato" GetMethodModifier="Public" GetMethodName="GetUltimoDato" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUltimoDato" UserSourceName="FillUltimoDato">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Desde, Hasta, IdDato, IdTramo, Parcial, TiempoAcum, TiempoParcial, TipoTramo, Velocidad FROM Datos WHERE (IdTramo = ?) AND (IdDato = (SELECT MAX(IdDato) AS Expr1 FROM Datos Datos_1 WHERE (IdTramo = ?)))</CommandText>
@@ -147,7 +147,7 @@ GROUP BY IdTramo</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetFila" GetMethodModifier="Public" GetMethodName="GetFila" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetFila" UserSourceName="GetFila">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Datos" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetFila" GetMethodModifier="Public" GetMethodName="GetFila" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetFila" UserSourceName="GetFila">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Desde, Hasta, IdDato, IdTramo, Parcial, TiempoAcum, TiempoParcial, TipoTramo, Velocidad FROM Datos WHERE (IdTramo = ?) AND (IdDato = ?)</CommandText>
@@ -158,7 +158,7 @@ GROUP BY IdTramo</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LimpiarDatos" Modifier="Public" Name="LimpiarDatos" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="LimpiarDatos">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LimpiarDatos" Modifier="Public" Name="LimpiarDatos" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="LimpiarDatos">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Datos</CommandText>
@@ -166,7 +166,7 @@ GROUP BY IdTramo</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ModificaFila" Modifier="Public" Name="ModificaFila" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ModificaFila">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ModificaFila" Modifier="Public" Name="ModificaFila" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ModificaFila">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Datos
@@ -189,7 +189,7 @@ WHERE        (IdTramo = ?) AND (IdDato = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IncidenciasTableAdapter" GeneratorDataComponentClassName="IncidenciasTableAdapter" Name="Incidencias" UserDataComponentName="IncidenciasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Incidencias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Incidencias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Incidencias
@@ -258,7 +258,7 @@ ORDER BY IdIncidencia</CommandText>
               <Mapping SourceColumn="Comentarios" DataSetColumn="Comentarios" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CuentaIncidencias" Modifier="Public" Name="CuentaIncidencias" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CuentaIncidencias">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CuentaIncidencias" Modifier="Public" Name="CuentaIncidencias" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CuentaIncidencias">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -271,7 +271,7 @@ GROUP BY Tramo</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Incidencias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByPosicion" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPosicion" GeneratorSourceName="FillByPosicion" GetMethodModifier="Public" GetMethodName="GetDataByPosicion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPosicion" UserSourceName="FillByPosicion">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Incidencias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByPosicion" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPosicion" GeneratorSourceName="FillByPosicion" GetMethodModifier="Public" GetMethodName="GetDataByPosicion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPosicion" UserSourceName="FillByPosicion">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Tramo, IdIncidencia, Posicion, Descripcion, Comentarios, Orientacion
@@ -284,7 +284,7 @@ ORDER BY Posicion</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LimpiarIncidencias" Modifier="Public" Name="LimpiarIncidencias" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="LimpiarIncidencias">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LimpiarIncidencias" Modifier="Public" Name="LimpiarIncidencias" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="LimpiarIncidencias">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Incidencias</CommandText>
@@ -296,7 +296,7 @@ ORDER BY Posicion</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SectoresTableAdapter" GeneratorDataComponentClassName="SectoresTableAdapter" Name="Sectores" UserDataComponentName="SectoresTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Sectores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Sectores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Sectores` WHERE ((`IdTramo` = ?) AND ((? = 1 AND `Distancia` IS NULL) OR (`Distancia` = ?)) AND ((? = 1 AND `Sectores` IS NULL) OR (`Sectores` = ?)) AND ((? = 1 AND `TiempoMax` IS NULL) OR (`TiempoMax` = ?)) AND ((? = 1 AND `TiempoMin` IS NULL) OR (`TiempoMin` = ?)) AND ((? = 1 AND `VelocidadMin` IS NULL) OR (`VelocidadMin` = ?)) AND ((? = 1 AND `VelocidadMax` IS NULL) OR (`VelocidadMax` = ?)) AND ((? = 1 AND `Velocidad` IS NULL) OR (`Velocidad` = ?)))</CommandText>
@@ -386,7 +386,7 @@ ORDER BY Posicion</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TramosTableAdapter" GeneratorDataComponentClassName="TramosTableAdapter" Name="Tramos" UserDataComponentName="TramosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Tramos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Tramos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Tramos
@@ -441,7 +441,7 @@ WHERE        (IdTramo = ?)</CommandText>
               <Mapping SourceColumn="HoraSalida" DataSetColumn="HoraSalida" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InicializarTodos" Modifier="Public" Name="InicializarTodos" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InicializarTodos">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InicializarTodos" Modifier="Public" Name="InicializarTodos" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InicializarTodos">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Tramos
@@ -456,7 +456,7 @@ SET                TipoTramo= "Medias", HoraSalida = ?</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LogTableAdapter" GeneratorDataComponentClassName="LogTableAdapter" Name="Log" UserDataComponentName="LogTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="Log" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="Log" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Log` WHERE ((`Id` = ?) AND ((? = 1 AND `Tramo` IS NULL) OR (`Tramo` = ?)) AND ((? = 1 AND `Hora` IS NULL) OR (`Hora` = ?)) AND ((? = 1 AND `DistanciaTeorica` IS NULL) OR (`DistanciaTeorica` = ?)) AND ((? = 1 AND `DistanciaReal` IS NULL) OR (`DistanciaReal` = ?)) AND ((? = 1 AND `Crono` IS NULL) OR (`Crono` = ?)) AND ((? = 1 AND `Velocidad` IS NULL) OR (`Velocidad` = ?)) AND ((? = 1 AND `Datos` IS NULL) OR (`Datos` = ?)))</CommandText>
@@ -543,7 +543,7 @@ VALUES        (?, ?, ?, ?, ?, ?, ?)</CommandText>
               <Mapping SourceColumn="Datos" DataSetColumn="Datos" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ZeroTripBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LimpiarLog" Modifier="Public" Name="LimpiarLog" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="LimpiarLog">
+              <DbSource ConnectionRef="ZeroMeterBBDDConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LimpiarLog" Modifier="Public" Name="LimpiarLog" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="LimpiarLog">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Log</CommandText>
@@ -558,7 +558,7 @@ VALUES        (?, ?, ?, ?, ?, ?, ?)</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ZeroTripBBDDDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ZeroTripBBDDDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ZeroTripBBDDDataSet">
+  <xs:element name="ZeroMeterBBDDDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ZeroMeterBBDDDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ZeroMeterBBDDDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Incidencias" msprop:Generator_RowEvHandlerName="IncidenciasRowChangeEventHandler" msprop:Generator_RowDeletedName="IncidenciasRowDeleted" msprop:Generator_RowDeletingName="IncidenciasRowDeleting" msprop:Generator_RowEvArgName="IncidenciasRowChangeEvent" msprop:Generator_TablePropName="Incidencias" msprop:Generator_RowChangedName="IncidenciasRowChanged" msprop:Generator_UserTableName="Incidencias" msprop:Generator_RowChangingName="IncidenciasRowChanging" msprop:Generator_RowClassName="IncidenciasRow" msprop:Generator_TableClassName="IncidenciasDataTable" msprop:Generator_TableVarName="tableIncidencias">

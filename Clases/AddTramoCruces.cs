@@ -9,12 +9,12 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using Microsoft.VisualBasic;
-using ZeroTrip.ZeroTripBBDDDataSetTableAdapters;
+using ZeroMeter.ZeroMeterBBDDDataSetTableAdapters;
 using DevExpress.Utils;
 //using DevExpress.Office.Crypto;
 //using Microsoft.Office.Interop.Excel;
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
     partial class frPrincipal
 
@@ -631,7 +631,7 @@ namespace ZeroTrip
                 if (Convert.ToInt32(dsIncidencias.Incidencias.Rows[nRegs - 1]["Posicion"]) > Convert.ToInt32(tePosicion.Text.Replace(".", "")))
                 {
 
-                    ZeroTripBBDDDataSet.IncidenciasDataTable tbPosicion = new ZeroTripBBDDDataSet.IncidenciasDataTable();
+                    ZeroMeterBBDDDataSet.IncidenciasDataTable tbPosicion = new ZeroMeterBBDDDataSet.IncidenciasDataTable();
 
                     incidenciasTableAdapter.Fill(dsIncidencias.Incidencias, nTramo);
                     incidenciasTableAdapter.FillByPosicion(tbPosicion, nTramo);
@@ -640,7 +640,7 @@ namespace ZeroTrip
 
                     int a = 1;
 
-                    foreach (ZeroTripBBDDDataSet.IncidenciasRow rwDato in dsIncidencias.Incidencias)
+                    foreach (ZeroMeterBBDDDataSet.IncidenciasRow rwDato in dsIncidencias.Incidencias)
                     {
                         dsIncidencias.Incidencias.Rows[a - 1]["Posicion"] = tbPosicion[a - 1]["Posicion"];
                         dsIncidencias.Incidencias.Rows[a - 1]["Orientacion"] = tbPosicion[a - 1]["Orientacion"];

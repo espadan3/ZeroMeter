@@ -33,7 +33,7 @@ namespace BTLibrary
         // Nombre del dispositivo desde el que admitiremos la conexión
         public string remoteDeviceNameAdmited = "";
 
-        private ZeroTrip.Utiles util = new ZeroTrip.Utiles();
+        private ZeroMeter.Utiles util = new ZeroMeter.Utiles();
 
 
         

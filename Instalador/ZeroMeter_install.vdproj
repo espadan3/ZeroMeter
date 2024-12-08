@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:ZeroTrip_2.0_install"
+"ProjectName" = "8:ZeroMeter_install"
 "LanguageId" = "3:3082"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:3082"
@@ -29,12 +29,6 @@
         {
         "MsmKey" = "8:_0AF00C701B2BB0A76A6FD78CA6F36255"
         "OwnerKey" = "8:_C3B0D29081471DE51CC066043ACA4603"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0D570B3297C62B4EEE4BE8B47C82376F"
-        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -165,6 +159,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_23BDC3C5F1606BF74EC82E1BB96CB3DD"
+        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_23BDC3C5F1606BF74EC82E1BB96CB3DD"
+        "OwnerKey" = "8:_CDE8BEF4339B76928BF49D27AD65F106"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_24CC53E02A7D4DBC9F03C08EFBE7764A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -172,13 +178,13 @@
         "Entry"
         {
         "MsmKey" = "8:_28149174AC17036F062CCC4917152716"
-        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
+        "OwnerKey" = "8:_CDE8BEF4339B76928BF49D27AD65F106"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_28149174AC17036F062CCC4917152716"
-        "OwnerKey" = "8:_30C1DE1D2CE75099B5039F760AF847DF"
+        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -213,18 +219,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_30C1DE1D2CE75099B5039F760AF847DF"
-        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_30C1DE1D2CE75099B5039F760AF847DF"
-        "OwnerKey" = "8:_0D570B3297C62B4EEE4BE8B47C82376F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_384327B514D540A68E12E4C3C3841478"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -233,24 +227,6 @@
         {
         "MsmKey" = "8:_3CADD32E82D064A7F41A66D76914DF70"
         "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_42B1658065F258F3C2D8EE965F71CFB0"
-        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_42B1658065F258F3C2D8EE965F71CFB0"
-        "OwnerKey" = "8:_0D570B3297C62B4EEE4BE8B47C82376F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_42B1658065F258F3C2D8EE965F71CFB0"
-        "OwnerKey" = "8:_30C1DE1D2CE75099B5039F760AF847DF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -513,18 +489,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_813184F5736DD5E87B678B0208761B22"
-        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9133147E309A05773EACF850C922529D"
-        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_92CF98D8FF724CF1BB8E98B675C4A807"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -567,25 +531,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A1B4ED8F29A3BD76CA29F1FBDA5C75F4"
+        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A7549DD35ABF47A7AB583266D696ABC4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_AF80F875D2CE0143BE1D2EFC818A75A1"
-        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AF80F875D2CE0143BE1D2EFC818A75A1"
-        "OwnerKey" = "8:_EE4201443F14953FFBE67BA91613DB69"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B63CDC89097326DDCE831261D026D36D"
+        "MsmKey" = "8:_ADBF1704DE563147D97D998BDD5ACC8A"
         "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -723,6 +681,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_CDE8BEF4339B76928BF49D27AD65F106"
+        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D0B0DDCD14564AB395FAFD6BDFA7982C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -795,18 +759,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EE4201443F14953FFBE67BA91613DB69"
-        "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_EE4201443F14953FFBE67BA91613DB69"
-        "OwnerKey" = "8:_9133147E309A05773EACF850C922529D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F35A2133C3F0E259F351D192A702ECCD"
         "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
         "MsmSig" = "8:_UNDEFINED"
@@ -839,54 +791,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_2DC976B5A7E14EF1B3D0D788609AEE6A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_813184F5736DD5E87B678B0208761B22"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0D570B3297C62B4EEE4BE8B47C82376F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_30C1DE1D2CE75099B5039F760AF847DF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_42B1658065F258F3C2D8EE965F71CFB0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B63CDC89097326DDCE831261D026D36D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9133147E309A05773EACF850C922529D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EE4201443F14953FFBE67BA91613DB69"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AF80F875D2CE0143BE1D2EFC818A75A1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1018,7 +922,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_ADBF1704DE563147D97D998BDD5ACC8A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_CDE8BEF4339B76928BF49D27AD65F106"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_28149174AC17036F062CCC4917152716"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_23BDC3C5F1606BF74EC82E1BB96CB3DD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A1B4ED8F29A3BD76CA29F1FBDA5C75F4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1029,7 +957,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\ZeroTrip_2.0_install.msi"
+        "OutputFilename" = "8:Debug\\ZeroMeter_2.0_install.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -1061,7 +989,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\ZeroTrip_install.msi"
+        "OutputFilename" = "8:Release\\ZeroMeter_install.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -1130,37 +1058,6 @@
                     }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0D570B3297C62B4EEE4BE8B47C82376F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:VBIDEApi, Version=1.9.6.0, Culture=neutral, PublicKeyToken=297f57b43ae7c1de, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_0D570B3297C62B4EEE4BE8B47C82376F"
-                    {
-                    "Name" = "8:VBIDEApi.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:VBIDEApi.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
@@ -1280,6 +1177,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_23BDC3C5F1606BF74EC82E1BB96CB3DD"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NetOffice, Version=1.9.6.0, Culture=neutral, PublicKeyToken=297f57b43ae7c1de, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_23BDC3C5F1606BF74EC82E1BB96CB3DD"
+                    {
+                    "Name" = "8:NetOffice.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:NetOffice.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_24CC53E02A7D4DBC9F03C08EFBE7764A"
             {
             "SourcePath" = "8:..\\Sonidos\\Startup.wav"
@@ -1382,37 +1310,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_30C1DE1D2CE75099B5039F760AF847DF"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:OfficeApi, Version=1.9.6.0, Culture=neutral, PublicKeyToken=297f57b43ae7c1de, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_30C1DE1D2CE75099B5039F760AF847DF"
-                    {
-                    "Name" = "8:OfficeApi.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:OfficeApi.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_384327B514D540A68E12E4C3C3841478"
             {
             "SourcePath" = "8:..\\Sonidos\\ringout.wav"
@@ -1447,37 +1344,6 @@
                     }
                 }
             "SourcePath" = "8:DevExpress.BonusSkins.v22.2.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_42B1658065F258F3C2D8EE965F71CFB0"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:NetOffice, Version=1.9.6.0, Culture=neutral, PublicKeyToken=297f57b43ae7c1de, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_42B1658065F258F3C2D8EE965F71CFB0"
-                    {
-                    "Name" = "8:NetOffice.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:NetOffice.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
@@ -1843,68 +1709,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_813184F5736DD5E87B678B0208761B22"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InTheHand.Devices.Bluetooth, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_813184F5736DD5E87B678B0208761B22"
-                    {
-                    "Name" = "8:InTheHand.Devices.Bluetooth.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:InTheHand.Devices.Bluetooth.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9133147E309A05773EACF850C922529D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.TestTools.UITest.Extension, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_9133147E309A05773EACF850C922529D"
-                    {
-                    "Name" = "8:Microsoft.VisualStudio.TestTools.UITest.Extension.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.VisualStudio.TestTools.UITest.Extension.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_92CF98D8FF724CF1BB8E98B675C4A807"
             {
             "SourcePath" = "8:..\\Sonidos\\Parada crítica de Windows XP.wav"
@@ -2027,6 +1831,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A1B4ED8F29A3BD76CA29F1FBDA5C75F4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:InTheHand.Net.Personal, Version=3.5.605.0, Culture=neutral, PublicKeyToken=ea38caa273134499, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A1B4ED8F29A3BD76CA29F1FBDA5C75F4"
+                    {
+                    "Name" = "8:InThehand.Net.Personal.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:InThehand.Net.Personal.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A7549DD35ABF47A7AB583266D696ABC4"
             {
             "SourcePath" = "8:..\\Sonidos\\CambioMedia.wav"
@@ -2047,51 +1882,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AF80F875D2CE0143BE1D2EFC818A75A1"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_ADBF1704DE563147D97D998BDD5ACC8A"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:InTheHand.Devices.Bluetooth, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_AF80F875D2CE0143BE1D2EFC818A75A1"
+                    "_ADBF1704DE563147D97D998BDD5ACC8A"
                     {
-                    "Name" = "8:Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll"
+                    "Name" = "8:InTheHand.Devices.Bluetooth.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B63CDC89097326DDCE831261D026D36D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InTheHand.Net.Personal, Version=3.5.605.0, Culture=neutral, PublicKeyToken=ea38caa273134499, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_B63CDC89097326DDCE831261D026D36D"
-                    {
-                    "Name" = "8:InThehand.Net.Personal.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:InThehand.Net.Personal.dll"
+            "SourcePath" = "8:InTheHand.Devices.Bluetooth.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
@@ -2202,6 +2006,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CDE8BEF4339B76928BF49D27AD65F106"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:OfficeApi, Version=1.9.6.0, Culture=neutral, PublicKeyToken=297f57b43ae7c1de, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_CDE8BEF4339B76928BF49D27AD65F106"
+                    {
+                    "Name" = "8:OfficeApi.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:OfficeApi.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D0B0DDCD14564AB395FAFD6BDFA7982C"
             {
             "SourcePath" = "8:..\\Sonidos\\message.wav"
@@ -2224,8 +2059,8 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D19A4A14B2EA43E287896E1AF77B6C10"
             {
-            "SourcePath" = "8:..\\ZeroTripBBDD-LIMPIA.accdb"
-            "TargetName" = "8:ZeroTripBBDD.accdb"
+            "SourcePath" = "8:..\\ZeroMeterBBDD-LIMPIA.accdb"
+            "TargetName" = "8:ZeroMeterBBDD.accdb"
             "Tag" = "8:"
             "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
             "Condition" = "8:"
@@ -2276,37 +2111,6 @@
                     }
                 }
             "SourcePath" = "8:DevExpress.Data.Desktop.v22.2.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EE4201443F14953FFBE67BA91613DB69"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.Interop, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_EE4201443F14953FFBE67BA91613DB69"
-                    {
-                    "Name" = "8:Microsoft.VisualStudio.Interop.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.VisualStudio.Interop.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"
@@ -2483,7 +2287,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:ZeroTrip"
+        "ProductName" = "8:ZeroMeter"
         "ProductCode" = "8:{B5CC8085-37FD-4093-B332-EB34B5F0910E}"
         "PackageCode" = "8:{B477E966-7848-419B-8AD7-D889C7A39FF1}"
         "UpgradeCode" = "8:{60C83670-849A-46E7-9943-2E934818D95D}"
@@ -2496,7 +2300,7 @@
         "Manufacturer" = "8:Marae SW"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:ZeroTrip_2.0_install"
+        "Title" = "8:ZeroMeter_2.0_install"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Miguel Angel"
         "Keywords" = "8:"
@@ -2607,7 +2411,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2EB9DA54E26C42E7BC958507B2860596"
             {
-            "Name" = "8:ZeroTrip"
+            "Name" = "8:ZeroMeter"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -3020,7 +2824,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2DC976B5A7E14EF1B3D0D788609AEE6A"
             {
-            "SourcePath" = "8:..\\obj\\Release\\ZeroTrip.exe"
+            "SourcePath" = "8:..\\obj\\Debug\\ZeroMeter.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E8AAA3545BC445F9901FD60C130088AE"

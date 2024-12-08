@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
 	/// <summary>
 	/// Descripción breve de VblesGlobales.

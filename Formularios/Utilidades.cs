@@ -8,7 +8,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 //using System.Net;
 //using System.Net.Sockets;
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
     partial class frPrincipal
     {
@@ -22,7 +22,7 @@ namespace ZeroTrip
 
         VblesGlobales.SYSTEMTIME st = new VblesGlobales.SYSTEMTIME();
 
-        //GestionConfig config = new GestionConfig(Application.StartupPath + @"\ConfigZeroTrip.exe.config");
+        //GestionConfig config = new GestionConfig(Application.StartupPath + @"\ConfigZeroMeter.exe.config");
 
         //*********************************************************************************************************        
 
@@ -44,28 +44,28 @@ namespace ZeroTrip
 
 #if DEBUG
 #if PORTATIL                  
-            //String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
+            //String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroMeter_2.0\";
             //String dataName = AppDomain.CurrentDomain.BaseDirectory;
             string dataName = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
 
-            String fileName = "ZeroTripBBDD.accdb";
+            String fileName = "ZeroMeterBBDD.accdb";
 #else
 #if PC
-            String fileName = "ZeroTripBBDD.accdb";
-            // String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
+            String fileName = "ZeroMeterBBDD.accdb";
+            // String dataName = @"D:\Mis documentos\Visual Studio 2017\Proyectos\ZeroMeter_2.0\";
             szDirectorio = System.AppDomain.CurrentDomain.BaseDirectory; ;
 
-            String dataName = szDirectorio.Substring(0, szDirectorio.IndexOf("ZeroTrip") + 8);
-            int n = szDirectorio.IndexOf("ZeroTrip");
+            String dataName = szDirectorio.Substring(0, szDirectorio.IndexOf("ZeroMeter") + 8);
+            int n = szDirectorio.IndexOf("ZeroMeter");
 #else
 #if NANO
-            String fileName = "ZeroTripBBDD.accdb";
-            String dataName = @"C:\Users\Miguel Angel\Documents\Visual Studio 2017\Proyectos\ZeroTrip_2.0\";
+            String fileName = "ZeroMeterBBDD.accdb";
+            String dataName = @"C:\Users\Miguel Angel\Documents\Visual Studio 2017\Proyectos\ZeroMeter_2.0\";
 #else
 
             //String fileName = FichConfig.GetFicheroDeDatos();
-            String fileName = "ZeroTripBBDD.accdb";
-            String dataName = @"D:\Mis documentos\Visual Studio 2010\Projects\ZeroTrip\";
+            String fileName = "ZeroMeterBBDD.accdb";
+            String dataName = @"D:\Mis documentos\Visual Studio 2010\Projects\ZeroMeter\";
 
 
 #endif
@@ -78,11 +78,11 @@ namespace ZeroTrip
 // Por aqui entramos si estamos en modo Release
 //#if PC
             // Por aqui entramos si estamos en modo Release desde VS. Comprobar comportamiento en ejecucion
-//            String fileName = "ZeroTripBBDD.accdb";
+//            String fileName = "ZeroMeterBBDD.accdb";
 //            string dataName = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
             ////String dataName = System.AppDomain.CurrentDomain.BaseDirectory;
 //#else
-            String fileName = "ZeroTripBBDD.accdb";
+            String fileName = "ZeroMeterBBDD.accdb";
             String dataName = System.AppDomain.CurrentDomain.BaseDirectory;
 //#endif
 #endif
@@ -506,7 +506,7 @@ namespace ZeroTrip
             //switch (szTipoTramo)
             //{
             //    case "Tablas":
-            //        foreach (ZeroTrip.ZeroTripBBDDDataSet.DatosRow rwDato in tbDatosTr)
+            //        foreach (ZeroMeter.ZeroMeterBBDDDataSet.DatosRow rwDato in tbDatosTr)
             //        {
             //            tsTiempoAcum = (Convert.ToDateTime(rwDato.TiempoAcum)).TimeOfDay;
             //            if (tsCrono <= tsTiempoAcum)
@@ -524,7 +524,7 @@ namespace ZeroTrip
             //                return (tbDatosTr[nInd].IdDato);
 
             //        }
-            //        //foreach (ZeroTrip.ZeroTripBBDDDataSet.DatosRow rwDato in tbDatosTr)
+            //        //foreach (ZeroMeter.ZeroMeterBBDDDataSet.DatosRow rwDato in tbDatosTr)
             //        //{
             //        //    tsTiempoAcum = (Convert.ToDateTime(rwDato.TiempoAcum)).TimeOfDay;
             //        //    if (tsCrono <= tsTiempoAcum)
@@ -535,7 +535,7 @@ namespace ZeroTrip
             //        // break;
             //    case "Hitos":
             //    case "HitosH":
-            //        foreach (ZeroTrip.ZeroTripBBDDDataSet.DatosRow rwDato in tbDatosTr)
+            //        foreach (ZeroMeter.ZeroMeterBBDDDataSet.DatosRow rwDato in tbDatosTr)
             //        {
             //            tsTiempoAcum = (Convert.ToDateTime(rwDato.TiempoAcum)).TimeOfDay;
             //            if (tsCrono <= tsTiempoAcum)
@@ -660,136 +660,136 @@ namespace ZeroTrip
                                     switch (tbIncidenciasTr[nSigIncidecia - 1].Orientacion)
                                     {
                                         case "1":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._1;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._1;
                                             break;
                                         case "2":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._2;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._2;
                                             break;
                                         case "3":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._3;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._3;
                                             break;
                                         case "4":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._4;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._4;
                                             break;
                                         case "5":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._5;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._5;
                                             break;
                                         case "6":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._6;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._6;
                                             break;
                                         case "7":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._7;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._7;
                                             break;
                                         case "8":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._8;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._8;
                                             break;
                                         case "9":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._9;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._9;
                                             break;
                                         case "10":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._10;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._10;
                                             break;
                                         case "11":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._11;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._11;
                                             break;
                                         case "12":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources._12;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources._12;
                                             break;
                                         case "C1":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C1;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C1;
                                             break;
                                         case "C2":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C2;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C2;
                                             break;
                                         case "C9":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C9;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C9;
                                             break;
                                         case "C3":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C3;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C3;
                                             break;
                                         case "C4":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C4;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C4;
                                             break;
                                         case "C5":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C5;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C5;
                                             break;
                                         case "C7":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C1;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C1;
                                             break;
                                         case "C8":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C2;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C2;
                                             break;
                                         case "C10":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C10;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C10;
                                             break;
                                         case "C11":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C11;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C11;
                                             break;
                                         case "C12":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.C12;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.C12;
                                             break;
                                         case "R1":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R1;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R1;
                                             break;
                                         case "R2":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R2;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R2;
                                             break;
                                         case "R3":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R3;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R3;
                                             break;
                                         case "R4":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R4;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R4;
                                             break;
                                         case "R5":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R5;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R5;
                                             break;
                                         case "R7":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R7;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R7;
                                             break;
                                         case "R8":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R8;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R8;
                                             break;
                                         case "R9":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R9;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R9;
                                             break;
                                         case "R10":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R10;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R10;
                                             break;
                                         case "R11":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R11;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R11;
                                             break;
                                         case "R12":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.R12;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.R12;
                                             break;
                                         case "S3":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.S3;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.S3;
                                             break;
                                         case "S9":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.S9;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.S9;
                                             break;
                                         case "T3":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.T3;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.T3;
                                             break;
                                         case "T9":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.T9;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.T9;
                                             break;
                                         case "TS2":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS2;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.TS2;
                                             break;
                                         case "TS3":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS3;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.TS3;
                                             break;
                                         case "TS4":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS4;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.TS4;
                                             break;
                                         case "TS8":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS8;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.TS8;
                                             break;
                                         case "TS9":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS9;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.TS9;
                                             break;
                                         case "TS10":
-                                            picOrientacion.Image = ZeroTrip.Properties.Resources.TS10;
+                                            picOrientacion.Image = ZeroMeter.Properties.Resources.TS10;
                                             break;
                                         default:
                                             picOrientacion.Visible = false;
@@ -1196,9 +1196,9 @@ namespace ZeroTrip
             if (!config.GetSelCal1())
             {
 
-                btCal1.Image = ZeroTrip.Properties.Resources.tick;
-                btCal2.Image = ZeroTrip.Properties.Resources.cross;
-                btCal3.Image = ZeroTrip.Properties.Resources.cross;
+                btCal1.Image = ZeroMeter.Properties.Resources.tick;
+                btCal2.Image = ZeroMeter.Properties.Resources.cross;
+                btCal3.Image = ZeroMeter.Properties.Resources.cross;
 
                 config.SetSelCal1(true);
                 config.SetSelCal2(false);
@@ -1231,9 +1231,9 @@ namespace ZeroTrip
         {
             if (!config.GetSelCal2())
             {
-                btCal1.Image = ZeroTrip.Properties.Resources.cross;
-                btCal2.Image = ZeroTrip.Properties.Resources.tick;
-                btCal3.Image = ZeroTrip.Properties.Resources.cross;
+                btCal1.Image = ZeroMeter.Properties.Resources.cross;
+                btCal2.Image = ZeroMeter.Properties.Resources.tick;
+                btCal3.Image = ZeroMeter.Properties.Resources.cross;
 
                 config.SetSelCal1(false);
                 config.SetSelCal2(true);
@@ -1265,9 +1265,9 @@ namespace ZeroTrip
         {
             if (!config.GetSelCal3())
             {
-                btCal1.Image = ZeroTrip.Properties.Resources.cross;
-                btCal2.Image = ZeroTrip.Properties.Resources.cross;
-                btCal3.Image = ZeroTrip.Properties.Resources.tick;
+                btCal1.Image = ZeroMeter.Properties.Resources.cross;
+                btCal2.Image = ZeroMeter.Properties.Resources.cross;
+                btCal3.Image = ZeroMeter.Properties.Resources.tick;
 
                 config.SetSelCal1(false);
                 config.SetSelCal2(false);
@@ -1518,14 +1518,14 @@ namespace ZeroTrip
 
             {
 
-                String fileOrigen = System.AppDomain.CurrentDomain.BaseDirectory + "\\ZeroTripBBDD.accdb";
-                String fileDestino = System.AppDomain.CurrentDomain.BaseDirectory + "ZeroTripBBDD_BACKUP.accdb";
+                String fileOrigen = System.AppDomain.CurrentDomain.BaseDirectory + "\\ZeroMeterBBDD.accdb";
+                String fileDestino = System.AppDomain.CurrentDomain.BaseDirectory + "ZeroMeterBBDD_BACKUP.accdb";
 
                 FileInfo archivoOrigen = new FileInfo(fileOrigen);
                 FileInfo archivoDestino = new FileInfo(fileDestino);
 
                 if (Util.AvisoConRespuesta("Pero si quieres, podemos guardar una copia de la BBDD actual \r" +
-                    "¿Quieres que hagamos la copia a ZeroTripBBDD_BACKUP.accdb?", "Salvar BBDD"))
+                    "¿Quieres que hagamos la copia a ZeroMeterBBDD_BACKUP.accdb?", "Salvar BBDD"))
                 {
                     try
                     {

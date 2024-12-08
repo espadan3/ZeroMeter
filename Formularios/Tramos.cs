@@ -12,7 +12,7 @@ using System.CodeDom;
 using System.Data.OleDb;
 
 
-namespace ZeroTrip
+namespace ZeroMeter
 {
 
     partial class frPrincipal
@@ -742,14 +742,14 @@ namespace ZeroTrip
         {
             if (btBloqueo.Tag.ToString() == "Cerrado")
             {
-                btBloqueo.Image = ZeroTrip.Properties.Resources.lock_open;
+                btBloqueo.Image = ZeroMeter.Properties.Resources.lock_open;
                 btBloqueo.Tag = "Abierto";
                 gcAdd.Enabled = true;
                 gcMedias.EmbeddedNavigator.Enabled = true;
             }
             else
             {
-                btBloqueo.Image = ZeroTrip.Properties.Resources._lock;
+                btBloqueo.Image = ZeroMeter.Properties.Resources._lock;
                 btBloqueo.Tag = "Cerrado";
                 gcAdd.Enabled = false;
                 gcMedias.EmbeddedNavigator.Enabled = false;
