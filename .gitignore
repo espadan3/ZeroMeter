@@ -411,3 +411,5 @@ bin/Release/ZeroTrip.exe
 bin/Debug/ZeroTrip.pdb
 bin/Debug/ZeroTrip.exe
 bin/Debug/ConfigZeroTrip.exe.config
+bin/Release/*.*
+bin/Debug/*.*
